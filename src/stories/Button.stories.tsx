@@ -14,5 +14,14 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Button',
   color: 'primary',
-  variant: 'contained'
+  variant: 'contained',
+  chunky: false,
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  children: 'Button',
+  color: 'primary',
+  variant: 'outlined',
+  chunky: false,
 };
