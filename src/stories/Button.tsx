@@ -2,12 +2,13 @@ import React, { FunctionComponent } from 'react';
 import { Button as MuiButton, ButtonProps as MuiButtonProps, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  root: {
+  root: chunky => ({
     fontSize: '1rem',
     fontWeight: 500,
     lineHeight: 1,
     borderRadius: '3px',
-  },
+    padding: (chunky ? '16px 24px' : '12px 24px'),
+  }),
   outlined: variant => ( variant === 'outlined' ? {
       backgroundColor: '#FFFFFF',
       '&:hover': {
@@ -20,9 +21,6 @@ const useStyles = makeStyles({
           color: '#739C9A',
       }
   } : {}),
-  chunky: chunky => ({
-    padding: (chunky ? '16px 24px' : '12px 24px')
-  })
 })
 
 export interface ButtonProps extends MuiButtonProps {
@@ -30,9 +28,9 @@ export interface ButtonProps extends MuiButtonProps {
 }
 
 const Button: FunctionComponent<ButtonProps> = ({ children, chunky, ...props }) => {
-  const classes = useStyles();
+  const classes = useStyles(chunky);
     return (
-        <MuiButton className={`${classes.root} ${classes.chunky} ${classes.outlined}`} {...props}>
+        <MuiButton className={`${classes.root} ${classes.outlined}`} {...props}>
             {children}
         </MuiButton>
     )
