@@ -25,3 +25,19 @@ Secondary.args = {
   variant: 'outlined',
   chunky: false,
 };
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  children: 'Button',
+  color: 'tertiary',
+  variant: 'outlined',
+  chunky: false,
+};
+
+export const Destructive = Template.bind({});
+Destructive.args = {
+  children: 'Button',
+  color: 'destructive',
+  variant: 'contained',
+  chunky: false,
+};
