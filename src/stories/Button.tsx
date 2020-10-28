@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { Button as MuiButton, ButtonProps as MuiButtonProps, makeStyles } from '@material-ui/core';
+import {Button as MuiButton, ButtonProps as MuiButtonProps, createStyles, makeStyles, Theme} from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {
     fontSize: '1rem',
     fontWeight: 500,
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   chunky: chunky => ({
     padding: (chunky ? '16px 24px' : '12px 24px')
   })
-})
+}))
 
 export interface ButtonProps extends MuiButtonProps {
     chunky?: boolean;
