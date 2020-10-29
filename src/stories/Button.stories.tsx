@@ -4,7 +4,7 @@ import Button, { ButtonProps } from './Button';
 import ThemeSelector from "../themes/ThemeSelector";
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Contained',
   component: Button,
 } as Meta;
 
@@ -21,23 +21,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Button',
-  color: 'primary',
-  variant: 'outlined',
-  chunky: false,
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  children: 'Button',
-  color: 'tertiary',
-  variant: 'outlined',
-  chunky: false,
-};
-
-export const Destructive = Template.bind({});
-Destructive.args = {
-  children: 'Button',
-  color: 'destructive',
+  color: 'secondary',
   variant: 'contained',
   chunky: false,
 };
