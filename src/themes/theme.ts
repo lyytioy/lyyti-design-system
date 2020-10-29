@@ -3,40 +3,18 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import lightBlue from "@material-ui/core/colors/lightBlue";
 import indigo from "@material-ui/core/colors/indigo";
 
-declare module "@material-ui/core/styles/createPalette" {
-    interface Palette {
-      tertiary: Palette['primary'];
-      destructive: Palette['primary'];
-    }
-    interface PaletteOptions {
-      tertiary: PaletteOptions['primary'];
-      destructive: PaletteOptions['primary'];
-    }
-}
-
 export default createMuiTheme({
     palette: {
         primary: {
             main: '#045B56',
             dark: '#034E49',
             light: '#05756F',
-            contrastText: '#FFFFFF'
+            contrastText: '#FFFFFF',
         },
         secondary: {
             main: '#EE8B3A',
             dark: '#DD6E13',
             light: '#F2A96D',
-            contrastText: '#FFFFFF'
-        },
-        tertiary: {
-            main: '#FFFFFF',
-            dark: '#DDE6E6',
-            light: '#E6F1F1',
-        },
-        destructive: {
-            main: '#C24127',
-            dark: '#A8321B',
-            light: '#D75339',
             contrastText: '#FFFFFF'
         },
         info: {
