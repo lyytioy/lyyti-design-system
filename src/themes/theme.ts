@@ -46,12 +46,31 @@ export default createMuiTheme({
             secondary: indigo[300],
             disabled: lightBlue[100]
         },
+        grey: {
+             "50": '#F9FAFB',
+             "100": '#E3E6E9',
+             "200": '#B1B9BE',
+             "300": '#7A8389',
+             "400": '#46545B',
+             "500": '#192832'
+        }
     },
     typography: {
         fontFamily: 'Nunito Sans, sans-serif',
         button: {
           textTransform: 'none',
           fontWeight: 500,
+        }
+    },
+    props: {
+        MuiCheckbox: {
+            color: 'primary'
+        },
+        MuiRadio: {
+            color: 'primary'
+        },
+        MuiSwitch: {
+            color: 'primary'
         }
     }
 });
