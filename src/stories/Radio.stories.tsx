@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Radio, { RadioProps } from './Radio';
+import Radio, { RadioProps } from '../components/Radio';
 import ThemeSelector from "../themes/ThemeSelector";
 
 export default {

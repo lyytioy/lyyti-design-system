@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Checkbox, { CheckboxProps } from './Checkbox';
+import Checkbox, { CheckboxProps } from '../components/Checkbox';
 import ThemeSelector from "../themes/ThemeSelector";
 
 export default {

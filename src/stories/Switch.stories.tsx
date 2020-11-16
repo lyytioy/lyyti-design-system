@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Switch, { SwitchProps } from './Switch';
+import Switch, { SwitchProps } from '../components/Switch';
 import ThemeSelector from "../themes/ThemeSelector";
 
 export default {
