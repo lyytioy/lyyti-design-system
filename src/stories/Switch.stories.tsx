@@ -30,6 +30,5 @@ Small.args = {
 export const Label = LabelTemplate.bind({});
 Label.args = {
   control: <Switch />,
-  label: 'Label',
-  disabled: true
+  label: 'Label'
 }
