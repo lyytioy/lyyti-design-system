@@ -4,6 +4,7 @@ import {FormControlLabel as MuiFormControlLabel, FormControlLabelProps as MuiFor
 const useStyles = makeStyles<Theme>(theme => createStyles({
     root: {
         color: theme.palette.grey[400],
+        letterSpacing: '0.15px'
     },
     label: {
         '&$disabled': {
