@@ -2,14 +2,20 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Tooltip, { TooltipProps } from '../components/Tooltip';
 import ThemeSelector from "../themes/ThemeSelector";
-import Button from "../components/Button"
 
 export default {
   title: 'Components/Tooltip',
   component: Tooltip,
 } as Meta;
 
-const Template: Story<TooltipProps> = (args) => <ThemeSelector><Tooltip {...args}><Button color="primary" variant="contained" chunky={false}>Button</Button></Tooltip></ThemeSelector>;
+const SomeContent = React.forwardRef<HTMLDivElement>((props, ref) => <div {...props} ref={ref}>Hover over me!</div>);
+
+const Template: Story<TooltipProps> = (args) => 
+<ThemeSelector>
+  <Tooltip {...args}>
+    <SomeContent />
+  </Tooltip>
+</ThemeSelector>;
 
 export const NoDirection = Template.bind({});
 NoDirection.args = {
