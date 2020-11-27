@@ -1,8 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-import lightBlue from "@material-ui/core/colors/lightBlue";
-import indigo from "@material-ui/core/colors/indigo";
-
 export default createMuiTheme({
     palette: {
         primary: {
@@ -42,9 +39,15 @@ export default createMuiTheme({
             contrastText: '#50B54E'
         },
         text: {
-            primary: indigo[600],
-            secondary: indigo[300],
-            disabled: lightBlue[100]
+            primary: "#192832",
+            secondary: '#7A8389',
+            disabled: 'rgba(122, 131, 137, 0.5)',
+        },
+        action: {
+            hover: 'rgba(122, 131, 137, 0.1)',
+            selected: 'rgba(122, 131, 137, 0.08)',
+            disabled: '#B8BCBF',
+            disabledBackground: 'rgba(122, 131, 137, 0.5)'
         },
         grey: {
              "50": '#F9FAFB',
