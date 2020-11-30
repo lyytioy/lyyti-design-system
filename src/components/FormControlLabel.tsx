@@ -16,7 +16,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface FormControlLabelProps extends MuiFormControlLabelProps {}
 
-const FormControlLabel: FunctionComponent<FormControlLabelProps> = ({ ...props }) => {
+const FormControlLabel: FunctionComponent<FormControlLabelProps> = props => {
     const classes = useStyles();
 
     return (

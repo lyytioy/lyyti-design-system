@@ -6,7 +6,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface FormControlProps extends MuiFormControlProps {}
 
-const FormControl: FunctionComponent<FormControlProps> = ({ ...props }) => {
+const FormControl: FunctionComponent<FormControlProps> = props => {
     const classes = useStyles();
 
     return (

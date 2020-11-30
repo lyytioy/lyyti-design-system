@@ -6,7 +6,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface FormGroupProps extends MuiFormGroupProps {}
 
-const FormGroup: FunctionComponent<FormGroupProps> = ({ ...props }) => {
+const FormGroup: FunctionComponent<FormGroupProps> = props => {
     const classes = useStyles();
 
     return (

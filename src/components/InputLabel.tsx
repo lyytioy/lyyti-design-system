@@ -10,7 +10,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface InputLabelProps extends MuiInputLabelProps {}
 
-const InputLabel: FunctionComponent<InputLabelProps> = ({ ...props }) => {
+const InputLabel: FunctionComponent<InputLabelProps> = props => {
     const classes = useStyles();
 
     return (

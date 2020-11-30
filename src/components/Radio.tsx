@@ -12,7 +12,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface RadioProps extends MuiRadioProps {}
 
-const Radio: FunctionComponent<RadioProps> = ({ ...props }) => {
+const Radio: FunctionComponent<RadioProps> = props => {
     const classes = useStyles();
 
     return (

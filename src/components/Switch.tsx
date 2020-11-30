@@ -53,7 +53,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface SwitchProps extends MuiSwitchProps {}
 
-const Switch: FunctionComponent<SwitchProps> = ({ ...props }) => {
+const Switch: FunctionComponent<SwitchProps> = props => {
     const classes = useStyles();
 
     return (

@@ -15,7 +15,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface TooltipProps extends MuiTooltipProps {}
 
-const Tooltip: FunctionComponent<TooltipProps> = ({ ...props }) => {
+const Tooltip: FunctionComponent<TooltipProps> = props => {
     const classes = useStyles();
 
     return (

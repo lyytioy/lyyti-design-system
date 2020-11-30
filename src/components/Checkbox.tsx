@@ -12,7 +12,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface CheckboxProps extends MuiCheckboxProps {}
 
-const Checkbox: FunctionComponent<CheckboxProps> = ({ ...props }) => {
+const Checkbox: FunctionComponent<CheckboxProps> = props => {
     const classes = useStyles();
 
     return (

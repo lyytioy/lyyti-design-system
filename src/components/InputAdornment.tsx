@@ -9,7 +9,7 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export interface InputAdornmentProps extends MuiInputAdornmentProps {}
 
-const InputAdornment: FunctionComponent<InputAdornmentProps> = ({ ...props }) => {
+const InputAdornment: FunctionComponent<InputAdornmentProps> = props => {
     const classes = useStyles();
 
     return (
