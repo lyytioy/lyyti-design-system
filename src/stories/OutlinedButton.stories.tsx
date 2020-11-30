@@ -15,6 +15,7 @@ Primary.args = {
   children: 'Button',
   color: 'primary',
   variant: 'outlined',
+  chunky: false
 };
 
 export const Secondary = Template.bind({});
@@ -22,4 +23,5 @@ Secondary.args = {
   children: 'Button',
   color: 'secondary',
   variant: 'outlined',
+  chunky: false
 };
