@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g>
+	<title>phone-action-record</title>
+	<circle cx="12" cy="21.5" r="0.75"/>
+	<path d="M7.5,24C6.121,24,5,22.878,5,21.5v-19C5,1.121,6.121,0,7.5,0h9C17.878,0,19,1.121,19,2.5v19c0,1.378-1.122,2.5-2.5,2.5H7.5
+		z M6,21.5C6,22.327,6.673,23,7.5,23h9c0.827,0,1.5-0.673,1.5-1.5V20H6V21.5z M18,19V5H6v14H18z M18,4V2.5C18,1.673,17.327,1,16.5,1
+		h-9C6.673,1,6,1.673,6,2.5V4H18z"/>
+	<path d="M10.5,3C10.224,3,10,2.776,10,2.5S10.224,2,10.5,2h3C13.776,2,14,2.224,14,2.5S13.776,3,13.5,3H10.5z"/>
+	<path d="M12,16c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S14.206,16,12,16z M12,9c-1.654,0-3,1.346-3,3c0,1.654,1.346,3,3,3
+		c1.654,0,3-1.346,3-3C15,10.346,13.654,9,12,9z"/>
+	<circle cx="12" cy="12" r="0.75"/>
+</g>
+</svg>

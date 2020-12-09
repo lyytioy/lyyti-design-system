@@ -1,0 +1,6 @@
+export { default as VoiceIdApproved } from './VoiceIdApproved'
+export { default as VoiceIdDenied } from './VoiceIdDenied'
+export { default as VoiceIdLock } from './VoiceIdLock'
+export { default as VoiceIdSmartphone } from './VoiceIdSmartphone'
+export { default as VoiceIdUser } from './VoiceIdUser'
+export { default as VoiceId } from './VoiceId'

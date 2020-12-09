@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g>
+	<title>keyboard-command</title>
+	<path d="M20,24c-2.206,0-4-1.794-4-4v-3.003H8V20c0,2.206-1.794,4-4,4s-4-1.794-4-4s1.794-4,4-4h3V8H4C1.794,8,0,6.206,0,4
+		s1.794-4,4-4s4,1.794,4,4v2.997h8V4c0-2.206,1.794-4,4-4s4,1.794,4,4s-1.794,4-4,4h-3v8h3c2.206,0,4,1.794,4,4S22.206,24,20,24z
+		 M17,20c0,1.654,1.346,3,3,3s3-1.346,3-3s-1.346-3-3-3h-3V20z M4,17c-1.654,0-3,1.346-3,3s1.346,3,3,3s3-1.346,3-3v-3H4z
+		 M16,15.997v-8H8v8H16z M20,7c1.654,0,3-1.346,3-3s-1.346-3-3-3s-3,1.346-3,3v3H20z M4,1C2.346,1,1,2.346,1,4s1.346,3,3,3h3V4
+		C7,2.346,5.654,1,4,1z"/>
+</g>
+</svg>

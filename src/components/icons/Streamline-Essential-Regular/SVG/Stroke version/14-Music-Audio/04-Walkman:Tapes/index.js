@@ -1,0 +1,6 @@
+export { default as WalkmanCassette1 } from './WalkmanCassette1'
+export { default as WalkmanCassette } from './WalkmanCassette'
+export { default as WalkmanHeadphones } from './WalkmanHeadphones'
+export { default as WalkmanHeaphones1 } from './WalkmanHeaphones1'
+export { default as WalkmanPlay } from './WalkmanPlay'
+export { default as Walkman } from './Walkman'

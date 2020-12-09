@@ -1,0 +1,8 @@
+export { default as CertifiedCertificate } from './CertifiedCertificate'
+export { default as CertifiedDiploma1 } from './CertifiedDiploma1'
+export { default as CertifiedDiploma2Alternate } from './CertifiedDiploma2Alternate'
+export { default as CertifiedDiploma2 } from './CertifiedDiploma2'
+export { default as CertifiedDiploma } from './CertifiedDiploma'
+export { default as CertifiedRibbon1 } from './CertifiedRibbon1'
+export { default as CertifiedRibbon2 } from './CertifiedRibbon2'
+export { default as CertifiedRibbon } from './CertifiedRibbon'

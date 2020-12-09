@@ -1,0 +1,5 @@
+export { default as NewspaperFold } from './NewspaperFold'
+export { default as NewspaperGive } from './NewspaperGive'
+export { default as NewspaperReadMan } from './NewspaperReadMan'
+export { default as NewspaperRead } from './NewspaperRead'
+export { default as Newspaper } from './Newspaper'

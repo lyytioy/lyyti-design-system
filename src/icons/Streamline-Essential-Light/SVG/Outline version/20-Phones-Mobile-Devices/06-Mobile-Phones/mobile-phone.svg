@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g>
+	<title>mobile-phone</title>
+	<path d="M6.5,24C5.121,24,4,22.878,4,21.5v-19C4,1.121,5.121,0,6.5,0h11C18.878,0,20,1.121,20,2.5v19c0,1.378-1.122,2.5-2.5,2.5
+		H6.5z M5,21.5C5,22.327,5.673,23,6.5,23h11c0.827,0,1.5-0.673,1.5-1.5V20H5V21.5z M19,19V2.5C19,1.673,18.327,1,17.5,1h-11
+		C5.673,1,5,1.673,5,2.5V19H19z"/>
+	<path d="M9.5,3C9.224,3,9,2.776,9,2.5S9.224,2,9.5,2h5C14.776,2,15,2.224,15,2.5S14.776,3,14.5,3H9.5z"/>
+	<circle cx="12" cy="21.25" r="0.75"/>
+</g>
+</svg>

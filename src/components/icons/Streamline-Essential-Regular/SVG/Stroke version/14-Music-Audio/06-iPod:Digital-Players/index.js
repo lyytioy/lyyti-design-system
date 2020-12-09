@@ -1,0 +1,8 @@
+export { default as CdPlayer } from './CdPlayer'
+export { default as IpodPlay } from './IpodPlay'
+export { default as Ipod } from './Ipod'
+export { default as MusicPlayer1 } from './MusicPlayer1'
+export { default as MusicPlayer } from './MusicPlayer'
+export { default as PlayerPhoneStation1 } from './PlayerPhoneStation1'
+export { default as PlayerPhoneStation } from './PlayerPhoneStation'
+export { default as PortablePlayer } from './PortablePlayer'

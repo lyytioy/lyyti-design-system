@@ -1,0 +1,5 @@
+export { default as MailboxFull } from './MailboxFull'
+export { default as MailboxHouse } from './MailboxHouse'
+export { default as MailboxIn } from './MailboxIn'
+export { default as MailboxPost1 } from './MailboxPost1'
+export { default as MailboxPost } from './MailboxPost'

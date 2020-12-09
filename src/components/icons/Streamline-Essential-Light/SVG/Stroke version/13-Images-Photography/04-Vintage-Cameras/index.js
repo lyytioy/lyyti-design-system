@@ -1,0 +1,5 @@
+export { default as VintageCameraFlash1 } from './VintageCameraFlash1'
+export { default as VintageCameraFlash } from './VintageCameraFlash'
+export { default as VintageCameraFoldable } from './VintageCameraFoldable'
+export { default as VintageCameraPolaroid } from './VintageCameraPolaroid'
+export { default as VintageCamera } from './VintageCamera'

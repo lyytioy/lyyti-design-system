@@ -1,0 +1,8 @@
+export { default as MultipleMan1 } from './MultipleMan1'
+export { default as MultipleMan2 } from './MultipleMan2'
+export { default as MultipleManWoman1 } from './MultipleManWoman1'
+export { default as MultipleManWoman2 } from './MultipleManWoman2'
+export { default as MultipleNeutral1 } from './MultipleNeutral1'
+export { default as MultipleNeutral2 } from './MultipleNeutral2'
+export { default as MultipleWoman1 } from './MultipleWoman1'
+export { default as MultipleWoman2 } from './MultipleWoman2'
