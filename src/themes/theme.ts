@@ -8,10 +8,7 @@ const objektivMk1Rg = {
     fontStyle: 'normal',
     fontDisplay: 'swap' as const,
     fontWeight: 400,
-    src: `
-        local('Objektiv MK1 Regular'),
-        url(/${ObjektivMk1RgTff}) format('truetype'),
-    `,
+    src: `url(/${ObjektivMk1RgTff}) format('truetype')`,
 };
 
 const objektivMk1Md = {
@@ -19,10 +16,7 @@ const objektivMk1Md = {
     fontStyle: 'normal',
     fontDisplay: 'swap' as const,
     fontWeight: 500,
-    src: `
-        local('Objektiv MK1 Medium'),
-        url(/${ObjektivMk1MdTff}) format('truetype'),
-    `,
+    src: `url(/${ObjektivMk1MdTff}) format('truetype')`,
 };
 
 const objektivMk3Rg = {
@@ -30,10 +24,7 @@ const objektivMk3Rg = {
     fontStyle: 'normal',
     fontDisplay: 'swap' as const,
     fontWeight: 400,
-    src: `
-        local('Objektiv MK3 Regular'),
-        url(/${ObjektivMk3RgTff}) format('truetype'),
-    `,
+    src: ` url(/${ObjektivMk3RgTff}) format('truetype')`,
 };
 
 export default createMuiTheme({
