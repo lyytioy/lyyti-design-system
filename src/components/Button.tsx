@@ -9,12 +9,20 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
     borderRadius: '3px',
     padding: (chunky ? '16px 20px' : '10px 20px'),
   }),
+  containedPrimary: {
+    border: '1px solid',
+    borderColor: theme.palette.primary.main
+  },
+  containedSecondary: {
+    border: '1px solid',
+    borderColor: theme.palette.secondary.main
+  },
   textPrimary: {
     border: '1px solid #045b561a',
   },
   textSecondary: {
     border: '1px solid #ee8b3a1a',
-  }
+  },
 }))
 
 export type ColorTypes =
@@ -27,7 +35,7 @@ const Button: FunctionComponent<ButtonProps> = ({ children, chunky, ...props }) 
   const classes = useStyles(chunky);
 
     return (
-        <MuiButton classes={{ root: classes.root, textPrimary: classes.textPrimary, textSecondary: classes.textSecondary }} {...props}>
+        <MuiButton classes={{ root: classes.root, containedPrimary: classes.containedPrimary, containedSecondary: classes.containedSecondary, textPrimary: classes.textPrimary, textSecondary: classes.textSecondary }} {...props}>
             {children}
         </MuiButton>
     )
