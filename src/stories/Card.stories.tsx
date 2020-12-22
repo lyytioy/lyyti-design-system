@@ -5,8 +5,8 @@ import ThemeSelector from "../themes/ThemeSelector";
 import CardHeader from '../components/CardHeader';
 import CardContent from '../components/CardContent';
 import CardActions from '../components/CardActions';
-import { PrimaryContainedButton } from './ContainedButton.stories';
-import { PrimaryOutlinedButton } from './OutlinedButton.stories';
+import { Primary as PrimaryContainedButton } from './ContainedButton.stories';
+import { Primary as PrimaryOutlinedButton } from './OutlinedButton.stories';
 
 export default {
   title: 'Components/Card',
