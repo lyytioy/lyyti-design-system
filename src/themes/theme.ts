@@ -109,5 +109,10 @@ export default createMuiTheme({
                 '@font-face': [objektivMk1Rg, objektivMk1Md, objektivMk3Rg],
             },
         },
+        MuiPaper: {
+            elevation1: {
+                boxShadow: '0.79px 6.95px 11px rgba(0, 0, 0, 0.0096), 0.52px 4.53px 6.44px rgba(0, 0, 0, 0.0157), 0.31px 2.76px 3.5px rgba(0, 0, 0, 0.02), 0.17px 1.52px 1.79px rgba(0, 0, 0, 0.0243), 0.08px 0.72px 0.9px rgba(0, 0, 0, 0.0304), 0.03px 0.25px 0.43px rgba(0, 0, 0, 0.04)'
+            }
+        }
     },
 });
