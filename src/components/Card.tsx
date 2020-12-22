@@ -3,8 +3,6 @@ import {Card as MuiCard, CardProps as MuiCardProps, createStyles, makeStyles, Th
 
 const useStyles = makeStyles<Theme>(theme => createStyles({
   root: {
-    // width: '200px',
-    // height: '200px',
     borderRadius: '3px',
     border: '1px solid',
     borderColor: theme.palette.grey[100],
