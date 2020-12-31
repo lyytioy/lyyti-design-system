@@ -4,7 +4,9 @@ import {Link as MuiLink, LinkProps as MuiLinkProps, createStyles, makeStyles, Th
 const useStyles = makeStyles<Theme>(theme => createStyles({
     root: {
         color: theme.palette.primary.light,
-        fontSize: '16px'
+        fontSize: '16px',
+        display: 'flex',
+        alignItems: 'center'
     },
     underlineHover: {
         '&:hover': {
