@@ -5,7 +5,8 @@ import {Pagination as MuiPagination, PaginationProps as MuiPaginationProps} from
 const useStyles = makeStyles<Theme>(theme => createStyles({
   root: {
       '& .MuiPaginationItem-root': {
-          fontSize: '15px'
+          fontSize: '15px',
+          lineHeight: '16px'
       }
   },
 }))
