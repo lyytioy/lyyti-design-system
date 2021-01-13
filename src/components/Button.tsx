@@ -27,7 +27,8 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
 
 export type ColorTypes =
   | "primary"
-  | "secondary";
+  | "secondary"
+  | "inherit";
 
 export type ButtonProps = { color: ColorTypes, chunky?: boolean } & Omit<MuiButtonProps, "color">;
 
