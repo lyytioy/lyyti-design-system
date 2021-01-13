@@ -100,7 +100,10 @@ export default createMuiTheme({
             color: 'primary'
         },
         MuiSwitch: {
-            color: 'primary',
+            color: 'primary'
+        },
+        MuiChip: {
+            color: 'primary'
         }
     },
     overrides: {
