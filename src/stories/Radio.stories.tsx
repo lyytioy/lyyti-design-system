@@ -7,6 +7,17 @@ import ThemeSelector from "../themes/ThemeSelector";
 export default {
   title: 'Components/Radio',
   component: Radio,
+  argTypes: {
+    size: {
+        control: {
+            type: 'radio',
+            options: [
+                'small',
+                'medium'
+          ]
+        }
+    }
+  }
 } as Meta;
 
 const Template: Story<RadioProps> = (args) => <ThemeSelector><Radio {...args} /></ThemeSelector>;

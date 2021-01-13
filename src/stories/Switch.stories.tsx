@@ -7,6 +7,17 @@ import ThemeSelector from "../themes/ThemeSelector";
 export default {
   title: 'Components/Switch',
   component: Switch,
+  argTypes: {
+    size: {
+        control: {
+            type: 'radio',
+            options: [
+                'small',
+                'medium'
+          ]
+        }
+    }
+  }
 } as Meta;
 
 const Template: Story<SwitchProps> = (args) => <ThemeSelector><Switch {...args} /></ThemeSelector>;

@@ -7,6 +7,17 @@ import ThemeSelector from "../themes/ThemeSelector";
 export default {
   title: 'Components/Checkbox',
   component: Checkbox,
+  argTypes: {
+    size: {
+        control: {
+            type: 'radio',
+            options: [
+                'small',
+                'medium'
+          ]
+        }
+    }
+  }
 } as Meta;
 
 const Template: Story<CheckboxProps> = (args) => <ThemeSelector><Checkbox {...args} /></ThemeSelector>;

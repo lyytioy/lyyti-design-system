@@ -6,6 +6,17 @@ import ThemeSelector from "../themes/ThemeSelector";
 export default {
   title: 'Components/Pagination',
   component: Pagination,
+  argTypes: {
+    color: {
+        control: {
+            type: 'radio',
+            options: [
+                'primary',
+                'secondary'
+          ]
+        }
+    }
+  }
 } as Meta;
 
 const Template: Story<PaginationProps> = (args) => <ThemeSelector><Pagination {...args} /></ThemeSelector>;
