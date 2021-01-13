@@ -12,34 +12,35 @@ export default {
 
 const Template: Story<ChipProps> = (args) => <ThemeSelector><Chip {...args} /></ThemeSelector>;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Primary = Template.bind({});
+Primary.args = {
     label: 'Label',
     onDelete: undefined
 };
 
-export const DefaultRemovable = Template.bind({});
-DefaultRemovable.args = {
-    label: 'Medium',
+export const SecondaryRemovable = Template.bind({});
+SecondaryRemovable.args = {
+    label: 'Label',
+    color: 'secondary',
 };
 
-export const PrimaryWithIcon = Template.bind({});
-PrimaryWithIcon.args = {
-    label: 'Medium',
-    color: 'primary',
+export const PrimaryIcon = Template.bind({});
+PrimaryIcon.args = {
+    label: 'Label',
     icon: <RatingStarIcon />
 };
 
-export const SecondaryLetter = Template.bind({});
-SecondaryLetter.args = {
-    label: 'Medium',
+export const SecondaryLetterSmall = Template.bind({});
+SecondaryLetterSmall.args = {
+    label: 'Label',
     color: 'secondary',
-    avatar: <Avatar>M</Avatar>
+    avatar: <Avatar>M</Avatar>,
+    size: 'small'
 };
 
 export const SecondaryOutlined = Template.bind({});
 SecondaryOutlined.args = {
-    label: 'Medium',
+    label: 'Label',
     color: 'secondary',
     variant: 'outlined',
     avatar: <Avatar alt="Steve" src="/steve-basic.png"/>
