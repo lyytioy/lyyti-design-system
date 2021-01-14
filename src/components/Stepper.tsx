@@ -22,7 +22,6 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
         },
         '& .MuiStepIcon-root.MuiStepIcon-completed': {
             color: theme.palette.secondary.main,
-            border: '2px solid',
             borderColor: theme.palette.secondary.main,
             borderRadius: '50%',
             fill: '#FFF',
@@ -30,7 +29,6 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
         },
         '& .MuiStepIcon-root.MuiStepIcon-active': {
             color: theme.palette.secondary.main,
-            border: '2px solid',
             borderColor: theme.palette.secondary.main,
             borderRadius: '50%',
             background: theme.palette.secondary.main
@@ -38,10 +36,29 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
         '& .MuiStepIcon-root.MuiStepIcon-active .MuiStepIcon-text': {
             fill: '#FFF'
         },
+        '& .MuiStepLabel-label.MuiStepLabel-completed': {
+            color: theme.palette.secondary.main
+        },
+        '& .MuiStepLabel-label.MuiStepLabel-active': {
+            color: theme.palette.secondary.main
+        },
+        '& .MuiStepLabel-label': {
+            fontSize: '15px',
+            color: theme.palette.action.disabledBackground
+        },
+        '& .MuiStepLabel-label.MuiStepLabel-alternativeLabel': {
+            marginTop: '8px'
+        },
+        '& .MuiStepLabel-iconContainer': {
+            boxSizing: 'border-box'
+        }
     },
 }));
 
-export interface StepperProps extends MuiStepperProps {}
+export type OrientationTypes =
+  | "horizontal";
+
+export type StepperProps = MuiStepperProps & { orientation: OrientationTypes };
 
 const Stepper: FunctionComponent<StepperProps> = props => {
     const classes = useStyles();
