@@ -5,10 +5,23 @@ import ThemeSelector from "../themes/ThemeSelector";
 import { Step } from '@material-ui/core';
 import StepConnector from '../components/StepConnector';
 import StepLabel from '../components/StepLabel';
+import StepButton from '../components/StepButton';
 
 export default {
   title: 'Components/Stepper',
   component: Stepper,
+  argTypes: {
+    children: {
+      table: {
+        disable: true
+      }
+    },
+    connector: {
+      table: {
+        disable: true
+      }
+    },
+  }
 } as Meta;
 
 const Template: Story<StepperProps> = (args) => <ThemeSelector><Stepper {...args} /></ThemeSelector>;
@@ -16,17 +29,23 @@ const Template: Story<StepperProps> = (args) => <ThemeSelector><Stepper {...args
 export const Default = Template.bind({});
 Default.args = {
     alternativeLabel: true,
-    orientation: 'horizontal',
     connector: <StepConnector />,
     activeStep: 1,
-    children: [<Step key={0}><StepLabel>Label here</StepLabel></Step>, <Step key={1}><StepLabel>Label here</StepLabel></Step>, <Step key={2}><StepLabel>Label here</StepLabel></Step>]
+    children: [
+      <Step key={0}><StepLabel>Label here</StepLabel></Step>, 
+      <Step key={1}><StepLabel>Label here</StepLabel></Step>, 
+      <Step key={2}><StepLabel>Label here</StepLabel></Step>]
 };
 
-export const MoreSteps = Template.bind({});
-MoreSteps.args = {
+export const ClickableSteps = Template.bind({});
+ClickableSteps.args = {
     alternativeLabel: true,
-    orientation: 'horizontal',
     connector: <StepConnector />,
     activeStep: 2,
-    children: [<Step key={0}><StepLabel>Label here</StepLabel></Step>, <Step key={1}><StepLabel>Label here</StepLabel></Step>, <Step key={2}><StepLabel>Label here</StepLabel></Step>, <Step key={3}><StepLabel>Label here</StepLabel></Step>, <Step key={4}><StepLabel>Label here</StepLabel></Step>]
+    children: [
+      <Step key={0}><StepButton>Label here</StepButton></Step>, 
+      <Step key={1}><StepButton>Label here</StepButton></Step>, 
+      <Step key={2}><StepButton>Label here</StepButton></Step>, 
+      <Step key={3}><StepButton>Label here</StepButton></Step>, 
+      <Step key={4}><StepButton>Label here</StepButton></Step>]
 };
