@@ -4,7 +4,7 @@ import {MenuList as MuiMenuList, MenuListProps as MuiMenuListProps, createStyles
 const useStyles = makeStyles<Theme>(theme => createStyles({
   root: {
     '& .MuiListItem-button:hover': {
-      backgroundColor: theme.palette.primaryActions.main
+      backgroundColor: theme.palette.primaryStates.hover
     }
   },
 }))
