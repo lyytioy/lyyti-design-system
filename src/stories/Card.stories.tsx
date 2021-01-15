@@ -17,12 +17,26 @@ const Template: Story<CardProps> = (args) => <ThemeSelector><Card {...args} /></
 
 export const DefaultCard = Template.bind({});
 DefaultCard.args = {
-    children: [<CardHeader title="Lyyti Oy" subheader="September 26, 2020" ></CardHeader>, <CardContent></CardContent>, <CardActions><PrimaryOutlinedButton color='primary' variant='outlined' chunky={false}>Cancel</PrimaryOutlinedButton><PrimaryContainedButton color='primary' variant='contained' chunky={false}>Save</PrimaryContainedButton></CardActions>],
-    elevation: 1
+  elevation: 1,
+  children: [
+    <CardHeader title="Lyyti Oy" subheader="September 26, 2020" ></CardHeader>,
+    <CardContent></CardContent>,
+    <CardActions>
+      <PrimaryOutlinedButton {...PrimaryOutlinedButton.args}>Cancel</PrimaryOutlinedButton>
+      <PrimaryContainedButton {...PrimaryContainedButton.args}>Save</PrimaryContainedButton>
+    </CardActions>
+    ]
 };
 
 export const OutlinedCard = Template.bind({});
 OutlinedCard.args = {
-    children: [<CardHeader title="Lyyti Oy" subheader="September 26, 2020" ></CardHeader>, <CardContent></CardContent>, <CardActions><PrimaryOutlinedButton color='primary' variant='outlined' chunky={false}>Cancel</PrimaryOutlinedButton><PrimaryContainedButton color='primary' variant='contained' chunky={false}>Save</PrimaryContainedButton></CardActions>],
-    variant: 'outlined',
+  variant: 'outlined',
+  children: [
+    <CardHeader title="Lyyti Oy" subheader="September 26, 2020" ></CardHeader>,
+    <CardContent></CardContent>,
+    <CardActions>
+      <PrimaryOutlinedButton {...PrimaryOutlinedButton.args}>Cancel</PrimaryOutlinedButton>
+      <PrimaryContainedButton {...PrimaryContainedButton.args}>Save</PrimaryContainedButton>
+    </CardActions>
+    ]
 };
