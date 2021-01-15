@@ -7,6 +7,13 @@ import Tab from '../components/Tab';
 export default {
   title: 'Components/Tabs',
   component: Tabs,
+  argTypes: {
+    children: {
+      table: {
+        disable: true
+      }
+    }
+  }
 } as Meta;
 
 const Template: Story<TabsProps> = (args) => <ThemeSelector><Tabs {...args} /></ThemeSelector>;

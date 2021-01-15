@@ -11,6 +11,13 @@ import { Primary as PrimaryOutlinedButton } from './OutlinedButton.stories';
 export default {
   title: 'Components/Card',
   component: Card,
+  argTypes: {
+    children: {
+      table: {
+        disable: true
+      }
+    }
+  }
 } as Meta;
 
 const Template: Story<CardProps> = (args) => <ThemeSelector><Card {...args} /></ThemeSelector>;

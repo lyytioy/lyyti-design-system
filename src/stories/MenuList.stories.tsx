@@ -8,6 +8,13 @@ import MenuItem from '../components/MenuItem';
 export default {
   title: 'Components/MenuList',
   component: MenuList,
+  argTypes: {
+    children: {
+      table: {
+        disable: true
+      }
+    }
+  }
 } as Meta;
 
 const Template: Story<MenuListProps> = (args) => 
