@@ -1,16 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import {FormGroup as MuiFormGroup, FormGroupProps as MuiFormGroupProps, createStyles, makeStyles, Theme} from '@material-ui/core';
-
-const useStyles = makeStyles<Theme>(theme => createStyles({
-}));
+import {FormGroup as MuiFormGroup, FormGroupProps as MuiFormGroupProps} from '@material-ui/core';
 
 export interface FormGroupProps extends MuiFormGroupProps {}
 
 const FormGroup: FunctionComponent<FormGroupProps> = props => {
-    const classes = useStyles();
-
     return (
-        <MuiFormGroup {...props} classes={{ root: classes.root }} />
+        <MuiFormGroup {...props}/>
     )
 };
 

@@ -2,8 +2,6 @@ import React, { FunctionComponent } from 'react';
 import {StepConnector as MuiStepConnector, StepConnectorProps as MuiStepConnectorProps, createStyles, makeStyles, Theme} from '@material-ui/core';
 
 const useStyles = makeStyles<Theme>(theme => createStyles({
-    root: {
-    },
     active: {
         '& $line': {
             borderColor: theme.palette.secondary.main
@@ -31,7 +29,7 @@ const StepConnector: FunctionComponent<StepConnectorProps> = props => {
     const classes = useStyles();
 
     return (
-        <MuiStepConnector {...props} classes={{ root: classes.root, active: classes.active, alternativeLabel: classes.alternativeLabel, completed: classes.completed, line: classes.line }} />
+        <MuiStepConnector {...props} classes={{ active: classes.active, alternativeLabel: classes.alternativeLabel, completed: classes.completed, line: classes.line }} />
     )
 };
 
