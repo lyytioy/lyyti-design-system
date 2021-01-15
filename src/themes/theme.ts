@@ -27,6 +27,17 @@ const objektivMk3Rg = {
     src: ` url(/${ObjektivMk3RgTff}) format('truetype')`,
 };
 
+interface ColorStateOptions {activeContained: string, hover: string, selected: string, activeOutlined: string, outlinedStroke: string, disabledBg: string}
+
+declare module "@material-ui/core/styles/createPalette" {
+    interface Palette {
+        primaryStates: ColorStateOptions
+    }
+    interface PaletteOptions {
+        primaryStates: ColorStateOptions
+    }
+}
+
 export default createMuiTheme({
     palette: {
         primary: {
@@ -83,7 +94,15 @@ export default createMuiTheme({
              "300": '#7A8389',
              "400": '#46545B',
              "500": '#192832'
-        }
+        },
+        primaryStates: {
+            activeContained: 'rgba(255, 255, 255, 0.3)',
+            hover: 'rgba(4, 91, 86, 0.1)',
+            selected: 'rgba(4, 91, 86, 0.08)',
+            activeOutlined: 'rgba(4, 91, 86, 0.24)',
+            outlinedStroke: '#045B56',
+            disabledBg: '#739C9A'
+        },
     },
     typography: {
         fontFamily: 'Objektiv MK1 Regular, sans-serif',
