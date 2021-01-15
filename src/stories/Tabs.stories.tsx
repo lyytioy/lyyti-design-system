@@ -13,17 +13,27 @@ const Template: Story<TabsProps> = (args) => <ThemeSelector><Tabs {...args} /></
 
 export const Horizontal = Template.bind({});
 Horizontal.args = {
-    children: [<Tab label="Active"/>, <Tab label="Default"/>, <Tab label="Disabled" disabled/>, <Tab label="Wrapped text label" wrapped/>],
     indicatorColor: 'primary',
     textColor: 'primary',
-    value: 0
+    value: 0,
+    children: [
+      <Tab label="Active"/>,
+      <Tab label="Default"/>,
+      <Tab label="Disabled" disabled/>,
+      <Tab label="Wrapped text label" wrapped/>
+    ]
 };
 
 export const Vertical = Template.bind({});
 Vertical.args = {
-    children: [<Tab label="Default"/>, <Tab label="Active"/>, <Tab label="Disabled" disabled/>, <Tab label="Wrapped text label" wrapped/>],
     orientation: 'vertical',
     indicatorColor: 'secondary',
     textColor: 'secondary',
-    value: 1
+    value: 1,
+    children: [
+      <Tab label="Default"/>,
+      <Tab label="Active"/>,
+      <Tab label="Disabled" disabled/>,
+      <Tab label="Wrapped text label" wrapped/>
+    ]
 };
