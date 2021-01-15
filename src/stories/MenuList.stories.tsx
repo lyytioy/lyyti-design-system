@@ -13,13 +13,14 @@ export default {
 const Template: Story<MenuListProps> = (args) => 
   <ThemeSelector>
     <Paper>
-      <MenuList {...args}>
-        <MenuItem>Menu text</MenuItem>
-        <MenuItem>Menu text</MenuItem>
-      </MenuList>
+      <MenuList {...args} />
     </Paper>
-    </ThemeSelector>;
+  </ThemeSelector>;
 
 export const TextOnly = Template.bind({});
 TextOnly.args = {
+  children: [
+    <MenuItem>Menu text</MenuItem>,
+    <MenuItem>Menu text</MenuItem>
+  ]
 };
