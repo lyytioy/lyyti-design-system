@@ -1,0 +1,12 @@
+image: node:14
+
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          name: Eslint
+          caches:
+            - node
+          script:
+            - yarn
+            - yarn lint

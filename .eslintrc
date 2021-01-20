@@ -1,0 +1,52 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "standard",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "react/forbid-prop-types": 0,
+    "react/self-closing-comp": 1,
+    "react/sort-comp": 1,
+    "react/jsx-no-literals": 1,
+    "react/sort-prop-types": 1,
+    "react/jsx-sort-props": 0,
+    "react/display-name": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-console": 0,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"]
+      }
+    }
+  ]
+}
