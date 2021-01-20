@@ -14,11 +14,10 @@
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn && start-storybook -p 6006 -s public",
+    "lint": "eslint src/js",
+    "lint:fix": "eslint src/js --fix",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "yarn && start-storybook -p 6006 -s public",
     "build-storybook": "yarn && build-storybook -s public"
   },
   "eslintConfig": {
