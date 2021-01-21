@@ -27,9 +27,6 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
         '& .MuiFormHelperText-contained': {
             marginLeft: 0,
         },
-        '& .MuiFormControl-marginDense': {
-            height: '60px',
-        }
     },
 }));
 
