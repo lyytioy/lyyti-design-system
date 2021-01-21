@@ -30,7 +30,10 @@ const useStyles = makeStyles<Theme>(theme => createStyles({
     },
 }));
 
-export interface TextFieldProps extends OutlinedTextFieldProps {}
+export type VariantTypes =
+  | "outlined";
+
+export type TextFieldProps = OutlinedTextFieldProps & { variant: VariantTypes };
 
 const TextField: FunctionComponent<TextFieldProps> = props => {
     const muiTextField = useRef<HTMLInputElement>(null)
