@@ -123,6 +123,9 @@ export default createMuiTheme({
         },
         MuiChip: {
             color: 'primary'
+        },
+        MuiTextField: {
+            variant: 'outlined'
         }
     },
     overrides: {
