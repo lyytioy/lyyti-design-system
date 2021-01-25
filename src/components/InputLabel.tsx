@@ -1,21 +1,27 @@
 import React, { FunctionComponent } from 'react';
-import {InputLabel as MuiInputLabel, InputLabelProps as MuiInputLabelProps, createStyles, makeStyles, Theme} from '@material-ui/core';
+import {
+  InputLabel as MuiInputLabel,
+  InputLabelProps as MuiInputLabelProps,
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core';
 
-const useStyles = makeStyles<Theme>(theme => createStyles({
+const useStyles = makeStyles<Theme>((theme) =>
+  createStyles({
     root: {
-        color: theme.palette.grey[400],
-        letterSpacing: '0.15px'
+      color: theme.palette.grey[400],
+      letterSpacing: '0.15px',
     },
-}));
+  })
+);
 
-export interface InputLabelProps extends MuiInputLabelProps {}
+export type InputLabelProps = MuiInputLabelProps;
 
-const InputLabel: FunctionComponent<InputLabelProps> = props => {
-    const classes = useStyles();
+const InputLabel: FunctionComponent<InputLabelProps> = (props) => {
+  const classes = useStyles();
 
-    return (
-        <MuiInputLabel {...props} classes={{ root: classes.root }} />
-    )
+  return <MuiInputLabel {...props} classes={{ root: classes.root }} />;
 };
 
 export default InputLabel;

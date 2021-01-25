@@ -1,12 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import {Paper as MuiPaper, PaperProps as MuiPaperProps} from '@material-ui/core';
+import { Paper as MuiPaper, PaperProps as MuiPaperProps } from '@material-ui/core';
 
-export interface PaperProps extends MuiPaperProps {}
+export type PaperProps = MuiPaperProps;
 
-const Paper: FunctionComponent<PaperProps> = props => {
-    return (
-        <MuiPaper {...props} />
-    )
+const Paper: FunctionComponent<PaperProps> = (props) => {
+  return <MuiPaper {...props} />;
 };
 
 export default Paper;

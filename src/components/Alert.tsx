@@ -1,13 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import {Alert as MuiAlert, AlertProps as MuiAlertProps} from '@material-ui/lab';
+import { Alert as MuiAlert, AlertProps as MuiAlertProps } from '@material-ui/lab';
 
-export interface AlertProps extends MuiAlertProps {}
+export type AlertProps = MuiAlertProps;
 
-const Alert: FunctionComponent<AlertProps> = props => {
-
-    return (
-        <MuiAlert {...props} />
-    )
+const Alert: FunctionComponent<AlertProps> = (props) => {
+  return <MuiAlert {...props} />;
 };
 
 export default Alert;

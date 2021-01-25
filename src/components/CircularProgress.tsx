@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import {CircularProgress as MuiCircularProgress, CircularProgressProps as MuiCircularProgressProps } from '@material-ui/core';
+import {
+  CircularProgress as MuiCircularProgress,
+  CircularProgressProps as MuiCircularProgressProps,
+} from '@material-ui/core';
 
+export type CircularProgressProps = MuiCircularProgressProps;
 
-export interface CircularProgressProps extends MuiCircularProgressProps {}
-
-const CircularProgress: FunctionComponent<CircularProgressProps> = props => {
-
-    return (
-        <MuiCircularProgress {...props} />
-    )
+const CircularProgress: FunctionComponent<CircularProgressProps> = (props) => {
+  return <MuiCircularProgress {...props} />;
 };
 
 export default CircularProgress;

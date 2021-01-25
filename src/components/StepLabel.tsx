@@ -1,13 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import {StepLabel as MuiStepLabel, StepLabelProps as MuiStepLabelProps} from '@material-ui/core';
+import { StepLabel as MuiStepLabel, StepLabelProps as MuiStepLabelProps } from '@material-ui/core';
 
-export interface StepLabelProps extends MuiStepLabelProps {}
+export type StepLabelProps = MuiStepLabelProps;
 
-const StepLabel: FunctionComponent<StepLabelProps> = props => {
-
-    return (
-        <MuiStepLabel {...props} />
-    )
+const StepLabel: FunctionComponent<StepLabelProps> = (props) => {
+  return <MuiStepLabel {...props} />;
 };
 
 export default StepLabel;

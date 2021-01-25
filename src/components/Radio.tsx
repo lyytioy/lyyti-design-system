@@ -1,23 +1,29 @@
 import React, { FunctionComponent } from 'react';
-import {Radio as MuiRadio, RadioProps as MuiRadioProps, createStyles, makeStyles, Theme} from '@material-ui/core';
+import {
+  Radio as MuiRadio,
+  RadioProps as MuiRadioProps,
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core';
 
-const useStyles = makeStyles<Theme>(theme => createStyles({
-  root: {
+const useStyles = makeStyles<Theme>((theme) =>
+  createStyles({
+    root: {
       color: theme.palette.grey[200],
       '&$root$root:hover': {
-        backgroundColor: '#045b561a'
-    }
-  },
-}))
+        backgroundColor: '#045b561a',
+      },
+    },
+  })
+);
 
-export interface RadioProps extends MuiRadioProps {}
+export type RadioProps = MuiRadioProps;
 
-const Radio: FunctionComponent<RadioProps> = props => {
-    const classes = useStyles();
+const Radio: FunctionComponent<RadioProps> = (props) => {
+  const classes = useStyles();
 
-    return (
-        <MuiRadio {...props} classes={{ root: classes.root }} />
-    )
+  return <MuiRadio {...props} classes={{ root: classes.root }} />;
 };
 
 export default Radio;

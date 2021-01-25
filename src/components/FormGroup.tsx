@@ -1,12 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import {FormGroup as MuiFormGroup, FormGroupProps as MuiFormGroupProps} from '@material-ui/core';
+import { FormGroup as MuiFormGroup, FormGroupProps as MuiFormGroupProps } from '@material-ui/core';
 
-export interface FormGroupProps extends MuiFormGroupProps {}
+export type FormGroupProps = MuiFormGroupProps;
 
-const FormGroup: FunctionComponent<FormGroupProps> = props => {
-    return (
-        <MuiFormGroup {...props}/>
-    )
+const FormGroup: FunctionComponent<FormGroupProps> = (props) => {
+  return <MuiFormGroup {...props} />;
 };
 
 export default FormGroup;

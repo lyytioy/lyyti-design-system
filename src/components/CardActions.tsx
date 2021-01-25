@@ -1,20 +1,26 @@
 import React, { FunctionComponent } from 'react';
-import {CardActions as MuiCardActions, CardActionsProps as MuiCardActionsProps, createStyles, makeStyles, Theme} from '@material-ui/core';
+import {
+  CardActions as MuiCardActions,
+  CardActionsProps as MuiCardActionsProps,
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core';
 
-const useStyles = makeStyles<Theme>(theme => createStyles({
-  root: {
-      padding: '16px'
-  },
-}))
+const useStyles = makeStyles<Theme>(() =>
+  createStyles({
+    root: {
+      padding: '16px',
+    },
+  })
+);
 
-export interface CardActionsProps extends MuiCardActionsProps {}
+export type CardActionsProps = MuiCardActionsProps;
 
-const CardActions: FunctionComponent<CardActionsProps> = props => {
-    const classes = useStyles();
+const CardActions: FunctionComponent<CardActionsProps> = (props) => {
+  const classes = useStyles();
 
-    return (
-        <MuiCardActions {...props} classes={{ root: classes.root }} />
-    )
+  return <MuiCardActions {...props} classes={{ root: classes.root }} />;
 };
 
 export default CardActions;
