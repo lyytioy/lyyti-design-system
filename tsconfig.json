@@ -16,6 +16,6 @@
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "typings/**/*.d.ts"],
+  "include": ["src", "typings"],
   "exclude": ["icons", "fonts"]
 }
