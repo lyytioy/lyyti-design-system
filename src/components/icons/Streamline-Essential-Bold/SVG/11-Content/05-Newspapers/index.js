@@ -1,5 +1,0 @@
-export { default as NewspaperFold } from './NewspaperFold'
-export { default as NewspaperGive } from './NewspaperGive'
-export { default as NewspaperReadWoman } from './NewspaperReadWoman'
-export { default as NewspaperRead } from './NewspaperRead'
-export { default as Newspaper } from './Newspaper'

@@ -1,6 +1,0 @@
-export { default as CdAlbumNote } from './CdAlbumNote'
-export { default as CdAlbum } from './CdAlbum'
-export { default as CdPlayAlternate } from './CdPlayAlternate'
-export { default as CdPlay } from './CdPlay'
-export { default as CdPlayer } from './CdPlayer'
-export { default as CdPlaying } from './CdPlaying'

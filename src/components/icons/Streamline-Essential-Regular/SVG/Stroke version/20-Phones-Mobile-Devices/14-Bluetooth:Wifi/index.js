@@ -1,5 +1,0 @@
-export { default as BluetoothSearch } from './BluetoothSearch'
-export { default as BluetoothTransfer } from './BluetoothTransfer'
-export { default as Bluetooth } from './Bluetooth'
-export { default as WifiTransferHand } from './WifiTransferHand'
-export { default as WifiTransfer } from './WifiTransfer'

@@ -1,5 +1,0 @@
-export { default as CameraHolder } from './CameraHolder'
-export { default as CameraProfessional } from './CameraProfessional'
-export { default as CameraSmall } from './CameraSmall'
-export { default as CameraStudio } from './CameraStudio'
-export { default as Camera } from './Camera'

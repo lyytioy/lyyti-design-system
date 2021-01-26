@@ -1,8 +1,0 @@
-export { default as FingerTap1 } from './FingerTap1'
-export { default as FingerTap } from './FingerTap'
-export { default as ForceTouchDoubleTap } from './ForceTouchDoubleTap'
-export { default as ForceTouchPress } from './ForceTouchPress'
-export { default as ForceTouchTap } from './ForceTouchTap'
-export { default as SlideRight } from './SlideRight'
-export { default as SqueezeSides1 } from './SqueezeSides1'
-export { default as SqueezeSides } from './SqueezeSides'

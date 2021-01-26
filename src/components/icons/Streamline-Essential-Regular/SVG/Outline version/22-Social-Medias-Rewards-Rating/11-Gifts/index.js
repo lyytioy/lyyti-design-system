@@ -1,5 +1,0 @@
-export { default as GiftBox1 } from './GiftBox1'
-export { default as GiftBox } from './GiftBox'
-export { default as GiftCircle } from './GiftCircle'
-export { default as GiftElectronic } from './GiftElectronic'
-export { default as GiftHeart } from './GiftHeart'

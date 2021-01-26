@@ -1,6 +1,0 @@
-export { default as TakingPicturesCameras } from './TakingPicturesCameras'
-export { default as TakingPicturesCircle } from './TakingPicturesCircle'
-export { default as TakingPicturesHuman } from './TakingPicturesHuman'
-export { default as TakingPicturesMan } from './TakingPicturesMan'
-export { default as TakingPicturesSquare } from './TakingPicturesSquare'
-export { default as TakingPicturesWoman } from './TakingPicturesWoman'
