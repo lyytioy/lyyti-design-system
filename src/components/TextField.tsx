@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useRef } from 'react';
 import {
   TextField as MuiTextField,
   OutlinedTextFieldProps,
@@ -14,15 +14,19 @@ const useStyles = makeStyles<Theme>((theme) =>
       '& label': {
         color: theme.palette.grey[400],
         letterSpacing: '0.15px',
+        lineHeight: '26px',
       },
       '& .MuiFormLabel-root.Mui-disabled': {
         color: theme.palette.grey[400],
       },
       '& .MuiInputLabel-shrink': {
-        transform: 'translate(0, -20px) scale(1)',
+        transform: 'translate(0, 0) scale(1)',
+      },
+      '& .MuiInputLabel-formControl': {
+        position: 'relative',
       },
       '& .MuiInputBase-root.Mui-disabled': {
-        backgroundColor: 'rgba(122, 131, 137, 0.08)',
+        backgroundColor: theme.palette.action.selected,
       },
       '& .MuiFormHelperText-root': {
         letterSpacing: '0.15px',
@@ -34,12 +38,22 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export type TextFieldProps = OutlinedTextFieldProps;
+export type VariantTypes = 'outlined';
+
+export type TextFieldProps = OutlinedTextFieldProps & { variant: VariantTypes };
 
 const TextField: FunctionComponent<TextFieldProps> = (props) => {
+  const muiTextField = useRef<HTMLInputElement>(null);
   const classes = useStyles();
 
-  return <MuiTextField {...props} classes={{ root: classes.root }} />;
+  return (
+    <MuiTextField
+      {...props}
+      onClick={() => muiTextField.current?.focus()}
+      inputRef={muiTextField}
+      classes={{ root: classes.root }}
+    />
+  );
 };
 
 export default TextField;
