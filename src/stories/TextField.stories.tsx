@@ -7,6 +7,27 @@ import InputAdornment from '../components/InputAdornment';
 export default {
   title: 'Components/TextField',
   component: TextField,
+  argTypes: {
+    margin: {
+        control: {
+            type: 'radio',
+            options: [
+                'dense',
+                'normal'
+            ]
+        }
+    },
+    InputProps: {
+      table: {
+        disable: true
+      }
+    },
+    InputLabelProps: {
+      table: {
+        disable: true
+      }
+    },
+}
 } as Meta;
 
 const Template: Story<TextFieldProps> = (args) => <ThemeSelector><TextField {...args} /></ThemeSelector>;
@@ -14,7 +35,6 @@ const Template: Story<TextFieldProps> = (args) => <ThemeSelector><TextField {...
 export const Default = Template.bind({});
 Default.args = {
   margin: 'dense',
-  variant: 'outlined',
   label: "Label",
   placeholder: "Placeholder",
   disabled: false,
@@ -26,7 +46,6 @@ Default.args = {
 export const Large = Template.bind({});
 Large.args = {
   margin: 'normal',
-  variant: 'outlined',
   label: "Label",
   placeholder: "Placeholder",
   disabled: false,
@@ -38,7 +57,6 @@ Large.args = {
 export const HelperText = Template.bind({});
 HelperText.args = {
   margin: 'dense',
-  variant: 'outlined',
   label: "Label",
   placeholder: "Placeholder",
   helperText: "Helper text",
@@ -51,7 +69,6 @@ HelperText.args = {
 export const Error = Template.bind({});
 Error.args = {
   margin: 'dense',
-  variant: 'outlined',
   label: "Label",
   placeholder: "Placeholder",
   helperText: "Helper text",
@@ -64,7 +81,6 @@ Error.args = {
 export const StartAdornment = Template.bind({});
 StartAdornment.args = {
   margin: 'dense',
-  variant: 'outlined',
   label: "Label",
   placeholder: "Placeholder",
   helperText: "Helper text",
@@ -77,7 +93,6 @@ StartAdornment.args = {
 export const EndAdornment = Template.bind({});
 EndAdornment.args = {
   margin: 'dense',
-  variant: 'outlined',
   label: "Label",
   placeholder: "Placeholder",
   helperText: "Helper text",
@@ -90,7 +105,6 @@ EndAdornment.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   margin: 'dense',
-  variant: 'outlined',
   label: "Label",
   placeholder: "Placeholder",
   disabled: true,
