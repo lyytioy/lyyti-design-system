@@ -1,12 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Alert, { AlertProps } from '../components/Alert';
-import ThemeSelector from '../themes/ThemeSelector';
-import Button from '../components/Button';
-import AlertTitle from '../components/AlertTitle';
+import Alert, { AlertProps } from '../../components/Alert';
+import ThemeSelector from '../../themes/ThemeSelector';
+import Button from '../../components/Button';
+import AlertTitle from '../../components/AlertTitle';
 
 export default {
-  title: 'Components/Alert',
+  title: 'Components/Feedback/Alert',
   component: Alert,
   argTypes: {
     variant: {
