@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Link, { LinkProps } from '../components/Link';
-import ThemeSelector from '../themes/ThemeSelector';
-import CogIcon from '../components/icons/Streamline-Essential-Regular/SVG/Stroke version/01-Interface Essential/12-Settings/Cog';
+import Link, { LinkProps } from '../../components/Link';
+import ThemeSelector from '../../themes/ThemeSelector';
+import CogIcon from '../../components/icons/Streamline-Essential-Regular/SVG/Stroke version/01-Interface Essential/12-Settings/Cog';
 
 export default {
-  title: 'Components/Link',
+  title: 'Components/Navigation/Link',
   component: Link,
 } as Meta;
 

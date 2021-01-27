@@ -1,12 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Radio, { RadioProps } from '../components/Radio';
-import FormControlLabel, { FormControlLabelProps } from '../components/FormControlLabel';
-import ThemeSelector from '../themes/ThemeSelector';
+import Switch, { SwitchProps } from '../../components/Switch';
+import FormControlLabel, { FormControlLabelProps } from '../../components/FormControlLabel';
+import ThemeSelector from '../../themes/ThemeSelector';
 
 export default {
-  title: 'Components/Radio',
-  component: Radio,
+  title: 'Components/Inputs/Switch',
+  component: Switch,
   argTypes: {
     size: {
       control: {
@@ -17,9 +17,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<RadioProps> = (args) => (
+const Template: Story<SwitchProps> = (args) => (
   <ThemeSelector>
-    <Radio {...args} />
+    <Switch {...args} />
   </ThemeSelector>
 );
 
@@ -45,6 +45,6 @@ Small.args = {
 
 export const Label = LabelTemplate.bind({});
 Label.args = {
-  control: <Radio />,
+  control: <Switch />,
   label: 'Label',
 };

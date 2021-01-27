@@ -1,12 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Chip, { ChipProps } from '../components/Chip';
-import ThemeSelector from '../themes/ThemeSelector';
-import Avatar from '../components/Avatar';
-import RatingStarIcon from '../components/icons/Streamline-Essential-Bold/SVG/22-Social-Medias-Rewards-Rating/06-Rating/RatingStar1';
+import Chip, { ChipProps } from '../../components/Chip';
+import ThemeSelector from '../../themes/ThemeSelector';
+import Avatar from '../../components/Avatar';
+import RatingStarIcon from '../../components/icons/Streamline-Essential-Bold/SVG/22-Social-Medias-Rewards-Rating/06-Rating/RatingStar1';
 
 export default {
-  title: 'Components/Chip',
+  title: 'Components/Data Display/Chip',
   component: Chip,
 } as Meta;
 
