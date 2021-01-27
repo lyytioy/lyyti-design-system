@@ -1,12 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import MenuList, { MenuListProps } from '../components/MenuList';
-import Paper from '../components/Paper';
-import ThemeSelector from '../themes/ThemeSelector';
-import MenuItem from '../components/MenuItem';
+import MenuList, { MenuListProps } from '../../components/MenuList';
+import Paper from '../../components/Paper';
+import ThemeSelector from '../../themes/ThemeSelector';
+import MenuItem from '../../components/MenuItem';
 
 export default {
-  title: 'Components/MenuList',
+  title: 'Components/Navigation/MenuList',
   component: MenuList,
   argTypes: {
     children: {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../themes/ThemeSelector';
-import InputAdornment from '../components/InputAdornment';
+import ThemeSelector from '../../themes/ThemeSelector';
+import InputAdornment from '../../components/InputAdornment';
 import { MenuItem } from '@material-ui/core';
-import TextField, { TextFieldProps } from '../components/TextField';
+import TextField, { TextFieldProps } from '../../components/TextField';
 
 export default {
-  title: 'Components/Select',
+  title: 'Components/Inputs/Select',
   component: TextField,
 } as Meta;
 

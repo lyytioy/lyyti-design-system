@@ -1,10 +1,10 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Button, { ButtonProps } from '../components/Button';
-import ThemeSelector from '../themes/ThemeSelector';
+import Button, { ButtonProps } from '../../components/Button';
+import ThemeSelector from '../../themes/ThemeSelector';
 
 export default {
-  title: 'Components/Button/Contained',
+  title: 'Components/Inputs/Button/Text',
   component: Button,
 } as Meta;
 
@@ -18,7 +18,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Button',
   color: 'primary',
-  variant: 'contained',
+  variant: 'text',
   chunky: false,
 };
 
@@ -26,6 +26,6 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Button',
   color: 'secondary',
-  variant: 'contained',
+  variant: 'text',
   chunky: false,
 };
