@@ -1,0 +1,33 @@
+import React from 'react';
+import { Meta } from '@storybook/react/types-6-0';
+import ThemeSelector from '../../themes/ThemeSelector';
+import DropdownMenu from '../../components/DropdownMenu';
+
+export default {
+  title: 'Components/Navigation/Menu',
+  component: DropdownMenu,
+} as Meta;
+
+const exampleFunction = (clickedItem: string) => {
+  console.log(clickedItem);
+};
+
+const menuItems = [
+  { id: 1, title: 'Menu item 1' },
+  { id: 2, title: 'Menu item 2' },
+  { id: 3, title: 'Menu item 3' },
+];
+
+const Template = (args) => (
+  <ThemeSelector>
+    <DropdownMenu {...args} />
+  </ThemeSelector>
+);
+
+export const Dropdown = Template.bind({});
+Dropdown.args = {
+  title: 'Open menu',
+  onSelect: (item: string) => exampleFunction(item),
+  items: menuItems,
+  buttonProps: { variant: 'outlined', color: 'primary', chunky: false },
+};
