@@ -37,22 +37,25 @@ export type ColorTypes = 'primary' | 'secondary' | 'inherit' | undefined;
 
 export type ButtonProps = { color?: ColorTypes; chunky?: boolean } & Omit<MuiButtonProps, 'color'>;
 
-const Button: FunctionComponent<ButtonProps> = ({ children, chunky, ...props }: ButtonProps) => {
-  const classes = useStyles(chunky);
+const Button: FunctionComponent<ButtonProps> = React.forwardRef(
+  ({ children, chunky, ...props }: ButtonProps, ref) => {
+    const classes = useStyles(chunky);
 
-  return (
-    <MuiButton
-      classes={{
-        root: classes.root,
-        containedPrimary: classes.containedPrimary,
-        containedSecondary: classes.containedSecondary,
-        textPrimary: classes.textPrimary,
-        textSecondary: classes.textSecondary,
-      }}
-      {...props}>
-      {children}
-    </MuiButton>
-  );
-};
+    return (
+      <MuiButton
+        ref={ref}
+        classes={{
+          root: classes.root,
+          containedPrimary: classes.containedPrimary,
+          containedSecondary: classes.containedSecondary,
+          textPrimary: classes.textPrimary,
+          textSecondary: classes.textSecondary,
+        }}
+        {...props}>
+        {children}
+      </MuiButton>
+    );
+  }
+);
 
 export default Button;

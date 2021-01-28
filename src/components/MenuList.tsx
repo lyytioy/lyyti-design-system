@@ -19,10 +19,10 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type MenuListProps = MuiMenuListProps;
 
-const MenuList: FunctionComponent<MenuListProps> = (props) => {
+const MenuList: FunctionComponent<MenuListProps> = React.forwardRef((props, ref) => {
   const classes = useStyles();
 
-  return <MuiMenuList {...props} classes={{ root: classes.root }} />;
-};
+  return <MuiMenuList ref={ref} {...props} classes={{ root: classes.root }} />;
+});
 
 export default MenuList;
