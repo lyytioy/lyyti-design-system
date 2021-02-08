@@ -10,7 +10,7 @@ import Popper from './Popper';
 
 interface DropdownProps {
   title: string;
-  onSelect: (clickedItem: string) => void;
+  onSelect: (clickedItem: number) => void;
   items: Array<{ id: number; title: string }>;
   buttonProps: ButtonProps;
 }
@@ -30,8 +30,8 @@ const DropdownMenu: FunctionComponent<DropdownProps> = (props) => {
     setOpen(false);
   };
 
-  const selectItem = (event: React.MouseEvent<EventTarget>) => {
-    props.onSelect(event.target.innerText);
+  const selectItem = (event: React.MouseEvent<EventTarget>, id: number) => {
+    props.onSelect(id);
     handleClose(event);
   };
 
@@ -67,7 +67,7 @@ const DropdownMenu: FunctionComponent<DropdownProps> = (props) => {
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                   {props.items.map((item) => (
-                    <MenuItem key={item.id} onClick={selectItem}>
+                    <MenuItem key={item.id} onClick={(event) => selectItem(event, item.id)}>
                       {item.title}
                     </MenuItem>
                   ))}

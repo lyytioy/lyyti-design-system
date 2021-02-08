@@ -8,7 +8,7 @@ export default {
   component: DropdownMenu,
 } as Meta;
 
-const exampleFunction = (clickedItem: string) => {
+const exampleFunction = (clickedItem: number) => {
   console.log(clickedItem);
 };
 
@@ -27,7 +27,7 @@ const Template = (args) => (
 export const Dropdown = Template.bind({});
 Dropdown.args = {
   title: 'Open menu',
-  onSelect: (item: string) => exampleFunction(item),
+  onSelect: (item: number) => exampleFunction(item),
   items: menuItems,
   buttonProps: { variant: 'outlined', color: 'primary', chunky: false },
 };
