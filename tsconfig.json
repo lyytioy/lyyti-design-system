@@ -17,5 +17,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src", "typings"],
-  "exclude": ["fonts"]
+  "exclude": ["icons", "fonts"]
 }
