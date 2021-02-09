@@ -4,6 +4,7 @@ import MenuList, { MenuListProps } from '../../components/MenuList';
 import Paper from '../../components/Paper';
 import ThemeSelector from '../../themes/ThemeSelector';
 import MenuItem from '../../components/MenuItem';
+import { Primary as PrimaryOutlinedButton } from '../Inputs/OutlinedButton.stories';
 
 export default {
   title: 'Components/Navigation/MenuList',
@@ -25,8 +26,25 @@ const Template: Story<MenuListProps> = (args) => (
   </ThemeSelector>
 );
 
+const DropdownTemplate: Story<MenuListProps> = (args) => (
+  <ThemeSelector>
+    <PrimaryOutlinedButton {...PrimaryOutlinedButton.args}>{'Open menu'}</PrimaryOutlinedButton>
+    <Paper>
+      <MenuList {...args} />
+    </Paper>
+  </ThemeSelector>
+);
+
 export const TextOnly = Template.bind({});
 TextOnly.args = {
+  children: [
+    <MenuItem key={1}>{'Menu text'}</MenuItem>,
+    <MenuItem key={2}>{'Menu text'}</MenuItem>,
+  ],
+};
+
+export const Dropdown = DropdownTemplate.bind({});
+Dropdown.args = {
   children: [
     <MenuItem key={1}>{'Menu text'}</MenuItem>,
     <MenuItem key={2}>{'Menu text'}</MenuItem>,
