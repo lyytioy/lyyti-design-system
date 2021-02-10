@@ -1,7 +1,0 @@
-export { default as CableSplit } from './CableSplit'
-export { default as PowerAdapter } from './PowerAdapter'
-export { default as ThunderboltCable } from './ThunderboltCable'
-export { default as UsbCable1 } from './UsbCable1'
-export { default as UsbCable } from './UsbCable'
-export { default as UsbPort1 } from './UsbPort1'
-export { default as UsbTypeC } from './UsbTypeC'

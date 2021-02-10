@@ -1,7 +1,0 @@
-export { default as ArchiveBooks } from './ArchiveBooks'
-export { default as ArchiveDrawerTable } from './ArchiveDrawerTable'
-export { default as ArchiveDrawer } from './ArchiveDrawer'
-export { default as ArchiveFolder } from './ArchiveFolder'
-export { default as ArchiveLocker1 } from './ArchiveLocker1'
-export { default as ArchiveLocker } from './ArchiveLocker'
-export { default as Archive } from './Archive'

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Chip, { ChipProps } from '../../components/Chip';
 import ThemeSelector from '../../themes/ThemeSelector';
 import Avatar from '../../components/Avatar';
-import RatingStarIcon from '../../components/icons/Streamline-Essential-Bold/SVG/22-Social-Medias-Rewards-Rating/06-Rating/RatingStar1';
+import StarIcon from '../../components/icons/Star';
 
 export default {
   title: 'Components/Data Display/Chip',
@@ -31,7 +31,7 @@ SecondaryRemovable.args = {
 export const PrimaryIcon = Template.bind({});
 PrimaryIcon.args = {
   label: 'Label',
-  icon: <RatingStarIcon />,
+  icon: <StarIcon />,
 };
 
 export const SecondaryLetterSmall = Template.bind({});

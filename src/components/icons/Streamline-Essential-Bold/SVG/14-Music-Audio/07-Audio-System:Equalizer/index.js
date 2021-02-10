@@ -1,5 +1,0 @@
-export { default as Equalizer1 } from './Equalizer1'
-export { default as Equalizer2 } from './Equalizer2'
-export { default as EqualizerStereo1 } from './EqualizerStereo1'
-export { default as EqualizerStereoPlay } from './EqualizerStereoPlay'
-export { default as EqualizerStereo } from './EqualizerStereo'

@@ -1,7 +1,0 @@
-export { default as EnvelopeBackFront } from './EnvelopeBackFront'
-export { default as EnvelopeLetter } from './EnvelopeLetter'
-export { default as EnvelopePigeon } from './EnvelopePigeon'
-export { default as EnvelopePostcard } from './EnvelopePostcard'
-export { default as EnvelopeSealed } from './EnvelopeSealed'
-export { default as EnvelopeUps } from './EnvelopeUps'
-export { default as Envelope } from './Envelope'

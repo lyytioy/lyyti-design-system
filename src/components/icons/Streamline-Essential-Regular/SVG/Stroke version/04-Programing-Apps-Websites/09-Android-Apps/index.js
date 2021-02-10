@@ -1,6 +1,0 @@
-export { default as Android1 } from './Android1'
-export { default as AndroidDownload } from './AndroidDownload'
-export { default as AndroidSettings } from './AndroidSettings'
-export { default as AndroidSync } from './AndroidSync'
-export { default as AndroidUpload } from './AndroidUpload'
-export { default as Android } from './Android'

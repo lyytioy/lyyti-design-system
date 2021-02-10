@@ -1,8 +1,0 @@
-export { default as AlarmBellCheck } from './AlarmBellCheck'
-export { default as AlarmBellDisable } from './AlarmBellDisable'
-export { default as AlarmBellOff } from './AlarmBellOff'
-export { default as AlarmBellRing } from './AlarmBellRing'
-export { default as AlarmBellSleep } from './AlarmBellSleep'
-export { default as AlarmBellTimer } from './AlarmBellTimer'
-export { default as AlarmBell } from './AlarmBell'
-export { default as AlarmClock } from './AlarmClock'

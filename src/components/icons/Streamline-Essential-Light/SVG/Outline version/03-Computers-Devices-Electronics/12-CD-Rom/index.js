@@ -1,7 +1,0 @@
-export { default as CdBox1 } from './CdBox1'
-export { default as CdBox } from './CdBox'
-export { default as CdBroken } from './CdBroken'
-export { default as CdBurn } from './CdBurn'
-export { default as CdPartition } from './CdPartition'
-export { default as CdRom } from './CdRom'
-export { default as Cd } from './Cd'

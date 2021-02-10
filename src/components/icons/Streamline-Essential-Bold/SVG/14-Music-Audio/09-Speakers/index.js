@@ -1,7 +1,0 @@
-export { default as Speaker1 } from './Speaker1'
-export { default as SpeakerStand } from './SpeakerStand'
-export { default as Speaker } from './Speaker'
-export { default as Speakers1 } from './Speakers1'
-export { default as SpeakersNote } from './SpeakersNote'
-export { default as SpeakersStand } from './SpeakersStand'
-export { default as Speakers } from './Speakers'

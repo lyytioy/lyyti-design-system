@@ -1,6 +1,0 @@
-export { default as Binocular } from './Binocular'
-export { default as View1 } from './View1'
-export { default as ViewCircle1 } from './ViewCircle1'
-export { default as ViewCircle } from './ViewCircle'
-export { default as ViewOff } from './ViewOff'
-export { default as ViewSquare } from './ViewSquare'

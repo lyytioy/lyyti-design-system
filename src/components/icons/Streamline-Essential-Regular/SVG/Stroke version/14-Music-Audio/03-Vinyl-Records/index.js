@@ -1,5 +1,0 @@
-export { default as VinylRecordAlbum } from './VinylRecordAlbum'
-export { default as VinylRecordGramophone } from './VinylRecordGramophone'
-export { default as VinylRecordPlayer2 } from './VinylRecordPlayer2'
-export { default as VinylRecordPlayer } from './VinylRecordPlayer'
-export { default as VinylRecord } from './VinylRecord'

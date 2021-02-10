@@ -1,7 +1,0 @@
-export { default as Laptop1 } from './Laptop1'
-export { default as Laptop2 } from './Laptop2'
-export { default as LaptopLock1 } from './LaptopLock1'
-export { default as LaptopLock } from './LaptopLock'
-export { default as LaptopSmiley1 } from './LaptopSmiley1'
-export { default as LaptopSmiley } from './LaptopSmiley'
-export { default as Laptop } from './Laptop'
