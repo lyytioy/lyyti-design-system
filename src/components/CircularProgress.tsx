@@ -7,7 +7,7 @@ import {
   Theme,
 } from '@material-ui/core';
 
-const useStyles = makeStyles<Theme>((theme) =>
+const useStyles = makeStyles<Theme>(() =>
   createStyles({
     root: {},
     svg: {
