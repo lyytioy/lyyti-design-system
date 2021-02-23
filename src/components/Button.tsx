@@ -10,26 +10,26 @@ import {
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
     root: (chunky) => ({
-      fontSize: '1rem',
-      fontWeight: 500,
-      lineHeight: 1,
-      borderRadius: '3px',
+      // fontSize: '1rem',
+      // fontWeight: 500,
+      // lineHeight: 1,
+      // borderRadius: '3px',
       padding: chunky ? '16px 20px' : '10px 20px',
     }),
-    containedPrimary: {
-      border: '1px solid',
-      borderColor: theme.palette.primary.main,
-    },
-    containedSecondary: {
-      border: '1px solid',
-      borderColor: theme.palette.secondary.main,
-    },
-    textPrimary: {
-      border: '1px solid #045b561a',
-    },
-    textSecondary: {
-      border: '1px solid #ee8b3a1a',
-    },
+    // containedPrimary: {
+    //   border: '1px solid',
+    //   borderColor: theme.palette.primary.main,
+    // },
+    // containedSecondary: {
+    //   border: '1px solid',
+    //   borderColor: theme.palette.secondary.main,
+    // },
+    // textPrimary: {
+    //   border: '1px solid #045b561a',
+    // },
+    // textSecondary: {
+    //   border: '1px solid #ee8b3a1a',
+    // },
   })
 );
 
