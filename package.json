@@ -16,8 +16,8 @@
   },
   "scripts": {
     "start": "yarn && start-storybook -p 6006 -s public",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "tsc --noEmit && eslint src",
+    "lint:fix": "tsc --noEmit && eslint src --fix",
     "build": "react-scripts build",
     "build-storybook": "yarn && build-storybook -s public"
   },

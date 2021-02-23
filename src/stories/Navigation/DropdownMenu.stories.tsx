@@ -1,7 +1,7 @@
 import React from 'react';
-import { Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
-import DropdownMenu from '../../components/DropdownMenu';
+import DropdownMenu, { DropdownProps } from '../../components/DropdownMenu';
 
 export default {
   title: 'Components/Navigation/Menu',
@@ -18,7 +18,7 @@ const menuItems = [
   { id: 3, title: 'Menu item 3' },
 ];
 
-const Template = (args) => (
+const Template: Story<DropdownProps> = (args) => (
   <ThemeSelector>
     <DropdownMenu {...args} />
   </ThemeSelector>

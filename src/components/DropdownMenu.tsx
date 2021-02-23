@@ -8,7 +8,7 @@ import ClickAwayListener from './ClickAwayListener';
 import Grow from './Grow';
 import Popper from './Popper';
 
-interface DropdownProps {
+export interface DropdownProps {
   title: string;
   onSelect: (clickedItem: number) => void;
   items: Array<{ id: number; title: string }>;
