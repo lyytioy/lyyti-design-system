@@ -1,12 +1,20 @@
-import React, { FunctionComponent } from 'react';
 import { Chip as MuiChip, ChipProps as MuiChipProps } from '@material-ui/core';
 
-export type ColorTypes = 'primary' | 'secondary';
+export interface ChipProps extends MuiChipProps {
+  color: 'primary' | 'secondary';
+}
 
-export type ChipProps = MuiChipProps & { color: ColorTypes };
-
-const Chip: FunctionComponent<ChipProps> = (props) => {
+const Chip = (props: ChipProps): JSX.Element => {
   return <MuiChip {...props} />;
+};
+
+Chip.defaultProps = {
+  label: 'Label',
+  size: 'medium',
+  disabled: false,
+  variant: 'default',
+  color: 'primary',
+  clickable: false,
 };
 
 export default Chip;

@@ -128,9 +128,6 @@ export default createMuiTheme({
     MuiSwitch: {
       color: 'primary',
     },
-    MuiChip: {
-      color: 'primary',
-    },
     MuiTextField: {
       variant: 'outlined',
     },
