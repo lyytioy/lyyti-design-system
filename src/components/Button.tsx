@@ -13,10 +13,7 @@ const buttonBoxShadow =
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
     root: (chunky) => ({
-      fontSize: '1rem',
-      lineHeight: '1.625rem',
       borderRadius: '3px',
-      letterSpacing: '0.01rem',
       transition: 'all 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000)',
       transitionTimingFunction: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
       padding: chunky ? '15px 23px' : '5px 15px',

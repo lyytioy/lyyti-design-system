@@ -115,7 +115,10 @@ export default createMuiTheme({
     fontFamily: 'Objektiv MK1 Regular, sans-serif',
     button: {
       textTransform: 'none',
+      fontSize: '1rem',
       fontWeight: 500,
+      lineHeight: '1.625',
+      letterSpacing: '0.01rem',
     },
   },
   props: {
