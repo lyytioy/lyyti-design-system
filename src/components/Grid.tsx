@@ -2,8 +2,24 @@ import { Grid as MuiGrid, GridProps as MuiGridProps } from '@material-ui/core';
 
 export type GridProps = MuiGridProps;
 
-const Alert = (props: GridProps): JSX.Element => {
+const Grid = (props: GridProps): JSX.Element => {
   return <MuiGrid {...props} />;
 };
 
-export default Alert;
+Grid.defaultProps = {
+  spacing: 0,
+  alignContent: 'stretch',
+  alignItems: 'stretch',
+  container: false,
+  direction: 'row',
+  item: false,
+  justify: 'flex-start',
+  wrap: 'wrap',
+  xl: false,
+  lg: false,
+  md: false,
+  sm: false,
+  xs: false,
+};
+
+export default Grid;
