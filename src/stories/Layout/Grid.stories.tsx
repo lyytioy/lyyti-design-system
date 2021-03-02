@@ -15,9 +15,15 @@ export default {
   },
 } as Meta;
 
-const Template: Story<GridProps> = ({ ...args }) => (
+// eslint-disable-next-line react/prop-types
+const Template: Story<GridProps> = ({ spacing, direction, justify, alignItems, ...args }) => (
   <ThemeSelector>
-    <Grid container justify="center" spacing={args.spacing}>
+    <Grid
+      container
+      spacing={spacing}
+      direction={direction}
+      justify={justify}
+      alignItems={alignItems}>
       {[0, 1, 2].map((value) => (
         <Grid key={value} item {...args}>
           <Rect {...Rect.args} />
@@ -30,6 +36,7 @@ const Template: Story<GridProps> = ({ ...args }) => (
 export const Default = Template.bind({});
 Default.args = {
   spacing: 1,
+  justify: 'center',
 };
 
 export const Column = Template.bind({});
