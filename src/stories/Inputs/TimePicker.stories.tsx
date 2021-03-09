@@ -18,3 +18,9 @@ Default.args = {};
 
 export const TwelveHour = Template.bind({});
 TwelveHour.args = { twelvehour: true };
+
+export const Disabled = Template.bind({});
+Disabled.args = { disabled: true };
+
+export const Error = Template.bind({});
+Error.args = { error: true, helperText: 'The date was bad' };

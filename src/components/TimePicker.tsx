@@ -1,5 +1,6 @@
 import Autocomplete, { AutocompleteProps } from '@material-ui/lab/Autocomplete';
 import TextField from './TextField';
+import { makeStyles } from '@material-ui/styles';
 import CogIcon from './icons/Cog';
 
 const twentyFourHourTimes = [
@@ -101,25 +102,40 @@ const twelveHourTimes = [
   '11:30 PM',
 ];
 
+const useStyles = makeStyles({ root: { width: 'min-content' } });
+
 export interface TimePickerProps
   extends AutocompleteProps<string, boolean | undefined, boolean | undefined, boolean | undefined> {
-  twelvehour: boolean;
+  twelvehour?: boolean;
+  error?: boolean;
+  helperText?: JSX.Element | string;
 }
 
 const TimePicker = ({ twelvehour, ...props }: TimePickerProps): JSX.Element => {
+  const classes = useStyles();
+
   props.options = twelvehour ? twelveHourTimes : twentyFourHourTimes;
   props.disableClearable = true;
   return (
     <Autocomplete
       {...props}
       freeSolo
-      renderInput={(params) => {
-        Object.assign(params.InputProps, { notched: false });
-        return <TextField {...params} InputLabelProps={{ shrink: true }} variant="outlined" />;
-      }}
       forcePopupIcon
       // TODO: Change Icon to clock
-      popupIcon={<CogIcon color="primary" />}
+      popupIcon={<CogIcon color={props?.error ? 'error' : 'primary'} />}
+      className={classes.root}
+      renderInput={(params) => {
+        Object.assign(params.InputProps, { notched: false });
+        return (
+          <TextField
+            {...params}
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+            error={props?.error}
+            helperText={props?.helperText}
+          />
+        );
+      }}
     />
   );
 };
