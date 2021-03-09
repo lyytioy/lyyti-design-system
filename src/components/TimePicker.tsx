@@ -111,7 +111,7 @@ export interface TimePickerProps
   helperText?: JSX.Element | string;
 }
 
-const TimePicker = ({ twelvehour, ...props }: TimePickerProps): JSX.Element => {
+const TimePicker = ({ twelvehour, error, helperText, ...props }: TimePickerProps): JSX.Element => {
   const classes = useStyles();
 
   props.options = twelvehour ? twelveHourTimes : twentyFourHourTimes;
@@ -122,7 +122,7 @@ const TimePicker = ({ twelvehour, ...props }: TimePickerProps): JSX.Element => {
       freeSolo
       forcePopupIcon
       // TODO: Change Icon to clock
-      popupIcon={<CogIcon color={props?.error ? 'error' : 'primary'} />}
+      popupIcon={<CogIcon color={error ? 'error' : 'primary'} />}
       className={classes.root}
       renderInput={(params) => {
         Object.assign(params.InputProps, { notched: false });
@@ -131,8 +131,8 @@ const TimePicker = ({ twelvehour, ...props }: TimePickerProps): JSX.Element => {
             {...params}
             InputLabelProps={{ shrink: true }}
             variant="outlined"
-            error={props?.error}
-            helperText={props?.helperText}
+            error={error}
+            helperText={helperText}
           />
         );
       }}
