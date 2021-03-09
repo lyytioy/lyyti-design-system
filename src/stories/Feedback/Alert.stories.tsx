@@ -9,18 +9,11 @@ export default {
   title: 'Components/Feedback/Alert',
   component: Alert,
   argTypes: {
-    variant: {
-      control: {
-        type: 'radio',
-        options: ['standard', 'outlined', 'filled'],
-      },
-    },
-    severity: {
-      control: {
-        type: 'select',
-        options: ['success', 'info', 'warning', 'error'],
-      },
-    },
+    ref: { control: false },
+    children: { control: 'text' },
+    action: { control: 'text' },
+    closeText: { control: 'text' },
+    onClose: { control: false },
   },
 } as Meta;
 
@@ -36,7 +29,6 @@ const clickFunction = () => {
 
 export const Success = Template.bind({});
 Success.args = {
-  children: 'Alert content in here',
   onClose: clickFunction,
   variant: 'outlined',
 };
@@ -44,7 +36,6 @@ Success.args = {
 export const Error = Template.bind({});
 Error.args = {
   severity: 'error',
-  children: 'Alert content in here',
   action: (
     <Button color="inherit" chunky={false}>
       {'Button'}
@@ -55,7 +46,6 @@ Error.args = {
 export const Info = Template.bind({});
 Info.args = {
   severity: 'info',
-  children: 'Alert content in here',
   variant: 'filled',
 };
 

@@ -1,5 +1,5 @@
-
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: { expanded: true },
+  actions: { disable: true },
   layout: 'centered',
-}
+};
