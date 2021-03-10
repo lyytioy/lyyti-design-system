@@ -1,10 +1,9 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Card, { CardProps } from '../../components/Card';
-import ThemeSelector from '../../themes/ThemeSelector';
-import CardHeader from '../../components/CardHeader';
-import CardContent from '../../components/CardContent';
-import CardActions from '../../components/CardActions';
+import Card, { CardProps } from 'components/Card';
+import ThemeSelector from 'themes/ThemeSelector';
+import CardHeader from 'components/CardHeader';
+import CardContent from 'components/CardContent';
+import CardActions from 'components/CardActions';
 import { Primary as PrimaryContainedButton } from '../Inputs/ContainedButton.stories';
 import { Primary as PrimaryOutlinedButton } from '../Inputs/OutlinedButton.stories';
 

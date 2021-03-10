@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../themes/ThemeSelector';
+import ThemeSelector from 'themes/ThemeSelector';
 import { ColDef, ValueGetterParams } from '@material-ui/data-grid';
-import DataGrid, { DataGridProps } from '../../components/DataGrid';
+import DataGrid, { DataGridProps } from 'components/DataGrid';
 
 const columns: ColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },

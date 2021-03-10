@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Stepper, { StepperProps } from '../../components/Stepper';
-import ThemeSelector from '../../themes/ThemeSelector';
+import Stepper, { StepperProps } from 'components/Stepper';
+import ThemeSelector from 'themes/ThemeSelector';
 import { Step } from '@material-ui/core';
-import StepConnector from '../../components/StepConnector';
-import StepLabel from '../../components/StepLabel';
-import StepButton from '../../components/StepButton';
+import StepConnector from 'components/StepConnector';
+import StepLabel from 'components/StepLabel';
+import StepButton from 'components/StepButton';
 
 export default {
   title: 'Components/Navigation/Stepper',

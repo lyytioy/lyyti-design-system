@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import MenuList, { MenuListProps } from '../../components/MenuList';
-import Paper from '../../components/Paper';
-import ThemeSelector from '../../themes/ThemeSelector';
-import MenuItem from '../../components/MenuItem';
+import MenuList, { MenuListProps } from 'components/MenuList';
+import Paper from 'components/Paper';
+import ThemeSelector from 'themes/ThemeSelector';
+import MenuItem from 'components/MenuItem';
 import { Primary as PrimaryOutlinedButton } from '../Inputs/OutlinedButton.stories';
 
 export default {

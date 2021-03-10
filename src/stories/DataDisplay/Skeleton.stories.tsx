@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Skeleton, { SkeletonProps } from '../../components/Skeleton';
-import ThemeSelector from '../../themes/ThemeSelector';
+import Skeleton, { SkeletonProps } from 'components/Skeleton';
+import ThemeSelector from 'themes/ThemeSelector';
 
 export default {
   title: 'Components/Data Display/Skeleton',
