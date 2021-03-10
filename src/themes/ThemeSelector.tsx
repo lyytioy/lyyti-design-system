@@ -1,10 +1,9 @@
-import { ReactNode } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Theme from './theme';
 import { CssBaseline } from '@material-ui/core';
 
 interface ThemeSelectorProps {
-  children: ReactNode;
+  children: JSX.Element | JSX.Element[];
 }
 
 const ThemeSelector = ({ children }: ThemeSelectorProps): JSX.Element => {
