@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   AlertTitle as MuiAlertTitle,
   AlertTitleProps as MuiAlertTitleProps,
@@ -6,7 +5,7 @@ import {
 
 export type AlertTitleProps = MuiAlertTitleProps;
 
-const AlertTitle: FunctionComponent<AlertTitleProps> = (props) => {
+const AlertTitle = (props: AlertTitleProps): JSX.Element => {
   return <MuiAlertTitle {...props} />;
 };
 

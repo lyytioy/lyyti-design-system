@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   CircularProgress as MuiCircularProgress,
   CircularProgressProps as MuiCircularProgressProps,
@@ -37,7 +36,7 @@ const useStyles = makeStyles({
 
 export type CircularProgressProps = MuiCircularProgressProps;
 
-const CircularProgress: FunctionComponent<CircularProgressProps> = (props) => {
+const CircularProgress = (props: CircularProgressProps): JSX.Element => {
   const classes = useStyles();
 
   return (

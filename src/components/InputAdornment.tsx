@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   InputAdornment as MuiInputAdornment,
   InputAdornmentProps as MuiInputAdornmentProps,
@@ -17,7 +16,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type InputAdornmentProps = MuiInputAdornmentProps;
 
-const InputAdornment: FunctionComponent<InputAdornmentProps> = (props) => {
+const InputAdornment = (props: InputAdornmentProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiInputAdornment {...props} classes={{ root: classes.root }} />;

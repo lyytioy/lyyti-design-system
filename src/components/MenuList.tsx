@@ -1,4 +1,3 @@
-import { FunctionComponent, forwardRef } from 'react';
 import {
   MenuList as MuiMenuList,
   MenuListProps as MuiMenuListProps,
@@ -19,10 +18,10 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type MenuListProps = MuiMenuListProps;
 
-const MenuList: FunctionComponent<MenuListProps> = forwardRef((props, ref) => {
+const MenuList = (props: MenuListProps): JSX.Element => {
   const classes = useStyles();
 
-  return <MuiMenuList ref={ref} {...props} classes={{ root: classes.root }} />;
-});
+  return <MuiMenuList {...props} classes={{ root: classes.root }} />;
+};
 
 export default MenuList;

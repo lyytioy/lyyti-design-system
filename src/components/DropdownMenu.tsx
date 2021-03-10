@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { FunctionComponent, useState, useRef, MouseEvent, KeyboardEvent } from 'react';
+import { useState, useRef, MouseEvent, KeyboardEvent } from 'react';
 import Button, { ButtonProps } from './Button';
 import MenuList from './MenuList';
 import MenuItem from './MenuItem';
@@ -15,7 +15,7 @@ export interface DropdownProps {
   buttonProps: ButtonProps;
 }
 
-const DropdownMenu: FunctionComponent<DropdownProps> = (props) => {
+const DropdownMenu = (props: DropdownProps): JSX.Element => {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLButtonElement>(null);
 

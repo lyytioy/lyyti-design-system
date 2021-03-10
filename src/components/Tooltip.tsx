@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   Tooltip as MuiTooltip,
   TooltipProps as MuiTooltipProps,
@@ -23,7 +22,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type TooltipProps = MuiTooltipProps;
 
-const Tooltip: FunctionComponent<TooltipProps> = (props) => {
+const Tooltip = (props: TooltipProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiTooltip {...props} classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} />;

@@ -1,4 +1,4 @@
-import { FunctionComponent, useRef } from 'react';
+import { useRef } from 'react';
 import {
   TextField as MuiTextField,
   OutlinedTextFieldProps,
@@ -42,7 +42,7 @@ export type VariantTypes = 'outlined';
 
 export type TextFieldProps = OutlinedTextFieldProps & { variant: VariantTypes };
 
-const TextField: FunctionComponent<TextFieldProps> = (props) => {
+const TextField = (props: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
   const classes = useStyles();
 

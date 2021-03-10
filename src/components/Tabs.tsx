@@ -1,9 +1,8 @@
-import { FunctionComponent } from 'react';
 import { Tabs as MuiTabs, TabsProps as MuiTabsProps } from '@material-ui/core';
 
 export type TabsProps = MuiTabsProps;
 
-const Tabs: FunctionComponent<TabsProps> = (props) => {
+const Tabs = (props: TabsProps): JSX.Element => {
   return <MuiTabs {...props} />;
 };
 

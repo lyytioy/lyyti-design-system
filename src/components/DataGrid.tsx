@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import { DataGrid as MuiDataGrid, DataGridProps as MuiDataGridProps } from '@material-ui/data-grid';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 
@@ -17,7 +16,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type DataGridProps = MuiDataGridProps;
 
-const DataGrid: FunctionComponent<DataGridProps> = (props) => {
+const DataGrid = (props: DataGridProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiDataGrid {...props} className={classes.root} />;

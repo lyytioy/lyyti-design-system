@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   Card as MuiCard,
   CardProps as MuiCardProps,
@@ -19,7 +18,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type CardProps = MuiCardProps;
 
-const Card: FunctionComponent<CardProps> = (props) => {
+const Card = (props: CardProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiCard {...props} classes={{ root: classes.root }} />;

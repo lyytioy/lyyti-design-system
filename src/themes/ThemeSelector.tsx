@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Theme from './theme';
 import { CssBaseline } from '@material-ui/core';
@@ -7,7 +7,7 @@ interface ThemeSelectorProps {
   children: ReactNode;
 }
 
-const ThemeSelector: FunctionComponent<ThemeSelectorProps> = ({ children }: ThemeSelectorProps) => {
+const ThemeSelector = ({ children }: ThemeSelectorProps): JSX.Element => {
   return (
     <ThemeProvider theme={Theme}>
       <CssBaseline />

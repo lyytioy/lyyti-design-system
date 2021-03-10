@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   CardContent as MuiCardContent,
   CardContentProps as MuiCardContentProps,
@@ -6,7 +5,7 @@ import {
 
 export type CardContentProps = MuiCardContentProps;
 
-const CardContent: FunctionComponent<CardContentProps> = (props) => {
+const CardContent = (props: CardContentProps): JSX.Element => {
   return <MuiCardContent {...props} />;
 };
 

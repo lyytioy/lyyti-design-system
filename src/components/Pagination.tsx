@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import {
   Pagination as MuiPagination,
@@ -18,7 +17,7 @@ const useStyles = makeStyles<Theme>(() =>
 
 export type PaginationProps = MuiPaginationProps;
 
-const Pagination: FunctionComponent<PaginationProps> = (props) => {
+const Pagination = (props: PaginationProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiPagination {...props} classes={{ root: classes.root }} />;

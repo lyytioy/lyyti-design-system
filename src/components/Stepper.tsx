@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   Stepper as MuiStepper,
   StepperProps as MuiStepperProps,
@@ -67,7 +66,7 @@ export type OrientationTypes = 'horizontal';
 
 export type StepperProps = MuiStepperProps & { orientation: OrientationTypes };
 
-const Stepper: FunctionComponent<StepperProps> = (props) => {
+const Stepper = (props: StepperProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiStepper {...props} classes={{ root: classes.root }} />;

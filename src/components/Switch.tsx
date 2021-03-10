@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import {
   Switch as MuiSwitch,
   SwitchProps as MuiSwitchProps,
@@ -61,7 +60,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type SwitchProps = MuiSwitchProps;
 
-const Switch: FunctionComponent<SwitchProps> = (props) => {
+const Switch = (props: SwitchProps): JSX.Element => {
   const classes = useStyles();
 
   return (
