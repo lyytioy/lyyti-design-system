@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Paper as MuiPaper, PaperProps as MuiPaperProps } from '@material-ui/core';
 
 export type PaperProps = MuiPaperProps;

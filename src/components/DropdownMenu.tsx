@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent, useState, useRef, MouseEvent, KeyboardEvent } from 'react';
 import Button, { ButtonProps } from './Button';
 import MenuList from './MenuList';
 import MenuItem from './MenuItem';
@@ -16,26 +16,26 @@ export interface DropdownProps {
 }
 
 const DropdownMenu: FunctionComponent<DropdownProps> = (props) => {
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLButtonElement>(null);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = (event: React.MouseEvent<EventTarget>) => {
+  const handleClose = (event: MouseEvent<EventTarget>) => {
     if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
       return;
     }
     setOpen(false);
   };
 
-  const selectItem = (event: React.MouseEvent<EventTarget>, id: number) => {
+  const selectItem = (event: MouseEvent<EventTarget>, id: number) => {
     props.onSelect(id);
     handleClose(event);
   };
 
-  function handleListKeyDown(event: React.KeyboardEvent) {
+  function handleListKeyDown(event: KeyboardEvent) {
     if (event.key === 'Tab') {
       event.preventDefault();
       setOpen(false);

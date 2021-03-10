@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Tooltip, { TooltipProps } from 'components/Tooltip';
 import ThemeSelector from 'themes/ThemeSelector';
@@ -8,7 +8,7 @@ export default {
   component: Tooltip,
 } as Meta;
 
-const SomeContent = React.forwardRef<HTMLDivElement>((props, ref) => (
+const SomeContent = forwardRef<HTMLDivElement>((props, ref) => (
   <div {...props} ref={ref}>
     {'Hover over me!'}
   </div>

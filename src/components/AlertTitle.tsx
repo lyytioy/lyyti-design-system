@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import {
   AlertTitle as MuiAlertTitle,
   AlertTitleProps as MuiAlertTitleProps,

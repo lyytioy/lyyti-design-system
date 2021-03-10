@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { DataGrid as MuiDataGrid, DataGridProps as MuiDataGridProps } from '@material-ui/data-grid';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 

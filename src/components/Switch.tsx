@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import {
   Switch as MuiSwitch,
   SwitchProps as MuiSwitchProps,

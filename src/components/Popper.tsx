@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Popper as MuiPopper, PopperProps as MuiPopperProps } from '@material-ui/core';
 
 export type PopperProps = MuiPopperProps;

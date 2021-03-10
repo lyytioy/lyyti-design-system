@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Theme from './theme';
 import { CssBaseline } from '@material-ui/core';

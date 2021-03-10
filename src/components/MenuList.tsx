@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent, forwardRef } from 'react';
 import {
   MenuList as MuiMenuList,
   MenuListProps as MuiMenuListProps,
@@ -19,7 +19,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type MenuListProps = MuiMenuListProps;
 
-const MenuList: FunctionComponent<MenuListProps> = React.forwardRef((props, ref) => {
+const MenuList: FunctionComponent<MenuListProps> = forwardRef((props, ref) => {
   const classes = useStyles();
 
   return <MuiMenuList ref={ref} {...props} classes={{ root: classes.root }} />;

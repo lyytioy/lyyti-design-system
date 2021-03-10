@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent, forwardRef } from 'react';
 import {
   Button as MuiButton,
   ButtonProps as MuiButtonProps,
@@ -67,7 +67,7 @@ export type ColorTypes = 'primary' | 'secondary' | 'inherit' | undefined;
 
 export type ButtonProps = { color?: ColorTypes; chunky?: boolean } & Omit<MuiButtonProps, 'color'>;
 
-const Button: FunctionComponent<ButtonProps> = React.forwardRef(
+const Button: FunctionComponent<ButtonProps> = forwardRef(
   ({ children, chunky, ...props }: ButtonProps, ref) => {
     const classes = useStyles(chunky);
 

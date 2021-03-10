@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Chip, { ChipProps } from 'components/Chip';
 import ThemeSelector from 'themes/ThemeSelector';

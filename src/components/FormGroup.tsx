@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { FormGroup as MuiFormGroup, FormGroupProps as MuiFormGroupProps } from '@material-ui/core';
 
 export type FormGroupProps = MuiFormGroupProps;

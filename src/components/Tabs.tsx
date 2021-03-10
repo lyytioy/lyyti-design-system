@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Tabs as MuiTabs, TabsProps as MuiTabsProps } from '@material-ui/core';
 
 export type TabsProps = MuiTabsProps;

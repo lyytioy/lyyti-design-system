@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import {
   Pagination as MuiPagination,

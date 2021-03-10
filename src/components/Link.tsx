@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import {
   Link as MuiLink,
   LinkProps as MuiLinkProps,

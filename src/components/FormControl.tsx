@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import {
   FormControl as MuiFormControl,
   FormControlProps as MuiFormControlProps,

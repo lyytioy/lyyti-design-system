@@ -1,4 +1,3 @@
-import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import ThemeSelector from 'themes/ThemeSelector';
 import DropdownMenu, { DropdownProps } from 'components/DropdownMenu';
