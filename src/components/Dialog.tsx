@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import {
   Dialog as MuiDialog,
   DialogTitle as MuiDialogTitle,
@@ -10,6 +11,9 @@ import Button from './Button';
 import CogIcon from './icons/Cog';
 
 const useStyles = makeStyles({
+  titlePadding: {
+    '& h2': { paddingRight: '40px' },
+  },
   closeIcon: {
     position: 'absolute',
     right: '24px',
@@ -21,14 +25,14 @@ const useStyles = makeStyles({
 });
 
 export interface DialogProps extends MuiDialogProps {
-  dialogTitle: JSX.Element | string;
-  dialogContent: JSX.Element | string;
-  dialogActions: JSX.Element | JSX.Element[];
+  dialogTitle?: JSX.Element | string;
+  dialogContent?: JSX.Element | string;
+  dialogActions?: JSX.Element | JSX.Element[];
 }
 
 const Dialog = ({
   dialogTitle = 'This is the dialog title',
-  dialogContent = <p>{'This is the dialog content'}</p>,
+  dialogContent = 'This is the dialog content',
   dialogActions = (
     <>
       <Button>{'Cancel'}</Button>
@@ -40,10 +44,12 @@ const Dialog = ({
   const classes = useStyles();
   return (
     <MuiDialog {...props}>
-      <MuiDialogTitle>
+      <MuiDialogTitle className={classes.titlePadding}>
         {dialogTitle}
         {/* TODO Change icon to closeIcon */}
-        <Button onClick={() => props.onClose} className={classes.closeIcon}>
+        <Button
+          onClick={props.onClose as MouseEventHandler<HTMLButtonElement>}
+          className={classes.closeIcon}>
           <CogIcon />
         </Button>
       </MuiDialogTitle>

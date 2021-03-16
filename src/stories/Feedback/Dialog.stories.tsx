@@ -10,10 +10,24 @@ export default {
   argTypes: {
     dialogActions: { control: false },
   },
+  /*  TODO: Try removing these default values when this is released
+      https://github.com/storybookjs/storybook/releases/tag/v6.2.0-alpha.30
+
+      Related issue: https://github.com/storybookjs/storybook/issues/12098
+  */
+  args: {
+    dialogActions: (
+      <>
+        <Button>{'Cancel'}</Button>
+        <Button>{'Delete'}</Button>
+      </>
+    ),
+  },
 } as Meta;
 
 const Template: Story<DialogProps> = (args) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+
   args.open = dialogOpen;
   args.onClose = () => setDialogOpen(false);
   return (
@@ -22,7 +36,7 @@ const Template: Story<DialogProps> = (args) => {
         variant="contained"
         color="primary"
         chunky={false}
-        onClick={() => setDialogOpen(!dialogOpen)}>
+        onClick={() => setDialogOpen(true)}>
         {'Open Dialog'}
       </Button>
       <Dialog {...args} />
