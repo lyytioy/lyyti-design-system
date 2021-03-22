@@ -49,7 +49,7 @@ const Dialog = ({
         </Button>
       </MuiDialogTitle>
       <MuiDialogContent>{dialogContent}</MuiDialogContent>
-      {dialogActions ? <MuiDialogActions>{dialogActions}</MuiDialogActions> : <></>}
+      {dialogActions ? <MuiDialogActions>{dialogActions}</MuiDialogActions> : null}
     </MuiDialog>
   );
 };
