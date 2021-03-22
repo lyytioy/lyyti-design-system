@@ -2,24 +2,22 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from 'themes/ThemeSelector';
 import InputAdornment from 'components/InputAdornment';
 import { MenuItem } from '@material-ui/core';
-import TextField, { TextFieldProps } from 'components/TextField';
+import Select, { SelectProps } from 'components/Select';
 
 export default {
   title: 'Components/Inputs/Select',
-  component: TextField,
+  component: Select,
 } as Meta;
 
-const Template: Story<TextFieldProps> = (args) => (
+const Template: Story<SelectProps> = (args) => (
   <ThemeSelector>
-    <TextField {...args} />
+    <Select {...args} />
   </ThemeSelector>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  select: true,
   children: <MenuItem>{'Item 1'}</MenuItem>,
-  variant: 'outlined',
   margin: 'dense',
   label: 'Label',
   placeholder: 'Placeholder',
@@ -31,9 +29,7 @@ Default.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  select: true,
   children: <MenuItem>{'Item 1'}</MenuItem>,
-  variant: 'outlined',
   margin: 'normal',
   label: 'Label',
   placeholder: 'Placeholder',
@@ -45,9 +41,7 @@ Large.args = {
 
 export const HelperText = Template.bind({});
 HelperText.args = {
-  select: true,
   children: <MenuItem>{'Item 1'}</MenuItem>,
-  variant: 'outlined',
   margin: 'dense',
   label: 'Label',
   placeholder: 'Placeholder',
@@ -60,9 +54,7 @@ HelperText.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-  select: true,
   children: <MenuItem>{'Item 1'}</MenuItem>,
-  variant: 'outlined',
   margin: 'dense',
   label: 'Label',
   placeholder: 'Placeholder',
@@ -75,9 +67,7 @@ Error.args = {
 
 export const StartAdornment = Template.bind({});
 StartAdornment.args = {
-  select: true,
   children: <MenuItem>{'Item 1'}</MenuItem>,
-  variant: 'outlined',
   margin: 'dense',
   label: 'Label',
   placeholder: 'Placeholder',
@@ -95,7 +85,6 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   select: true,
   children: <MenuItem>{'Item 1'}</MenuItem>,
-  variant: 'outlined',
   margin: 'dense',
   label: 'Label',
   placeholder: 'Placeholder',

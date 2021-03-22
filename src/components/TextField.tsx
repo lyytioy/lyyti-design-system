@@ -56,4 +56,12 @@ const TextField = (props: TextFieldProps): JSX.Element => {
   );
 };
 
+TextField.defaultProps = {
+  margin: 'dense',
+  label: 'Label',
+  placeholder: 'Placeholder',
+  InputLabelProps: { shrink: true },
+  InputProps: { notched: false },
+};
+
 export default TextField;
