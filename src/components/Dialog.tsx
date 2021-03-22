@@ -25,20 +25,15 @@ const useStyles = makeStyles({
 });
 
 export interface DialogProps extends MuiDialogProps {
-  dialogTitle?: JSX.Element | string;
-  dialogContent?: JSX.Element | string;
+  dialogTitle: JSX.Element | string;
+  dialogContent: JSX.Element | string;
   dialogActions?: JSX.Element | JSX.Element[];
 }
 
 const Dialog = ({
-  dialogTitle = 'This is the dialog title',
-  dialogContent = 'This is the dialog content',
-  dialogActions = (
-    <>
-      <Button>{'Cancel'}</Button>
-      <Button>{'Delete'}</Button>
-    </>
-  ),
+  dialogTitle,
+  dialogContent,
+  dialogActions,
   ...props
 }: DialogProps): JSX.Element => {
   const classes = useStyles();
@@ -54,7 +49,7 @@ const Dialog = ({
         </Button>
       </MuiDialogTitle>
       <MuiDialogContent>{dialogContent}</MuiDialogContent>
-      <MuiDialogActions>{dialogActions}</MuiDialogActions>
+      {dialogActions ? <MuiDialogActions>{dialogActions}</MuiDialogActions> : <></>}
     </MuiDialog>
   );
 };

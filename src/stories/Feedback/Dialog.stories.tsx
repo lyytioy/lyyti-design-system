@@ -16,6 +16,8 @@ export default {
       Related issue: https://github.com/storybookjs/storybook/issues/12098
   */
   args: {
+    dialogTitle: 'This is the dialog title',
+    dialogContent: 'This is the dialog content',
     dialogActions: (
       <>
         <Button>{'Cancel'}</Button>
