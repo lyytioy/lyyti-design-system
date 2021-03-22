@@ -1,8 +1,7 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Link, { LinkProps } from '../../components/Link';
-import ThemeSelector from '../../themes/ThemeSelector';
-import CogIcon from '../../components/icons/Cog';
+import Link, { LinkProps } from 'components/Link';
+import ThemeSelector from 'themes/ThemeSelector';
+import CogIcon from 'components/icons/Cog';
 
 export default {
   title: 'Components/Navigation/Link',

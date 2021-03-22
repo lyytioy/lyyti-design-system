@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   Checkbox as MuiCheckbox,
   CheckboxProps as MuiCheckboxProps,
@@ -20,7 +19,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type CheckboxProps = MuiCheckboxProps;
 
-const Checkbox: FunctionComponent<CheckboxProps> = (props) => {
+const Checkbox = (props: CheckboxProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiCheckbox {...props} classes={{ root: classes.root }} />;

@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   Link as MuiLink,
   LinkProps as MuiLinkProps,
@@ -38,7 +37,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type LinkProps = MuiLinkProps;
 
-const Link: FunctionComponent<LinkProps> = (props) => {
+const Link = (props: LinkProps): JSX.Element => {
   const classes = useStyles();
 
   return (
