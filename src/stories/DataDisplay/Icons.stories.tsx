@@ -5,7 +5,7 @@ import ThemeSelector from 'themes/ThemeSelector';
 import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core';
 import TextField from 'components/TextField';
 import Grid from 'components/Grid';
-import { Cog, Star } from '../../components/icons';
+import { Cog, Star } from 'components/icons';
 
 export default {
   title: 'Components/Data Display/Icons',
