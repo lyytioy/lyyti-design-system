@@ -21,8 +21,8 @@ const TransitionDown = (props: TransitionProps) => {
 };
 
 export interface SnackbarProps extends MuiSnackbarProps {
-  severity?: 'success' | 'info' | 'warning' | 'error';
-  variant?: 'standard' | 'filled' | 'outlined';
+  severity?: 'success' | 'info' | 'warning' | 'error' | undefined;
+  variant?: 'standard' | 'filled' | 'outlined' | undefined;
   direction?: 'right' | 'left' | 'up' | 'down' | undefined;
 }
 
@@ -62,6 +62,9 @@ Snackbar.defaultProps = {
   },
   autoHideDuration: 6000,
   message: 'Success message',
+  severity: 'success',
+  variant: 'standard',
+  direction: 'left',
 };
 
 export default Snackbar;

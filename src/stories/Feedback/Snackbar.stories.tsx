@@ -6,6 +6,31 @@ import ThemeSelector from '../../themes/ThemeSelector';
 export default {
   title: 'Components/Feedback/Snackbar',
   component: Snackbar,
+  argTypes: {
+    ref: {
+      table: {
+        disable: true,
+      },
+    },
+    severity: {
+      control: {
+        type: 'select',
+        options: ['success', 'error', 'warning', 'info'],
+      },
+    },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['standard', 'filled', 'outlined'],
+      },
+    },
+    direction: {
+      control: {
+        type: 'select',
+        options: ['right', 'left', 'up', 'down'],
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<SnackbarProps> = (args) => (
