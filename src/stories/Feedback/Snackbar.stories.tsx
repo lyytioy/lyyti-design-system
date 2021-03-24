@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Snackbar, { SnackbarProps } from '../../components/Snackbar';
 import ThemeSelector from '../../themes/ThemeSelector';
@@ -50,6 +49,10 @@ Error.args = {
   message: 'Error occured',
   severity: 'error',
   variant: 'filled',
+  anchorOrigin: {
+    vertical: 'top',
+    horizontal: 'left',
+  },
   direction: 'right',
 };
 
