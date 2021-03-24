@@ -28,33 +28,37 @@ const Template: Story<CardProps> = (args) => (
 export const DefaultCard = Template.bind({});
 DefaultCard.args = {
   elevation: 1,
-  children: [
-    <CardHeader title="Lyyti Oy" subheader="September 26, 2020" key={1} />,
-    <CardContent key={1} />,
-    <CardActions key={1}>
+  cardHeader: {
+    title: 'Lyyti Oy',
+    subheader: 'September 26, 2020',
+  },
+  cardActions: (
+    <>
       <PrimaryOutlinedButton key={1} {...PrimaryOutlinedButton.args}>
         {'Cancel'}
       </PrimaryOutlinedButton>
       <PrimaryContainedButton key={2} {...PrimaryContainedButton.args}>
         {'Save'}
       </PrimaryContainedButton>
-    </CardActions>,
-  ],
+    </>
+  ),
 };
 
 export const OutlinedCard = Template.bind({});
 OutlinedCard.args = {
   variant: 'outlined',
-  children: [
-    <CardHeader title="Lyyti Oy" subheader="September 26, 2020" key={2} />,
-    <CardContent key={2} />,
-    <CardActions key={2}>
+  cardHeader: {
+    title: 'Lyyti Oy',
+    subheader: 'September 26, 2020',
+  },
+  cardActions: (
+    <>
       <PrimaryOutlinedButton key={1} {...PrimaryOutlinedButton.args}>
         {'Cancel'}
       </PrimaryOutlinedButton>
       <PrimaryContainedButton key={2} {...PrimaryContainedButton.args}>
         {'Save'}
       </PrimaryContainedButton>
-    </CardActions>,
-  ],
+    </>
+  ),
 };
