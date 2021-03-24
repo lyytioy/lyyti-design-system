@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   StepConnector as MuiStepConnector,
   StepConnectorProps as MuiStepConnectorProps,
@@ -33,7 +32,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type StepConnectorProps = MuiStepConnectorProps;
 
-const StepConnector: FunctionComponent<StepConnectorProps> = (props) => {
+const StepConnector = (props: StepConnectorProps): JSX.Element => {
   const classes = useStyles();
 
   return (

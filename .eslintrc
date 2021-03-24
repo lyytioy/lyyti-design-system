@@ -33,6 +33,11 @@
     "react/react-in-jsx-scope": "off"
   },
   "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    },
     "react": {
       "version": "detect"
     }

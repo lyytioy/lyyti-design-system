@@ -1,9 +1,8 @@
-import React, { FunctionComponent } from 'react';
 import { FormLabel as MuiFormLabel, FormLabelProps as MuiFormLabelProps } from '@material-ui/core';
 
 export type FormLabelProps = MuiFormLabelProps;
 
-const FormLabel: FunctionComponent<FormLabelProps> = (props) => {
+const FormLabel = (props: FormLabelProps): JSX.Element => {
   return <MuiFormLabel {...props} />;
 };
 

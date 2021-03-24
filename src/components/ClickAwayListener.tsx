@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   ClickAwayListener as MuiClickAwayListener,
   ClickAwayListenerProps as MuiClickAwayListenerProps,
@@ -6,7 +5,7 @@ import {
 
 export type ClickAwayListenerProps = MuiClickAwayListenerProps;
 
-const ClickAwayListener: FunctionComponent<ClickAwayListenerProps> = (props) => {
+const ClickAwayListener = (props: ClickAwayListenerProps): JSX.Element => {
   return <MuiClickAwayListener {...props} />;
 };
 
