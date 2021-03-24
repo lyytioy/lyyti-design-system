@@ -1,5 +1,5 @@
 import { Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@material-ui/core';
-import Alert from './Alert';
+import Alert from 'components/Alert';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
 
