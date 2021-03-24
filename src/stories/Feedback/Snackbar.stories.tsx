@@ -1,6 +1,8 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Snackbar, { SnackbarProps } from '../../components/Snackbar';
-import ThemeSelector from '../../themes/ThemeSelector';
+import { useState } from 'react';
+import Snackbar, { SnackbarProps } from 'components/Snackbar';
+import Button from 'components/Button';
+import ThemeSelector from 'themes/ThemeSelector';
 
 export default {
   title: 'Components/Feedback/Snackbar',
@@ -32,23 +34,33 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SnackbarProps> = (args) => (
-  <ThemeSelector>
-    <Snackbar {...args} />
-  </ThemeSelector>
-);
+const Template: Story<SnackbarProps> = (args) => {
+  const [showSnackbar, setShowSnackbar] = useState(false);
+
+  args.open = showSnackbar;
+  args.onClose = () => setShowSnackbar(false);
+  return (
+    <ThemeSelector>
+      <Button
+        variant="contained"
+        color="primary"
+        chunky={false}
+        onClick={() => setShowSnackbar(true)}>
+        {'Open snackbar'}
+      </Button>
+      <Snackbar {...args} />
+    </ThemeSelector>
+  );
+};
 
 export const Success = Template.bind({});
-Success.args = {
-  open: true,
-};
+Success.args = {};
 
 export const Error = Template.bind({});
 Error.args = {
-  open: true,
   message: 'Error occured',
   severity: 'error',
-  variant: 'filled',
+  variant: 'outlined',
   anchorOrigin: {
     vertical: 'top',
     horizontal: 'left',
@@ -58,10 +70,9 @@ Error.args = {
 
 export const Info = Template.bind({});
 Info.args = {
-  open: true,
   message: 'Info message here',
   severity: 'info',
-  variant: 'outlined',
+  variant: 'filled',
   anchorOrigin: {
     vertical: 'bottom',
     horizontal: 'left',
