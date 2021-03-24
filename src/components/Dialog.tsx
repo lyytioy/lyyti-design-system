@@ -31,6 +31,7 @@ export interface DialogProps extends MuiDialogProps {
 }
 
 const Dialog = ({
+  children,
   dialogTitle,
   dialogContent,
   dialogActions,
@@ -48,7 +49,7 @@ const Dialog = ({
           <CogIcon />
         </Button>
       </MuiDialogTitle>
-      <MuiDialogContent>{dialogContent}</MuiDialogContent>
+      <MuiDialogContent>{dialogContent ?? children}</MuiDialogContent>
       {dialogActions ? <MuiDialogActions>{dialogActions}</MuiDialogActions> : null}
     </MuiDialog>
   );
