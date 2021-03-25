@@ -37,8 +37,16 @@ export default {
 const Template: Story<SnackbarProps> = (args) => {
   const [showSnackbar, setShowSnackbar] = useState(false);
 
+  const handleClose = (event: React.SyntheticEvent | MouseEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setShowSnackbar(false);
+  };
+
   args.open = showSnackbar;
-  args.onClose = () => setShowSnackbar(false);
+  args.onClose = handleClose;
+
   return (
     <ThemeSelector>
       <Button
