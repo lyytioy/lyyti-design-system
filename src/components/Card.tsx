@@ -2,7 +2,6 @@ import {
   Card as MuiCard,
   CardProps as MuiCardProps,
   CardHeader as MuiCardHeader,
-  CardHeaderProps as MuiCardHeaderProps,
   CardActions as MuiCardActions,
   CardContent as MuiCardContent,
   createStyles,
@@ -30,15 +29,21 @@ const useStyles = makeStyles<Theme>((theme) =>
 );
 
 export interface CardProps extends MuiCardProps {
-  cardHeader?: MuiCardHeaderProps;
-  cardContent: JSX.Element | string;
-  cardActions?: JSX.Element | JSX.Element[];
+  title?: string;
+  subheader?: JSX.Element | string;
+  headerAction?: JSX.Element;
+  headerAvatar?: JSX.Element;
+  content: JSX.Element | string;
+  actions?: JSX.Element;
 }
 
 const Card = ({
-  cardHeader,
-  cardContent,
-  cardActions,
+  title,
+  subheader,
+  headerAction,
+  headerAvatar,
+  content,
+  actions,
   children,
   ...props
 }: CardProps): JSX.Element => {
@@ -47,11 +52,14 @@ const Card = ({
   return (
     <MuiCard {...props} className={classes.root}>
       <MuiCardHeader
-        {...cardHeader}
+        title={title}
+        subheader={subheader}
+        action={headerAction}
+        avatar={headerAvatar}
         classes={{ title: classes.title, subheader: classes.subheader }}
       />
-      <MuiCardContent>{cardContent ?? children}</MuiCardContent>
-      <MuiCardActions className={classes.actions}>{cardActions}</MuiCardActions>
+      <MuiCardContent>{content ?? children}</MuiCardContent>
+      {actions && <MuiCardActions className={classes.actions}>{actions}</MuiCardActions>}
     </MuiCard>
   );
 };

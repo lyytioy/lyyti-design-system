@@ -50,7 +50,7 @@ const Dialog = ({
         </Button>
       </MuiDialogTitle>
       <MuiDialogContent>{dialogContent ?? children}</MuiDialogContent>
-      {dialogActions ? <MuiDialogActions>{dialogActions}</MuiDialogActions> : null}
+      {dialogActions && <MuiDialogActions>{dialogActions}</MuiDialogActions>}
     </MuiDialog>
   );
 };

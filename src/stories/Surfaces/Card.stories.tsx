@@ -1,9 +1,8 @@
+import { IconButton } from '@material-ui/core';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Card, { CardProps } from 'components/Card';
+import { Star } from 'components/icons';
 import ThemeSelector from 'themes/ThemeSelector';
-import CardHeader from 'components/CardHeader';
-import CardContent from 'components/CardContent';
-import CardActions from 'components/CardActions';
 import { Primary as PrimaryContainedButton } from '../Inputs/ContainedButton.stories';
 import { Primary as PrimaryOutlinedButton } from '../Inputs/OutlinedButton.stories';
 
@@ -11,11 +10,45 @@ export default {
   title: 'Components/Surfaces/Card',
   component: Card,
   argTypes: {
-    children: {
-      table: {
-        disable: true,
-      },
+    title: {
+      control: 'text',
+      description: 'The main title of the card',
     },
+    subheader: {
+      control: 'text',
+      description: 'The subheader for the card',
+    },
+    headerAvatar: {
+      control: false,
+      description: 'The Avatar for the card header',
+    },
+    headerAction: {
+      control: false,
+      description: 'The action to display in the card header',
+    },
+    content: {
+      control: 'text',
+      description: 'The main content for the card, can be passed as children too',
+    },
+    actions: {
+      control: false,
+      description: 'The actions at the bottom of the card',
+    },
+  },
+  args: {
+    title: 'Lyyti Oy',
+    subheader: 'September 26, 2020',
+    content: 'Lorem ipsum dolor sit amet',
+    actions: (
+      <>
+        <PrimaryOutlinedButton key={1} {...PrimaryOutlinedButton.args}>
+          {'Cancel'}
+        </PrimaryOutlinedButton>
+        <PrimaryContainedButton key={2} {...PrimaryContainedButton.args}>
+          {'Save'}
+        </PrimaryContainedButton>
+      </>
+    ),
   },
 } as Meta;
 
@@ -25,40 +58,14 @@ const Template: Story<CardProps> = (args) => (
   </ThemeSelector>
 );
 
-export const DefaultCard = Template.bind({});
-DefaultCard.args = {
-  elevation: 1,
-  cardHeader: {
-    title: 'Lyyti Oy',
-    subheader: 'September 26, 2020',
-  },
-  cardActions: (
-    <>
-      <PrimaryOutlinedButton key={1} {...PrimaryOutlinedButton.args}>
-        {'Cancel'}
-      </PrimaryOutlinedButton>
-      <PrimaryContainedButton key={2} {...PrimaryContainedButton.args}>
-        {'Save'}
-      </PrimaryContainedButton>
-    </>
-  ),
-};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const OutlinedCard = Template.bind({});
-OutlinedCard.args = {
-  variant: 'outlined',
-  cardHeader: {
-    title: 'Lyyti Oy',
-    subheader: 'September 26, 2020',
-  },
-  cardActions: (
-    <>
-      <PrimaryOutlinedButton key={1} {...PrimaryOutlinedButton.args}>
-        {'Cancel'}
-      </PrimaryOutlinedButton>
-      <PrimaryContainedButton key={2} {...PrimaryContainedButton.args}>
-        {'Save'}
-      </PrimaryContainedButton>
-    </>
+export const HeaderAction = Template.bind({});
+HeaderAction.args = {
+  headerAction: (
+    <IconButton>
+      <Star />
+    </IconButton>
   ),
 };
