@@ -1,6 +1,8 @@
 import { IconButton } from '@material-ui/core';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Card, { CardProps } from 'components/Card';
+import Avatar from 'components/Avatar';
+import Grid from 'components/Grid';
 import { Star } from 'components/icons';
 import ThemeSelector from 'themes/ThemeSelector';
 import { Primary as PrimaryContainedButton } from '../Inputs/ContainedButton.stories';
@@ -9,6 +11,14 @@ import { Primary as PrimaryOutlinedButton } from '../Inputs/OutlinedButton.stori
 export default {
   title: 'Components/Surfaces/Card',
   component: Card,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Cards contain content and actions about a single subject. They are used to group similar concepts about a single subject together so that it’s easy to scan and get things done in Lyyti.',
+      },
+    },
+  },
   argTypes: {
     title: {
       control: 'text',
@@ -73,4 +83,31 @@ HeaderAction.args = {
       <Star />
     </IconButton>
   ),
+};
+
+export const HeaderAvatar = Template.bind({});
+HeaderAvatar.args = {
+  headerBackgroundColor: 'rgba(4, 91, 86, 0.1)',
+  headerAvatar: <Avatar alt="Steve" src="/steve-basic.png" />,
+};
+
+export const OnlyContent = Template.bind({});
+OnlyContent.args = {
+  title: undefined,
+  subheader: undefined,
+  content: (
+    <Grid container>
+      <Grid item sm={2}>
+        <img src="/steve-basic.png" alt="Steve, blue octopus" />
+      </Grid>
+      <Grid item sm={10}>
+        <p>
+          {
+            'Cards can support multiple actions and UI controls. Use restraint and remember that cards are entry points to more complex and detailed information.'
+          }
+        </p>
+      </Grid>
+    </Grid>
+  ),
+  actions: undefined,
 };

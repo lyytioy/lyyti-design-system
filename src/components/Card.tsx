@@ -56,13 +56,15 @@ const Card = ({
 
   return (
     <MuiCard {...props} className={classes.root}>
-      <MuiCardHeader
-        title={title}
-        subheader={subheader}
-        action={headerAction}
-        avatar={headerAvatar}
-        className={classes.header}
-      />
+      {(title || subheader) && (
+        <MuiCardHeader
+          title={title}
+          subheader={subheader}
+          action={headerAction}
+          avatar={headerAvatar}
+          className={classes.header}
+        />
+      )}
       <MuiCardContent>{content ?? children}</MuiCardContent>
       {actions && <MuiCardActions className={classes.actions}>{actions}</MuiCardActions>}
     </MuiCard>
