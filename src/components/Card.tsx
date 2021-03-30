@@ -9,7 +9,7 @@ import {
   Theme,
 } from '@material-ui/core';
 
-const useStyles = makeStyles<Theme>((theme) =>
+const useStyles = makeStyles<Theme, { headerBackgroundColor: string }>((theme) =>
   createStyles({
     root: {
       borderRadius: '3px',
@@ -19,12 +19,15 @@ const useStyles = makeStyles<Theme>((theme) =>
     actions: {
       padding: '16px',
     },
-    title: {
-      fontSize: '15px',
-    },
-    subheader: {
-      fontSize: '15px',
-    },
+    header: (props) => ({
+      backgroundColor: props.headerBackgroundColor,
+      '& .MuiCardHeader-title': {
+        fontSize: '15px',
+      },
+      '& .MuiCardHeader-subheader': {
+        fontSize: '15px',
+      },
+    }),
   })
 );
 
@@ -35,6 +38,7 @@ export interface CardProps extends MuiCardProps {
   headerAvatar?: JSX.Element;
   content: JSX.Element | string;
   actions?: JSX.Element;
+  headerBackgroundColor: string;
 }
 
 const Card = ({
@@ -44,10 +48,11 @@ const Card = ({
   headerAvatar,
   content,
   actions,
+  headerBackgroundColor,
   children,
   ...props
 }: CardProps): JSX.Element => {
-  const classes = useStyles();
+  const classes = useStyles({ headerBackgroundColor });
 
   return (
     <MuiCard {...props} className={classes.root}>
@@ -56,7 +61,7 @@ const Card = ({
         subheader={subheader}
         action={headerAction}
         avatar={headerAvatar}
-        classes={{ title: classes.title, subheader: classes.subheader }}
+        className={classes.header}
       />
       <MuiCardContent>{content ?? children}</MuiCardContent>
       {actions && <MuiCardActions className={classes.actions}>{actions}</MuiCardActions>}

@@ -34,6 +34,10 @@ export default {
       control: false,
       description: 'The actions at the bottom of the card',
     },
+    headerBackgroundColor: {
+      control: 'color',
+      description: 'The background color for card header',
+    },
   },
   args: {
     title: 'Lyyti Oy',
@@ -63,6 +67,7 @@ Default.args = {};
 
 export const HeaderAction = Template.bind({});
 HeaderAction.args = {
+  headerBackgroundColor: 'rgba(4, 91, 86, 0.1)',
   headerAction: (
     <IconButton>
       <Star />
