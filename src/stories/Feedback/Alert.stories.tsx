@@ -8,7 +8,6 @@ export default {
   title: 'Components/Feedback/Alert',
   component: Alert,
   argTypes: {
-    ref: { control: false },
     children: { control: 'text' },
     action: { control: 'text' },
     closeText: { control: 'text' },
