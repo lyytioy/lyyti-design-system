@@ -14,15 +14,27 @@ export default {
       },
     },
   },
+  args: {
+    spacing: 1,
+  },
   argTypes: {
     ref: { table: { disable: true } },
+    container: {
+      control: { type: 'boolean' },
+      table: { defaultValue: { summary: false } },
+      description:
+        'If true, the component will have the flex container behavior. You should be wrapping items with a container.',
+    },
     spacing: {
-      control: { type: 'number', options: { min: 0, max: 10 } },
-      table: {
-        defaultValue: { summary: 0 },
-      },
+      table: { defaultValue: { summary: 0 } },
       description:
         'Defines the space between the type item component. It can only be used on a type container component.',
+    },
+    item: {
+      control: { type: 'boolean' },
+      table: { defaultValue: { summary: false } },
+      description:
+        'If true, the component will have the flex item behavior. You should be wrapping items with a container.',
     },
     xs: {
       control: {
@@ -66,9 +78,32 @@ export default {
       },
       table: { defaultValue: { summary: false } },
     },
+    direction: {
+      description: 'Defines the flex-direction style property. It is applied for all screen sizes.',
+      table: { defaultValue: { summary: 'row' } },
+    },
     justify: {
       description:
         'Defines the justify-content style property. It is applied for all screen sizes.',
+      table: { defaultValue: { summary: 'flex-start' } },
+    },
+    alignItems: {
+      description: "Defines the align-items style property. It's applied for all screen sizes.",
+      table: { defaultValue: { summary: 'stretch' } },
+    },
+    alignContent: {
+      description: "Defines the align-content style property. It's applied for all screen sizes.",
+      table: { defaultValue: { summary: 'stretch' } },
+    },
+    wrap: {
+      description: "Defines the flex-wrap style property. It's applied for all screen sizes.",
+      table: { defaultValue: { summary: 'wrap' } },
+    },
+    zeroMinWidth: {
+      control: { type: 'boolean' },
+      table: { defaultValue: { summary: false } },
+      description:
+        'If true, it sets min-width: 0 on the item. Refer to the limitations section of the documentation to better understand the use case.',
     },
   },
 } as Meta;
@@ -93,13 +128,12 @@ const Template: Story<GridProps> = ({ spacing, direction, justify, alignItems, .
 
 export const Default = Template.bind({});
 Default.args = {
-  spacing: 1,
   justify: 'center',
+  item: true,
 };
 
 export const Column = Template.bind({});
 Column.args = {
-  spacing: 1,
   direction: 'column',
   justify: 'space-between',
   alignItems: 'center',
