@@ -1,4 +1,8 @@
-import { DataGrid as MuiDataGrid, DataGridProps as MuiDataGridProps } from '@material-ui/data-grid';
+import {
+  DataGrid as MuiDataGrid,
+  DataGridProps as MuiDataGridProps,
+  GridRowsProp as MuiGridRowsProp,
+} from '@material-ui/data-grid';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 
 const useStyles = makeStyles<Theme>((theme) =>
@@ -14,7 +18,9 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export type DataGridProps = MuiDataGridProps;
+export interface DataGridProps extends MuiDataGridProps {
+  rows: MuiGridRowsProp;
+}
 
 const DataGrid = (props: DataGridProps): JSX.Element => {
   const classes = useStyles();

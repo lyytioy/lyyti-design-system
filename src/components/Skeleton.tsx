@@ -11,10 +11,10 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type SkeletonProps = MuiSkeletonProps;
 
-const Skeleton = (props: SkeletonProps): JSX.Element => {
+const Skeleton = ({ animation = 'wave', ...props }: SkeletonProps): JSX.Element => {
   const classes = useStyles();
 
-  return <MuiSkeleton {...props} classes={{ root: classes.root }} />;
+  return <MuiSkeleton animation={animation} {...props} classes={{ root: classes.root }} />;
 };
 
 export default Skeleton;

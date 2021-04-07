@@ -40,15 +40,20 @@ export default {
   title: 'Components/Data Display/DataGrid',
   component: DataGrid,
   argTypes: {
-    columns: { table: { disable: true } },
-    rows: { table: { disable: true } },
+    columns: { description: '', table: { defaultValue: { summary: undefined } } },
+    rows: { table: { defaultValue: { summary: undefined } } },
     disableColumnResize: { table: { disable: true } },
     disableColumnReorder: { table: { disable: true } },
     disableMultipleColumnsFiltering: { table: { disable: true } },
     disableMultipleColumnsSorting: { table: { disable: true } },
     disableMultipleSelection: { table: { disable: true } },
+    onRowsScrollEnd: { table: { disable: true } },
     pagination: { table: { disable: true } },
     apiRef: { table: { disable: true } },
+  },
+  args: {
+    rows: rows,
+    columns: columns,
   },
 } as Meta;
 
