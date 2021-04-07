@@ -2,6 +2,8 @@ import { Chip as MuiChip, ChipProps as MuiChipProps } from '@material-ui/core';
 
 export interface ChipProps extends MuiChipProps {
   color: 'primary' | 'secondary';
+  clickable: boolean;
+  disabled: boolean;
 }
 
 const Chip = ({

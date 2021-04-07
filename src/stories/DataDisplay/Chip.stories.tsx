@@ -17,9 +17,8 @@ export default {
   argTypes: {
     children: { table: { disable: true } },
     avatar: { control: false },
-    clickable: { control: 'boolean' },
     deleteIcon: { control: false },
-    disabled: { control: 'boolean' },
+
     icon: { control: false },
   },
   args: { label: 'Label', size: 'medium', variant: 'default' },

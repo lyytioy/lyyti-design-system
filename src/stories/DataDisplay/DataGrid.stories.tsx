@@ -39,8 +39,18 @@ const rows = [
 export default {
   title: 'Components/Data Display/DataGrid',
   component: DataGrid,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use data tables to display information in a way that’s easy to scan.',
+      },
+    },
+  },
   argTypes: {
-    columns: { description: '', table: { defaultValue: { summary: undefined } } },
+    columns: {
+      description: 'Set of columns of type [[GridColumns]].',
+      table: { defaultValue: { summary: undefined } },
+    },
     rows: { table: { defaultValue: { summary: undefined } } },
     disableColumnResize: { table: { disable: true } },
     disableColumnReorder: { table: { disable: true } },
