@@ -17,12 +17,10 @@ export default {
   argTypes: {
     children: { table: { disable: true } },
     avatar: { control: false },
-    variant: { table: { defaultValue: { summary: 'default' } } },
-    clickable: { control: 'boolean', table: { defaultValue: { summary: false } } },
+    clickable: { control: 'boolean' },
     deleteIcon: { control: false },
-    disabled: { control: 'boolean', table: { defaultValue: { summary: false } } },
+    disabled: { control: 'boolean' },
     icon: { control: false },
-    size: { table: { defaultValue: { summary: 'medium' } } },
   },
   args: { label: 'Label', size: 'medium', variant: 'default' },
 } as Meta;

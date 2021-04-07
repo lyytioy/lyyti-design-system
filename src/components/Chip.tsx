@@ -4,8 +4,24 @@ export interface ChipProps extends MuiChipProps {
   color: 'primary' | 'secondary';
 }
 
-const Chip = ({ color = 'primary', ...props }: ChipProps): JSX.Element => {
-  return <MuiChip color={color} {...props} />;
+const Chip = ({
+  color = 'primary',
+  variant = 'default',
+  size = 'medium',
+  clickable = false,
+  disabled = false,
+  ...props
+}: ChipProps): JSX.Element => {
+  return (
+    <MuiChip
+      color={color}
+      variant={variant}
+      size={size}
+      clickable={clickable}
+      disabled={disabled}
+      {...props}
+    />
+  );
 };
 
 export default Chip;

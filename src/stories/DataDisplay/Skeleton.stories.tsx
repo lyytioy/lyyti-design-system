@@ -15,7 +15,6 @@ export default {
   argTypes: {
     animation: {
       control: { type: 'radio', options: [false, 'wave', 'pulse'] },
-      table: { defaultValue: { summary: 'wave' } },
       description: 'The animation. If false the animation effect is disabled.',
     },
     height: {
@@ -29,7 +28,6 @@ export default {
         'Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.',
     },
     variant: {
-      table: { defaultValue: { summary: 'text' } },
       description: 'The type of content that will be rendered.',
     },
   },
