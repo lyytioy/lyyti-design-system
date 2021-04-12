@@ -36,7 +36,7 @@ export interface CardProps extends MuiCardProps {
   subheader?: JSX.Element | string;
   headerAction?: JSX.Element;
   headerAvatar?: JSX.Element;
-  content: JSX.Element | string;
+  children: JSX.Element | string;
   actions?: JSX.Element;
   headerBackgroundColor: string;
 }
@@ -46,9 +46,8 @@ const Card = ({
   subheader,
   headerAction,
   headerAvatar,
-  content,
   actions,
-  headerBackgroundColor,
+  headerBackgroundColor = 'inherit',
   children,
   ...props
 }: CardProps): JSX.Element => {
@@ -65,7 +64,7 @@ const Card = ({
           className={classes.header}
         />
       )}
-      <MuiCardContent>{content ?? children}</MuiCardContent>
+      <MuiCardContent>{children}</MuiCardContent>
       {actions && <MuiCardActions className={classes.actions}>{actions}</MuiCardActions>}
     </MuiCard>
   );

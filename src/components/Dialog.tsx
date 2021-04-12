@@ -26,17 +26,11 @@ const useStyles = makeStyles({
 
 export interface DialogProps extends MuiDialogProps {
   dialogTitle: JSX.Element | string;
-  dialogContent: JSX.Element | string;
+  children: JSX.Element | string;
   dialogActions?: JSX.Element | JSX.Element[];
 }
 
-const Dialog = ({
-  children,
-  dialogTitle,
-  dialogContent,
-  dialogActions,
-  ...props
-}: DialogProps): JSX.Element => {
+const Dialog = ({ children, dialogTitle, dialogActions, ...props }: DialogProps): JSX.Element => {
   const classes = useStyles();
   return (
     <MuiDialog {...props}>
@@ -49,7 +43,7 @@ const Dialog = ({
           <CogIcon />
         </Button>
       </MuiDialogTitle>
-      <MuiDialogContent>{dialogContent ?? children}</MuiDialogContent>
+      <MuiDialogContent>{children}</MuiDialogContent>
       {dialogActions && <MuiDialogActions>{dialogActions}</MuiDialogActions>}
     </MuiDialog>
   );

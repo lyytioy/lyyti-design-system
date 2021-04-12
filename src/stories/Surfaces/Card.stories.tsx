@@ -36,9 +36,8 @@ export default {
       control: false,
       description: 'The action to display in the card header',
     },
-    content: {
+    children: {
       control: 'text',
-      description: 'The main content for the card, can be passed as children too',
     },
     actions: {
       control: false,
@@ -52,7 +51,7 @@ export default {
   args: {
     title: 'Lyyti Oy',
     subheader: 'September 26, 2020',
-    content: 'Lorem ipsum dolor sit amet',
+    children: 'Lorem ipsum dolor sit amet',
     actions: (
       <>
         <PrimaryOutlinedButton key={1} {...PrimaryOutlinedButton.args}>
