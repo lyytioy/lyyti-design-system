@@ -94,7 +94,7 @@ export const OnlyContent = Template.bind({});
 OnlyContent.args = {
   title: undefined,
   subheader: undefined,
-  content: (
+  children: (
     <Grid container>
       <Grid item sm={2}>
         <img src="/steve-basic.png" alt="Steve, blue octopus" />
