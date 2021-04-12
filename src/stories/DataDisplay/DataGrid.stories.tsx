@@ -48,7 +48,6 @@ export default {
   },
   argTypes: {
     columns: {
-      description: 'Set of columns of type [[GridColumns]].',
       table: { defaultValue: { summary: undefined } },
     },
     rows: { table: { defaultValue: { summary: undefined } } },

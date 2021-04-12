@@ -24,11 +24,15 @@ export interface DataGridProps extends MuiDataGridProps {
   columns: MuiGridColumns;
   pageSize: number;
   checkboxSelection: boolean;
+  disableColumnMenu: boolean;
+  hideFooter: boolean;
 }
 
 const DataGrid = ({
   pageSize = 100,
   checkboxSelection = false,
+  disableColumnMenu = false,
+  hideFooter = false,
   ...props
 }: DataGridProps): JSX.Element => {
   const classes = useStyles();
@@ -37,6 +41,8 @@ const DataGrid = ({
     <MuiDataGrid
       pageSize={pageSize}
       checkboxSelection={checkboxSelection}
+      disableColumnMenu={disableColumnMenu}
+      hideFooter={hideFooter}
       {...props}
       className={classes.root}
     />
