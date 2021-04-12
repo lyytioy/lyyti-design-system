@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from 'themes/ThemeSelector';
-import { GridColDef, ValueGetterParams } from '@material-ui/data-grid';
+import { GridColDef, GridValueGetterParams } from '@material-ui/data-grid';
 import DataGrid, { DataGridProps } from 'components/DataGrid';
 
 const columns: GridColDef[] = [
@@ -19,7 +19,7 @@ const columns: GridColDef[] = [
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 160,
-    valueGetter: (params: ValueGetterParams) =>
+    valueGetter: (params: GridValueGetterParams) =>
       `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
   },
 ];
