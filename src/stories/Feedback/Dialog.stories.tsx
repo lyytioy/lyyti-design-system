@@ -9,6 +9,7 @@ export default {
   component: Dialog,
   argTypes: {
     dialogActions: { control: false },
+    children: { description: 'The content of the component.' },
   },
   /*  TODO: Try removing these default values when this is released
       https://github.com/storybookjs/storybook/releases/tag/v6.2.0-alpha.30
@@ -17,7 +18,7 @@ export default {
   */
   args: {
     dialogTitle: 'This is the dialog title',
-    dialogContent: 'This is the dialog content',
+    children: 'This is the dialog content',
     dialogActions: (
       <>
         <Button>{'Cancel'}</Button>
@@ -50,4 +51,4 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export const ImageDialog = Template.bind({});
-ImageDialog.args = { dialogContent: <img src="/steve-basic.png" alt="Steve" /> };
+ImageDialog.args = { children: <img src="/steve-basic.png" alt="Steve" /> };
