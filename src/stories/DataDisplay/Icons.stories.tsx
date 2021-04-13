@@ -10,6 +10,13 @@ import { Cog, Star } from 'components/icons';
 export default {
   title: 'Components/Data Display/Icons',
   component: Cog,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Fill this in from zeroheight',
+      },
+    },
+  },
   argTypes: {
     htmlColor: {
       control: 'color',

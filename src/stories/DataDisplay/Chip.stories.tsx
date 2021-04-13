@@ -7,12 +7,21 @@ import StarIcon from 'components/icons/Star';
 export default {
   title: 'Components/Data Display/Chip',
   component: Chip,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use chips to represent an input, attribute, or action.',
+      },
+    },
+  },
   argTypes: {
     children: { table: { disable: true } },
     avatar: { control: false },
     deleteIcon: { control: false },
+
     icon: { control: false },
   },
+  args: { label: 'Label', size: 'medium', variant: 'default' },
 } as Meta;
 
 const Template: Story<ChipProps> = (args) => (

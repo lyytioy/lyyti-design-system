@@ -18,7 +18,6 @@ export default {
     spacing: 1,
   },
   argTypes: {
-    ref: { table: { disable: true } },
     container: {
       control: { type: 'boolean' },
       table: { defaultValue: { summary: false } },

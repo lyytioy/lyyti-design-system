@@ -39,16 +39,30 @@ const rows = [
 export default {
   title: 'Components/Data Display/DataGrid',
   component: DataGrid,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use data tables to display information in a way that’s easy to scan.',
+      },
+    },
+  },
   argTypes: {
-    columns: { table: { disable: true } },
-    rows: { table: { disable: true } },
+    columns: {
+      table: { defaultValue: { summary: undefined } },
+    },
+    rows: { table: { defaultValue: { summary: undefined } } },
     disableColumnResize: { table: { disable: true } },
     disableColumnReorder: { table: { disable: true } },
     disableMultipleColumnsFiltering: { table: { disable: true } },
     disableMultipleColumnsSorting: { table: { disable: true } },
     disableMultipleSelection: { table: { disable: true } },
+    onRowsScrollEnd: { table: { disable: true } },
     pagination: { table: { disable: true } },
     apiRef: { table: { disable: true } },
+  },
+  args: {
+    rows: rows,
+    columns: columns,
   },
 } as Meta;
 

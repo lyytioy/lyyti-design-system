@@ -20,12 +20,35 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export type TooltipProps = MuiTooltipProps;
+export interface TooltipProps extends MuiTooltipProps {
+  arrow: boolean;
+  placement?:
+    | 'bottom-end'
+    | 'bottom-start'
+    | 'bottom'
+    | 'left-end'
+    | 'left-start'
+    | 'left'
+    | 'right-end'
+    | 'right-start'
+    | 'right'
+    | 'top-end'
+    | 'top-start'
+    | 'top';
+  title: NonNullable<React.ReactNode>;
+}
 
-const Tooltip = (props: TooltipProps): JSX.Element => {
+const Tooltip = ({ arrow = false, placement = 'bottom', ...props }: TooltipProps): JSX.Element => {
   const classes = useStyles();
 
-  return <MuiTooltip {...props} classes={{ arrow: classes.arrow, tooltip: classes.tooltip }} />;
+  return (
+    <MuiTooltip
+      arrow={arrow}
+      placement={placement}
+      {...props}
+      classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+    />
+  );
 };
 
 export default Tooltip;
