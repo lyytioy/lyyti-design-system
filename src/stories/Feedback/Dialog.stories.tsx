@@ -7,6 +7,14 @@ import ThemeSelector from '../../themes/ThemeSelector';
 export default {
   title: 'Components/Feedback/Dialog',
   component: Dialog,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Use dialogs to inform users about a task, or to display critical information, or to require decisions.',
+      },
+    },
+  },
   argTypes: {
     dialogActions: { control: false },
     children: { description: 'The content of the component.' },
