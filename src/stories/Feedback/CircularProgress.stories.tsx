@@ -5,6 +5,14 @@ import ThemeSelector from 'themes/ThemeSelector';
 export default {
   title: 'Components/Feedback/CircularProgress',
   component: CircularProgress,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Use progress indicators to inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates.',
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<CircularProgressProps> = (args) => (
