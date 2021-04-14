@@ -1,4 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { useState } from 'react';
 import Alert, { AlertProps } from 'components/Alert';
 import ThemeSelector from 'themes/ThemeSelector';
 import Button from 'components/Button';
@@ -27,14 +28,20 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AlertProps> = (args) => (
-  <ThemeSelector>
-    <Alert {...args} />
-  </ThemeSelector>
-);
+const Template: Story<AlertProps> = (args) => {
+  const [alertOpen, setAlertOpen] = useState(true);
 
-const clickFunction = () => {
-  console.log('You clicked a button!');
+  args.open = alertOpen;
+  args.onClose = () => setAlertOpen(false);
+
+  return (
+    <ThemeSelector>
+      <Alert {...args} />
+      <Button variant="contained" color="primary" chunky={false} onClick={() => setAlertOpen(true)}>
+        {'Re-open'}
+      </Button>
+    </ThemeSelector>
+  );
 };
 
 export const Success = Template.bind({});
@@ -53,7 +60,6 @@ Error.args = {
 
 export const Info = Template.bind({});
 Info.args = {
-  onClose: clickFunction,
   severity: 'info',
   variant: 'filled',
 };
@@ -61,6 +67,5 @@ Info.args = {
 export const Warning = Template.bind({});
 Warning.args = {
   children: [<AlertTitle key={1}>{'Title'}</AlertTitle>, 'Alert content in here'],
-  onClose: clickFunction,
   severity: 'warning',
 };
