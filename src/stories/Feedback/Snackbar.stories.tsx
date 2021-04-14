@@ -7,7 +7,33 @@ import ThemeSelector from 'themes/ThemeSelector';
 export default {
   title: 'Components/Feedback/Snackbar',
   component: Snackbar,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use snackbars to provide brief messages about app processes.',
+      },
+    },
+  },
   argTypes: {
+    closeText: {
+      table: {
+        disable: true,
+      },
+    },
+    color: {
+      description:
+        'The color of the snackbar. Unless provided, the value is taken from the severity prop.',
+      type: 'select',
+      options: ['success', 'error', 'warning', 'info'],
+    },
+    direction: {
+      control: {
+        description: 'Direction the snackbar will enter from.',
+        type: 'select',
+        options: ['right', 'left', 'up', 'down'],
+      },
+    },
+    message: { description: 'The message to display.', control: 'text' },
     ref: {
       table: {
         disable: true,
@@ -15,20 +41,16 @@ export default {
     },
     severity: {
       control: {
+        description: 'The severity of the snackbar. This defines the color and icon used.',
         type: 'select',
         options: ['success', 'error', 'warning', 'info'],
       },
     },
     variant: {
       control: {
+        description: 'The variant to use.',
         type: 'select',
         options: ['standard', 'filled', 'outlined'],
-      },
-    },
-    direction: {
-      control: {
-        type: 'select',
-        options: ['right', 'left', 'up', 'down'],
       },
     },
   },
@@ -62,7 +84,9 @@ const Template: Story<SnackbarProps> = (args) => {
 };
 
 export const Success = Template.bind({});
-Success.args = {};
+Success.args = {
+  message: 'Success message',
+};
 
 export const Error = Template.bind({});
 Error.args = {
