@@ -7,11 +7,23 @@ import AlertTitle from 'components/AlertTitle';
 export default {
   title: 'Components/Feedback/Alert',
   component: Alert,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Use alerts to display short, important messages that attracts the user's attention without interrupting the user's tasks.",
+      },
+    },
+  },
   argTypes: {
-    children: { control: 'text' },
     action: { control: 'text' },
+    children: { description: 'The content of the component.', control: 'text' },
+    color: { type: 'select', options: ['success', 'error', 'warning', 'info'] },
     closeText: { control: 'text' },
     onClose: { control: false },
+  },
+  args: {
+    children: 'This is the alert content',
   },
 } as Meta;
 
@@ -26,30 +38,29 @@ const clickFunction = () => {
 };
 
 export const Success = Template.bind({});
-Success.args = {
-  onClose: clickFunction,
-  variant: 'outlined',
-};
+Success.args = {};
 
 export const Error = Template.bind({});
 Error.args = {
-  severity: 'error',
   action: (
     <Button color="inherit" chunky={false}>
-      {'Button'}
+      {'Undo'}
     </Button>
   ),
+  severity: 'error',
+  variant: 'outlined',
 };
 
 export const Info = Template.bind({});
 Info.args = {
+  onClose: clickFunction,
   severity: 'info',
   variant: 'filled',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  severity: 'warning',
   children: [<AlertTitle key={1}>{'Title'}</AlertTitle>, 'Alert content in here'],
   onClose: clickFunction,
+  severity: 'warning',
 };
