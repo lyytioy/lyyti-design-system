@@ -15,43 +15,32 @@ export default {
     },
   },
   argTypes: {
-    closeText: {
-      table: {
-        disable: true,
-      },
-    },
     color: {
       description:
         'The color of the snackbar. Unless provided, the value is taken from the severity prop.',
-      type: 'select',
       options: ['success', 'error', 'warning', 'info'],
+      control: { type: 'select' },
     },
     direction: {
-      control: {
-        description: 'Direction the snackbar will enter from.',
-        type: 'select',
-        options: ['right', 'left', 'up', 'down'],
-      },
+      description: 'Direction the snackbar will enter from.',
+      options: ['right', 'left', 'up', 'down'],
+      control: { type: 'select' },
     },
-    message: { description: 'The message to display.', control: 'text' },
+    message: { description: 'The message to display.', type: 'text' },
     ref: {
       table: {
         disable: true,
       },
     },
     severity: {
-      control: {
-        description: 'The severity of the snackbar. This defines the color and icon used.',
-        type: 'select',
-        options: ['success', 'error', 'warning', 'info'],
-      },
+      description: 'The severity of the snackbar. This defines the color and icon used.',
+      options: ['success', 'error', 'warning', 'info'],
+      control: { type: 'select' },
     },
     variant: {
-      control: {
-        description: 'The variant to use.',
-        type: 'select',
-        options: ['standard', 'filled', 'outlined'],
-      },
+      description: 'The variant to use.',
+      options: ['standard', 'filled', 'outlined'],
+      control: { type: 'select' },
     },
   },
 } as Meta;

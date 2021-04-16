@@ -17,11 +17,22 @@ export default {
     },
   },
   argTypes: {
-    action: { control: 'text' },
+    action: {
+      description: 'The action to display. It renders after the message, at the end of the alert.',
+      control: false,
+    },
     children: { description: 'The content of the component.', control: 'text' },
-    color: { type: 'select', options: ['success', 'error', 'warning', 'info'] },
-    closeText: { control: 'text' },
-    onClose: { control: false },
+    color: { control: { type: 'select' }, options: ['success', 'error', 'warning', 'info'] },
+    closeText: {
+      description: 'Override the default label for the close popup icon button.',
+      defaultValue: 'Close',
+      control: 'text',
+    },
+    onClose: {
+      description:
+        'Callback fired when the component requests to be closed. When provided and no action prop is set, a close icon button is displayed that triggers the callback when clicked.',
+      control: false,
+    },
   },
   args: {
     children: 'This is the alert content',
