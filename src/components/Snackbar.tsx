@@ -1,5 +1,5 @@
 import { Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@material-ui/core';
-import Alert from 'components/Alert';
+import AlertBase from 'components/AlertBase';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
 
@@ -36,9 +36,9 @@ const Snackbar = ({
         <Slide {...params} direction={direction} />
       )}>
       <div>
-        <Alert color={color} severity={severity} variant={variant}>
+        <AlertBase color={color} severity={severity} variant={variant}>
           {props.message}
-        </Alert>
+        </AlertBase>
       </div>
     </MuiSnackbar>
   );
