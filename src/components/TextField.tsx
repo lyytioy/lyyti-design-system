@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useRef } from 'react';
+import { useRef } from 'react';
 import {
   TextField as MuiTextField,
   OutlinedTextFieldProps,
@@ -42,7 +42,7 @@ export type VariantTypes = 'outlined';
 
 export type TextFieldProps = OutlinedTextFieldProps & { variant: VariantTypes };
 
-const TextField: FunctionComponent<TextFieldProps> = (props) => {
+const TextField = (props: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
   const classes = useStyles();
 
@@ -54,6 +54,14 @@ const TextField: FunctionComponent<TextFieldProps> = (props) => {
       classes={{ root: classes.root }}
     />
   );
+};
+
+TextField.defaultProps = {
+  margin: 'dense',
+  label: 'Label',
+  placeholder: 'Placeholder',
+  InputLabelProps: { shrink: true },
+  InputProps: { notched: false },
 };
 
 export default TextField;

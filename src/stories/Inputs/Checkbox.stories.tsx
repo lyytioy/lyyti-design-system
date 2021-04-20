@@ -1,8 +1,7 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Checkbox, { CheckboxProps } from '../../components/Checkbox';
-import FormControlLabel, { FormControlLabelProps } from '../../components/FormControlLabel';
-import ThemeSelector from '../../themes/ThemeSelector';
+import Checkbox, { CheckboxProps } from 'components/Checkbox';
+import FormControlLabel, { FormControlLabelProps } from 'components/FormControlLabel';
+import ThemeSelector from 'themes/ThemeSelector';
 
 export default {
   title: 'Components/Inputs/Checkbox',

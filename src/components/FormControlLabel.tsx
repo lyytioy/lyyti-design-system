@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   FormControlLabel as MuiFormControlLabel,
   FormControlLabelProps as MuiFormControlLabelProps,
@@ -24,7 +23,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type FormControlLabelProps = MuiFormControlLabelProps;
 
-const FormControlLabel: FunctionComponent<FormControlLabelProps> = (props) => {
+const FormControlLabel = (props: FormControlLabelProps): JSX.Element => {
   const classes = useStyles();
 
   return (

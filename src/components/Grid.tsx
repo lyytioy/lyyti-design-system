@@ -5,7 +5,4 @@ export type GridProps = MuiGridProps;
 const Grid = (props: GridProps): JSX.Element => {
   return <MuiGrid {...props} />;
 };
-
-Grid.defaultProps = {};
-
 export default Grid;

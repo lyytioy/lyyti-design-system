@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   StepButton as MuiStepButton,
   StepButtonProps as MuiStepButtonProps,
@@ -6,7 +5,7 @@ import {
 
 export type StepButtonProps = MuiStepButtonProps;
 
-const StepButton: FunctionComponent<StepButtonProps> = (props) => {
+const StepButton = (props: StepButtonProps): JSX.Element => {
   return <MuiStepButton {...props} />;
 };
 

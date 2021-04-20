@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   Radio as MuiRadio,
   RadioProps as MuiRadioProps,
@@ -20,7 +19,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type RadioProps = MuiRadioProps;
 
-const Radio: FunctionComponent<RadioProps> = (props) => {
+const Radio = (props: RadioProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiRadio {...props} classes={{ root: classes.root }} />;

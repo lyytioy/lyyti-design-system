@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   InputLabel as MuiInputLabel,
   InputLabelProps as MuiInputLabelProps,
@@ -18,7 +17,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type InputLabelProps = MuiInputLabelProps;
 
-const InputLabel: FunctionComponent<InputLabelProps> = (props) => {
+const InputLabel = (props: InputLabelProps): JSX.Element => {
   const classes = useStyles();
 
   return <MuiInputLabel {...props} classes={{ root: classes.root }} />;

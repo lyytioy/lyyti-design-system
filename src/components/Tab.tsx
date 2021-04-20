@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   Tab as MuiTab,
   TabProps as MuiTabProps,
@@ -23,7 +22,7 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type TabProps = MuiTabProps;
 
-const Tab: FunctionComponent<TabProps> = (props) => {
+const Tab = (props: TabProps): JSX.Element => {
   const classes = useStyles();
 
   return (

@@ -1,8 +1,7 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Tabs, { TabsProps } from '../../components/Tabs';
-import ThemeSelector from '../../themes/ThemeSelector';
-import Tab from '../../components/Tab';
+import Tabs, { TabsProps } from 'components/Tabs';
+import ThemeSelector from 'themes/ThemeSelector';
+import Tab from 'components/Tab';
 
 export default {
   title: 'Components/Navigation/Tabs',

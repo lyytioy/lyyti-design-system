@@ -8,7 +8,7 @@ import Plugin from './assets/plugin.svg';
 import Repo from './assets/repo.svg';
 import StackAlt from './assets/stackalt.svg';
 
-<Meta title="Example/Introduction" />
+<Meta title="Introduction" />
 
 <style>{`
   .subheading {
@@ -26,7 +26,7 @@ import StackAlt from './assets/stackalt.svg';
   .link-list {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     row-gap: 10px;
   }
 
@@ -73,7 +73,7 @@ import StackAlt from './assets/stackalt.svg';
     display: block;
     margin-bottom: 2px;
   }
-  
+
   .link-item img {
     height: 40px;
     width: 40px;
@@ -111,84 +111,89 @@ import StackAlt from './assets/stackalt.svg';
     display: inline-block;
   }
 
-  
+
 `}</style>
 
-# Welcome to Storybook
+# Welcome to Lyyti Design System
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+The Lyyti Design System is here to help you build an even more lovable Lyyti.
+The whole of the Design System can be found in [**Zeroheight**](https://lyyti.zeroheight.com/styleguide/s/24777/p/593925-lyyti-design-system).
 
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `src/storybook-examples` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+This version of Design System in Storybook is meant mostly for developers and others interested in Lyyti's UI components in isolation from any app's business logic, data, and context.
 
-<div class="subheading">Configure</div>
+We mainly use ready-made components from libraries like [**Material-UI**](https://material-ui.com/) and [**airbnb/react-dates**](https://github.com/airbnb/react-dates) and add styles to them to match designs. Changes to component functionality are done based on needs and kept to quite minimal.
+
+<div class="subheading">Main dependencies</div>
 
 <div class="link-list">
-  <a class="link-item" href="https://storybook.js.org/docs/react/api/presets" target="_blank">
+  <a class="link-item" href="https://material-ui.com/" target="_blank">
     <img src={Plugin} alt="plugin" />
     <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
+      <strong>Material-UI</strong>
+      React components for faster and easier web development.
     </span>
   </a>
-  <a class="link-item" href="https://storybook.js.org/docs/react/configure/webpack" target="_blank">
+  <a class="link-item" href="https://github.com/airbnb/react-dates" target="_blank">
     <img src={StackAlt} alt="Build" />
     <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
+      <strong>react-dates</strong>
+      An easily internationalizable, accessible, mobile-friendly datepicker library for the web.
     </span>
   </a>
-  <a class="link-item" href="https://storybook.js.org/docs/react/configure/styling-and-css" target="_blank">
+  <a class="link-item" href="https://streamlineicons.com/" target="_blank">
     <img src={Colors} alt="colors" />
     <span>
-      <strong>Styling</strong>
-      How to load and configure CSS libraries
+      <strong>Streamline Icons</strong>
+      The world’s largest icon pack.
     </span>
   </a>
-  <a class="link-item" href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack" target="_blank">
+  <a
+    class="link-item"
+    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
+    target="_blank">
     <img src={Flow} alt="flow" />
     <span>
-      <strong>Data</strong>
+      <strong>Placeholder</strong>
       Providers and mocking for data libraries
     </span>
   </a>
 </div>
 
-<div class="subheading">Learn</div>
+<div class="subheading">Technologies</div>
 
 <div class="link-list">
-  <a class="link-item" href="https://storybook.js.org/docs" target="_blank">
+  <a class="link-item" href="https://reactjs.org" target="_blank">
     <img src={Repo} alt="repo" />
     <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
+      <strong>React</strong>A JavaScript library for building user interfaces
     </span>
   </a>
-  <a class="link-item" href="https://www.learnstorybook.com" target="_blank">
+  <a class="link-item" href="https://www.typescriptlang.org" target="_blank">
     <img src={Direction} alt="direction" />
     <span>
-      <strong>In-depth guides</strong>
-      Best practices from leading teams
+      <strong>TypeScript</strong>
+      Typed JavaScript at Any Scale.
     </span>
   </a>
-  <a class="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
+  <a class="link-item" href="https://storybook.js.org/docs" target="_blank">
     <img src={Code} alt="code" />
     <span>
-      <strong>GitHub project</strong>
+      <strong>Storybook</strong>
       View the source and add issues
     </span>
   </a>
   <a class="link-item" href="https://discord.gg/UUt2PJb" target="_blank">
     <img src={Comments} alt="comments" />
     <span>
-      <strong>Discord chat</strong>
+      <strong>Placeholder</strong>
       Chat with maintainers and the community
     </span>
   </a>
 </div>
 
 <div class="tip-wrapper">
-  <span class="tip">Tip</span>Edit the Markdown in <code>src/storybook-examples/welcome.mdx</code>
+  <span class="tip">Tip for Developers</span>
+  Check out <a href="https://lyytidev.atlassian.net/wiki/spaces/DEV/pages/2314043400/React+in+Lyyti">
+    React in Lyyti document
+  </a> for more technical instructions
 </div>

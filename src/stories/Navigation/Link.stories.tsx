@@ -1,8 +1,7 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Link, { LinkProps } from '../../components/Link';
-import ThemeSelector from '../../themes/ThemeSelector';
-import CogIcon from '../../components/icons/Cog';
+import Link, { LinkProps } from 'components/Link';
+import ThemeSelector from 'themes/ThemeSelector';
+import { Cog } from 'icons';
 
 export default {
   title: 'Components/Navigation/Link',
@@ -32,6 +31,6 @@ InlineLink.args = {
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   href: '#',
-  children: [<CogIcon key={1} fontSize="inherit" style={{ marginRight: '8px' }} />, 'Link example'],
+  children: [<Cog key={1} fontSize="inherit" style={{ marginRight: '8px' }} />, 'Link example'],
   underline: 'always',
 };

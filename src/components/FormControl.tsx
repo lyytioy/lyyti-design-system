@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import {
   FormControl as MuiFormControl,
   FormControlProps as MuiFormControlProps,
@@ -6,7 +5,7 @@ import {
 
 export type FormControlProps = MuiFormControlProps;
 
-const FormControl: FunctionComponent<FormControlProps> = (props) => {
+const FormControl = (props: FormControlProps): JSX.Element => {
   return <MuiFormControl {...props} />;
 };
 

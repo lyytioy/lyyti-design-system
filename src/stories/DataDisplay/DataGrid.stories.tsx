@@ -1,9 +1,9 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../themes/ThemeSelector';
-import { ColDef, ValueGetterParams } from '@material-ui/data-grid';
-import DataGrid, { DataGridProps } from '../../components/DataGrid';
+import ThemeSelector from 'themes/ThemeSelector';
+import { GridColDef, GridValueGetterParams } from '@material-ui/data-grid';
+import DataGrid, { DataGridProps } from 'components/DataGrid';
 
-const columns: ColDef[] = [
+const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'firstName', headerName: 'First name', width: 130 },
   { field: 'lastName', headerName: 'Last name', width: 130 },
@@ -19,7 +19,7 @@ const columns: ColDef[] = [
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 160,
-    valueGetter: (params: ValueGetterParams) =>
+    valueGetter: (params: GridValueGetterParams) =>
       `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
   },
 ];
@@ -39,16 +39,30 @@ const rows = [
 export default {
   title: 'Components/Data Display/DataGrid',
   component: DataGrid,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use data tables to display information in a way that’s easy to scan.',
+      },
+    },
+  },
   argTypes: {
-    columns: { table: { disable: true } },
-    rows: { table: { disable: true } },
+    columns: {
+      table: { defaultValue: { summary: undefined } },
+    },
+    rows: { table: { defaultValue: { summary: undefined } } },
     disableColumnResize: { table: { disable: true } },
     disableColumnReorder: { table: { disable: true } },
     disableMultipleColumnsFiltering: { table: { disable: true } },
     disableMultipleColumnsSorting: { table: { disable: true } },
     disableMultipleSelection: { table: { disable: true } },
+    onRowsScrollEnd: { table: { disable: true } },
     pagination: { table: { disable: true } },
     apiRef: { table: { disable: true } },
+  },
+  args: {
+    rows: rows,
+    columns: columns,
   },
 } as Meta;
 

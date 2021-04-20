@@ -1,19 +1,27 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Chip, { ChipProps } from '../../components/Chip';
-import ThemeSelector from '../../themes/ThemeSelector';
-import Avatar from '../../components/Avatar';
-import StarIcon from '../../components/icons/Star';
+import Chip, { ChipProps } from 'components/Chip';
+import ThemeSelector from 'themes/ThemeSelector';
+import Avatar from 'components/Avatar';
+import { Star } from 'icons';
 
 export default {
   title: 'Components/Data Display/Chip',
   component: Chip,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use chips to represent an input, attribute, or action.',
+      },
+    },
+  },
   argTypes: {
     children: { table: { disable: true } },
     avatar: { control: false },
     deleteIcon: { control: false },
+
     icon: { control: false },
   },
+  args: { label: 'Label', size: 'medium', variant: 'default' },
 } as Meta;
 
 const Template: Story<ChipProps> = (args) => (
@@ -35,7 +43,7 @@ SecondaryRemovable.args = {
 
 export const PrimaryIcon = Template.bind({});
 PrimaryIcon.args = {
-  icon: <StarIcon />,
+  icon: <Star />,
   onDelete: undefined,
 };
 

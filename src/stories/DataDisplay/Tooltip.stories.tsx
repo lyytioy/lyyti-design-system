@@ -1,17 +1,25 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Tooltip, { TooltipProps } from '../../components/Tooltip';
-import ThemeSelector from '../../themes/ThemeSelector';
+import Tooltip, { TooltipProps } from 'components/Tooltip';
+import ThemeSelector from 'themes/ThemeSelector';
 
 export default {
   title: 'Components/Data Display/Tooltip',
   component: Tooltip,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Use tooltips to display informative text when users hover over, focus on, or tap an element.',
+      },
+    },
+  },
 } as Meta;
 
-const SomeContent = React.forwardRef<HTMLDivElement>((props, ref) => (
-  <div {...props} ref={ref}>
+const SomeContent = forwardRef<HTMLDivElement>((props, ref) => (
+  <span {...props} ref={ref}>
     {'Hover over me!'}
-  </div>
+  </span>
 ));
 
 const Template: Story<TooltipProps> = (args) => (
