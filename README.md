@@ -2,7 +2,7 @@
 
 ## Storybook
 ### Development
-Start with `yarn storybook`.
+Start with `yarn start`.
 ### Build
 Build with `yarn build-storybook`.
 
