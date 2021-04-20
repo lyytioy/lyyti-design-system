@@ -1,7 +1,7 @@
 import Autocomplete, { AutocompleteProps } from '@material-ui/lab/Autocomplete';
 import TextField from './TextField';
 import { makeStyles } from '@material-ui/styles';
-import CogIcon from './icons/Cog';
+import CogIcon from '../icons/Cog';
 
 const twentyFourHourTimes = [
   '00:00',

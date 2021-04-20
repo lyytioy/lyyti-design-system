@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Chip, { ChipProps } from 'components/Chip';
 import ThemeSelector from 'themes/ThemeSelector';
 import Avatar from 'components/Avatar';
-import StarIcon from 'components/icons/Star';
+import StarIcon from 'icons/Star';
 
 export default {
   title: 'Components/Data Display/Chip',

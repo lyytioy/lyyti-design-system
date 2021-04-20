@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Button from './Button';
-import CogIcon from './icons/Cog';
+import CogIcon from '../icons/Cog';
 
 const useStyles = makeStyles({
   titlePadding: {

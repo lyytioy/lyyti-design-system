@@ -1,10 +1,4 @@
 // https://www.learnstorybook.com/design-systems-for-developers/react/en/distribute/
-
-import * as Cog from './components/icons/Cog';
-import * as Star from './components/icons/Star';
-
-export { Cog, Star };
-
 export { default as ThemeSelector } from './themes/ThemeSelector';
 
 export { default as Alert } from './components/Alert';
@@ -12,9 +6,6 @@ export { default as AlertTitle } from './components/AlertTitle';
 export { default as Avatar } from './components/Avatar';
 export { default as Button } from './components/Button';
 export { default as Card } from './components/Card';
-export { default as CardActions } from './components/CardActions';
-export { default as CardContent } from './components/CardContent';
-export { default as CardHeader } from './components/CardHeader';
 export { default as Checkbox } from './components/Checkbox';
 export { default as Chip } from './components/Chip';
 export { default as CircularProgress } from './components/CircularProgress';
