@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from 'themes/ThemeSelector';
-import { GridColDef, ValueGetterParams } from '@material-ui/data-grid';
+import { GridColDef, GridValueGetterParams } from '@material-ui/data-grid';
 import DataGrid, { DataGridProps } from 'components/DataGrid';
 
 const columns: GridColDef[] = [
@@ -19,7 +19,7 @@ const columns: GridColDef[] = [
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 160,
-    valueGetter: (params: ValueGetterParams) =>
+    valueGetter: (params: GridValueGetterParams) =>
       `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
   },
 ];
@@ -39,16 +39,30 @@ const rows = [
 export default {
   title: 'Components/Data Display/DataGrid',
   component: DataGrid,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use data tables to display information in a way that’s easy to scan.',
+      },
+    },
+  },
   argTypes: {
-    columns: { table: { disable: true } },
-    rows: { table: { disable: true } },
+    columns: {
+      table: { defaultValue: { summary: undefined } },
+    },
+    rows: { table: { defaultValue: { summary: undefined } } },
     disableColumnResize: { table: { disable: true } },
     disableColumnReorder: { table: { disable: true } },
     disableMultipleColumnsFiltering: { table: { disable: true } },
     disableMultipleColumnsSorting: { table: { disable: true } },
     disableMultipleSelection: { table: { disable: true } },
+    onRowsScrollEnd: { table: { disable: true } },
     pagination: { table: { disable: true } },
     apiRef: { table: { disable: true } },
+  },
+  args: {
+    rows: rows,
+    columns: columns,
   },
 } as Meta;
 
