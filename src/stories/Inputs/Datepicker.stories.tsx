@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Datepicker, { DatepickerProps } from '../../components/Datepicker';
 import ThemeSelector from '../../themes/ThemeSelector';
@@ -12,17 +12,19 @@ export default {
   },
 } as Meta;
 
-const Template: Story<DatepickerProps> = (args) => (
-  <ThemeSelector>
-    <Datepicker {...args} />
-  </ThemeSelector>
-);
+const Template: Story<DatepickerProps> = (args) => {
+  const [date, setDate] = useState<moment.Moment | null>(moment());
+
+  return (
+    <ThemeSelector>
+      <Datepicker {...args} date={date} onDateChange={(e) => setDate(e)} />
+    </ThemeSelector>
+  );
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
-  date: moment(),
   id: 'datepicker',
   locale: 'en-US',
   label: 'Label',
-  onDateChange: (date) => console.log,
 };
