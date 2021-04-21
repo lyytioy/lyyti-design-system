@@ -58,6 +58,20 @@ const useStyles = makeStyles<Theme>((theme) => {
         marginRight: 8,
         padding: 0,
       },
+      '& .CalendarMonth_caption': {
+        color: theme.palette.text.primary,
+      },
+      '& .CalendarDay': {
+        fontSize: '16px',
+      },
+      '& .CalendarDay__default': {
+        border: 'none',
+        borderRadius: '50%',
+      },
+      '& .CalendarDay__selected': {
+        background: theme.palette.primary.main,
+        color: theme.palette.primary.contrastText,
+      },
     },
     focused: {
       '& label': {
