@@ -13,7 +13,7 @@ export default {
 } as Meta;
 
 const Template: Story<DatepickerProps> = (args) => {
-  const [date, setDate] = useState<moment.Moment | null>(moment());
+  const [date, setDate] = useState<moment.Moment | null>(null);
 
   return (
     <ThemeSelector>
