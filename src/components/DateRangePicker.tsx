@@ -107,6 +107,8 @@ export interface DateRange {
 }
 
 export interface DateRangePickerProps {
+  startDateId: string;
+  endDateId: string;
   startDate: moment.Moment | null;
   endDate: moment.Moment | null;
   id: string;
@@ -118,6 +120,8 @@ export interface DateRangePickerProps {
 }
 
 const Datepicker = ({
+  startDateId,
+  endDateId,
   startDate,
   endDate,
   id,
@@ -143,8 +147,8 @@ const Datepicker = ({
     <div className={`${classes.root} ${focusedInput ? classes.focused : ''}`}>
       {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
       <AirBnbDateRangePicker
-        endDateId="moi"
-        startDateId="jee"
+        startDateId={startDateId}
+        endDateId={endDateId}
         startDate={startDate}
         endDate={endDate}
         focusedInput={focusedInput}

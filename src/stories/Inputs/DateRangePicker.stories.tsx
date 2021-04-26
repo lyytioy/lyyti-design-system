@@ -35,7 +35,8 @@ const Template: Story<DateRangePickerProps> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  id: 'datepicker',
+  startDateId: 'id_start',
+  endDateId: 'id_end',
   locale: 'en-US',
   label: 'Label',
 };
