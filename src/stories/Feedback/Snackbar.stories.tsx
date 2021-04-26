@@ -19,12 +19,9 @@ export default {
       description:
         'The color of the snackbar. Unless provided, the value is taken from the severity prop.',
       options: ['success', 'error', 'warning', 'info'],
-      control: { type: 'select' },
     },
     direction: {
       description: 'Direction the snackbar will enter from.',
-      options: ['right', 'left', 'up', 'down'],
-      control: { type: 'select' },
     },
     message: { description: 'The message to display.', type: 'text' },
     ref: {
@@ -34,13 +31,9 @@ export default {
     },
     severity: {
       description: 'The severity of the snackbar. This defines the color and icon used.',
-      options: ['success', 'error', 'warning', 'info'],
-      control: { type: 'select' },
     },
     variant: {
       description: 'The variant to use.',
-      options: ['standard', 'filled', 'outlined'],
-      control: { type: 'select' },
     },
   },
 } as Meta;
