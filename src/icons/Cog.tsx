@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const Cog = (props) =>
+const Cog = (props: any) =>
   React.createElement(
     SvgIcon,
     props,

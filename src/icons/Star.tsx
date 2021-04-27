@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const Star = (props) =>
+const Star = (props: any) =>
   React.createElement(
     SvgIcon,
     props,

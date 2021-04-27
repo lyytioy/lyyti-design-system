@@ -17,5 +17,5 @@
     "baseUrl": "src"
   },
   "include": ["src", "typings"],
-  "exclude": ["icons", "fonts"]
+  "exclude": ["fonts"]
 }
