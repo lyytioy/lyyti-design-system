@@ -7,9 +7,22 @@ import ThemeSelector from '../../themes/ThemeSelector';
 export default {
   title: 'Components/Feedback/Dialog',
   component: Dialog,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Use dialogs to inform users about a task, or to display critical information, or to require decisions.',
+      },
+    },
+  },
   argTypes: {
-    dialogActions: { control: false },
     children: { description: 'The content of the component.' },
+    dialogActions: {
+      description:
+        'Use to add one or more elements as actions. Needs to be wrapped to one element, like a React Fragment.',
+      control: false,
+    },
+    dialogTitle: { description: 'Use to give a title to the Dialog.', control: false },
   },
   /*  TODO: Try removing these default values when this is released
       https://github.com/storybookjs/storybook/releases/tag/v6.2.0-alpha.30
@@ -17,7 +30,6 @@ export default {
       Related issue: https://github.com/storybookjs/storybook/issues/12098
   */
   args: {
-    dialogTitle: 'This is the dialog title',
     children: 'This is the dialog content',
     dialogActions: (
       <>
@@ -25,6 +37,7 @@ export default {
         <Button>{'Delete'}</Button>
       </>
     ),
+    dialogTitle: 'This is the dialog title',
   },
 } as Meta;
 

@@ -25,20 +25,31 @@ const useStyles = makeStyles({
 });
 
 export interface DialogProps extends MuiDialogProps {
-  dialogTitle: JSX.Element | string;
   children: JSX.Element | string;
   dialogActions?: JSX.Element | JSX.Element[];
+  dialogTitle: JSX.Element | string;
+  fullScreen?: boolean;
+  onClose: () => void;
+  open: boolean;
 }
 
-const Dialog = ({ children, dialogTitle, dialogActions, ...props }: DialogProps): JSX.Element => {
+const Dialog = ({
+  children,
+  dialogActions,
+  dialogTitle,
+  fullScreen = false,
+  onClose,
+  open,
+  ...props
+}: DialogProps): JSX.Element => {
   const classes = useStyles();
   return (
-    <MuiDialog {...props}>
+    <MuiDialog {...props} fullScreen={fullScreen} open={open} onClose={onClose}>
       <MuiDialogTitle className={classes.titlePadding}>
         {dialogTitle}
         {/* TODO Change icon to closeIcon */}
         <Button
-          onClick={props.onClose as MouseEventHandler<HTMLButtonElement>}
+          onClick={onClose as MouseEventHandler<HTMLButtonElement>}
           className={classes.closeIcon}>
           <CogIcon />
         </Button>
