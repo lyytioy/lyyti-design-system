@@ -3,4 +3,12 @@ export const parameters = {
   actions: { disable: true },
   layout: 'centered',
   viewMode: 'docs',
+  options: {
+    storySort: {
+      order: [
+        'Components',
+        ['Layout', 'Inputs', 'Navigation', 'Surfaces', 'Feedback', 'Data Display'],
+      ],
+    },
+  },
 };
