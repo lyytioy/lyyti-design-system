@@ -14,16 +14,8 @@ export default {
     },
   },
   argTypes: {
-    color: { description: 'Defines the color of the progress indicator.' },
     size: { description: 'Size can be adjusted only for the circular progress.' },
     type: { description: 'Defines whether to show circular or linear progress indicator.' },
-    value: {
-      description:
-        'The value of the progress indicator for the determinate variant. Value between 0 and 100.',
-    },
-    variant: {
-      description: 'The variant to use. Use indeterminate when there is no progress value.',
-    },
   },
 } as Meta;
 

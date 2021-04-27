@@ -1,7 +1,7 @@
 import CircularProgress from './CircularProgress';
-import LinearProgress from './LinearProgress';
+import LinearProgress, { LinearProgressProps } from './LinearProgress';
 
-export interface ProgressProps {
+export interface ProgressProps extends LinearProgressProps {
   color: 'primary' | 'secondary';
   size?: number | string;
   type: 'circular' | 'linear';
