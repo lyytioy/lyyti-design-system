@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 });
 
 export interface CircularProgressProps extends MuiCircularProgressProps {
-  color?: 'primary' | 'secondary';
+  color: 'primary' | 'secondary';
   size?: number | string;
 }
 
