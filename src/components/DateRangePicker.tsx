@@ -70,7 +70,7 @@ const useStyles = makeStyles<Theme>((theme) => {
       '& .CalendarDay__selected': {
         background: theme.palette.primary.main,
         color: theme.palette.primary.contrastText,
-        borderRadius: '50%',
+        // borderRadius: '50%',
       },
       '& .CalendarDay__selected_span': {
         background: theme.palette.primaryStates.selected,
