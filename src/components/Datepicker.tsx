@@ -66,7 +66,6 @@ const useStyles = makeStyles<Theme>((theme) => {
       },
       '& .CalendarDay__default': {
         border: 'none',
-        borderRadius: '50%',
       },
       '& .CalendarDay__selected': {
         background: theme.palette.primary.main,
