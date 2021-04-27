@@ -1,16 +1,19 @@
 import AlertBase, { AlertBaseProps } from 'components/AlertBase';
 import Fade from '@material-ui/core/Fade';
+import React from 'react';
 
 export interface AlertProps extends AlertBaseProps {
+  action?: React.ReactNode;
+  onClose?: (event: React.SyntheticEvent) => void;
   open?: boolean;
 }
 
 const Alert = ({
+  action,
+  onClose,
   open,
   severity = 'success',
   variant = 'standard',
-  action = undefined,
-  onClose = undefined,
   ...props
 }: AlertProps): JSX.Element => {
   return (

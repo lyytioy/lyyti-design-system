@@ -18,7 +18,6 @@ export default {
   },
   argTypes: {
     action: {
-      description: 'The action to display. It renders after the message, at the end of the alert.',
       control: false,
     },
     children: { description: 'The content of the component.', control: 'text' },
@@ -29,8 +28,6 @@ export default {
       control: 'text',
     },
     onClose: {
-      description:
-        'Callback fired when the component requests to be closed. When provided and no action prop is set, a close icon button is displayed that triggers the callback when clicked.',
       control: false,
     },
   },
