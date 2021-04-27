@@ -24,11 +24,6 @@ export default {
       description: 'Direction the snackbar will enter from.',
     },
     message: { description: 'The message to display.', type: 'text' },
-    ref: {
-      table: {
-        disable: true,
-      },
-    },
     severity: {
       description: 'The severity of the snackbar. This defines the color and icon used.',
     },
