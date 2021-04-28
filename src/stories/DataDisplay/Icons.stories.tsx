@@ -5,7 +5,28 @@ import ThemeSelector from 'themes/ThemeSelector';
 import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core';
 import TextField from 'components/TextField';
 import Grid from 'components/Grid';
-import { Cog, Star } from 'icons';
+import {
+  Cog,
+  Star,
+  Excel,
+  Pdf,
+  Link,
+  CreditCard,
+  Attachment,
+  Bank,
+  Chat,
+  Filter,
+  Mobile,
+  Lock,
+  Code,
+  FaceId,
+  Hierarchy,
+  HierarchyTree,
+  ShareHierarchy,
+  Magnifier,
+  Pin,
+  Share,
+} from 'icons';
 
 export default {
   title: 'Components/Data Display/Icons',
@@ -65,6 +86,24 @@ export default {
 const iconsList = [
   { name: 'Star', component: Star },
   { name: 'Cog', component: Cog },
+  { name: 'Excel', component: Excel },
+  { name: 'Pdf', component: Pdf },
+  { name: 'Link', component: Link },
+  { name: 'CreditCard', component: CreditCard },
+  { name: 'Attachment', component: Attachment },
+  { name: 'Bank', component: Bank },
+  { name: 'Chat', component: Chat },
+  { name: 'Filter', component: Filter },
+  { name: 'Mobile', component: Mobile },
+  { name: 'Lock', component: Lock },
+  { name: 'Code', component: Code },
+  { name: 'FaceId', component: FaceId },
+  { name: 'Hierarchy', component: Hierarchy },
+  { name: 'HierarchyTree', component: HierarchyTree },
+  { name: 'ShareHierarchy', component: ShareHierarchy },
+  { name: 'Magnifier', component: Magnifier },
+  { name: 'Pin', component: Pin },
+  { name: 'Share', component: Share },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
