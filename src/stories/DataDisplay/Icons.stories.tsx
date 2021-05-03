@@ -26,6 +26,12 @@ import {
   Magnifier,
   Pin,
   Share,
+  Layout,
+  LayoutGrid,
+  LayoutRows,
+  LayoutSquare,
+  List,
+  Menu,
 } from 'icons';
 
 export default {
@@ -104,6 +110,12 @@ const iconsList = [
   { name: 'Magnifier', component: Magnifier },
   { name: 'Pin', component: Pin },
   { name: 'Share', component: Share },
+  { name: 'Layout', component: Layout },
+  { name: 'LayoutGrid', component: LayoutGrid },
+  { name: 'LayoutRows', component: LayoutRows },
+  { name: 'LayoutSquare', component: LayoutSquare },
+  { name: 'List', component: List },
+  { name: 'Menu', component: Menu },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
