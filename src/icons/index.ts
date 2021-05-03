@@ -42,3 +42,6 @@ export { default as PaginationLeft } from './PaginationLeft';
 export { default as PaginationRight } from './PaginationRight';
 export { default as PaginationFirst } from './PaginationFirst';
 export { default as PaginationLast } from './PaginationLast';
+export { default as Clock } from './Clock';
+export { default as Stopwatch } from './Stopwatch';
+export { default as Calendar } from './Calendar';

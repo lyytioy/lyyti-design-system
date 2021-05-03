@@ -50,6 +50,9 @@ import {
   PaginationRight,
   PaginationFirst,
   PaginationLast,
+  Clock,
+  Stopwatch,
+  Calendar,
 } from 'icons';
 
 export default {
@@ -152,6 +155,9 @@ const iconsList = [
   { name: 'PaginationRight', component: PaginationRight },
   { name: 'PaginationFirst', component: PaginationFirst },
   { name: 'PaginationLast', component: PaginationLast },
+  { name: 'Clock', component: Clock },
+  { name: 'Stopwatch', component: Stopwatch },
+  { name: 'Calendar', component: Calendar },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
