@@ -6,8 +6,6 @@ import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core
 import TextField from 'components/TextField';
 import Grid from 'components/Grid';
 import {
-  Cog,
-  Star,
   Excel,
   Pdf,
   Link,
@@ -53,6 +51,20 @@ import {
   Clock,
   Stopwatch,
   Calendar,
+  Plus,
+  Close,
+  Copy,
+  Save,
+  Bin,
+  Edit,
+  Eye,
+  EyeClosed,
+  Cog,
+  Star,
+  StarFilled,
+  Preview,
+  Search,
+  Undo,
 } from 'icons';
 
 export default {
@@ -111,8 +123,6 @@ export default {
 } as Meta;
 
 const iconsList = [
-  { name: 'Star', component: Star },
-  { name: 'Cog', component: Cog },
   { name: 'Excel', component: Excel },
   { name: 'Pdf', component: Pdf },
   { name: 'Link', component: Link },
@@ -158,6 +168,19 @@ const iconsList = [
   { name: 'Clock', component: Clock },
   { name: 'Stopwatch', component: Stopwatch },
   { name: 'Calendar', component: Calendar },
+  { name: 'Plus', component: Plus },
+  { name: 'Close', component: Close },
+  { name: 'Save', component: Save },
+  { name: 'Bin', component: Bin },
+  { name: 'Edit', component: Edit },
+  { name: 'Eye', component: Eye },
+  { name: 'EyeClosed', component: EyeClosed },
+  { name: 'Cog', component: Cog },
+  { name: 'Star', component: Star },
+  { name: 'StarFilled', component: StarFilled },
+  { name: 'Preview', component: Preview },
+  { name: 'Search', component: Search },
+  { name: 'Undo', component: Undo },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
