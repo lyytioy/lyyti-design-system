@@ -39,6 +39,12 @@ import {
   UsersShare,
   PeopleShare,
   PeopleSwitch,
+  ChevronUp,
+  ChevronRight,
+  ChevronDown,
+  ChevronLeft,
+  ArrowUp,
+  ArrowDown,
 } from 'icons';
 
 export default {
@@ -130,6 +136,12 @@ const iconsList = [
   { name: 'UsersShare', component: UsersShare },
   { name: 'PeopleShare', component: PeopleShare },
   { name: 'PeopleSwitch', component: PeopleSwitch },
+  { name: 'ChevronUp', component: ChevronUp },
+  { name: 'ChevronRight', component: ChevronRight },
+  { name: 'ChevronDown', component: ChevronDown },
+  { name: 'ChevronLeft', component: ChevronLeft },
+  { name: 'ArrowUp', component: ArrowUp },
+  { name: 'ArrowDown', component: ArrowDown },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
