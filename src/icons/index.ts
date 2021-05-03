@@ -38,3 +38,7 @@ export { default as ChevronLeft } from './ChevronLeft';
 export { default as ArrowUp } from './ArrowUp';
 export { default as ArrowDown } from './ArrowDown';
 export { default as Loading } from './Loading';
+export { default as PaginationLeft } from './PaginationLeft';
+export { default as PaginationRight } from './PaginationRight';
+export { default as PaginationFirst } from './PaginationFirst';
+export { default as PaginationLast } from './PaginationLast';

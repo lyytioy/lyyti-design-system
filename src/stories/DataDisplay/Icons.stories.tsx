@@ -46,6 +46,10 @@ import {
   ArrowUp,
   ArrowDown,
   Loading,
+  PaginationLeft,
+  PaginationRight,
+  PaginationFirst,
+  PaginationLast,
 } from 'icons';
 
 export default {
@@ -144,6 +148,10 @@ const iconsList = [
   { name: 'ArrowUp', component: ArrowUp },
   { name: 'ArrowDown', component: ArrowDown },
   { name: 'Loading', component: Loading },
+  { name: 'PaginationLeft', component: PaginationLeft },
+  { name: 'PaginationRight', component: PaginationRight },
+  { name: 'PaginationFirst', component: PaginationFirst },
+  { name: 'PaginationLast', component: PaginationLast },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
