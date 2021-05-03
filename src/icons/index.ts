@@ -37,3 +37,4 @@ export { default as ChevronDown } from './ChevronDown';
 export { default as ChevronLeft } from './ChevronLeft';
 export { default as ArrowUp } from './ArrowUp';
 export { default as ArrowDown } from './ArrowDown';
+export { default as Loading } from './Loading';

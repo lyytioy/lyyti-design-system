@@ -45,6 +45,7 @@ import {
   ChevronLeft,
   ArrowUp,
   ArrowDown,
+  Loading,
 } from 'icons';
 
 export default {
@@ -142,6 +143,7 @@ const iconsList = [
   { name: 'ChevronLeft', component: ChevronLeft },
   { name: 'ArrowUp', component: ArrowUp },
   { name: 'ArrowDown', component: ArrowDown },
+  { name: 'Loading', component: Loading },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
