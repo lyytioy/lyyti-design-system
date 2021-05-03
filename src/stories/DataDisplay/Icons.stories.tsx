@@ -65,6 +65,11 @@ import {
   Preview,
   Search,
   Undo,
+  Alert,
+  AlertCircle,
+  Success,
+  Info,
+  Stop,
 } from 'icons';
 
 export default {
@@ -170,6 +175,7 @@ const iconsList = [
   { name: 'Calendar', component: Calendar },
   { name: 'Plus', component: Plus },
   { name: 'Close', component: Close },
+  { name: 'Copy', component: Copy },
   { name: 'Save', component: Save },
   { name: 'Bin', component: Bin },
   { name: 'Edit', component: Edit },
@@ -181,6 +187,11 @@ const iconsList = [
   { name: 'Preview', component: Preview },
   { name: 'Search', component: Search },
   { name: 'Undo', component: Undo },
+  { name: 'Alert', component: Alert },
+  { name: 'AlertCircle', component: AlertCircle },
+  { name: 'Success', component: Success },
+  { name: 'Info', component: Info },
+  { name: 'Stop', component: Stop },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
