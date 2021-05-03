@@ -51,6 +51,7 @@ import {
   Clock,
   Stopwatch,
   Calendar,
+  CalendarDate,
   Plus,
   Close,
   Copy,
@@ -75,6 +76,20 @@ import {
   ParticipantsNotReacted,
   ParticipantsDeclined,
   ParticipantsNoShow,
+  Bill,
+  BrowserPage,
+  EmptyFile,
+  Company,
+  ImageEdit,
+  Laptop,
+  LockShield,
+  Mail,
+  Meter,
+  MonitorChart,
+  MonitorPieChart,
+  Participants,
+  Profile,
+  Quill,
 } from 'icons';
 
 export default {
@@ -83,7 +98,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Fill this in from zeroheight',
+        component:
+          'Use icons to afford interactivity, communicate messages at quickly and draw attention to important information.',
       },
     },
   },
@@ -178,6 +194,7 @@ const iconsList = [
   { name: 'Clock', component: Clock },
   { name: 'Stopwatch', component: Stopwatch },
   { name: 'Calendar', component: Calendar },
+  { name: 'CalendarDate', component: CalendarDate },
   { name: 'Plus', component: Plus },
   { name: 'Close', component: Close },
   { name: 'Copy', component: Copy },
@@ -202,6 +219,20 @@ const iconsList = [
   { name: 'ParticipantsNotReacted', component: ParticipantsNotReacted },
   { name: 'ParticipantsDeclined', component: ParticipantsDeclined },
   { name: 'ParticipantsNoShow', component: ParticipantsNoShow },
+  { name: 'Bill', component: Bill },
+  { name: 'BrowserPage', component: BrowserPage },
+  { name: 'EmptyFile', component: EmptyFile },
+  { name: 'Company', component: Company },
+  { name: 'ImageEdit', component: ImageEdit },
+  { name: 'Laptop', component: Laptop },
+  { name: 'LockShield', component: LockShield },
+  { name: 'Mail', component: Mail },
+  { name: 'Meter', component: Meter },
+  { name: 'MonitorChart', component: MonitorChart },
+  { name: 'MonitorPieChart', component: MonitorPieChart },
+  { name: 'Participants', component: Participants },
+  { name: 'Profile', component: Profile },
+  { name: 'Quill', component: Quill },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
