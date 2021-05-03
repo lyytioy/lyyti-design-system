@@ -32,6 +32,13 @@ import {
   LayoutSquare,
   List,
   Menu,
+  Download,
+  Upload,
+  LaptopDownload,
+  LaptopUpload,
+  UsersShare,
+  PeopleShare,
+  PeopleSwitch,
 } from 'icons';
 
 export default {
@@ -116,6 +123,13 @@ const iconsList = [
   { name: 'LayoutSquare', component: LayoutSquare },
   { name: 'List', component: List },
   { name: 'Menu', component: Menu },
+  { name: 'Download', component: Download },
+  { name: 'Upload', component: Upload },
+  { name: 'LaptopDownload', component: LaptopDownload },
+  { name: 'LaptopUpload', component: LaptopUpload },
+  { name: 'UsersShare', component: UsersShare },
+  { name: 'PeopleShare', component: PeopleShare },
+  { name: 'PeopleSwitch', component: PeopleSwitch },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
