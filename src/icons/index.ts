@@ -62,3 +62,8 @@ export { default as AlertCircle } from './AlertCircle';
 export { default as Success } from './Success';
 export { default as Info } from './Info';
 export { default as Stop } from './Stop';
+export { default as ParticipantsRegistered } from './ParticipantsRegistered';
+export { default as ParticipantsShow } from './ParticipantsShow';
+export { default as ParticipantsNotReacted } from './ParticipantsNotReacted';
+export { default as ParticipantsDeclined } from './ParticipantsDeclined';
+export { default as ParticipantsNoShow } from './ParticipantsNoShow';

@@ -70,6 +70,11 @@ import {
   Success,
   Info,
   Stop,
+  ParticipantsRegistered,
+  ParticipantsShow,
+  ParticipantsNotReacted,
+  ParticipantsDeclined,
+  ParticipantsNoShow,
 } from 'icons';
 
 export default {
@@ -192,6 +197,11 @@ const iconsList = [
   { name: 'Success', component: Success },
   { name: 'Info', component: Info },
   { name: 'Stop', component: Stop },
+  { name: 'ParticipantsRegistered', component: ParticipantsRegistered },
+  { name: 'ParticipantsShow', component: ParticipantsShow },
+  { name: 'ParticipantsNotReacted', component: ParticipantsNotReacted },
+  { name: 'ParticipantsDeclined', component: ParticipantsDeclined },
+  { name: 'ParticipantsNoShow', component: ParticipantsNoShow },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
