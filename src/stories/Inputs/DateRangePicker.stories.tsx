@@ -9,6 +9,14 @@ export default {
   component: DateRangePicker,
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component: 'Use to select a range of dates.',
+      },
+    },
+  },
+  args: {
+    label: 'Label',
   },
 } as Meta;
 
@@ -33,10 +41,5 @@ const Template: Story<DateRangePickerProps> = (args) => {
   );
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  startDateId: 'id_start',
-  endDateId: 'id_end',
-  locale: 'en-US',
-  label: 'Label',
-};
+export const Default = Template.bind({});
+Default.args = {};

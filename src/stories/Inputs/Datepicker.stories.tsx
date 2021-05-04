@@ -15,6 +15,9 @@ export default {
       },
     },
   },
+  args: {
+    label: 'Label',
+  },
 } as Meta;
 
 const Template: Story<DatepickerProps> = (args) => {
@@ -28,7 +31,4 @@ const Template: Story<DatepickerProps> = (args) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  locale: 'en-US',
-  label: 'Label',
-};
+Default.args = {};
