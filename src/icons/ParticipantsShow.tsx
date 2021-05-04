@@ -23,13 +23,13 @@ const ParticipantsShow = (props: any) =>
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      stroke="#888"
+      stroke="currentcolor"
     />,
     <path
       d="M12.21 12.43A6.74 6.74 0 00.75 17.26"
       transform="translate(0 -.01)"
       fill="none"
-      stroke="#888"
+      stroke="currentcolor"
       strokeLinecap="round"
       strokeLinejoin="round"
     />,

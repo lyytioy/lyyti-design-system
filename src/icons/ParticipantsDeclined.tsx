@@ -7,7 +7,7 @@ const ParticipantsDeclined = (props: any) =>
     props,
     <style>
       {
-        '.single-neutral-actions-warning-filled_svg__st0,.single-neutral-actions-warning-filled_svg__st1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}.single-neutral-actions-warning-filled_svg__st1{stroke:#888;stroke-width:1px}.single-neutral-actions-warning-filled_svg__st2{fill:#fff}'
+        '.single-neutral-actions-warning-filled_svg__st0,.single-neutral-actions-warning-filled_svg__st1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}.single-neutral-actions-warning-filled_svg__st1{stroke:currentcolor;stroke-width:1px}.single-neutral-actions-warning-filled_svg__st2{fill:#fff}'
       }
     </style>,
     <path

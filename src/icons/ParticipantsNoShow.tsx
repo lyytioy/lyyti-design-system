@@ -8,7 +8,7 @@ const ParticipantsNoShow = (props: any) =>
     <defs>
       <style>
         {
-          '.single-neutral-actions-remove_svg__cls-1,.single-neutral-actions-remove_svg__cls-2{fill:none;stroke:#bc0011;stroke-linecap:round;stroke-linejoin:round}.single-neutral-actions-remove_svg__cls-2{stroke:#888}'
+          '.single-neutral-actions-remove_svg__cls-1,.single-neutral-actions-remove_svg__cls-2{fill:none;stroke:#bc0011;stroke-linecap:round;stroke-linejoin:round}.single-neutral-actions-remove_svg__cls-2{stroke:currentcolor}'
         }
       </style>
     </defs>,

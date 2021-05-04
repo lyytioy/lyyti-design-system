@@ -8,7 +8,7 @@ const ParticipantsNotReacted = (props: any) =>
     <defs>
       <style>
         {
-          '.single-neutral-actions-hourglass_svg__a,.single-neutral-actions-hourglass_svg__cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#25abc6}.single-neutral-actions-hourglass_svg__cls-2{stroke:#888}'
+          '.single-neutral-actions-hourglass_svg__a,.single-neutral-actions-hourglass_svg__cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#25abc6}.single-neutral-actions-hourglass_svg__cls-2{stroke:currentcolor}'
         }
       </style>
     </defs>,

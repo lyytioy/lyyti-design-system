@@ -8,7 +8,7 @@ const ParticipantsRegistered = (props: any) =>
     <defs>
       <style>
         {
-          '.single-neutral-actions-check-2_svg__cls-1,.single-neutral-actions-check-2_svg__cls-2{fill:none;stroke:#5ab12f;stroke-linecap:round;stroke-linejoin:round}.single-neutral-actions-check-2_svg__cls-2{stroke:#888}'
+          '.single-neutral-actions-check-2_svg__cls-1,.single-neutral-actions-check-2_svg__cls-2{fill:none;stroke:#5ab12f;stroke-linecap:round;stroke-linejoin:round}.single-neutral-actions-check-2_svg__cls-2{stroke:currentcolor}'
         }
       </style>
     </defs>,
