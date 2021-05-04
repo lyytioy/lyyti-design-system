@@ -11,7 +11,7 @@ export default {
     layout: 'padded',
     docs: {
       description: {
-        component: 'Use to display past, present or future dates or times.',
+        component: 'Use to display past, present or future dates.',
       },
     },
   },
