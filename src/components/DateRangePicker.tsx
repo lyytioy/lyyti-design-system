@@ -112,26 +112,36 @@ export interface DateRange {
 }
 
 export interface DateRangePickerProps {
+  /** Date range pickers need to have a unique start date id. */
   startDateId: string;
+  /** Date range pickers need to have a unique end date id. */
   endDateId: string;
+  /** Selected start date. */
   startDate: moment.Moment | null;
+  /** Selected end date. */
   endDate: moment.Moment | null;
-  id: string;
+  /** Label for the date picker input field. */
   label?: string;
+  /** Determines date localization. */
   locale?: string;
+  /** Date range pickers need to have a unique id.  */
+  id: string;
+  /** Defines the look of the input element. */
   margin?: 'dense' | 'normal';
+  /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
+  /** Function to control changing the dates. */
   onDatesChange: (arg: DateRange) => void;
 }
 
 const Datepicker = ({
-  startDateId,
-  endDateId,
+  startDateId = 'id_start',
+  endDateId = 'id_end',
   startDate,
   endDate,
-  id,
   label,
   locale = 'en',
+  id,
   margin = 'dense',
   numberOfMonths = 1,
   onDatesChange,

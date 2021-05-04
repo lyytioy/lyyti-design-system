@@ -99,12 +99,19 @@ const useStyles = makeStyles<Theme>((theme) => {
 });
 
 export interface DatepickerProps {
+  /** Selected date. */
   date: moment.Moment | null;
+  /** Date pickers need to have a unique id.  */
   id: string;
+  /** Label for the date picker input field. */
   label?: string;
+  /** Determines date localization. */
   locale?: string;
+  /** Defines the look of the input element. */
   margin?: 'dense' | 'normal';
+  /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
+  /** Function to control changing the date. */
   onDateChange: (date: moment.Moment | null) => void;
 }
 
