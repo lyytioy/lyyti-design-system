@@ -9,6 +9,11 @@ export default {
   component: Datepicker,
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component: 'Use to display past, present or future dates or times.',
+      },
+    },
   },
 } as Meta;
 
@@ -22,8 +27,8 @@ const Template: Story<DatepickerProps> = (args) => {
   );
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   id: 'datepicker',
   locale: 'en-US',
   label: 'Label',
