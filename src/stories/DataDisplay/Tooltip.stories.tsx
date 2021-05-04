@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Tooltip, { TooltipProps } from 'components/Tooltip';
-import ThemeSelector from 'themes/ThemeSelector';
+import Tooltip, { TooltipProps } from '../../components/Tooltip';
+import ThemeSelector from '../../themes/ThemeSelector';
 
 export default {
   title: 'Components/Data Display/Tooltip',
