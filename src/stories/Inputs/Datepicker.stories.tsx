@@ -29,7 +29,6 @@ const Template: Story<DatepickerProps> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  id: 'datepicker',
   locale: 'en-US',
   label: 'Label',
 };
