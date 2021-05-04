@@ -97,6 +97,12 @@ const useStyles = makeStyles<Theme>((theme) => {
       position: 'absolute',
       top: 16,
     },
+    navPrev: {
+      left: '22px',
+    },
+    navNext: {
+      right: '22px',
+    },
   });
 });
 
@@ -157,12 +163,12 @@ const Datepicker = ({
         inputIconPosition="after"
         numberOfMonths={numberOfMonths}
         navPrev={
-          <span className={classes.navButton} style={{ left: 22 }}>
+          <span className={`${classes.navButton} ${classes.navPrev}`}>
             <ChevronLeft />
           </span>
         }
         navNext={
-          <span className={classes.navButton} style={{ right: 22 }}>
+          <span className={`${classes.navButton} ${classes.navNext}`}>
             <ChevronRight />
           </span>
         }
