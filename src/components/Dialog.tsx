@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Button from './Button';
-import CogIcon from '../icons/Cog';
+import { Close } from '../icons';
 
 const useStyles = makeStyles({
   titlePadding: {
@@ -47,11 +47,10 @@ const Dialog = ({
     <MuiDialog {...props} fullScreen={fullScreen} open={open} onClose={onClose}>
       <MuiDialogTitle className={classes.titlePadding}>
         {dialogTitle}
-        {/* TODO Change icon to closeIcon */}
         <Button
           onClick={onClose as MouseEventHandler<HTMLButtonElement>}
           className={classes.closeIcon}>
-          <CogIcon />
+          <Close fontSize="small" />
         </Button>
       </MuiDialogTitle>
       <MuiDialogContent>{children}</MuiDialogContent>

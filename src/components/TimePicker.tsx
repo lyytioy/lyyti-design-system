@@ -1,7 +1,7 @@
 import Autocomplete, { AutocompleteProps } from '@material-ui/lab/Autocomplete';
 import TextField from './TextField';
 import { makeStyles } from '@material-ui/styles';
-import CogIcon from '../icons/Cog';
+import { Clock } from '../icons';
 
 const twentyFourHourTimes = [
   '00:00',
@@ -102,7 +102,9 @@ const twelveHourTimes = [
   '11:30 PM',
 ];
 
-const useStyles = makeStyles({ root: { width: 'min-content' } });
+const useStyles = makeStyles({
+  root: { width: 'min-content', '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' } },
+});
 
 export interface TimePickerProps
   extends AutocompleteProps<string, boolean | undefined, boolean | undefined, boolean | undefined> {
@@ -121,8 +123,7 @@ const TimePicker = ({ twelvehour, error, helperText, ...props }: TimePickerProps
       {...props}
       freeSolo
       forcePopupIcon
-      // TODO: Change Icon to clock
-      popupIcon={<CogIcon color={error ? 'error' : 'primary'} />}
+      popupIcon={<Clock color={error ? 'error' : 'primary'} />}
       className={classes.root}
       renderInput={(params) => {
         Object.assign(params.InputProps, { notched: false });
