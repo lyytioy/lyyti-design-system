@@ -90,6 +90,11 @@ import {
   Participants,
   Profile,
   Quill,
+  EVS1,
+  EVS2,
+  EVS3,
+  EVS4,
+  EVS5,
 } from 'icons';
 
 export default {
@@ -233,6 +238,11 @@ const iconsList = [
   { name: 'Participants', component: Participants },
   { name: 'Profile', component: Profile },
   { name: 'Quill', component: Quill },
+  { name: 'EVS1', component: EVS1 },
+  { name: 'EVS2', component: EVS2 },
+  { name: 'EVS3', component: EVS3 },
+  { name: 'EVS4', component: EVS4 },
+  { name: 'EVS5', component: EVS5 },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
