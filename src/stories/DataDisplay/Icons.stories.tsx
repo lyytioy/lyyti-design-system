@@ -272,16 +272,19 @@ const Template: Story<SvgIconProps> = (args) => {
           <Source
             language={'js'}
             code={`
-          //import icon
-import { ${importIcon} } from '@lds/icons'
-// use in the component
-<${importIcon}/>
+          // import icon
+import { ${importIcon} } from '@lyyti/design-system/icons';
+// use in a component
+<${importIcon} ${args.color && args.color !== 'inherit' ? `color="${args.color}"` : ''}${
+              args.fontSize && args.fontSize !== 'default' ? ` fontSize="${args.fontSize}"` : ''
+            }${args.htmlColor && args.htmlColor ? ` htmlColor="${args.htmlColor}"` : ''}/>
         `}
             dark
           />
         </Grid>
         {iconsList
           .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
+          .sort((a, b) => a.name.localeCompare(b.name))
           .map((icon, index) => {
             return (
               <Grid item xs={3} key={index} onClick={() => setImportIcon(icon.name)}>
