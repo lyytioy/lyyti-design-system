@@ -9,11 +9,8 @@ import Calendar from './icons/Calendar';
 import ChevronLeft from './icons/ChevronLeft';
 import ChevronRight from './icons/ChevronRight';
 
-const useStyles = makeStyles<Theme>((theme) => {
-  const borderColor =
-    theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)';
-
-  return createStyles({
+export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
+  createStyles({
     root: {
       ...theme.typography.body1,
       color: theme.palette.text.primary,
@@ -38,14 +35,15 @@ const useStyles = makeStyles<Theme>((theme) => {
         font: 'inherit',
         height: '1.1876em',
         lineHeight: 'inherit',
-        padding: '10.5px 14px',
+        padding: (props) => (props.margin === 'dense' ? '10.5px 14px' : '18.5px 14px'),
         width: 'initial',
       },
       '& .SingleDatePickerInput': {
         background: 'none',
       },
       '& .SingleDatePickerInput__withBorder': {
-        borderColor: borderColor,
+        borderColor:
+          theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)',
         borderRadius: theme.shape.borderRadius,
         boxSizing: 'border-box',
       },
@@ -53,6 +51,24 @@ const useStyles = makeStyles<Theme>((theme) => {
         borderColor: theme.palette.primary.main,
       },
       '& .SingleDatePickerInput_calendarIcon': {
+        color: theme.palette.grey[400],
+        lineHeight: 1,
+        marginRight: 8,
+        padding: 0,
+      },
+      '& .DateRangePickerInput': {
+        background: 'none',
+      },
+      '& .DateRangePickerInput__withBorder': {
+        borderColor:
+          theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)',
+        borderRadius: theme.shape.borderRadius,
+        boxSizing: 'border-box',
+      },
+      '& .DateRangePickerInput__withBorder:hover': {
+        borderColor: theme.palette.primary.main,
+      },
+      '& .DateRangePickerInput_calendarIcon': {
         color: theme.palette.grey[400],
         lineHeight: 1,
         marginRight: 8,
@@ -82,6 +98,12 @@ const useStyles = makeStyles<Theme>((theme) => {
       '& .SingleDatePickerInput_calendarIcon': {
         color: theme.palette.primary.main,
       },
+      '& .DateRangePickerInput__withBorder': {
+        borderColor: theme.palette.primary.main,
+      },
+      '& .DateRangePickerInput_calendarIcon': {
+        color: theme.palette.primary.main,
+      },
     },
     navButton: {
       lineHeight: 1,
@@ -95,8 +117,8 @@ const useStyles = makeStyles<Theme>((theme) => {
     navNext: {
       right: '22px',
     },
-  });
-});
+  })
+);
 
 export interface DatepickerProps {
   /** Selected date. */
@@ -108,11 +130,17 @@ export interface DatepickerProps {
   /** Determines date localization. */
   locale?: string;
   /** Defines the look of the input element. */
-  margin?: 'dense' | 'normal';
+  margin?: Margin;
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the date. */
   onDateChange: (date: moment.Moment | null) => void;
+}
+
+type Margin = 'dense' | 'normal';
+
+interface UseStylesProps {
+  margin: Margin;
 }
 
 const Datepicker = ({
@@ -124,7 +152,7 @@ const Datepicker = ({
   numberOfMonths = 1,
   onDateChange,
 }: DatepickerProps): JSX.Element => {
-  const classes = useStyles();
+  const classes = useStyles({ margin });
 
   useEffect(() => {
     moment.locale(locale);

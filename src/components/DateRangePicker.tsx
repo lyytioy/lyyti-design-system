@@ -4,107 +4,10 @@ import { DateRangePicker as AirBnbDateRangePicker, FocusedInputShape } from 'rea
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import InputLabel from './InputLabel';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import Calendar from './icons/Calendar';
 import ChevronLeft from './icons/ChevronLeft';
 import ChevronRight from './icons/ChevronRight';
-
-const useStyles = makeStyles<Theme>((theme) => {
-  const borderColor =
-    theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)';
-
-  return createStyles({
-    root: {
-      ...theme.typography.body1,
-      color: theme.palette.text.primary,
-      display: 'inline-flex',
-      flexDirection: 'column',
-      minWidth: 220,
-      verticalAlign: 'top',
-      '& label': {
-        color: theme.palette.grey[400],
-        letterSpacing: '0.15px',
-        lineHeight: '26px',
-      },
-      '& .DateInput': {
-        background: 'none',
-        width: 'initial',
-      },
-      '& .DateInput_input': {
-        background: 'none',
-        border: 0,
-        boxSizing: 'content-box',
-        color: 'currentColor',
-        font: 'inherit',
-        height: '1.1876em',
-        lineHeight: 'inherit',
-        padding: '10.5px 14px',
-        width: 'initial',
-      },
-      '& .DateRangePickerInput': {
-        background: 'none',
-      },
-      '& .DateRangePickerInput__withBorder': {
-        borderColor: borderColor,
-        borderRadius: theme.shape.borderRadius,
-        boxSizing: 'border-box',
-      },
-      '& .DateRangePickerInput__withBorder:hover': {
-        borderColor: theme.palette.primary.main,
-      },
-      '& .DateRangePickerInput_calendarIcon': {
-        color: theme.palette.grey[400],
-        lineHeight: 1,
-        marginRight: 8,
-        padding: 0,
-      },
-      '& .CalendarMonth_caption': {
-        color: theme.palette.text.primary,
-      },
-      '& .CalendarDay': {
-        fontSize: '16px',
-      },
-      '& .CalendarDay__default': {
-        border: 'none',
-      },
-      '& .CalendarDay__selected': {
-        background: theme.palette.primary.main,
-        color: theme.palette.primary.contrastText,
-      },
-      '& .CalendarDay__selected_span': {
-        background: theme.palette.primaryStates.selected,
-        color: theme.palette.text.primary,
-      },
-      '& .CalendarDay__hovered_span': {
-        background: theme.palette.primaryStates.selected,
-        color: theme.palette.text.primary,
-      },
-    },
-    focused: {
-      '& label': {
-        color: theme.palette.text.primary,
-      },
-      '& .DateRangePickerInput__withBorder': {
-        borderColor: theme.palette.primary.main,
-      },
-      '& .DateRangePickerInput_calendarIcon': {
-        color: theme.palette.primary.main,
-      },
-    },
-    navButton: {
-      lineHeight: 1,
-      padding: '8px',
-      position: 'absolute',
-      top: 16,
-    },
-    navPrev: {
-      left: '22px',
-    },
-    navNext: {
-      right: '22px',
-    },
-  });
-});
+import { useStyles } from './Datepicker';
 
 export interface DateRange {
   startDate: moment.Moment | null;
@@ -146,7 +49,7 @@ const Datepicker = ({
   numberOfMonths = 1,
   onDatesChange,
 }: DateRangePickerProps): JSX.Element => {
-  const classes = useStyles();
+  const classes = useStyles({ margin });
 
   useEffect(() => {
     moment.locale(locale);
