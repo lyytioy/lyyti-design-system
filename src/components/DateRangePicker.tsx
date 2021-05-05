@@ -37,7 +37,7 @@ export interface DateRangePickerProps {
   onDatesChange: (arg: DateRange) => void;
 }
 
-const Datepicker = ({
+const DateRangePicker = ({
   startDateId = 'id_start',
   endDateId = 'id_end',
   startDate,
@@ -92,4 +92,4 @@ const Datepicker = ({
   );
 };
 
-export default Datepicker;
+export default DateRangePicker;
