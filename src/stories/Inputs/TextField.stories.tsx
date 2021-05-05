@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import TextField, { TextFieldProps } from 'components/TextField';
-import ThemeSelector from 'themes/ThemeSelector';
-import InputAdornment from 'components/InputAdornment';
+import TextField, { TextFieldProps } from '../../components/TextField';
+import ThemeSelector from '../../themes/ThemeSelector';
+import InputAdornment from '../../components/InputAdornment';
 
 export default {
   title: 'Components/Inputs/TextField',

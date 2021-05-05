@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
-import Snackbar, { SnackbarProps } from 'components/Snackbar';
-import Button from 'components/Button';
-import ThemeSelector from 'themes/ThemeSelector';
+import Snackbar, { SnackbarProps } from '../../components/Snackbar';
+import Button from '../../components/Button';
+import ThemeSelector from '../../themes/ThemeSelector';
 
 export default {
   title: 'Components/Feedback/Snackbar',

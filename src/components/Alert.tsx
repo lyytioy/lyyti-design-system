@@ -1,4 +1,4 @@
-import AlertBase, { AlertBaseProps } from 'components/AlertBase';
+import AlertBase, { AlertBaseProps } from './AlertBase';
 import Fade from '@material-ui/core/Fade';
 import React from 'react';
 

@@ -1,10 +1,10 @@
 import { ChangeEvent, useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Source } from '@storybook/addon-docs/blocks';
-import ThemeSelector from 'themes/ThemeSelector';
+import ThemeSelector from '../../themes/ThemeSelector';
 import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core';
-import TextField from 'components/TextField';
-import Grid from 'components/Grid';
+import TextField from '../../components/TextField';
+import Grid from '../../components/Grid';
 import {
   Excel,
   Pdf,
@@ -95,7 +95,7 @@ import {
   EVS3,
   EVS4,
   EVS5,
-} from 'icons';
+} from '../../icons';
 
 export default {
   title: 'Components/Data Display/Icons',
