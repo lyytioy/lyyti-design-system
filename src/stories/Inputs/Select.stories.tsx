@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from 'themes/ThemeSelector';
-import InputAdornment from 'components/InputAdornment';
+import ThemeSelector from '../../themes/ThemeSelector';
+import InputAdornment from '../../components/InputAdornment';
 import { MenuItem } from '@material-ui/core';
-import Select, { SelectProps } from 'components/Select';
+import Select, { SelectProps } from '../../components/Select';
 
 export default {
   title: 'Components/Inputs/Select',
