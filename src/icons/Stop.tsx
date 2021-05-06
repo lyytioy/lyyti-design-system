@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const SvgStopSign = (props: any) =>
+const Stop = (props: any) =>
   React.createElement(
     SvgIcon,
     props,
@@ -19,4 +19,4 @@ const SvgStopSign = (props: any) =>
     <path className="stop-sign_svg__a" d="M6.75 23.25h10.5l6-6V6.75l-6-6H6.75l-6 6v10.5l6 6z" />
   );
 
-export default SvgStopSign;
+export default Stop;

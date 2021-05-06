@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const Svg1OutlinedNeutral = (props: any) =>
+const EVS1 = (props: any) =>
   React.createElement(
     SvgIcon,
     props,
@@ -22,4 +22,4 @@ const Svg1OutlinedNeutral = (props: any) =>
     />
   );
 
-export default Svg1OutlinedNeutral;
+export default EVS1;

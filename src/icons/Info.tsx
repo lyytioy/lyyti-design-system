@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const SvgInformationCircle = (props: any) =>
+const Info = (props: any) =>
   React.createElement(
     SvgIcon,
     props,
@@ -19,4 +19,4 @@ const SvgInformationCircle = (props: any) =>
     <circle className="information-circle_svg__a" cx={12} cy={12} r={11.25} />
   );
 
-export default SvgInformationCircle;
+export default Info;
