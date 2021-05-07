@@ -1,10 +1,10 @@
 import { IconButton } from '@material-ui/core';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Card, { CardProps } from 'components/Card';
-import Avatar from 'components/Avatar';
-import Grid from 'components/Grid';
-import { Star } from 'icons';
-import ThemeSelector from 'themes/ThemeSelector';
+import Card, { CardProps } from '../../components/Card';
+import Avatar from '../../components/Avatar';
+import Grid from '../../components/Grid';
+import { Star } from '../../icons';
+import ThemeSelector from '../../themes/ThemeSelector';
 import { Primary as PrimaryContainedButton } from '../Inputs/ContainedButton.stories';
 import { Primary as PrimaryOutlinedButton } from '../Inputs/OutlinedButton.stories';
 

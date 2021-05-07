@@ -1,35 +1,34 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
-import Snackbar, { SnackbarProps } from 'components/Snackbar';
-import Button from 'components/Button';
-import ThemeSelector from 'themes/ThemeSelector';
+import Snackbar, { SnackbarProps } from '../../components/Snackbar';
+import Button from '../../components/Button';
+import ThemeSelector from '../../themes/ThemeSelector';
 
 export default {
   title: 'Components/Feedback/Snackbar',
   component: Snackbar,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Use snackbars to provide brief messages about app processes.',
+      },
+    },
+  },
   argTypes: {
-    ref: {
-      table: {
-        disable: true,
-      },
-    },
-    severity: {
-      control: {
-        type: 'select',
-        options: ['success', 'error', 'warning', 'info'],
-      },
-    },
-    variant: {
-      control: {
-        type: 'select',
-        options: ['standard', 'filled', 'outlined'],
-      },
+    color: {
+      description:
+        'The color of the snackbar. Unless provided, the value is taken from the severity prop.',
+      options: ['success', 'error', 'warning', 'info'],
     },
     direction: {
-      control: {
-        type: 'select',
-        options: ['right', 'left', 'up', 'down'],
-      },
+      description: 'Direction the snackbar will enter from.',
+    },
+    message: { description: 'The message to display.', type: 'text' },
+    severity: {
+      description: 'The severity of the snackbar. This defines the color and icon used.',
+    },
+    variant: {
+      description: 'The variant to use.',
     },
   },
 } as Meta;
@@ -62,7 +61,9 @@ const Template: Story<SnackbarProps> = (args) => {
 };
 
 export const Success = Template.bind({});
-Success.args = {};
+Success.args = {
+  message: 'Success message',
+};
 
 export const Error = Template.bind({});
 Error.args = {

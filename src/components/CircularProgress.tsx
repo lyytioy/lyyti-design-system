@@ -34,14 +34,29 @@ const useStyles = makeStyles({
   },
 });
 
-export type CircularProgressProps = MuiCircularProgressProps;
+export interface CircularProgressProps extends MuiCircularProgressProps {
+  color: 'primary' | 'secondary';
+  size?: number | string;
+  value?: number;
+  variant: 'determinate' | 'indeterminate' | 'static';
+}
 
-const CircularProgress = (props: CircularProgressProps): JSX.Element => {
+const CircularProgress = ({
+  color = 'primary',
+  size = 40,
+  value,
+  variant = 'indeterminate',
+  ...props
+}: CircularProgressProps): JSX.Element => {
   const classes = useStyles();
 
   return (
     <MuiCircularProgress
       {...props}
+      color={color}
+      size={size}
+      value={value}
+      variant={variant}
       classes={{
         circleIndeterminate: classes.circleIndeterminate,
         indeterminate: classes.indeterminate,

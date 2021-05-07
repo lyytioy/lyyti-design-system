@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Chip, { ChipProps } from 'components/Chip';
-import ThemeSelector from 'themes/ThemeSelector';
-import Avatar from 'components/Avatar';
-import { Star } from 'icons';
+import Chip, { ChipProps } from '../../components/Chip';
+import ThemeSelector from '../../themes/ThemeSelector';
+import Avatar from '../../components/Avatar';
+import { StarFilled } from '../../icons';
 
 export default {
   title: 'Components/Data Display/Chip',
@@ -43,7 +43,7 @@ SecondaryRemovable.args = {
 
 export const PrimaryIcon = Template.bind({});
 PrimaryIcon.args = {
-  icon: <Star />,
+  icon: <StarFilled fontSize="small" />,
   onDelete: undefined,
 };
 
