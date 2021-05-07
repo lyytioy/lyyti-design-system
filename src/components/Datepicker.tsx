@@ -87,6 +87,14 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         background: theme.palette.primary.main,
         color: theme.palette.primary.contrastText,
       },
+      '& .CalendarDay__selected_span': {
+        background: theme.palette.primaryStates.selected,
+        color: theme.palette.text.primary,
+      },
+      '& .CalendarDay__hovered_span': {
+        background: theme.palette.primaryStates.selected,
+        color: theme.palette.text.primary,
+      },
     },
     focused: {
       '& label': {
