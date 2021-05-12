@@ -8,8 +8,7 @@
     "standard",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "prettier/react",
-    "prettier/standard"
+    "prettier"
   ],
   "parserOptions": {
     "ecmaFeatures": {
