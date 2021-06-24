@@ -1,96 +1,68 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
-import InputAdornment from '../../components/InputAdornment';
 import { MenuItem } from '@material-ui/core';
 import Select, { SelectProps } from '../../components/Select';
+import { useState } from 'react';
 
 export default {
   title: 'Components/Inputs/Select',
   component: Select,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Select components are used for collecting user provided information from a list of options.',
+      },
+    },
+  },
+  args: {
+    label: 'Label',
+  },
 } as Meta;
 
-const Template: Story<SelectProps> = (args) => (
-  <ThemeSelector>
-    <Select {...args} />
-  </ThemeSelector>
-);
+const Template: Story<SelectProps> = (args) => {
+  const [selectValue, setSelectValue] = useState('');
+
+  args.value = selectValue;
+  args.onChange = (e) => setSelectValue(e.target.value);
+
+  return (
+    <ThemeSelector>
+      <Select {...args} style={{ width: '220px' }}>
+        <MenuItem value={1}>{'Item 1'}</MenuItem>
+        <MenuItem value={2}>{'Item 2'}</MenuItem>
+      </Select>
+    </ThemeSelector>
+  );
+};
 
 export const Default = Template.bind({});
-Default.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
-};
+Default.args = {};
 
 export const Large = Template.bind({});
 Large.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
   margin: 'normal',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
 export const HelperText = Template.bind({});
 HelperText.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
-  disabled: false,
   error: true,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
 export const StartAdornment = Template.bind({});
 StartAdornment.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: {
-    notched: false,
-    startAdornment: <InputAdornment position="start">{'Kg'}</InputAdornment>,
-  },
+  startAdornment: 'Kg',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  select: true,
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
   disabled: true,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
