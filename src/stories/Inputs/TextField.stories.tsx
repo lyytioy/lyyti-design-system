@@ -5,6 +5,27 @@ import ThemeSelector from '../../themes/ThemeSelector';
 export default {
   title: 'Components/Inputs/TextField',
   component: TextField,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Text fields let users enter and edit text.',
+      },
+    },
+  },
+  argTypes: {
+    placeholder: {
+      description: 'The short hint displayed in the input before the user enters a value.',
+    },
+    label: {
+      description: 'The label content.',
+    },
+    startAdornment: {
+      description: 'This can be used to add a prefix or an action to the start of an input.',
+    },
+    endAdornment: {
+      description: 'This can be used to add a suffix or an action to the end of an input.',
+    },
+  },
   args: {
     label: 'Label',
   },
