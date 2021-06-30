@@ -39,10 +39,14 @@ const useStyles = makeStyles<Theme>((theme) =>
 );
 
 export type VariantTypes = 'outlined';
+export type ColorTypes = 'primary' | 'white';
 
-export type TextFieldProps = OutlinedTextFieldProps & { variant: VariantTypes };
+export type TextFieldProps = Omit<OutlinedTextFieldProps, 'color'> & {
+  color: ColorTypes;
+  variant: VariantTypes;
+};
 
-const TextField = (props: TextFieldProps): JSX.Element => {
+const TextField = ({ color, ...props }: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
   const classes = useStyles();
 

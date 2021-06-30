@@ -24,6 +24,15 @@ export default {
       },
     },
   },
+  parameters: {
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
+  },
 } as Meta;
 
 const Template: Story<TextFieldProps> = (args) => (
@@ -76,4 +85,12 @@ Disabled.args = {
     notched: false,
     endAdornment: <InputAdornment position="end">{'Kg'}</InputAdornment>,
   },
+};
+
+export const White = Template.bind({});
+White.args = {
+  color: 'white',
+};
+White.parameters = {
+  backgrounds: { default: 'dark' },
 };
