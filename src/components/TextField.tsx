@@ -58,20 +58,21 @@ const TextField = ({
   return (
     <MuiTextField
       margin={margin}
-      InputLabelProps={{ shrink: true }}
+      variant={variant}
+      onClick={() => muiTextField.current?.focus()}
+      inputRef={muiTextField}
+      {...props}
       InputProps={{
-        notched: false,
         endAdornment: endAdornment ? (
           <InputAdornment position="end">{endAdornment}</InputAdornment>
         ) : undefined,
         startAdornment: startAdornment ? (
           <InputAdornment position="start">{startAdornment}</InputAdornment>
         ) : undefined,
+        ...(props.InputProps ?? {}),
+        notched: false,
       }}
-      variant={variant}
-      onClick={() => muiTextField.current?.focus()}
-      inputRef={muiTextField}
-      {...props}
+      InputLabelProps={{ shrink: true }}
       classes={{ root: classes.root }}
     />
   );

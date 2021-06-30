@@ -1,65 +1,17 @@
-import { Autocomplete, AutocompleteProps } from '@material-ui/lab';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
+import TextField, { TextFieldProps } from './TextField';
 import { Search as SearchIcon } from '../icons';
-import TextField from './TextField';
-import InputAdornment from './InputAdornment';
+import Multiselect, { MultiselectProps, OptionsType } from './Multiselect';
 
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      '& .MuiInputAdornment-positionStart': {
-        marginLeft: '6px',
-      },
-    },
-  })
-);
+export type SearchProps<T = OptionsType> = (MultiselectProps<T> | TextFieldProps) & {
+  options?: T[];
+};
 
-export interface SearchProps
-  extends AutocompleteProps<string, boolean | undefined, boolean | undefined, boolean | undefined> {
-  label?: string;
-  placeholder?: string;
-  margin?: 'dense' | 'normal';
-  multiple?: boolean;
-  options: string[];
-}
-
-const Search = ({
-  label,
-  placeholder,
-  margin = 'dense',
-  options,
-  ...props
-}: SearchProps): JSX.Element => {
-  const classes = useStyles();
-
-  return (
-    <Autocomplete
-      options={options}
-      {...props}
-      className={classes.root}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          label={label}
-          placeholder={placeholder}
-          margin={margin}
-          variant="outlined"
-          InputProps={{
-            ...params.InputProps,
-            notched: false,
-            startAdornment: (
-              <>
-                <InputAdornment position="start">
-                  <SearchIcon fontSize="small" />
-                </InputAdornment>
-                {params.InputProps.startAdornment}
-              </>
-            ),
-          }}
-        />
-      )}
-    />
-  );
+const Search = (props: SearchProps): JSX.Element => {
+  const searchIcon = <SearchIcon fontSize="small" />;
+  if ((props as MultiselectProps).options?.length) {
+    return <Multiselect {...(props as MultiselectProps)} adornment={searchIcon} />;
+  }
+  return <TextField {...(props as TextFieldProps)} startAdornment={searchIcon} fullWidth />;
 };
 
 export default Search;

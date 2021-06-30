@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Search, { SearchProps } from '../../components/Search';
+import Multiselect, { MultiselectProps } from '../../components/Multiselect';
 import ThemeSelector from '../../themes/ThemeSelector';
+import Search, { SearchProps } from '../../components/Search';
 
 const options = [
   { id: 1, value: 'Option 1' },
@@ -11,7 +12,7 @@ const options = [
 
 export default {
   title: 'Components/Inputs/Search',
-  component: Search,
+  component: Multiselect,
   parameters: {
     docs: {
       description: {
@@ -24,18 +25,15 @@ export default {
     children: { table: { disable: true } },
     filterSelectedOptions: {
       description: 'If true, hide the selected options from the list box.',
-      defaultValue: { summary: 'false' },
     },
     getOptionLabel: {
       description:
         'Used to determine the string value for a given option. It is used to fill the input (and the list box options if renderOption is not provided).',
-      defaultValue: { summary: '(x) => x' },
     },
   },
   args: {
+    label: 'Label',
     placeholder: 'Search',
-    options: options,
-    getOptionLabel: (option: { id: number; value: string }) => option.value,
   },
 } as Meta;
 
@@ -46,16 +44,20 @@ const Template: Story<SearchProps> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = { filterSelectedOptions: true };
+Primary.args = {
+  options: options,
+  filterSelectedOptions: true,
+};
 
 export const Multiple = Template.bind({});
 Multiple.args = {
+  options: options,
   multiple: true,
-  filterSelectedOptions: true,
 };
 
 export const LargeWithLabel = Template.bind({});
 LargeWithLabel.args = {
-  label: 'Label',
   margin: 'normal',
 };
+
+export const NoOptions = Template.bind({});
