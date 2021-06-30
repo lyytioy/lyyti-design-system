@@ -1,32 +1,129 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import ObjektivMk1RgTff from '../fonts/ObjektivMk1_Rg.ttf';
-import ObjektivMk1MdTff from '../fonts/ObjektivMk1_Md.ttf';
-import ObjektivMk3RgTff from '../fonts/ObjektivMk3_Rg.ttf';
+import ObjektivMk1RgTff from '../fonts/Objektiv Mk1 Regular.ttf';
+import ObjektivMk1ItalicTff from '../fonts/Objektiv Mk1 Italic.ttf';
+import ObjektivMk1MdTff from '../fonts/Objektiv Mk1 Medium Regular.ttf';
+import ObjektivMk1MdItalicTff from '../fonts/Objektiv Mk1 Medium Italic.ttf';
+import ObjektivMk1BoldTff from '../fonts/Objektiv Mk1 Bold.ttf';
+import ObjektivMk1BoldItalicTff from '../fonts/Objektiv Mk1 Bold Italic.ttf';
+import ObjektivMk3RgTff from '../fonts/Objektiv Mk3 Regular.ttf';
+import ObjektivMk3ItalicTff from '../fonts/Objektiv Mk3 Italic.ttf';
+import ObjektivMk3MdTff from '../fonts/Objektiv Mk3 Medium Regular.ttf';
+import ObjektivMk3MdItalicTff from '../fonts/Objektiv Mk3 Medium Italic.ttf';
+import ObjektivMk3BoldTff from '../fonts/Objektiv Mk3 Bold Regular.ttf';
+import ObjektivMk3BoldItalicTff from '../fonts/Objektiv Mk3 Bold Italic.ttf';
 import type {} from '@material-ui/lab/themeAugmentation';
 
 const objektivMk1Rg = {
-  fontFamily: 'Objektiv MK1 Regular',
+  fontFamily: 'Objektiv MK1',
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 400,
-  src: `url(/${ObjektivMk1RgTff}) format('truetype')`,
+  src: `url('/${ObjektivMk1RgTff}') format('truetype')`,
+};
+
+const objektivMk1Italic = {
+  fontFamily: 'Objektiv MK1',
+  fontStyle: 'italic',
+  fontDisplay: 'swap' as const,
+  fontWeight: 400,
+  src: `url('/${ObjektivMk1ItalicTff}') format('truetype')`,
 };
 
 const objektivMk1Md = {
-  fontFamily: 'Objektiv MK1 Medium',
+  fontFamily: 'Objektiv MK1',
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 500,
-  src: `url(/${ObjektivMk1MdTff}) format('truetype')`,
+  src: `url('/${ObjektivMk1MdTff}') format('truetype')`,
+};
+
+const objektivMk1MdItalic = {
+  fontFamily: 'Objektiv MK1',
+  fontStyle: 'italic',
+  fontDisplay: 'swap' as const,
+  fontWeight: 500,
+  src: `url('/${ObjektivMk1MdItalicTff}') format('truetype')`,
+};
+
+const objektivMk1Bold = {
+  fontFamily: 'Objektiv MK1',
+  fontStyle: 'normal',
+  fontDisplay: 'swap' as const,
+  fontWeight: 700,
+  src: `url('/${ObjektivMk1BoldTff}') format('truetype')`,
+};
+
+const objektivMk1BoldItalic = {
+  fontFamily: 'Objektiv MK1',
+  fontStyle: 'italic',
+  fontDisplay: 'swap' as const,
+  fontWeight: 700,
+  src: `url('/${ObjektivMk1BoldItalicTff}') format('truetype')`,
 };
 
 const objektivMk3Rg = {
-  fontFamily: 'Objektiv MK3 Regular',
+  fontFamily: 'Objektiv MK3',
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 400,
-  src: ` url(/${ObjektivMk3RgTff}) format('truetype')`,
+  src: ` url('/${ObjektivMk3RgTff}') format('truetype')`,
 };
+
+const objektivMk3Italic = {
+  fontFamily: 'Objektiv MK3',
+  fontStyle: 'italic',
+  fontDisplay: 'swap' as const,
+  fontWeight: 400,
+  src: `url('/${ObjektivMk3ItalicTff}') format('truetype')`,
+};
+
+const objektivMk3Md = {
+  fontFamily: 'Objektiv MK3',
+  fontStyle: 'normal',
+  fontDisplay: 'swap' as const,
+  fontWeight: 500,
+  src: `url('/${ObjektivMk3MdTff}') format('truetype')`,
+};
+
+const objektivMk3MdItalic = {
+  fontFamily: 'Objektiv MK3',
+  fontStyle: 'italic',
+  fontDisplay: 'swap' as const,
+  fontWeight: 500,
+  src: `url('/${ObjektivMk3MdItalicTff}') format('truetype')`,
+};
+
+const objektivMk3Bold = {
+  fontFamily: 'Objektiv MK3',
+  fontStyle: 'normal',
+  fontDisplay: 'swap' as const,
+  fontWeight: 700,
+  src: `url('/${ObjektivMk3BoldTff}') format('truetype')`,
+};
+
+const objektivMk3BoldItalic = {
+  fontFamily: 'Objektiv MK3',
+  fontStyle: 'italic',
+  fontDisplay: 'swap' as const,
+  fontWeight: 700,
+  src: `url('/${ObjektivMk3BoldItalicTff}') format('truetype')`,
+};
+
+const baseFontStack = [
+  '-apple-system',
+  'BlinkMacSystemFont',
+  '"Segoe UI"',
+  'Roboto',
+  '"Helvetica Neue"',
+  'Arial',
+  'sans-serif',
+  '"Apple Color Emoji"',
+  '"Segoe UI Emoji"',
+  '"Segoe UI Symbol"',
+];
+
+const objektivMk1FontFamily = ['"Objektiv MK1"'].concat(baseFontStack).join(',');
+const objektivMk3FontFamily = ['"Objektiv MK3"'].concat(baseFontStack).join(',');
 
 interface ColorStateOptions {
   activeContained: string;
@@ -113,14 +210,77 @@ export default createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'Objektiv MK1 Regular, sans-serif',
+    fontFamily: objektivMk3FontFamily,
+    h1: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 400,
+      fontSize: '3rem',
+      letterSpacing: '-2%',
+    },
+    h2: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 400,
+      fontSize: '2.25rem',
+      letterSpacing: '-2%',
+    },
+    h3: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 400,
+      fontSize: '1.875rem',
+      letterSpacing: '-1%',
+    },
+    h4: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 400,
+      fontSize: '1.375rem',
+      letterSpacing: '0em',
+    },
+    h5: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 400,
+      fontSize: '1.125rem',
+      letterSpacing: '0em',
+    },
+    h6: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 400,
+      fontSize: '1rem',
+      letterSpacing: '0em',
+    },
+    subtitle1: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 500,
+      fontSize: '0.9375rem',
+      letterSpacing: '0.1px',
+    },
+    subtitle2: {
+      fontFamily: objektivMk1FontFamily,
+      fontWeight: 500,
+      fontSize: '0.9375rem',
+      letterSpacing: '0.1px',
+    },
+    body1: {
+      fontSize: '1rem',
+      letterSpacing: '0em',
+    },
+    body2: {
+      fontSize: '1rem',
+      letterSpacing: '0em',
+    },
     button: {
+      fontFamily: objektivMk1FontFamily,
       textTransform: 'none',
       fontSize: '1rem',
       fontWeight: 500,
       lineHeight: '1.625',
       letterSpacing: '0.01rem',
     },
+    caption: {
+      fontFamily: objektivMk1FontFamily,
+      fontSize: '0.75rem',
+      letterSpacing: '0em',
+    },
+    overline: {},
   },
   props: {
     MuiCheckbox: {
@@ -139,7 +299,20 @@ export default createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [objektivMk1Rg, objektivMk1Md, objektivMk3Rg],
+        '@font-face': [
+          objektivMk1Rg,
+          objektivMk1Italic,
+          objektivMk1Md,
+          objektivMk1MdItalic,
+          objektivMk1Bold,
+          objektivMk1BoldItalic,
+          objektivMk3Rg,
+          objektivMk3Italic,
+          objektivMk3Md,
+          objektivMk3MdItalic,
+          objektivMk3Bold,
+          objektivMk3BoldItalic,
+        ],
       },
     },
     MuiPaper: {
