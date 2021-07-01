@@ -1,8 +1,11 @@
-import TextField, { TextFieldProps } from './TextField';
 import { Search as SearchIcon } from '../icons';
+import TextField, { TextFieldProps } from './TextField';
 import Multiselect, { MultiselectProps, OptionsType } from './Multiselect';
 
-export type SearchProps<T = OptionsType> = (MultiselectProps<T> | TextFieldProps) & {
+export type SearchProps<T = OptionsType> = (
+  | Omit<MultiselectProps<T>, 'getOptionLabel'>
+  | Omit<TextFieldProps, 'getOptionLabel'>
+) & {
   options?: T[];
 };
 
