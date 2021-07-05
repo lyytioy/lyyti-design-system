@@ -38,18 +38,19 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export interface TextFieldProps extends OutlinedTextFieldProps {
+export type VariantTypes = 'outlined' | undefined;
+
+export type TextFieldProps = {
   endAdornment?: ReactNode;
   margin?: 'dense' | 'normal';
   startAdornment?: ReactNode;
-  variant: 'outlined';
-}
+  variant?: VariantTypes;
+} & Omit<OutlinedTextFieldProps, 'variant'>;
 
 const TextField = ({
   endAdornment,
   margin = 'dense',
   startAdornment,
-  variant = 'outlined',
   ...props
 }: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
@@ -58,7 +59,6 @@ const TextField = ({
   return (
     <MuiTextField
       margin={margin}
-      variant={variant}
       onClick={() => muiTextField.current?.focus()}
       inputRef={muiTextField}
       {...props}
@@ -72,6 +72,7 @@ const TextField = ({
         ...(props.InputProps ?? {}),
         notched: false,
       }}
+      variant="outlined"
       InputLabelProps={{ shrink: true }}
       classes={{ root: classes.root }}
     />

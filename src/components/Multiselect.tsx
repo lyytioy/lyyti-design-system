@@ -53,7 +53,6 @@ const Multiselect = ({
           label={label}
           placeholder={placeholder}
           margin={margin}
-          variant="outlined"
           InputProps={{
             ...params.InputProps,
             startAdornment: (
