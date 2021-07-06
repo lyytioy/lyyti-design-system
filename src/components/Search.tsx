@@ -6,6 +6,7 @@ export type SearchProps<T = OptionsType> = (
   | Omit<MultiselectProps<T>, 'getOptionLabel'>
   | Omit<TextFieldProps, 'getOptionLabel'>
 ) & {
+  fullWidth: boolean;
   options?: T[];
 };
 
@@ -14,7 +15,7 @@ const Search = (props: SearchProps): JSX.Element => {
   if ((props as MultiselectProps).options?.length) {
     return <Multiselect {...(props as MultiselectProps)} adornment={searchIcon} />;
   }
-  return <TextField {...(props as TextFieldProps)} startAdornment={searchIcon} fullWidth />;
+  return <TextField {...(props as TextFieldProps)} startAdornment={searchIcon} />;
 };
 
 export default Search;

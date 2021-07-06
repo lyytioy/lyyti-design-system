@@ -42,13 +42,15 @@ export type VariantTypes = 'outlined' | undefined;
 
 export type TextFieldProps = {
   endAdornment?: ReactNode;
-  margin?: 'dense' | 'normal';
+  fullWidth: boolean;
+  margin: 'dense' | 'normal';
   startAdornment?: ReactNode;
   variant?: VariantTypes;
 } & Omit<OutlinedTextFieldProps, 'variant'>;
 
 const TextField = ({
   endAdornment,
+  fullWidth = false,
   margin = 'dense',
   startAdornment,
   ...props
@@ -58,6 +60,7 @@ const TextField = ({
 
   return (
     <MuiTextField
+      fullWidth={fullWidth}
       margin={margin}
       onClick={() => muiTextField.current?.focus()}
       inputRef={muiTextField}

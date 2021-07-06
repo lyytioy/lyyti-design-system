@@ -14,6 +14,27 @@ export default {
           'Select components are used for collecting user provided information from a list of options.',
       },
     },
+    argTypes: {
+      endAdornment: { table: { disable: true } },
+      filterSelectedOptions: {
+        // description: 'If true, hide the selected options from the list box.',
+        control: { type: 'boolean' },
+        table: {
+          defaultValue: {
+            summary: true,
+          },
+        },
+      },
+      focused: {
+        control: { type: 'boolean' },
+      },
+      margin: {
+        control: {
+          type: 'radio',
+          options: ['dense', 'normal'],
+        },
+      },
+    },
   },
   args: {
     label: 'Label',

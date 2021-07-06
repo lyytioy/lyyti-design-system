@@ -1,5 +1,4 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Multiselect, { MultiselectProps } from '../../components/Multiselect';
 import ThemeSelector from '../../themes/ThemeSelector';
 import Search, { SearchProps } from '../../components/Search';
 
@@ -42,6 +41,15 @@ export default {
         },
       },
     },
+    fullWidth: {
+      description: 'If true, the input will take up the full width of its container.',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
     multiple: {
       description: 'If true, value must be an array and the menu will support multiple selections.',
       control: { type: 'boolean' },
@@ -66,7 +74,6 @@ export default {
   args: {
     label: 'Label',
     placeholder: 'Search',
-    multiple: false,
   },
 } as Meta;
 
@@ -82,10 +89,11 @@ Primary.args = {
   filterSelectedOptions: true,
 };
 
-export const Multiple = Template.bind({});
-Multiple.args = {
+export const MultipleFullwidth = Template.bind({});
+MultipleFullwidth.args = {
   options: options,
   multiple: true,
+  fullWidth: true,
 };
 
 export const LargeMultiple = Template.bind({});
