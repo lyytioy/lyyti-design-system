@@ -20,39 +20,42 @@ export interface MultiselectProps<T = OptionsType>
     AutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
     'renderInput'
   > {
-  label?: string;
-  placeholder?: string;
-  margin?: 'dense' | 'normal';
-  multiple?: boolean;
   adornment?: string | JSX.Element;
   filterSelectedOptions?: boolean;
+  fullWidth?: boolean;
+  label?: string;
+  margin?: 'dense' | 'normal';
+  multiple?: boolean;
+  placeholder?: string;
 }
 
 const Multiselect = ({
+  adornment,
+  filterSelectedOptions = true,
+  fullWidth = false,
+  getOptionLabel = (option: OptionsType) => option.value,
   label,
-  placeholder,
   margin = 'dense',
   options,
-  getOptionLabel = (option: OptionsType) => option.value,
-  filterSelectedOptions = true,
-  adornment,
+  placeholder,
   ...props
 }: MultiselectProps): JSX.Element => {
   const classes = useStyles();
 
   return (
     <Autocomplete
-      options={options}
       getOptionLabel={getOptionLabel}
+      options={options}
       {...props}
       className={classes.root}
       filterSelectedOptions={filterSelectedOptions}
       renderInput={(params) => (
         <TextField
           {...params}
+          fullWidth={fullWidth}
           label={label}
-          placeholder={placeholder}
           margin={margin}
+          placeholder={placeholder}
           InputProps={{
             ...params.InputProps,
             startAdornment: (
