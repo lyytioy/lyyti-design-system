@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from 'react';
+import { useRef } from 'react';
 import {
   TextField as MuiTextField,
   OutlinedTextFieldProps,
@@ -41,10 +41,10 @@ const useStyles = makeStyles<Theme>((theme) =>
 export type VariantTypes = 'outlined' | undefined;
 
 export type TextFieldProps = {
-  endAdornment?: ReactNode;
+  endAdornment?: string | JSX.Element;
   fullWidth: boolean;
   margin: 'dense' | 'normal';
-  startAdornment?: ReactNode;
+  startAdornment?: string | JSX.Element;
   variant?: VariantTypes;
 } & Omit<OutlinedTextFieldProps, 'variant'>;
 
