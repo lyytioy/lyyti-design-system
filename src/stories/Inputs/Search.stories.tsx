@@ -43,7 +43,9 @@ export default {
     },
     fullWidth: {
       description: 'If true, the input will take up the full width of its container.',
-      control: { type: 'boolean' },
+      control: {
+        type: 'boolean',
+      },
       table: {
         defaultValue: {
           summary: false,
@@ -73,7 +75,9 @@ export default {
   },
   args: {
     label: 'Label',
+    multiple: false,
     placeholder: 'Search',
+    fullWidth: false,
   },
 } as Meta;
 
