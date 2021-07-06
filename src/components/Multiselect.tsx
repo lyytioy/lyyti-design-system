@@ -18,7 +18,7 @@ export type OptionsType = { id: number | string; value: string };
 export interface MultiselectProps<T = OptionsType>
   extends Omit<
     AutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
-    'renderInput'
+    'renderInput' | 'startAdornment' | 'endAdornment' | 'variant'
   > {
   adornment?: string | JSX.Element;
   filterSelectedOptions?: boolean;
