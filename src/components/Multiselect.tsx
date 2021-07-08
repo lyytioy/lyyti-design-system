@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import TextField, { MarginTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 
-const useStyles = makeStyles<Theme>((theme) =>
+const useStyles = makeStyles<Theme>(() =>
   createStyles({
     root: {
       '& .MuiInputAdornment-positionStart': {
