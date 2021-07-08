@@ -139,7 +139,7 @@ export interface DatepickerProps {
   /** Determines date localization. */
   locale?: string;
   /** Defines the look of the input element. */
-  margin?: Margin;
+  margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the date. */
