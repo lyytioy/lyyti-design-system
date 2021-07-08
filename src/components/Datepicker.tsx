@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import 'react-dates/initialize';
-import { SingleDatePicker } from 'react-dates';
+import { DateRangePicker, SingleDatePicker, FocusedInputShape } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import InputLabel from './InputLabel';
@@ -129,7 +129,15 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   })
 );
 
-export interface DatepickerProps {
+export interface DateRange {
+  startDate: moment.Moment | null;
+  endDate: moment.Moment | null;
+}
+
+type DatepickerCallback = (date: moment.Moment | null) => void;
+type DateRangeCallback = (arg: DateRange) => void;
+
+export interface DatepickerProps extends Record<string, unknown> {
   /** Selected date. */
   date: moment.Moment | null;
   /** Date pickers need to have a unique id.  */
@@ -138,66 +146,131 @@ export interface DatepickerProps {
   label?: string;
   /** Determines date localization. */
   locale?: string;
+  /** Changes between date picker and date range picker */
+  range?: boolean;
   /** Defines the look of the input element. */
   margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the date. */
-  onDateChange: (date: moment.Moment | null) => void;
+  onDateChange: DatepickerCallback;
+}
+
+export interface DatepickerRangeProps
+  extends Omit<DatepickerProps, 'onDateChange' | 'date'>,
+    DateRange {
+  startDateId?: string;
+  endDateId?: string;
+  /** Changes between date picker and date range picker */
+  range: boolean;
+  onDateChange: DateRangeCallback;
 }
 
 interface UseStylesProps {
   margin: MarginTypes;
 }
 
-const Datepicker = ({
-  date,
-  id = 'datepicker',
-  label,
-  locale = 'en',
-  margin = 'dense',
-  numberOfMonths = 1,
-  onDateChange,
-}: DatepickerProps): JSX.Element => {
+function Datepicker(props: DatepickerRangeProps): JSX.Element;
+function Datepicker(props: DatepickerProps): JSX.Element;
+function Datepicker(props: Record<string, unknown>): JSX.Element {
+  const {
+    date,
+    id = 'datepicker',
+    label,
+    locale = 'en',
+    margin = 'dense',
+    numberOfMonths = 1,
+    onDateChange,
+  } = props as DatepickerProps;
+
+  const range = !!props?.range;
+
   const classes = useStyles({ margin });
+  let datepicker: JSX.Element;
 
   useEffect(() => {
     moment.locale(locale);
   }, [locale]);
 
-  const [focused, setFocused] = useState(false);
-
-  const handleFocusChange = (arg: { focused: typeof focused }) => {
-    setFocused(arg.focused);
+  const [focused, setFocused] = useState<boolean | FocusedInputShape | null>(null);
+  type Focused = { focused: typeof focused };
+  const handleFocusChange = (arg: Focused | FocusedInputShape) => {
+    if (arg && Object.keys(arg).includes('focused')) {
+      setFocused((arg as Focused)?.focused);
+    } else {
+      setFocused(arg as FocusedInputShape);
+    }
   };
 
-  return (
-    <div className={`${classes.root} ${focused ? classes.focused : ''}`}>
-      {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
-      <SingleDatePicker
-        id={id}
-        date={date}
-        focused={focused}
-        onDateChange={onDateChange}
-        onFocusChange={handleFocusChange}
-        customInputIcon={<Calendar />}
-        inputIconPosition="after"
-        numberOfMonths={numberOfMonths}
-        navPrev={
-          <span className={`${classes.navButton} ${classes.navPrev}`}>
-            <ChevronLeft />
-          </span>
-        }
-        navNext={
-          <span className={`${classes.navButton} ${classes.navNext}`}>
-            <ChevronRight />
-          </span>
-        }
-        hideKeyboardShortcutsPanel
-        firstDayOfWeek={1}
-      />
-    </div>
-  );
-};
+  if (range) {
+    const {
+      startDateId = 'start_id',
+      endDateId = 'end_id',
+      startDate,
+      endDate,
+      onDateChange: onDatesChange,
+    } = props as DatepickerRangeProps;
+
+    datepicker = (
+      <div className={`${classes.root} ${focused ? classes.focused : ''}`}>
+        {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
+        <DateRangePicker
+          startDateId={startDateId}
+          endDateId={endDateId}
+          startDate={startDate}
+          endDate={endDate}
+          focusedInput={focused as FocusedInputShape}
+          onDatesChange={onDatesChange}
+          onFocusChange={handleFocusChange as unknown as () => void}
+          customInputIcon={<Calendar />}
+          inputIconPosition="after"
+          numberOfMonths={numberOfMonths}
+          navPrev={
+            <span className={`${classes.navButton} ${classes.navPrev}`}>
+              <ChevronLeft />
+            </span>
+          }
+          navNext={
+            <span className={`${classes.navButton} ${classes.navNext}`}>
+              <ChevronRight />
+            </span>
+          }
+          hideKeyboardShortcutsPanel
+          firstDayOfWeek={1}
+        />
+      </div>
+    );
+  } else {
+    datepicker = (
+      <div className={`${classes.root} ${focused ? classes.focused : ''}`}>
+        {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
+        <SingleDatePicker
+          id={id}
+          date={date}
+          focused={!!focused}
+          onDateChange={onDateChange as DatepickerCallback}
+          onFocusChange={handleFocusChange}
+          customInputIcon={<Calendar />}
+          inputIconPosition="after"
+          numberOfMonths={numberOfMonths}
+          navPrev={
+            <span className={`${classes.navButton} ${classes.navPrev}`}>
+              <ChevronLeft />
+            </span>
+          }
+          navNext={
+            <span className={`${classes.navButton} ${classes.navNext}`}>
+              <ChevronRight />
+            </span>
+          }
+          hideKeyboardShortcutsPanel
+          firstDayOfWeek={1}
+        />
+      </div>
+    );
+  }
+
+  return datepicker;
+}
 
 export default Datepicker;
