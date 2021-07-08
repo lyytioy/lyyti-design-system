@@ -6,14 +6,72 @@ export default {
   title: 'Components/Data Display/Typography',
   component: Typography,
   argTypes: {
-    children: {
+    children: { table: { disable: true } },
+    variantMapping: { table: { disable: true } },
+    align: {
+      description: 'Set the text-align on the component.',
       table: {
-        disable: true,
+        defaultValue: {
+          summary: 'inherit',
+        },
+      },
+    },
+    color: {
+      description:
+        'The color of the component. It supports those theme colors that make sense for this component.',
+      table: {
+        defaultValue: {
+          summary: 'initial',
+        },
+      },
+    },
+    component: {
+      description:
+        'The component used for the root node. Either a string to use a HTML element or a component. Overrides the behavior of the variantMapping prop.',
+      control: { type: 'text' },
+    },
+    display: {
+      description: 'Controls the display type.',
+      table: {
+        defaultValue: {
+          summary: 'initial',
+        },
+      },
+    },
+    gutterBottom: {
+      description: 'If true, the text will have a bottom margin.',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    noWrap: {
+      description:
+        'If true, the text will not wrap, but instead will truncate with a text overflow ellipsis. Note that text overflow can only happen with block or inline-block level elements (the element needs to have a width in order to overflow).',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    paragraph: {
+      description: 'If true, the text will have a bottom margin.',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: {
+          summary: false,
+        },
       },
     },
   },
   args: {
     children: 'Some text',
+    gutterBottom: false,
+    noWrap: false,
+    paragraph: false,
   },
 } as Meta;
 
