@@ -4,9 +4,9 @@ import { DateRangePicker as AirBnbDateRangePicker, FocusedInputShape } from 'rea
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import InputLabel from './InputLabel';
-import Calendar from './icons/Calendar';
-import ChevronLeft from './icons/ChevronLeft';
-import ChevronRight from './icons/ChevronRight';
+import Calendar from '../icons/Calendar';
+import ChevronLeft from '../icons/ChevronLeft';
+import ChevronRight from '../icons/ChevronRight';
 import { useStyles } from './Datepicker';
 
 export interface DateRange {
