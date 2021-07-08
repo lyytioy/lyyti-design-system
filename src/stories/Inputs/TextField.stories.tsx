@@ -1,28 +1,33 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import TextField, { TextFieldProps } from '../../components/TextField';
 import ThemeSelector from '../../themes/ThemeSelector';
-import InputAdornment from '../../components/InputAdornment';
 
 export default {
   title: 'Components/Inputs/TextField',
   component: TextField,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Text fields let users enter and edit text.',
+      },
+    },
+  },
   argTypes: {
-    margin: {
-      control: {
-        type: 'radio',
-        options: ['dense', 'normal'],
-      },
+    placeholder: {
+      description: 'The short hint displayed in the input before the user enters a value.',
     },
-    InputProps: {
-      table: {
-        disable: true,
-      },
+    label: {
+      description: 'The label content.',
     },
-    InputLabelProps: {
-      table: {
-        disable: true,
-      },
+    startAdornment: {
+      description: 'This can be used to add a prefix or an action to the start of an input.',
     },
+    endAdornment: {
+      description: 'This can be used to add a suffix or an action to the end of an input.',
+    },
+  },
+  args: {
+    label: 'Label',
   },
   parameters: {
     backgrounds: {
@@ -42,7 +47,9 @@ const Template: Story<TextFieldProps> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  placeholder: 'Placeholder',
+};
 
 export const Large = Template.bind({});
 Large.args = {
@@ -63,28 +70,19 @@ Error.args = {
 export const StartAdornment = Template.bind({});
 StartAdornment.args = {
   helperText: 'Helper text',
-  InputProps: {
-    notched: false,
-    startAdornment: <InputAdornment position="start">{'Kg'}</InputAdornment>,
-  },
+  startAdornment: 'Kg',
 };
 
 export const EndAdornment = Template.bind({});
 EndAdornment.args = {
   helperText: 'Helper text',
-  InputProps: {
-    notched: false,
-    endAdornment: <InputAdornment position="end">{'Kg'}</InputAdornment>,
-  },
+  endAdornment: 'Kg',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
-  InputProps: {
-    notched: false,
-    endAdornment: <InputAdornment position="end">{'Kg'}</InputAdornment>,
-  },
+  endAdornment: 'Kg',
 };
 
 export const White = Template.bind({});

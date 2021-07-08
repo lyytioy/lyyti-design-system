@@ -6,6 +6,7 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core';
+import InputAdornment from './InputAdornment';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
@@ -13,7 +14,7 @@ const useStyles = makeStyles<Theme>((theme) =>
       const overrideColor = props.color === 'white' ? theme.palette.common.white : undefined;
 
       return {
-        minWidth: '220px',
+
         '&:hover': {
           '& .MuiOutlinedInput-notchedOutline': {
             borderColor: overrideColor,
@@ -65,34 +66,51 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export type VariantTypes = 'outlined';
+export type VariantTypes = 'outlined' | undefined;
 export type ColorTypes = 'primary' | 'white';
 
-export type TextFieldProps = Omit<OutlinedTextFieldProps, 'color'> & {
+export type TextFieldProps = {
+  endAdornment?: string | JSX.Element;
+  fullWidth: boolean;
+  margin: 'dense' | 'normal';
+  startAdornment?: string | JSX.Element;
   color?: ColorTypes;
-  variant: VariantTypes;
-};
+  variant?: VariantTypes;
+} & Omit<OutlinedTextFieldProps, 'variant'>;
 
-const TextField = ({ color = 'primary', ...props }: TextFieldProps): JSX.Element => {
+const TextField = ({
+  endAdornment,
+  fullWidth = false,
+  margin = 'dense',
+  startAdornment,
+  color = 'primary',
+  ...props
+}: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
   const classes = useStyles({ color });
 
   return (
     <MuiTextField
-      {...props}
+      fullWidth={fullWidth}
+      margin={margin}
       onClick={() => muiTextField.current?.focus()}
       inputRef={muiTextField}
+      {...props}
+      InputProps={{
+        endAdornment: endAdornment ? (
+          <InputAdornment position="end">{endAdornment}</InputAdornment>
+        ) : undefined,
+        startAdornment: startAdornment ? (
+          <InputAdornment position="start">{startAdornment}</InputAdornment>
+        ) : undefined,
+        ...(props.InputProps ?? {}),
+        notched: false,
+      }}
+      variant="outlined"
+      InputLabelProps={{ shrink: true }}
       classes={{ root: classes.root }}
     />
   );
-};
-
-TextField.defaultProps = {
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
 export default TextField;
