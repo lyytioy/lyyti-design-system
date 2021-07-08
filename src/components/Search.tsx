@@ -1,9 +1,9 @@
 import { Search as SearchIcon } from '../icons';
 import TextField, { TextFieldProps } from './TextField';
-import Multiselect, { MultiselectProps, OptionsType } from './Multiselect';
+import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
 export type SearchProps<T = OptionsType> = (
-  | Omit<MultiselectProps<T>, 'getOptionLabel'>
+  | Omit<AutocompleteProps<T>, 'getOptionLabel'>
   | Omit<TextFieldProps, 'getOptionLabel'>
 ) & {
   fullWidth: boolean;
@@ -12,8 +12,8 @@ export type SearchProps<T = OptionsType> = (
 
 const Search = (props: SearchProps): JSX.Element => {
   const searchIcon = <SearchIcon fontSize="small" />;
-  if ((props as MultiselectProps).options?.length) {
-    return <Multiselect {...(props as MultiselectProps)} adornment={searchIcon} />;
+  if ((props as AutocompleteProps).options?.length) {
+    return <Autocomplete {...(props as AutocompleteProps)} adornment={searchIcon} />;
   }
   return <TextField {...(props as TextFieldProps)} startAdornment={searchIcon} />;
 };

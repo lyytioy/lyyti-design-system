@@ -19,6 +19,13 @@ export default {
           'The search component can take in different options and display them as a datalist. It also works without options and functions just like a input field',
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
   },
   argTypes: {
     children: { table: { disable: true } },
@@ -105,6 +112,15 @@ LargeMultiple.args = {
   margin: 'normal',
   options: options,
   multiple: true,
+};
+
+export const WhiteMultiple = Template.bind({});
+WhiteMultiple.args = {
+  options: options,
+  color: 'white',
+};
+WhiteMultiple.parameters = {
+  backgrounds: { default: 'dark' },
 };
 
 export const NoOptions = Template.bind({});

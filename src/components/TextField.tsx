@@ -14,7 +14,6 @@ const useStyles = makeStyles<Theme>((theme) =>
       const overrideColor = props.color === 'white' ? theme.palette.common.white : undefined;
 
       return {
-
         '&:hover': {
           '& .MuiOutlinedInput-notchedOutline': {
             borderColor: overrideColor,
@@ -61,6 +60,9 @@ const useStyles = makeStyles<Theme>((theme) =>
         '& .MuiSelect-icon': {
           color: overrideColor,
         },
+        '& .MuiSvgIcon-root': {
+          color: overrideColor,
+        },
       };
     },
   })
@@ -76,7 +78,7 @@ export type TextFieldProps = {
   startAdornment?: string | JSX.Element;
   color?: ColorTypes;
   variant?: VariantTypes;
-} & Omit<OutlinedTextFieldProps, 'variant'>;
+} & Omit<OutlinedTextFieldProps, 'variant' | 'color'>;
 
 const TextField = ({
   endAdornment,

@@ -11,6 +11,13 @@ export default {
         component: 'Text fields let users enter and edit text.',
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
   },
   argTypes: {
     placeholder: {
@@ -28,15 +35,6 @@ export default {
   },
   args: {
     label: 'Label',
-  },
-  parameters: {
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#045b56' },
-      ],
-    },
   },
 } as Meta;
 

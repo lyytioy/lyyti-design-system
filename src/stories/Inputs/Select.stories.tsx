@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
 import Select, { SelectProps } from '../../components/Select';
 import { ChangeEvent, useState } from 'react';
-import { MultiselectProps } from '../../components/Multiselect';
+import { AutocompleteProps } from '../../components/Autocomplete';
 
 export default {
   title: 'Components/Inputs/Select',
@@ -50,7 +50,7 @@ const SelectTemplate: Story<SelectProps> = (args) => {
   );
 };
 
-const MultiSelectTemplate: Story<MultiselectProps> = (args) => {
+const MultiSelectTemplate: Story<AutocompleteProps> = (args) => {
   return (
     <ThemeSelector>
       <Select
