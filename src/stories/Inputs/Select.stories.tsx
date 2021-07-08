@@ -1,96 +1,112 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
-import InputAdornment from '../../components/InputAdornment';
-import { MenuItem } from '@material-ui/core';
 import Select, { SelectProps } from '../../components/Select';
+import { ChangeEvent, useState } from 'react';
+import { AutocompleteProps } from '../../components/Autocomplete';
 
 export default {
   title: 'Components/Inputs/Select',
   component: Select,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Select components are used for collecting user provided information from a list of options.',
+      },
+    },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
+  },
+  args: {
+    label: 'Label',
+    multiple: false,
+  },
 } as Meta;
 
-const Template: Story<SelectProps> = (args) => (
-  <ThemeSelector>
-    <Select {...args} />
-  </ThemeSelector>
-);
+const SelectTemplate: Story<SelectProps> = (args) => {
+  const [selectValue, setSelectValue] = useState('0');
 
-export const Default = Template.bind({});
-Default.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
+  args.value = selectValue;
+  args.onChange = (e: ChangeEvent<HTMLInputElement>) => setSelectValue(e.target.value);
+
+  return (
+    <ThemeSelector>
+      <Select
+        {...args}
+        options={[
+          { id: 0, value: 'Select...' },
+          { id: 1, value: 'Option 1' },
+          { id: 2, value: 'Option 2' },
+          { id: 3, value: 'Option 3' },
+          { id: 4, value: 'Option 4' },
+        ]}
+      />
+    </ThemeSelector>
+  );
 };
 
-export const Large = Template.bind({});
+const MultiSelectTemplate: Story<AutocompleteProps> = (args) => {
+  return (
+    <ThemeSelector>
+      <Select
+        {...args}
+        options={[
+          { id: 1, value: 'Option 1' },
+          { id: 2, value: 'Option 2' },
+          { id: 3, value: 'Option 3' },
+          { id: 4, value: 'Option 4' },
+        ]}
+      />
+    </ThemeSelector>
+  );
+};
+
+export const Default = SelectTemplate.bind({});
+Default.args = {};
+
+export const Large = SelectTemplate.bind({});
 Large.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
   margin: 'normal',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
-export const HelperText = Template.bind({});
+export const HelperText = SelectTemplate.bind({});
 HelperText.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
-export const Error = Template.bind({});
+export const Error = SelectTemplate.bind({});
 Error.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
-  disabled: false,
   error: true,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
-export const StartAdornment = Template.bind({});
+export const StartAdornment = SelectTemplate.bind({});
 StartAdornment.args = {
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
-  disabled: false,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: {
-    notched: false,
-    startAdornment: <InputAdornment position="start">{'Kg'}</InputAdornment>,
-  },
+  adornment: 'Kg',
 };
 
-export const Disabled = Template.bind({});
+export const Disabled = SelectTemplate.bind({});
 Disabled.args = {
-  select: true,
-  children: <MenuItem>{'Item 1'}</MenuItem>,
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
   helperText: 'Helper text',
   disabled: true,
-  error: false,
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
+};
+
+export const White = SelectTemplate.bind({});
+White.args = {
+  color: 'white',
+};
+White.parameters = {
+  backgrounds: { default: 'dark' },
+};
+
+export const MultipleSelect = MultiSelectTemplate.bind({});
+MultipleSelect.args = {
+  multiple: true,
+  placeholder: 'Select',
 };

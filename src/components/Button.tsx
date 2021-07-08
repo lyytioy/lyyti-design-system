@@ -9,9 +9,9 @@ import {
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
-    root: (chunky) => ({
+    root: (props: Record<string, unknown>) => ({
       borderRadius: '3px',
-      padding: chunky ? '15px 23px' : '5px 15px',
+      padding: props.chunky ? '15px 23px' : '5px 15px',
       '& > *': {
         zIndex: 1,
       },
@@ -100,7 +100,7 @@ const Button = ({
   disabled = false,
   ...props
 }: ButtonProps): JSX.Element => {
-  const classes = useStyles(chunky);
+  const classes = useStyles({ chunky });
 
   if (
     children &&

@@ -1,5 +1,5 @@
 import Autocomplete, { AutocompleteProps } from '@material-ui/lab/Autocomplete';
-import TextField from './TextField';
+import TextField, { MarginTypes } from './TextField';
 import { makeStyles } from '@material-ui/styles';
 import { Clock } from '../icons';
 
@@ -111,9 +111,16 @@ export interface TimePickerProps
   twelvehour?: boolean;
   error?: boolean;
   helperText?: JSX.Element | string;
+  margin?: MarginTypes;
 }
 
-const TimePicker = ({ twelvehour, error, helperText, ...props }: TimePickerProps): JSX.Element => {
+const TimePicker = ({
+  twelvehour,
+  error,
+  helperText,
+  margin = 'dense',
+  ...props
+}: TimePickerProps): JSX.Element => {
   const classes = useStyles();
 
   props.options = twelvehour ? twelveHourTimes : twentyFourHourTimes;
@@ -126,16 +133,7 @@ const TimePicker = ({ twelvehour, error, helperText, ...props }: TimePickerProps
       popupIcon={<Clock color={error ? 'error' : 'primary'} />}
       className={classes.root}
       renderInput={(params) => {
-        Object.assign(params.InputProps, { notched: false });
-        return (
-          <TextField
-            {...params}
-            InputLabelProps={{ shrink: true }}
-            variant="outlined"
-            error={error}
-            helperText={helperText}
-          />
-        );
+        return <TextField {...params} error={error} helperText={helperText} margin={margin} />;
       }}
     />
   );
