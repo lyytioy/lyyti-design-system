@@ -8,6 +8,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import Calendar from '../icons/Calendar';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
+import { MarginTypes } from './TextField';
 
 export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   createStyles({
@@ -145,10 +146,8 @@ export interface DatepickerProps {
   onDateChange: (date: moment.Moment | null) => void;
 }
 
-type Margin = 'dense' | 'normal';
-
 interface UseStylesProps {
-  margin: Margin;
+  margin: MarginTypes;
 }
 
 const Datepicker = ({
