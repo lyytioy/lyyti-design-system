@@ -1,6 +1,7 @@
 import {
   Button as MuiButton,
   ButtonProps as MuiButtonProps,
+  IconButton,
   createStyles,
   makeStyles,
   Theme,
@@ -13,9 +14,23 @@ const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
     root: (chunky) => ({
       borderRadius: '3px',
-      transition: 'all 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000)',
       transitionTimingFunction: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
       padding: chunky ? '15px 23px' : '5px 15px',
+      '&::before': {
+        content: '""',
+        height: '100%',
+        width: '0%',
+        right: 0,
+        position: 'absolute',
+        transition: 'all 5000ms cubic-bezier(0.645, 0.045, 0.355, 1.000)',
+        boxShadow: `${buttonBoxShadow},inset 0px -0px 0 0 rgba(4, 91, 86,.06)`,
+      },
+      '&:hover': {
+        '&::before': {
+          // boxShadow: `${buttonBoxShadow},inset 0px -0px 0 0 rgba(4, 91, 86,.06)`,
+          width: '100%',
+        },
+      },
     }),
     containedPrimary: {
       border: '1px solid',
@@ -33,12 +48,7 @@ const useStyles = makeStyles<Theme>((theme) =>
         boxShadow: `${buttonBoxShadow}, inset -100px -0px 0 0 ${theme.palette.secondary.dark}`,
       },
     },
-    outlinedPrimary: {
-      boxShadow: `${buttonBoxShadow},inset -0px -0px 0 0 rgba(4, 91, 86,.06)`,
-      '&:hover': {
-        boxShadow: `${buttonBoxShadow},inset -100px -0px 0 0 rgba(4, 91, 86,.06)`,
-      },
-    },
+    outlinedPrimary: {},
     outlinedSecondary: {
       boxShadow: 'inset -0px -0px 0 0 rgba(238, 139, 58,.06)',
       '&:hover': {
@@ -64,10 +74,33 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type ColorTypes = 'primary' | 'secondary' | 'inherit' | undefined;
 
-export type ButtonProps = { color?: ColorTypes; chunky?: boolean } & Omit<MuiButtonProps, 'color'>;
+export type ButtonProps = {
+  color?: ColorTypes;
+  chunky?: boolean;
+  children: MuiButtonProps['children'] & { $$typeof?: symbol };
+} & Omit<MuiButtonProps, 'color'>;
 
-const Button = ({ children, chunky, ...props }: ButtonProps): JSX.Element => {
+const Button = ({
+  children,
+  chunky = false,
+  variant = 'contained',
+  color = 'primary',
+  disabled = false,
+  ...props
+}: ButtonProps): JSX.Element => {
   const classes = useStyles(chunky);
+
+  if (
+    children &&
+    Object.keys(children).includes('$$typeof') &&
+    children.$$typeof === Symbol.for('react.element')
+  ) {
+    return (
+      <IconButton color={color} disabled={disabled}>
+        {children}
+      </IconButton>
+    );
+  }
 
   return (
     <MuiButton
@@ -80,6 +113,9 @@ const Button = ({ children, chunky, ...props }: ButtonProps): JSX.Element => {
         textPrimary: classes.textPrimary,
         textSecondary: classes.textSecondary,
       }}
+      variant={variant}
+      color={color}
+      disabled={disabled}
       {...props}>
       {children}
     </MuiButton>
