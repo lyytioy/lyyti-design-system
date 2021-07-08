@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
 import Select, { SelectProps } from '../../components/Select';
 import { ChangeEvent, useState } from 'react';
-import { MultiselectProps } from '../../components/Multiselect';
+import { AutocompleteProps } from '../../components/Autocomplete';
 
 export default {
   title: 'Components/Inputs/Select',
@@ -13,6 +13,13 @@ export default {
         component:
           'Select components are used for collecting user provided information from a list of options.',
       },
+    },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
     },
   },
   args: {
@@ -43,7 +50,7 @@ const SelectTemplate: Story<SelectProps> = (args) => {
   );
 };
 
-const MultiSelectTemplate: Story<MultiselectProps> = (args) => {
+const MultiSelectTemplate: Story<AutocompleteProps> = (args) => {
   return (
     <ThemeSelector>
       <Select
@@ -88,6 +95,14 @@ export const Disabled = SelectTemplate.bind({});
 Disabled.args = {
   helperText: 'Helper text',
   disabled: true,
+};
+
+export const White = SelectTemplate.bind({});
+White.args = {
+  color: 'white',
+};
+White.parameters = {
+  backgrounds: { default: 'dark' },
 };
 
 export const MultipleSelect = MultiSelectTemplate.bind({});

@@ -1,20 +1,20 @@
 import { MenuItem } from '@material-ui/core';
 import TextField, { TextFieldProps } from './TextField';
-import Multiselect, { MultiselectProps, OptionsType } from './Multiselect';
+import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
 export type SelectProps<T = OptionsType> = (
-  | MultiselectProps<T>
+  | AutocompleteProps<T>
   | Omit<TextFieldProps, 'startAdornment' | 'endAdornment' | 'variant'>
 ) & {
   options: T[];
-  adornment?: MultiselectProps<T>['adornment'];
+  adornment?: AutocompleteProps<T>['adornment'];
   multiple?: boolean;
 };
 
 const Select = (props: SelectProps): JSX.Element => {
   const { adornment, options, multiple = false } = props;
   if (multiple) {
-    return <Multiselect {...(props as MultiselectProps)} />;
+    return <Autocomplete {...(props as AutocompleteProps)} />;
   }
   return (
     <TextField

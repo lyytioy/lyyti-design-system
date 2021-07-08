@@ -11,6 +11,13 @@ export default {
         component: 'Text fields let users enter and edit text.',
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
   },
   argTypes: {
     placeholder: {
@@ -74,4 +81,12 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
   endAdornment: 'Kg',
+};
+
+export const White = Template.bind({});
+White.args = {
+  color: 'white',
+};
+White.parameters = {
+  backgrounds: { default: 'dark' },
 };
