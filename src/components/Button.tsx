@@ -11,11 +11,11 @@ const buttonBoxShadow =
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
-    root: (chunky) => ({
+    root: (props: Record<string, unknown>) => ({
       borderRadius: '3px',
       transition: 'all 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000)',
       transitionTimingFunction: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
-      padding: chunky ? '15px 23px' : '5px 15px',
+      padding: props.chunky ? '15px 23px' : '5px 15px',
     }),
     containedPrimary: {
       border: '1px solid',
@@ -67,7 +67,7 @@ export type ColorTypes = 'primary' | 'secondary' | 'inherit' | undefined;
 export type ButtonProps = { color?: ColorTypes; chunky?: boolean } & Omit<MuiButtonProps, 'color'>;
 
 const Button = ({ children, chunky, ...props }: ButtonProps): JSX.Element => {
-  const classes = useStyles(chunky);
+  const classes = useStyles({ chunky });
 
   return (
     <MuiButton
