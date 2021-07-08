@@ -6,11 +6,11 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core';
+import InputAdornment from './InputAdornment';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
     root: {
-      minWidth: '220px',
       '& label': {
         color: theme.palette.grey[400],
         letterSpacing: '0.15px',
@@ -38,30 +38,48 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export type VariantTypes = 'outlined';
+export type VariantTypes = 'outlined' | undefined;
 
-export type TextFieldProps = OutlinedTextFieldProps & { variant: VariantTypes };
+export type TextFieldProps = {
+  endAdornment?: string | JSX.Element;
+  fullWidth: boolean;
+  margin: 'dense' | 'normal';
+  startAdornment?: string | JSX.Element;
+  variant?: VariantTypes;
+} & Omit<OutlinedTextFieldProps, 'variant'>;
 
-const TextField = (props: TextFieldProps): JSX.Element => {
+const TextField = ({
+  endAdornment,
+  fullWidth = false,
+  margin = 'dense',
+  startAdornment,
+  ...props
+}: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
   const classes = useStyles();
 
   return (
     <MuiTextField
-      {...props}
+      fullWidth={fullWidth}
+      margin={margin}
       onClick={() => muiTextField.current?.focus()}
       inputRef={muiTextField}
+      {...props}
+      InputProps={{
+        endAdornment: endAdornment ? (
+          <InputAdornment position="end">{endAdornment}</InputAdornment>
+        ) : undefined,
+        startAdornment: startAdornment ? (
+          <InputAdornment position="start">{startAdornment}</InputAdornment>
+        ) : undefined,
+        ...(props.InputProps ?? {}),
+        notched: false,
+      }}
+      variant="outlined"
+      InputLabelProps={{ shrink: true }}
       classes={{ root: classes.root }}
     />
   );
-};
-
-TextField.defaultProps = {
-  margin: 'dense',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  InputLabelProps: { shrink: true },
-  InputProps: { notched: false },
 };
 
 export default TextField;

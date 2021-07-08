@@ -126,16 +126,7 @@ const TimePicker = ({ twelvehour, error, helperText, ...props }: TimePickerProps
       popupIcon={<Clock color={error ? 'error' : 'primary'} />}
       className={classes.root}
       renderInput={(params) => {
-        Object.assign(params.InputProps, { notched: false });
-        return (
-          <TextField
-            {...params}
-            InputLabelProps={{ shrink: true }}
-            variant="outlined"
-            error={error}
-            helperText={helperText}
-          />
-        );
+        return <TextField {...params} variant="outlined" error={error} helperText={helperText} />;
       }}
     />
   );
