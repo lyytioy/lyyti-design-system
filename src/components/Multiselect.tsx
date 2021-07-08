@@ -1,9 +1,9 @@
 import { Autocomplete, AutocompleteProps } from '@material-ui/lab';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import TextField from './TextField';
+import TextField, { MarginTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 
-const useStyles = makeStyles<Theme>((theme) =>
+const useStyles = makeStyles<Theme>(() =>
   createStyles({
     root: {
       '& .MuiInputAdornment-positionStart': {
@@ -24,7 +24,7 @@ export interface MultiselectProps<T = OptionsType>
   filterSelectedOptions?: boolean;
   fullWidth?: boolean;
   label?: string;
-  margin?: 'dense' | 'normal';
+  margin?: MarginTypes;
   multiple?: boolean;
   placeholder?: string;
 }
