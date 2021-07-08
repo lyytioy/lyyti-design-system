@@ -7,6 +7,15 @@ import Select, { SelectProps } from '../../components/Select';
 export default {
   title: 'Components/Inputs/Select',
   component: Select,
+  parameters: {
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
+  },
 } as Meta;
 
 const Template: Story<SelectProps> = (args) => (
@@ -93,4 +102,20 @@ Disabled.args = {
   error: false,
   InputLabelProps: { shrink: true },
   InputProps: { notched: false },
+};
+
+export const White = Template.bind({});
+White.args = {
+  children: <MenuItem>{'Item 1'}</MenuItem>,
+  margin: 'dense',
+  label: 'Label',
+  placeholder: 'Placeholder',
+  disabled: false,
+  error: false,
+  InputLabelProps: { shrink: true },
+  InputProps: { notched: false },
+  color: 'white',
+};
+White.parameters = {
+  backgrounds: { default: 'dark' },
 };
