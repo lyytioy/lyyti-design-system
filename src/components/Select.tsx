@@ -8,15 +8,32 @@ export type SelectProps<T = OptionsType> = (
 ) & {
   options: T[];
   adornment?: MultiselectProps<T>['adornment'];
+  multiple?: boolean;
 };
 
 const Select = (props: SelectProps): JSX.Element => {
-  const { adornment, options } = props;
-  if ((props as MultiselectProps).multiple) {
+  const { adornment, options, multiple = false } = props;
+  if (multiple) {
     return <Multiselect {...(props as MultiselectProps)} />;
   }
   return (
-    <TextField {...(props as TextFieldProps)} select startAdornment={adornment}>
+    <TextField
+      {...(props as TextFieldProps)}
+      select
+      startAdornment={adornment}
+      SelectProps={{
+        MenuProps: {
+          anchorOrigin: {
+            vertical: 'bottom',
+            horizontal: 'left',
+          },
+          transformOrigin: {
+            vertical: 'top',
+            horizontal: 'left',
+          },
+          getContentAnchorEl: null,
+        },
+      }}>
       {options.map(({ id, value: label }) => (
         <MenuItem key={id} value={id}>
           {label}
