@@ -133,13 +133,13 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   })
 );
 
-type DatePickerCallback = (date: moment.Moment | null) => void;
-type DateRangeCallback = (arg: DateRange) => void;
-
 export interface DateRange {
   startDate: moment.Moment | null;
   endDate: moment.Moment | null;
 }
+
+type DatePickerCallback = (date: moment.Moment | null) => void;
+type DateRangeCallback = (arg: DateRange) => void;
 
 export interface DatepickerProps extends Record<string, unknown> {
   /** Selected date. */
@@ -199,8 +199,8 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
   const [focused, setFocused] = useState<boolean | FocusedInputShape | null>(null);
   type Focused = { focused: typeof focused };
   const handleFocusChange = (arg: Focused | FocusedInputShape) => {
-    if ((arg as Focused)?.focused) {
-      setFocused((arg as Focused).focused);
+    if (arg && Object.keys(arg).includes('focused')) {
+      setFocused((arg as Focused)?.focused);
     } else {
       setFocused(arg as FocusedInputShape);
     }

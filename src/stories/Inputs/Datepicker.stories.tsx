@@ -29,7 +29,7 @@ const DatepickerTemplate: Story<DatepickerProps> = (args) => {
 
   return (
     <ThemeSelector>
-      <Datepicker {...args} date={date} onDateChange={(e) => setDate(e)} />
+      <Datepicker {...args} date={date} onDateChange={setDate} />
     </ThemeSelector>
   );
 };
