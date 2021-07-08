@@ -14,30 +14,10 @@ export default {
           'Select components are used for collecting user provided information from a list of options.',
       },
     },
-    argTypes: {
-      endAdornment: { table: { disable: true } },
-      filterSelectedOptions: {
-        // description: 'If true, hide the selected options from the list box.',
-        control: { type: 'boolean' },
-        table: {
-          defaultValue: {
-            summary: true,
-          },
-        },
-      },
-      focused: {
-        control: { type: 'boolean' },
-      },
-      margin: {
-        control: {
-          type: 'radio',
-          options: ['dense', 'normal'],
-        },
-      },
-    },
   },
   args: {
     label: 'Label',
+    multiple: false,
   },
 } as Meta;
 
@@ -101,7 +81,7 @@ Error.args = {
 export const StartAdornment = SelectTemplate.bind({});
 StartAdornment.args = {
   helperText: 'Helper text',
-  startAdornment: 'Kg',
+  adornment: 'Kg',
 };
 
 export const Disabled = SelectTemplate.bind({});
@@ -113,4 +93,5 @@ Disabled.args = {
 export const MultipleSelect = MultiSelectTemplate.bind({});
 MultipleSelect.args = {
   multiple: true,
+  placeholder: 'Select',
 };
