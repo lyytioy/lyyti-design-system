@@ -1,9 +1,12 @@
-import { Autocomplete, AutocompleteProps } from '@material-ui/lab';
+import {
+  Autocomplete as MuiAutocomplete,
+  AutocompleteProps as MuiAutocompleteProps,
+} from '@material-ui/lab';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import TextField from './TextField';
+import TextField, { MarginTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 
-const useStyles = makeStyles<Theme>((theme) =>
+const useStyles = makeStyles<Theme>(() =>
   createStyles({
     root: {
       '& .MuiInputAdornment-positionStart': {
@@ -15,21 +18,22 @@ const useStyles = makeStyles<Theme>((theme) =>
 
 export type OptionsType = { id: number | string; value: string };
 
-export interface MultiselectProps<T = OptionsType>
+export interface AutocompleteProps<T = OptionsType>
   extends Omit<
-    AutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
+    MuiAutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
     'renderInput' | 'startAdornment' | 'endAdornment' | 'variant'
   > {
   adornment?: string | JSX.Element;
   filterSelectedOptions?: boolean;
   fullWidth?: boolean;
   label?: string;
-  margin?: 'dense' | 'normal';
+  margin?: MarginTypes;
   multiple?: boolean;
   placeholder?: string;
+  color?: ColorTypes;
 }
 
-const Multiselect = ({
+const Autocomplete = ({
   adornment,
   filterSelectedOptions = true,
   fullWidth = false,
@@ -38,12 +42,13 @@ const Multiselect = ({
   margin = 'dense',
   options,
   placeholder,
+  color = 'primary',
   ...props
-}: MultiselectProps): JSX.Element => {
+}: AutocompleteProps): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Autocomplete
+    <MuiAutocomplete
       getOptionLabel={getOptionLabel}
       options={options}
       {...props}
@@ -65,10 +70,11 @@ const Multiselect = ({
               </>
             ),
           }}
+          color={color}
         />
       )}
     />
   );
 };
 
-export default Multiselect;
+export default Autocomplete;

@@ -12,6 +12,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import Calendar from '../icons/Calendar';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
+import { MarginTypes } from './TextField';
 
 export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   createStyles({
@@ -152,7 +153,7 @@ export interface DatepickerProps extends Record<string, unknown> {
   /** Changes between date picker and date range picker */
   range?: boolean;
   /** Defines the look of the input element. */
-  margin?: Margin;
+  margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the date. */
@@ -169,10 +170,8 @@ export interface DatepickerRangeProps
   onDateChange: DateRangeCallback;
 }
 
-type Margin = 'dense' | 'normal';
-
 interface UseStylesProps {
-  margin: Margin;
+  margin: MarginTypes;
 }
 
 function Datepicker(props: DatepickerRangeProps): JSX.Element;
