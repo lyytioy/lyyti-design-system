@@ -271,12 +271,7 @@ const Template: Story<SvgIconProps> = (args) => {
     <ThemeSelector>
       <Grid container spacing={1}>
         <Grid item xs={4}>
-          <TextField
-            onChange={handleChange}
-            value={search}
-            variant="outlined"
-            placeholder="Search"
-          />
+          <TextField onChange={handleChange} value={search} placeholder="Search" />
         </Grid>
         <Grid item xs={8}>
           <Source

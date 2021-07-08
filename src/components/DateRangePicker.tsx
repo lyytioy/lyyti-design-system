@@ -8,6 +8,7 @@ import Calendar from '../icons/Calendar';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { useStyles } from './Datepicker';
+import { MarginTypes } from './TextField';
 
 export interface DateRange {
   startDate: moment.Moment | null;
@@ -30,7 +31,7 @@ export interface DateRangePickerProps {
   /** Date range pickers need to have a unique id.  */
   id: string;
   /** Defines the look of the input element. */
-  margin?: 'dense' | 'normal';
+  margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the dates. */

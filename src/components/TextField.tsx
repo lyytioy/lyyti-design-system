@@ -68,13 +68,15 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
+export type MarginTypes = 'dense' | 'normal';
+
 export type VariantTypes = 'outlined' | undefined;
 export type ColorTypes = 'primary' | 'white';
 
 export type TextFieldProps = {
   endAdornment?: string | JSX.Element;
-  fullWidth: boolean;
-  margin: 'dense' | 'normal';
+  fullWidth?: boolean;
+  margin?: MarginTypes;
   startAdornment?: string | JSX.Element;
   color?: ColorTypes;
   variant?: VariantTypes;
