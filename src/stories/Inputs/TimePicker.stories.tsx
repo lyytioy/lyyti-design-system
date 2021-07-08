@@ -16,8 +16,8 @@ const Template: Story<TimePickerProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {};
 
-export const TwelveHour = Template.bind({});
-TwelveHour.args = { twelvehour: true };
+export const LargeTwelveHour = Template.bind({});
+LargeTwelveHour.args = { twelvehour: true, margin: 'normal' };
 
 export const Disabled = Template.bind({});
 Disabled.args = { disabled: true };
