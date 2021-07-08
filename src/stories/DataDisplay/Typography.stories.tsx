@@ -29,4 +29,5 @@ Default.args = {};
 export const H1 = Template.bind({});
 H1.args = {
   variant: 'h1',
+  component: 'p',
 };

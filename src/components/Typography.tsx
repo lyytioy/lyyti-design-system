@@ -2,6 +2,7 @@ import {
   Typography as MuiTypography,
   TypographyProps as MuiTypographyProps,
 } from '@material-ui/core';
+import React from 'react';
 
 export type VariantTypes =
   | 'h1'
@@ -14,11 +15,13 @@ export type VariantTypes =
   | 'body1'
   | 'body2'
   | 'caption'
-  | 'overline'
   | 'srOnly'
   | 'inherit';
 
-export type TypographyProps = { variant: VariantTypes } & Omit<MuiTypographyProps, 'variant'>;
+export type TypographyProps = { variant: VariantTypes; component?: React.ElementType } & Omit<
+  MuiTypographyProps,
+  'variant' | 'component'
+>;
 
 const Typography = ({ variant = 'body1', ...props }: TypographyProps): JSX.Element => {
   return <MuiTypography {...props} variant={variant} />;
