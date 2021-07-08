@@ -28,5 +28,5 @@ Dropdown.args = {
   title: 'Open menu',
   onSelect: (item: number) => exampleFunction(item),
   items: menuItems,
-  buttonProps: { variant: 'outlined', color: 'primary', chunky: false },
+  buttonProps: { children: '', variant: 'outlined', color: 'primary', chunky: false },
 };
