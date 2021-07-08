@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import 'react-dates/initialize';
-import {
-  DateRangePicker as AirBnbDateRangePicker,
-  SingleDatePicker,
-  FocusedInputShape,
-} from 'react-dates';
+import { DateRangePicker, SingleDatePicker, FocusedInputShape } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import InputLabel from './InputLabel';
@@ -138,7 +134,7 @@ export interface DateRange {
   endDate: moment.Moment | null;
 }
 
-type DatePickerCallback = (date: moment.Moment | null) => void;
+type DatepickerCallback = (date: moment.Moment | null) => void;
 type DateRangeCallback = (arg: DateRange) => void;
 
 export interface DatepickerProps extends Record<string, unknown> {
@@ -157,7 +153,7 @@ export interface DatepickerProps extends Record<string, unknown> {
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the date. */
-  onDateChange: DatePickerCallback;
+  onDateChange: DatepickerCallback;
 }
 
 export interface DatepickerRangeProps
@@ -190,7 +186,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
   const range = !!props?.range;
 
   const classes = useStyles({ margin });
-  let datPicker: JSX.Element;
+  let datepicker: JSX.Element;
 
   useEffect(() => {
     moment.locale(locale);
@@ -215,10 +211,10 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
       onDateChange: onDatesChange,
     } = props as DatepickerRangeProps;
 
-    datPicker = (
+    datepicker = (
       <div className={`${classes.root} ${focused ? classes.focused : ''}`}>
         {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
-        <AirBnbDateRangePicker
+        <DateRangePicker
           startDateId={startDateId}
           endDateId={endDateId}
           startDate={startDate}
@@ -245,14 +241,14 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
       </div>
     );
   } else {
-    datPicker = (
+    datepicker = (
       <div className={`${classes.root} ${focused ? classes.focused : ''}`}>
         {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
         <SingleDatePicker
           id={id}
           date={date}
           focused={!!focused}
-          onDateChange={onDateChange as DatePickerCallback}
+          onDateChange={onDateChange as DatepickerCallback}
           onFocusChange={handleFocusChange}
           customInputIcon={<Calendar />}
           inputIconPosition="after"
@@ -274,7 +270,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     );
   }
 
-  return datPicker;
+  return datepicker;
 }
 
 export default Datepicker;
