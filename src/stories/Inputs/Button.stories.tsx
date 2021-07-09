@@ -6,6 +6,11 @@ import { Bin } from '../../icons';
 export default {
   title: 'Components/Inputs/Button',
   component: Button,
+  argTypes: {
+    color: {
+      control: { type: 'radio', options: ['primary', 'secondary', 'inherit'] },
+    },
+  },
   args: {
     children: 'Button',
   },

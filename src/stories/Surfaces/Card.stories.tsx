@@ -53,7 +53,7 @@ export default {
     children: 'Lorem ipsum dolor sit amet',
     actions: (
       <>
-        <Button key={1} color={'secondary'} variant={'outlined'}>
+        <Button key={1} variant={'outlined'}>
           {'Cancel'}
         </Button>
         <Button key={2}>{'Save'}</Button>
