@@ -179,7 +179,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     label,
     locale = 'en',
     margin = 'dense',
-    numberOfMonths = 1,
+    numberOfMonths = 2,
     onDateChange,
   } = props as DatepickerProps;
 
