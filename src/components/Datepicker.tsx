@@ -9,6 +9,7 @@ import Calendar from '../icons/Calendar';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { MarginTypes } from './TextField';
+import { ArrowRight } from '../icons';
 
 export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   createStyles({
@@ -202,6 +203,18 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     }
   };
 
+  const previousIcon = (
+    <span className={`${classes.navButton} ${classes.navPrev}`}>
+      <ChevronLeft />
+    </span>
+  );
+
+  const nextIcon = (
+    <span className={`${classes.navButton} ${classes.navNext}`}>
+      <ChevronRight />
+    </span>
+  );
+
   if (range) {
     const {
       startDateId = 'start_id',
@@ -223,18 +236,11 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           onDatesChange={onDatesChange}
           onFocusChange={handleFocusChange as unknown as () => void}
           customInputIcon={<Calendar />}
+          customArrowIcon={<ArrowRight style={{ verticalAlign: 'middle', display: 'grid' }} />}
           inputIconPosition="after"
           numberOfMonths={numberOfMonths}
-          navPrev={
-            <span className={`${classes.navButton} ${classes.navPrev}`}>
-              <ChevronLeft />
-            </span>
-          }
-          navNext={
-            <span className={`${classes.navButton} ${classes.navNext}`}>
-              <ChevronRight />
-            </span>
-          }
+          navPrev={previousIcon}
+          navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
         />
@@ -253,16 +259,8 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           customInputIcon={<Calendar />}
           inputIconPosition="after"
           numberOfMonths={numberOfMonths}
-          navPrev={
-            <span className={`${classes.navButton} ${classes.navPrev}`}>
-              <ChevronLeft />
-            </span>
-          }
-          navNext={
-            <span className={`${classes.navButton} ${classes.navNext}`}>
-              <ChevronRight />
-            </span>
-          }
+          navPrev={previousIcon}
+          navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
         />
