@@ -236,7 +236,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           onDatesChange={onDatesChange}
           onFocusChange={handleFocusChange as unknown as () => void}
           customInputIcon={<Calendar />}
-          customArrowIcon={<ArrowRight style={{ verticalAlign: 'middle', display: 'grid' }} />}
+          customArrowIcon={<ArrowRight style={{ display: 'grid' }} />}
           inputIconPosition="after"
           numberOfMonths={numberOfMonths}
           navPrev={previousIcon}
