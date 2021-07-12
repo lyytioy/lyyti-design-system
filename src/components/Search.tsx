@@ -3,8 +3,14 @@ import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
 export type SearchProps<T = OptionsType> = (
-  | Omit<AutocompleteProps<T>, 'getOptionLabel' | 'multiple' | 'filterSelectedOptions'>
-  | Omit<TextFieldProps, 'getOptionLabel'>
+  | Omit<
+      AutocompleteProps<T>,
+      'adornment' | 'filterSelectedOptions' | 'getOptionLabel' | 'multiple'
+    >
+  | Omit<
+      TextFieldProps,
+      'endAdornment' | 'getOptionLabel' | 'hiddenLabel' | 'startAdornment' | 'variant'
+    >
 ) & {
   freeSolo?: boolean;
   fullWidth: boolean;

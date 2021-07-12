@@ -28,15 +28,6 @@ export default {
     },
   },
   argTypes: {
-    adornment: { table: { disable: true } },
-    children: { table: { disable: true } },
-    endAdornment: { table: { disable: true } },
-    focused: { table: { disable: true } },
-    getOptionLabel: { table: { disable: true } },
-    hiddenLabel: { table: { disable: true } },
-    multiple: { table: { disable: true } },
-    startAdornment: { table: { disable: true } },
-    variant: { table: { disable: true } },
     options: {
       description: 'Array of options, expects a array of objects that contain id and value',
     },
