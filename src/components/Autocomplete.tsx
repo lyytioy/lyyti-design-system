@@ -9,12 +9,15 @@ import InputAdornment from './InputAdornment';
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
     root: (props: Record<string, unknown>) => {
+      let iconColor = props.disabled ? theme.palette.action.disabled : theme.palette.text.primary;
+      if (props.color === 'white') iconColor = '#fff';
+
       return {
         '& .MuiInputAdornment-positionStart': {
           marginLeft: '6px',
         },
         '& .MuiSvgIcon-root': {
-          color: props.disabled ? theme.palette.action.disabled : theme.palette.text.primary,
+          color: iconColor,
         },
       };
     },
@@ -49,7 +52,7 @@ const Autocomplete = ({
   disabled = false,
   ...props
 }: AutocompleteProps): JSX.Element => {
-  const classes = useStyles({ disabled });
+  const classes = useStyles({ color, disabled });
 
   return (
     <MuiAutocomplete
