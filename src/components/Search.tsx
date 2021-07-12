@@ -11,8 +11,7 @@ export type SearchProps<T = OptionsType> = (
   options?: T[];
 };
 
-const Search = (props: SearchProps): JSX.Element => {
-  const { freeSolo = true } = props;
+const Search = ({ freeSolo = true, ...props }: SearchProps): JSX.Element => {
   const searchIcon = <SearchIcon fontSize="small" />;
   if ((props as AutocompleteProps).options?.length) {
     return (
