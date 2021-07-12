@@ -5,10 +5,10 @@ import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import InputLabel from './InputLabel';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import Calendar from '../icons/Calendar';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { MarginTypes } from './TextField';
+import { ArrowRight, Calendar } from '../icons';
 
 export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   createStyles({
@@ -126,6 +126,9 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
     navNext: {
       right: '22px',
     },
+    arrowIcon: {
+      display: 'grid',
+    },
   })
 );
 
@@ -179,7 +182,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     label,
     locale = 'en',
     margin = 'dense',
-    numberOfMonths = 1,
+    numberOfMonths = 2,
     onDateChange,
   } = props as DatepickerProps;
 
@@ -202,6 +205,18 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     }
   };
 
+  const previousIcon = (
+    <span className={`${classes.navButton} ${classes.navPrev}`}>
+      <ChevronLeft />
+    </span>
+  );
+
+  const nextIcon = (
+    <span className={`${classes.navButton} ${classes.navNext}`}>
+      <ChevronRight />
+    </span>
+  );
+
   if (range) {
     const {
       startDateId = 'start_id',
@@ -223,18 +238,11 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           onDatesChange={onDatesChange}
           onFocusChange={handleFocusChange as unknown as () => void}
           customInputIcon={<Calendar />}
+          customArrowIcon={<ArrowRight className={classes.arrowIcon} />}
           inputIconPosition="after"
           numberOfMonths={numberOfMonths}
-          navPrev={
-            <span className={`${classes.navButton} ${classes.navPrev}`}>
-              <ChevronLeft />
-            </span>
-          }
-          navNext={
-            <span className={`${classes.navButton} ${classes.navNext}`}>
-              <ChevronRight />
-            </span>
-          }
+          navPrev={previousIcon}
+          navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
         />
@@ -253,16 +261,8 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           customInputIcon={<Calendar />}
           inputIconPosition="after"
           numberOfMonths={numberOfMonths}
-          navPrev={
-            <span className={`${classes.navButton} ${classes.navPrev}`}>
-              <ChevronLeft />
-            </span>
-          }
-          navNext={
-            <span className={`${classes.navButton} ${classes.navNext}`}>
-              <ChevronRight />
-            </span>
-          }
+          navPrev={previousIcon}
+          navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
         />
