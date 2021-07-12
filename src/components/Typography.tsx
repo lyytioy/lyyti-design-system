@@ -15,7 +15,6 @@ export type VariantTypes =
   | 'body1'
   | 'body2'
   | 'caption'
-  | 'srOnly'
   | 'inherit';
 
 export type TypographyProps = { variant: VariantTypes; component?: React.ElementType } & Omit<
