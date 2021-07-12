@@ -5,11 +5,10 @@ import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import InputLabel from './InputLabel';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import Calendar from '../icons/Calendar';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { MarginTypes } from './TextField';
-import { ArrowRight } from '../icons';
+import { ArrowRight, Calendar } from '../icons';
 
 export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   createStyles({
