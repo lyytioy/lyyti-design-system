@@ -24,7 +24,6 @@ export interface AutocompleteProps<T = OptionsType>
     'renderInput' | 'startAdornment' | 'endAdornment' | 'variant'
   > {
   adornment?: string | JSX.Element;
-  filterSelectedOptions?: boolean;
   fullWidth?: boolean;
   label?: string;
   margin?: MarginTypes;
@@ -35,7 +34,6 @@ export interface AutocompleteProps<T = OptionsType>
 
 const Autocomplete = ({
   adornment,
-  filterSelectedOptions = true,
   fullWidth = false,
   getOptionLabel = (option: OptionsType) => option.value,
   label,
@@ -53,7 +51,6 @@ const Autocomplete = ({
       options={options}
       {...props}
       className={classes.root}
-      filterSelectedOptions={filterSelectedOptions}
       renderInput={(params) => (
         <TextField
           {...params}
