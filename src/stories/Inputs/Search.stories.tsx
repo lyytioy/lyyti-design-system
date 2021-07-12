@@ -40,6 +40,17 @@ export default {
     options: {
       description: 'Array of options, expects a array of objects that contain id and value',
     },
+    disabled: {
+      description: 'If true, the input element will be disabled.',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
     fullWidth: {
       description: 'If true, the input will take up the full width of its container.',
       control: {
@@ -76,6 +87,7 @@ export default {
     },
   },
   args: {
+    disabled: false,
     label: 'Label',
     placeholder: 'Search',
     fullWidth: false,
