@@ -127,6 +127,9 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
     navNext: {
       right: '22px',
     },
+    arrowIcon: {
+      display: 'grid',
+    },
   })
 );
 
@@ -236,7 +239,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           onDatesChange={onDatesChange}
           onFocusChange={handleFocusChange as unknown as () => void}
           customInputIcon={<Calendar />}
-          customArrowIcon={<ArrowRight style={{ display: 'grid' }} />}
+          customArrowIcon={<ArrowRight className={classes.arrowIcon} />}
           inputIconPosition="after"
           numberOfMonths={numberOfMonths}
           navPrev={previousIcon}
