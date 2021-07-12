@@ -6,8 +6,6 @@ export default {
   title: 'Components/Data Display/Typography',
   component: Typography,
   argTypes: {
-    children: { table: { disable: true } },
-    variantMapping: { table: { disable: true } },
     align: {
       description: 'Set the text-align on the component.',
       table: {
