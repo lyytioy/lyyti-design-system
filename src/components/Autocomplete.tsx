@@ -6,12 +6,17 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import TextField, { MarginTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 
-const useStyles = makeStyles<Theme>(() =>
+const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
-    root: {
-      '& .MuiInputAdornment-positionStart': {
-        marginLeft: '6px',
-      },
+    root: (props: Record<string, unknown>) => {
+      return {
+        '& .MuiInputAdornment-positionStart': {
+          marginLeft: '6px',
+        },
+        '& .MuiSvgIcon-root': {
+          color: props.disabled ? theme.palette.action.disabled : theme.palette.text.primary,
+        },
+      };
     },
   })
 );
@@ -41,12 +46,14 @@ const Autocomplete = ({
   options,
   placeholder,
   color = 'primary',
+  disabled = false,
   ...props
 }: AutocompleteProps): JSX.Element => {
-  const classes = useStyles();
+  const classes = useStyles({ disabled });
 
   return (
     <MuiAutocomplete
+      disabled={disabled}
       getOptionLabel={getOptionLabel}
       options={options}
       {...props}
