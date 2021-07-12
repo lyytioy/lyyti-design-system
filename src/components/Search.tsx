@@ -3,7 +3,7 @@ import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
 export type SearchProps<T = OptionsType> = (
-  | Omit<AutocompleteProps<T>, 'getOptionLabel' | 'multiple'>
+  | Omit<AutocompleteProps<T>, 'getOptionLabel' | 'multiple' | 'filterSelectedOptions'>
   | Omit<TextFieldProps, 'getOptionLabel'>
 ) & {
   freeSolo?: boolean;
