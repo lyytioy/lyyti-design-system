@@ -6,12 +6,20 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import TextField, { MarginTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 
-const useStyles = makeStyles<Theme>(() =>
+const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
-    root: {
-      '& .MuiInputAdornment-positionStart': {
-        marginLeft: '6px',
-      },
+    root: (props: Record<string, unknown>) => {
+      let iconColor = props.disabled ? theme.palette.action.disabled : theme.palette.text.primary;
+      if (props.color === 'white') iconColor = '#fff';
+
+      return {
+        '& .MuiInputAdornment-positionStart': {
+          marginLeft: '6px',
+        },
+        '& .MuiSvgIcon-root': {
+          color: iconColor,
+        },
+      };
     },
   })
 );
@@ -21,10 +29,9 @@ export type OptionsType = { id: number | string; value: string };
 export interface AutocompleteProps<T = OptionsType>
   extends Omit<
     MuiAutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
-    'renderInput' | 'startAdornment' | 'endAdornment' | 'variant'
+    'hiddenLabel' | 'renderInput' | 'startAdornment' | 'endAdornment' | 'variant'
   > {
   adornment?: string | JSX.Element;
-  filterSelectedOptions?: boolean;
   fullWidth?: boolean;
   label?: string;
   margin?: MarginTypes;
@@ -35,7 +42,6 @@ export interface AutocompleteProps<T = OptionsType>
 
 const Autocomplete = ({
   adornment,
-  filterSelectedOptions = true,
   fullWidth = false,
   getOptionLabel = (option: OptionsType) => option.value,
   label,
@@ -43,17 +49,18 @@ const Autocomplete = ({
   options,
   placeholder,
   color = 'primary',
+  disabled = false,
   ...props
 }: AutocompleteProps): JSX.Element => {
-  const classes = useStyles();
+  const classes = useStyles({ color, disabled });
 
   return (
     <MuiAutocomplete
+      disabled={disabled}
       getOptionLabel={getOptionLabel}
       options={options}
       {...props}
       className={classes.root}
-      filterSelectedOptions={filterSelectedOptions}
       renderInput={(params) => (
         <TextField
           {...params}
