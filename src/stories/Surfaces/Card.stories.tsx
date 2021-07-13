@@ -5,8 +5,7 @@ import Avatar from '../../components/Avatar';
 import Grid from '../../components/Grid';
 import { Star } from '../../icons';
 import ThemeSelector from '../../themes/ThemeSelector';
-import { Primary as PrimaryContainedButton } from '../Inputs/ContainedButton.stories';
-import { Primary as PrimaryOutlinedButton } from '../Inputs/OutlinedButton.stories';
+import Button from '../../components/Button';
 
 export default {
   title: 'Components/Surfaces/Card',
@@ -54,12 +53,10 @@ export default {
     children: 'Lorem ipsum dolor sit amet',
     actions: (
       <>
-        <PrimaryOutlinedButton key={1} {...PrimaryOutlinedButton.args}>
+        <Button key={1} variant={'outlined'}>
           {'Cancel'}
-        </PrimaryOutlinedButton>
-        <PrimaryContainedButton key={2} {...PrimaryContainedButton.args}>
-          {'Save'}
-        </PrimaryContainedButton>
+        </Button>
+        <Button key={2}>{'Save'}</Button>
       </>
     ),
   },
