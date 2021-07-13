@@ -241,12 +241,6 @@ export default createMuiTheme({
       fontSize: '1.125rem',
       letterSpacing: '0em',
     },
-    h6: {
-      fontFamily: objektivMk1FontFamily,
-      fontWeight: 400,
-      fontSize: '1rem',
-      letterSpacing: '0em',
-    },
     subtitle1: {
       fontFamily: objektivMk1FontFamily,
       fontWeight: 500,

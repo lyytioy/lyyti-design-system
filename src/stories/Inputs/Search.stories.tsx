@@ -28,23 +28,17 @@ export default {
     },
   },
   argTypes: {
-    children: { table: { disable: true } },
-    variant: { table: { disable: true } },
-    adornment: { table: { disable: true } },
-    endAdornment: { table: { disable: true } },
-    getOptionLabel: { table: { disable: true } },
-    focused: { table: { disable: true } },
-    hiddenLabel: { table: { disable: true } },
-    startAdornment: { table: { disable: true } },
     options: {
       description: 'Array of options, expects a array of objects that contain id and value',
     },
-    filterSelectedOptions: {
-      description: 'If true, hide the selected options from the list box.',
-      control: { type: 'boolean' },
+    disabled: {
+      description: 'If true, the input element will be disabled.',
+      control: {
+        type: 'boolean',
+      },
       table: {
         defaultValue: {
-          summary: true,
+          summary: false,
         },
       },
     },
@@ -59,12 +53,15 @@ export default {
         },
       },
     },
-    multiple: {
-      description: 'If true, value must be an array and the menu will support multiple selections.',
-      control: { type: 'boolean' },
+    freeSolo: {
+      description:
+        'If true, the Search is free solo, meaning that the user input is not bound to provided options.',
+      control: {
+        type: 'boolean',
+      },
       table: {
         defaultValue: {
-          summary: false,
+          summary: true,
         },
       },
     },
@@ -81,10 +78,11 @@ export default {
     },
   },
   args: {
+    disabled: false,
     label: 'Label',
-    multiple: false,
     placeholder: 'Search',
     fullWidth: false,
+    freeSolo: true,
   },
 } as Meta;
 
@@ -97,29 +95,21 @@ const Template: Story<SearchProps> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   options: options,
-  filterSelectedOptions: true,
 };
 
-export const MultipleFullwidth = Template.bind({});
-MultipleFullwidth.args = {
+export const LargeFullwidth = Template.bind({});
+LargeFullwidth.args = {
+  margin: 'normal',
   options: options,
-  multiple: true,
   fullWidth: true,
 };
 
-export const LargeMultiple = Template.bind({});
-LargeMultiple.args = {
-  margin: 'normal',
-  options: options,
-  multiple: true,
-};
-
-export const WhiteMultiple = Template.bind({});
-WhiteMultiple.args = {
+export const White = Template.bind({});
+White.args = {
   options: options,
   color: 'white',
 };
-WhiteMultiple.parameters = {
+White.parameters = {
   backgrounds: { default: 'dark' },
 };
 
