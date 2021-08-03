@@ -5,6 +5,7 @@ import {
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import TextField, { MarginTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
+import Chip from './Chip';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
@@ -20,6 +21,14 @@ const useStyles = makeStyles<Theme>((theme) =>
           color: iconColor,
         },
       };
+    },
+    option: {
+      '&[aria-selected="true"]': {
+        backgroundColor: theme.palette.primaryStates.selected,
+      },
+      '&[data-focus="true"]': {
+        backgroundColor: theme.palette.primaryStates.hover,
+      },
     },
   })
 );
@@ -60,7 +69,17 @@ const Autocomplete = ({
       getOptionLabel={getOptionLabel}
       options={options}
       {...props}
-      className={classes.root}
+      classes={{ root: classes.root, option: classes.option }}
+      renderTags={(value: OptionsType[], getTagProps) =>
+        value.map((value: OptionsType, index: number) => (
+          <Chip
+            key={value.id}
+            label={value.value}
+            size={margin === 'dense' ? 'small' : 'medium'}
+            {...getTagProps({ index })}
+          />
+        ))
+      }
       renderInput={(params) => (
         <TextField
           {...params}
