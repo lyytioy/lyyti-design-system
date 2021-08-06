@@ -19,7 +19,7 @@ export type VariantTypes =
 
 export interface TypographyProps
   extends Omit<MuiTypographyProps, 'component' | 'gutterBottom' | 'variant' | 'variantMapping'> {
-  variant: VariantTypes;
+  variant?: VariantTypes;
   component?: ElementType;
 }
 
