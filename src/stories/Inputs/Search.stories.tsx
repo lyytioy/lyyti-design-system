@@ -81,7 +81,6 @@ export default {
     disabled: false,
     label: 'Label',
     placeholder: 'Search',
-    fullWidth: false,
     freeSolo: true,
   },
 } as Meta;

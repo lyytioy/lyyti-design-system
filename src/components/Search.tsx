@@ -13,18 +13,26 @@ export type SearchProps<T = OptionsType> = (
     >
 ) & {
   freeSolo?: boolean;
-  fullWidth: boolean;
+  fullWidth?: boolean;
   options?: T[];
 };
 
-const Search = ({ freeSolo = true, ...props }: SearchProps): JSX.Element => {
+const Search = ({ freeSolo = true, fullWidth = false, ...props }: SearchProps): JSX.Element => {
   const searchIcon = <SearchIcon fontSize="small" />;
+  console.log(fullWidth);
   if ((props as AutocompleteProps).options?.length) {
     return (
-      <Autocomplete {...(props as AutocompleteProps)} adornment={searchIcon} freeSolo={freeSolo} />
+      <Autocomplete
+        {...(props as AutocompleteProps)}
+        adornment={searchIcon}
+        freeSolo={freeSolo}
+        fullWidth={fullWidth}
+      />
     );
   }
-  return <TextField {...(props as TextFieldProps)} startAdornment={searchIcon} />;
+  return (
+    <TextField {...(props as TextFieldProps)} fullWidth={fullWidth} startAdornment={searchIcon} />
+  );
 };
 
 export default Search;
