@@ -38,7 +38,7 @@ export interface CardProps extends MuiCardProps {
   headerAvatar?: JSX.Element;
   children: JSX.Element | string;
   actions?: JSX.Element;
-  headerBackgroundColor: string;
+  headerBackgroundColor?: string;
 }
 
 const Card = ({
