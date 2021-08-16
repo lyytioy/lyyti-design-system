@@ -109,4 +109,17 @@ export const MultipleSelect = MultiSelectTemplate.bind({});
 MultipleSelect.args = {
   multiple: true,
   placeholder: 'Select',
+  fullWidth: true,
+};
+
+export const MultipleSelectLargeWhite = MultiSelectTemplate.bind({});
+MultipleSelectLargeWhite.args = {
+  multiple: true,
+  placeholder: 'Select',
+  fullWidth: true,
+  margin: 'normal',
+  color: 'white',
+};
+MultipleSelectLargeWhite.parameters = {
+  backgrounds: { default: 'dark' },
 };
