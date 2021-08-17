@@ -17,8 +17,8 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       color: theme.palette.text.primary,
       display: 'inline-flex',
       flexDirection: 'column',
-      minWidth: 220,
       verticalAlign: 'top',
+      width: (props) => (props.fullwidth ? '100%' : undefined),
       '& label': {
         color: (props) =>
           props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
@@ -27,6 +27,7 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       },
       '& .DateInput': {
         background: 'none',
+        flex: 1,
         width: 'initial',
       },
       '& .DateInput_input': {
@@ -38,7 +39,6 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         height: '1.1876em',
         lineHeight: 'inherit',
         padding: (props) => (props.margin === 'dense' ? '10.5px 14px' : '18.5px 14px'),
-        width: 'initial',
         '&::placeholder': {
           color: (props) =>
             props.color === 'white'
@@ -48,12 +48,14 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       },
       '& .SingleDatePickerInput': {
         background: 'none',
+        width: '100%',
       },
       '& .SingleDatePickerInput__withBorder': {
         borderColor: (props) =>
           props.color === 'white' ? theme.palette.common.white : 'rgba(0, 0, 0, 0.23)',
         borderRadius: theme.shape.borderRadius,
         boxSizing: 'border-box',
+        display: 'flex',
       },
       '& .SingleDatePickerInput__withBorder:hover': {
         borderColor: (props) =>
@@ -68,12 +70,14 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       },
       '& .DateRangePickerInput': {
         background: 'none',
+        width: '100%',
       },
       '& .DateRangePickerInput__withBorder': {
         borderColor: (props) =>
           props.color === 'white' ? theme.palette.common.white : 'rgba(0, 0, 0, 0.23)',
         borderRadius: theme.shape.borderRadius,
         boxSizing: 'border-box',
+        display: 'flex',
       },
       '& .DateRangePickerInput__withBorder:hover': {
         borderColor: (props) =>
@@ -142,7 +146,7 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       right: '22px',
     },
     arrowIcon: {
-      display: 'grid',
+      height: '100%',
     },
   })
 );
@@ -160,6 +164,7 @@ export interface DatepickerProps extends Record<string, unknown> {
   color?: ColorTypes;
   /** Selected date. */
   date: moment.Moment | null;
+  fullwidth?: boolean;
   /** Date pickers need to have a unique id.  */
   id: string;
   /** Label for the date picker input field. */
@@ -185,11 +190,12 @@ export interface DatepickerRangeProps
   /** Changes between date picker and date range picker */
   range: boolean;
   onDateChange: DateRangeCallback;
-  placeholder?: string | moment.Moment;
+  fullwidth?: boolean;
 }
 
 interface UseStylesProps {
   color: ColorTypes;
+  fullwidth: boolean;
   margin: MarginTypes;
 }
 
@@ -199,6 +205,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
   const {
     color = 'default',
     date,
+    fullwidth = false,
     id = 'datepicker',
     label,
     locale = 'en',
@@ -210,7 +217,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
 
   const range = !!props?.range;
 
-  const classes = useStyles({ color, margin });
+  const classes = useStyles({ color, fullwidth, margin });
   let datepicker: JSX.Element;
 
   useEffect(() => {

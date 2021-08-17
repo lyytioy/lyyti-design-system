@@ -69,8 +69,11 @@ Default.args = {};
 export const DatepickerRange = DatepickerRangeTemplate.bind({});
 DatepickerRange.args = {};
 
-export const DatepickerWhite = DatepickerTemplate.bind({});
-DatepickerWhite.args = { color: 'white' };
-DatepickerWhite.parameters = {
+export const DatepickerWhiteFullwidth = DatepickerTemplate.bind({});
+DatepickerWhiteFullwidth.args = { color: 'white', fullwidth: true };
+DatepickerWhiteFullwidth.parameters = {
   backgrounds: { default: 'dark' },
 };
+
+export const DatepickerRangeFullwidth = DatepickerRangeTemplate.bind({});
+DatepickerRangeFullwidth.args = { fullwidth: true };
