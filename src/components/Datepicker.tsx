@@ -20,7 +20,8 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       minWidth: 220,
       verticalAlign: 'top',
       '& label': {
-        color: theme.palette.grey[400],
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
         letterSpacing: '0.15px',
         lineHeight: '26px',
       },
@@ -32,27 +33,35 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         background: 'none',
         border: 0,
         boxSizing: 'content-box',
-        color: 'currentColor',
+        color: (props) => (props.color === 'white' ? theme.palette.common.white : 'currentColor'),
         font: 'inherit',
         height: '1.1876em',
         lineHeight: 'inherit',
         padding: (props) => (props.margin === 'dense' ? '10.5px 14px' : '18.5px 14px'),
         width: 'initial',
+        '&::placeholder': {
+          color: (props) =>
+            props.color === 'white'
+              ? theme.palette.lightStates.disabledBg
+              : theme.palette.text.secondary,
+        },
       },
       '& .SingleDatePickerInput': {
         background: 'none',
       },
       '& .SingleDatePickerInput__withBorder': {
-        borderColor:
-          theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)',
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : 'rgba(0, 0, 0, 0.23)',
         borderRadius: theme.shape.borderRadius,
         boxSizing: 'border-box',
       },
       '& .SingleDatePickerInput__withBorder:hover': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .SingleDatePickerInput_calendarIcon': {
-        color: theme.palette.grey[400],
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
         lineHeight: 1,
         marginRight: 8,
         padding: 0,
@@ -61,16 +70,18 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         background: 'none',
       },
       '& .DateRangePickerInput__withBorder': {
-        borderColor:
-          theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)',
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : 'rgba(0, 0, 0, 0.23)',
         borderRadius: theme.shape.borderRadius,
         boxSizing: 'border-box',
       },
       '& .DateRangePickerInput__withBorder:hover': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .DateRangePickerInput_calendarIcon': {
-        color: theme.palette.grey[400],
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
         lineHeight: 1,
         marginRight: 8,
         padding: 0,
@@ -102,16 +113,20 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         color: theme.palette.text.primary,
       },
       '& .SingleDatePickerInput__withBorder': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .SingleDatePickerInput_calendarIcon': {
-        color: theme.palette.primary.main,
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .DateRangePickerInput__withBorder': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .DateRangePickerInput_calendarIcon': {
-        color: theme.palette.primary.main,
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
     },
     navButton: {
@@ -139,8 +154,10 @@ export interface DateRange {
 
 type DatepickerCallback = (date: moment.Moment | null) => void;
 type DateRangeCallback = (arg: DateRange) => void;
+type ColorTypes = 'default' | 'white';
 
 export interface DatepickerProps extends Record<string, unknown> {
+  color?: ColorTypes;
   /** Selected date. */
   date: moment.Moment | null;
   /** Date pickers need to have a unique id.  */
@@ -149,14 +166,15 @@ export interface DatepickerProps extends Record<string, unknown> {
   label?: string;
   /** Determines date localization. */
   locale?: string;
-  /** Changes between date picker and date range picker */
-  range?: boolean;
   /** Defines the look of the input element. */
   margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the date. */
   onDateChange: DatepickerCallback;
+  placeholder?: string;
+  /** Changes between date picker and date range picker */
+  range?: boolean;
 }
 
 export interface DatepickerRangeProps
@@ -167,9 +185,11 @@ export interface DatepickerRangeProps
   /** Changes between date picker and date range picker */
   range: boolean;
   onDateChange: DateRangeCallback;
+  placeholder?: string | moment.Moment;
 }
 
 interface UseStylesProps {
+  color: ColorTypes;
   margin: MarginTypes;
 }
 
@@ -177,6 +197,7 @@ function Datepicker(props: DatepickerRangeProps): JSX.Element;
 function Datepicker(props: DatepickerProps): JSX.Element;
 function Datepicker(props: Record<string, unknown>): JSX.Element {
   const {
+    color = 'default',
     date,
     id = 'datepicker',
     label,
@@ -184,11 +205,12 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     margin = 'dense',
     numberOfMonths = 2,
     onDateChange,
+    placeholder = moment(Date.now()).format('D.M.Y'),
   } = props as DatepickerProps;
 
   const range = !!props?.range;
 
-  const classes = useStyles({ margin });
+  const classes = useStyles({ color, margin });
   let datepicker: JSX.Element;
 
   useEffect(() => {
@@ -265,6 +287,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
+          placeholder={placeholder}
         />
       </div>
     );

@@ -18,6 +18,13 @@ export default {
         component: 'Use to display past, present or future dates.',
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
   },
   args: {
     label: 'Label',
@@ -61,3 +68,9 @@ Default.args = {};
 
 export const DatepickerRange = DatepickerRangeTemplate.bind({});
 DatepickerRange.args = {};
+
+export const DatepickerWhite = DatepickerTemplate.bind({});
+DatepickerWhite.args = { color: 'white' };
+DatepickerWhite.parameters = {
+  backgrounds: { default: 'dark' },
+};
