@@ -66,8 +66,8 @@ const DatepickerRangeTemplate: Story<DatepickerRangeProps> = (args) => {
 export const Default = DatepickerTemplate.bind({});
 Default.args = {};
 
-export const DatepickerRange = DatepickerRangeTemplate.bind({});
-DatepickerRange.args = {};
+export const DatepickerRangeLarge = DatepickerRangeTemplate.bind({});
+DatepickerRangeLarge.args = { margin: 'normal' };
 
 export const DatepickerWhiteFullwidth = DatepickerTemplate.bind({});
 DatepickerWhiteFullwidth.args = { color: 'white', fullwidth: true };
