@@ -26,6 +26,34 @@ export default {
       ],
     },
   },
+  argTypes: {
+    locale: {
+      control: {
+        type: 'select',
+        options: [
+          'da',
+          'de',
+          'en',
+          'es',
+          'et',
+          'fi',
+          'fr',
+          'hr',
+          'it',
+          'lv',
+          'nl',
+          'no',
+          'pl',
+          'pt',
+          'ru',
+          'sv',
+          'th',
+          'zh',
+          'yue',
+        ],
+      },
+    },
+  },
   args: {
     label: 'Label',
   },
@@ -64,16 +92,28 @@ const DatepickerRangeTemplate: Story<DatepickerRangeProps> = (args) => {
 };
 
 export const Default = DatepickerTemplate.bind({});
-Default.args = {};
+Default.args = { id: 'defaultDatepicker' };
 
 export const DatepickerRangeLarge = DatepickerRangeTemplate.bind({});
-DatepickerRangeLarge.args = { margin: 'normal' };
+DatepickerRangeLarge.args = {
+  margin: 'normal',
+  startDateId: 'start1',
+  endDateId: 'end1',
+};
 
 export const DatepickerWhiteFullwidth = DatepickerTemplate.bind({});
-DatepickerWhiteFullwidth.args = { color: 'white', fullwidth: true };
+DatepickerWhiteFullwidth.args = {
+  id: 'fullwidthDatepicker',
+  color: 'white',
+  fullwidth: true,
+};
 DatepickerWhiteFullwidth.parameters = {
   backgrounds: { default: 'dark' },
 };
 
 export const DatepickerRangeFullwidth = DatepickerRangeTemplate.bind({});
-DatepickerRangeFullwidth.args = { fullwidth: true };
+DatepickerRangeFullwidth.args = {
+  fullwidth: true,
+  startDateId: 'start2',
+  endDateId: 'end2',
+};

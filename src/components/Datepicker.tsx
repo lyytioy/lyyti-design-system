@@ -3,12 +3,36 @@ import 'react-dates/initialize';
 import { DateRangePicker, SingleDatePicker, FocusedInputShape } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
+import 'moment/min/locales.min';
 import InputLabel from './InputLabel';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { MarginTypes } from './TextField';
 import { ArrowRight, Calendar } from '../icons';
+import { CountryCode } from '../types/countrycode';
+
+const momentLocaleMappings: Record<CountryCode, string> = {
+  da: 'da',
+  de: 'de',
+  fi: 'fi',
+  fr: 'fr',
+  en: 'en',
+  es: 'es',
+  et: 'et',
+  hr: 'hr',
+  it: 'it',
+  lv: 'lv',
+  no: 'nb',
+  nl: 'nl',
+  pl: 'pl',
+  pt: 'pt',
+  ru: 'ru',
+  sv: 'sv',
+  th: 'th',
+  zh: 'zh-cn',
+  yue: 'zh-hk',
+};
 
 export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   createStyles({
@@ -170,7 +194,7 @@ export interface DatepickerProps extends Record<string, unknown> {
   /** Label for the date picker input field. */
   label?: string;
   /** Determines date localization. */
-  locale?: string;
+  locale?: CountryCode;
   /** Defines the look of the input element. */
   margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
@@ -185,12 +209,13 @@ export interface DatepickerProps extends Record<string, unknown> {
 export interface DatepickerRangeProps
   extends Omit<DatepickerProps, 'onDateChange' | 'date'>,
     DateRange {
-  startDateId?: string;
-  endDateId?: string;
+  endDateId: string;
+  fullwidth?: boolean;
+  locale?: CountryCode;
+  onDateChange: DateRangeCallback;
   /** Changes between date picker and date range picker */
   range: boolean;
-  onDateChange: DateRangeCallback;
-  fullwidth?: boolean;
+  startDateId: string;
 }
 
 interface UseStylesProps {
@@ -206,7 +231,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     color = 'default',
     date,
     fullwidth = false,
-    id = 'datepicker',
+    id,
     label,
     locale = 'en',
     margin = 'dense',
@@ -221,7 +246,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
   let datepicker: JSX.Element;
 
   useEffect(() => {
-    moment.locale(locale);
+    moment.locale(momentLocaleMappings[locale]);
   }, [locale]);
 
   const [focused, setFocused] = useState<boolean | FocusedInputShape | null>(null);
@@ -248,11 +273,11 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
 
   if (range) {
     const {
-      startDateId = 'start_id',
-      endDateId = 'end_id',
-      startDate,
       endDate,
+      endDateId,
       onDateChange: onDatesChange,
+      startDate,
+      startDateId,
     } = props as DatepickerRangeProps;
 
     datepicker = (
