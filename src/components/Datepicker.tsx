@@ -209,6 +209,7 @@ export interface DatepickerProps extends Record<string, unknown> {
 export interface DatepickerRangeProps
   extends Omit<DatepickerProps, 'onDateChange' | 'date'>,
     DateRange {
+  endDatePlaceholderText?: string;
   endDateId: string;
   fullwidth?: boolean;
   locale?: CountryCode;
@@ -216,6 +217,7 @@ export interface DatepickerRangeProps
   /** Changes between date picker and date range picker */
   range: boolean;
   startDateId: string;
+  startDatePlaceholderText?: string;
 }
 
 interface UseStylesProps {
@@ -275,9 +277,11 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     const {
       endDate,
       endDateId,
+      endDatePlaceholderText,
       onDateChange: onDatesChange,
       startDate,
       startDateId,
+      startDatePlaceholderText,
     } = props as DatepickerRangeProps;
 
     datepicker = (
@@ -288,6 +292,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           endDateId={endDateId}
           startDate={startDate}
           endDate={endDate}
+          endDatePlaceholderText={endDatePlaceholderText}
           focusedInput={focused as FocusedInputShape}
           onDatesChange={onDatesChange}
           onFocusChange={handleFocusChange as unknown as () => void}
@@ -299,6 +304,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
+          startDatePlaceholderText={startDatePlaceholderText}
         />
       </div>
     );
