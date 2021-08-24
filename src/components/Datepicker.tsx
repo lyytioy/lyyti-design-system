@@ -10,9 +10,10 @@ import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { MarginTypes } from './TextField';
 import { ArrowRight, Calendar } from '../icons';
-import { CountryCode } from '../types/countrycode';
+import { LanguageCode } from '../types/languagecode';
 
-const momentLocaleMappings: Record<CountryCode, string> = {
+// Add mapping for each supported language to the best suiting locale
+const momentLocaleMappings: Record<LanguageCode, string> = {
   da: 'da',
   de: 'de',
   fi: 'fi',
