@@ -195,7 +195,7 @@ export interface DatepickerProps extends Record<string, unknown> {
   /** Label for the date picker input field. */
   label?: string;
   /** Determines date localization. */
-  locale?: CountryCode;
+  locale?: LanguageCode;
   /** Defines the look of the input element. */
   margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
@@ -213,7 +213,7 @@ export interface DatepickerRangeProps
   endDatePlaceholderText?: string;
   endDateId: string;
   fullwidth?: boolean;
-  locale?: CountryCode;
+  locale?: LanguageCode;
   onDateChange: DateRangeCallback;
   /** Changes between date picker and date range picker */
   range: boolean;
