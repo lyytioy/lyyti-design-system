@@ -182,10 +182,10 @@ export interface DateRange {
 
 type DatepickerCallback = (date: moment.Moment | null) => void;
 type DateRangeCallback = (arg: DateRange) => void;
-type ColorTypes = 'default' | 'white';
+type ColorType = 'default' | 'white';
 
 export interface DatepickerProps extends Record<string, unknown> {
-  color?: ColorTypes;
+  color?: ColorType;
   /** Selected date. */
   date: moment.Moment | null;
   fullwidth?: boolean;
@@ -221,7 +221,7 @@ export interface DatepickerRangeProps
 }
 
 interface UseStylesProps {
-  color: ColorTypes;
+  color: ColorType;
   fullwidth: boolean;
   margin: MarginTypes;
 }
