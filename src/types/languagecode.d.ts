@@ -1,4 +1,5 @@
-export type CountryCode =
+// List of supported languages
+export type LanguageCode =
   | 'en'
   | 'fi'
   | 'sv'
