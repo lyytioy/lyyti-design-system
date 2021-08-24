@@ -12,7 +12,7 @@ import { MarginTypes } from './TextField';
 import { ArrowRight, Calendar } from '../icons';
 import { LanguageCode } from '../types/languagecode';
 
-// Add mapping for each supported language to the best suiting locale
+// Add mapping for each supported language in registration page to the best suiting locale
 const momentLocaleMappings: Record<LanguageCode, string> = {
   da: 'da',
   de: 'de',
