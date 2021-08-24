@@ -134,12 +134,23 @@ interface ColorStateOptions {
   disabledBg: string;
 }
 
+interface ColorShadeOptions {
+  main: string;
+  dark: string;
+  light: string;
+  contrastText: string;
+}
+
 declare module '@material-ui/core/styles/createPalette' {
   interface Palette {
     primaryStates: ColorStateOptions;
+    light: ColorShadeOptions;
+    lightStates: ColorStateOptions;
   }
   interface PaletteOptions {
     primaryStates: ColorStateOptions;
+    light: ColorShadeOptions;
+    lightStates: ColorStateOptions;
   }
 }
 
@@ -155,6 +166,12 @@ export default createMuiTheme({
       main: '#EE8B3A',
       dark: '#DD6E13',
       light: '#F2A96D',
+      contrastText: '#FFFFFF',
+    },
+    light: {
+      main: '#FAFAFA',
+      dark: '#F3F3F3',
+      light: '#FFFFFF',
       contrastText: '#FFFFFF',
     },
     info: {
@@ -207,6 +224,14 @@ export default createMuiTheme({
       activeOutlined: 'rgba(4, 91, 86, 0.24)',
       outlinedStroke: '#045B56',
       disabledBg: '#739C9A',
+    },
+    lightStates: {
+      activeContained: 'rgba(250, 250, 250, 0.3)',
+      hover: 'rgba(255, 255, 255, 0.1)',
+      selected: 'rgba(255, 255, 255, 0.08)',
+      activeOutlined: 'rgba(255, 255, 255, 0.24)',
+      outlinedStroke: 'rgba(255, 255, 255, 0.5)',
+      disabledBg: '#E9E9E9',
     },
   },
   typography: {

@@ -1,0 +1,21 @@
+// List of supported languages
+export type LanguageCode =
+  | 'en'
+  | 'fi'
+  | 'sv'
+  | 'de'
+  | 'fr'
+  | 'nl'
+  | 'es'
+  | 'it'
+  | 'pt'
+  | 'no'
+  | 'da'
+  | 'et'
+  | 'lv'
+  | 'pl'
+  | 'hr'
+  | 'ru'
+  | 'zh'
+  | 'yue'
+  | 'th';

@@ -3,12 +3,37 @@ import 'react-dates/initialize';
 import { DateRangePicker, SingleDatePicker, FocusedInputShape } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
+import 'moment/min/locales.min';
 import InputLabel from './InputLabel';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { MarginTypes } from './TextField';
 import { ArrowRight, Calendar } from '../icons';
+import { LanguageCode } from '../types/languagecode';
+
+// Add mapping for each supported language in registration page to the best suiting locale
+const momentLocaleMappings: Record<LanguageCode, string> = {
+  da: 'da',
+  de: 'de',
+  fi: 'fi',
+  fr: 'fr',
+  en: 'en',
+  es: 'es',
+  et: 'et',
+  hr: 'hr',
+  it: 'it',
+  lv: 'lv',
+  no: 'nb',
+  nl: 'nl',
+  pl: 'pl',
+  pt: 'pt',
+  ru: 'ru',
+  sv: 'sv',
+  th: 'th',
+  zh: 'zh-cn',
+  yue: 'zh-hk',
+};
 
 export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
   createStyles({
@@ -17,60 +42,75 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       color: theme.palette.text.primary,
       display: 'inline-flex',
       flexDirection: 'column',
-      minWidth: 220,
       verticalAlign: 'top',
+      width: (props) => (props.fullwidth ? '100%' : undefined),
       '& label': {
-        color: theme.palette.grey[400],
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
         letterSpacing: '0.15px',
         lineHeight: '26px',
       },
       '& .DateInput': {
         background: 'none',
+        flex: 1,
         width: 'initial',
       },
       '& .DateInput_input': {
         background: 'none',
         border: 0,
         boxSizing: 'content-box',
-        color: 'currentColor',
+        color: (props) => (props.color === 'white' ? theme.palette.common.white : 'currentColor'),
         font: 'inherit',
         height: '1.1876em',
         lineHeight: 'inherit',
         padding: (props) => (props.margin === 'dense' ? '10.5px 14px' : '18.5px 14px'),
-        width: 'initial',
+        '&::placeholder': {
+          color: (props) =>
+            props.color === 'white'
+              ? theme.palette.lightStates.disabledBg
+              : theme.palette.text.secondary,
+        },
       },
       '& .SingleDatePickerInput': {
         background: 'none',
+        width: '100%',
       },
       '& .SingleDatePickerInput__withBorder': {
-        borderColor:
-          theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)',
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : 'rgba(0, 0, 0, 0.23)',
         borderRadius: theme.shape.borderRadius,
         boxSizing: 'border-box',
+        display: 'flex',
       },
       '& .SingleDatePickerInput__withBorder:hover': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .SingleDatePickerInput_calendarIcon': {
-        color: theme.palette.grey[400],
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
         lineHeight: 1,
         marginRight: 8,
         padding: 0,
       },
       '& .DateRangePickerInput': {
         background: 'none',
+        width: '100%',
       },
       '& .DateRangePickerInput__withBorder': {
-        borderColor:
-          theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)',
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : 'rgba(0, 0, 0, 0.23)',
         borderRadius: theme.shape.borderRadius,
         boxSizing: 'border-box',
+        display: 'flex',
       },
       '& .DateRangePickerInput__withBorder:hover': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .DateRangePickerInput_calendarIcon': {
-        color: theme.palette.grey[400],
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
         lineHeight: 1,
         marginRight: 8,
         padding: 0,
@@ -102,16 +142,20 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         color: theme.palette.text.primary,
       },
       '& .SingleDatePickerInput__withBorder': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .SingleDatePickerInput_calendarIcon': {
-        color: theme.palette.primary.main,
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .DateRangePickerInput__withBorder': {
-        borderColor: theme.palette.primary.main,
+        borderColor: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
       '& .DateRangePickerInput_calendarIcon': {
-        color: theme.palette.primary.main,
+        color: (props) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.primary.main,
       },
     },
     navButton: {
@@ -127,7 +171,7 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       right: '22px',
     },
     arrowIcon: {
-      display: 'grid',
+      height: '100%',
     },
   })
 );
@@ -139,37 +183,47 @@ export interface DateRange {
 
 type DatepickerCallback = (date: moment.Moment | null) => void;
 type DateRangeCallback = (arg: DateRange) => void;
+type ColorType = 'default' | 'white';
 
 export interface DatepickerProps extends Record<string, unknown> {
+  color?: ColorType;
   /** Selected date. */
   date: moment.Moment | null;
+  fullwidth?: boolean;
   /** Date pickers need to have a unique id.  */
   id: string;
   /** Label for the date picker input field. */
   label?: string;
   /** Determines date localization. */
-  locale?: string;
-  /** Changes between date picker and date range picker */
-  range?: boolean;
+  locale?: LanguageCode;
   /** Defines the look of the input element. */
   margin?: MarginTypes;
   /** Number of months displayed on the date picker. */
   numberOfMonths?: number;
   /** Function to control changing the date. */
   onDateChange: DatepickerCallback;
+  placeholder?: string;
+  /** Changes between date picker and date range picker */
+  range?: boolean;
 }
 
 export interface DatepickerRangeProps
   extends Omit<DatepickerProps, 'onDateChange' | 'date'>,
     DateRange {
-  startDateId?: string;
-  endDateId?: string;
+  endDatePlaceholderText?: string;
+  endDateId: string;
+  fullwidth?: boolean;
+  locale?: LanguageCode;
+  onDateChange: DateRangeCallback;
   /** Changes between date picker and date range picker */
   range: boolean;
-  onDateChange: DateRangeCallback;
+  startDateId: string;
+  startDatePlaceholderText?: string;
 }
 
 interface UseStylesProps {
+  color: ColorType;
+  fullwidth: boolean;
   margin: MarginTypes;
 }
 
@@ -177,22 +231,25 @@ function Datepicker(props: DatepickerRangeProps): JSX.Element;
 function Datepicker(props: DatepickerProps): JSX.Element;
 function Datepicker(props: Record<string, unknown>): JSX.Element {
   const {
+    color = 'default',
     date,
-    id = 'datepicker',
+    fullwidth = false,
+    id,
     label,
     locale = 'en',
     margin = 'dense',
     numberOfMonths = 2,
     onDateChange,
+    placeholder = moment(Date.now()).format('D.M.Y'),
   } = props as DatepickerProps;
 
   const range = !!props?.range;
 
-  const classes = useStyles({ margin });
+  const classes = useStyles({ color, fullwidth, margin });
   let datepicker: JSX.Element;
 
   useEffect(() => {
-    moment.locale(locale);
+    moment.locale(momentLocaleMappings[locale]);
   }, [locale]);
 
   const [focused, setFocused] = useState<boolean | FocusedInputShape | null>(null);
@@ -219,11 +276,13 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
 
   if (range) {
     const {
-      startDateId = 'start_id',
-      endDateId = 'end_id',
-      startDate,
       endDate,
+      endDateId,
+      endDatePlaceholderText,
       onDateChange: onDatesChange,
+      startDate,
+      startDateId,
+      startDatePlaceholderText,
     } = props as DatepickerRangeProps;
 
     datepicker = (
@@ -234,6 +293,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           endDateId={endDateId}
           startDate={startDate}
           endDate={endDate}
+          endDatePlaceholderText={endDatePlaceholderText}
           focusedInput={focused as FocusedInputShape}
           onDatesChange={onDatesChange}
           onFocusChange={handleFocusChange as unknown as () => void}
@@ -245,6 +305,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
+          startDatePlaceholderText={startDatePlaceholderText}
         />
       </div>
     );
@@ -265,6 +326,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           navNext={nextIcon}
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
+          placeholder={placeholder}
         />
       </div>
     );

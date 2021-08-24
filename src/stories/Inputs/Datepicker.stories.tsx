@@ -18,6 +18,41 @@ export default {
         component: 'Use to display past, present or future dates.',
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
+  },
+  argTypes: {
+    locale: {
+      options: [
+        'da',
+        'de',
+        'en',
+        'es',
+        'et',
+        'fi',
+        'fr',
+        'hr',
+        'it',
+        'lv',
+        'nl',
+        'no',
+        'pl',
+        'pt',
+        'ru',
+        'sv',
+        'th',
+        'zh',
+        'yue',
+      ],
+      control: {
+        type: 'select',
+      },
+    },
   },
   args: {
     label: 'Label',
@@ -57,7 +92,28 @@ const DatepickerRangeTemplate: Story<DatepickerRangeProps> = (args) => {
 };
 
 export const Default = DatepickerTemplate.bind({});
-Default.args = {};
+Default.args = { id: 'defaultDatepicker' };
 
-export const DatepickerRange = DatepickerRangeTemplate.bind({});
-DatepickerRange.args = {};
+export const DatepickerRangeLarge = DatepickerRangeTemplate.bind({});
+DatepickerRangeLarge.args = {
+  margin: 'normal',
+  startDateId: 'start1',
+  endDateId: 'end1',
+};
+
+export const DatepickerWhiteFullwidth = DatepickerTemplate.bind({});
+DatepickerWhiteFullwidth.args = {
+  id: 'fullwidthDatepicker',
+  color: 'white',
+  fullwidth: true,
+};
+DatepickerWhiteFullwidth.parameters = {
+  backgrounds: { default: 'dark' },
+};
+
+export const DatepickerRangeFullwidth = DatepickerRangeTemplate.bind({});
+DatepickerRangeFullwidth.args = {
+  fullwidth: true,
+  startDateId: 'start2',
+  endDateId: 'end2',
+};
