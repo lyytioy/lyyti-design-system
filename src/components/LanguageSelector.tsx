@@ -1,7 +1,7 @@
 import { MenuItem } from '@material-ui/core';
 import TextField, { TextFieldProps } from './TextField';
 import { OptionsType } from './Autocomplete';
-import { Search as SearchIcon } from '../icons';
+import { Globe } from '../icons';
 
 export type LanguageSelectProps<T = OptionsType> = Omit<
   TextFieldProps,
@@ -11,13 +11,13 @@ export type LanguageSelectProps<T = OptionsType> = Omit<
 };
 
 const LanguageSelector = (props: LanguageSelectProps): JSX.Element => {
-  const searchIcon = <SearchIcon fontSize="small" />;
+  const globeIcon = <Globe fontSize="small" />;
   const { options } = props;
   return (
     <TextField
       {...(props as TextFieldProps)}
       select
-      startAdornment={searchIcon}
+      startAdornment={globeIcon}
       SelectProps={{
         MenuProps: {
           anchorOrigin: {
