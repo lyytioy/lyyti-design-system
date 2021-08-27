@@ -97,6 +97,7 @@ import {
   EVS3,
   EVS4,
   EVS5,
+  Globe,
 } from '../../icons';
 
 export default {
@@ -247,6 +248,7 @@ const iconsList = [
   { name: 'EVS3', component: EVS3 },
   { name: 'EVS4', component: EVS4 },
   { name: 'EVS5', component: EVS5 },
+  { name: 'Globe', component: Globe },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
