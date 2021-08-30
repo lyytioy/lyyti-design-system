@@ -90,3 +90,5 @@ export { default as EVS3 } from './EVS3';
 export { default as EVS4 } from './EVS4';
 export { default as EVS5 } from './EVS5';
 export { default as Globe } from './Globe';
+export { default as AwardBadgeStar } from './AwardBadgeStar';
+export { default as Hourglass } from './Hourglass';
