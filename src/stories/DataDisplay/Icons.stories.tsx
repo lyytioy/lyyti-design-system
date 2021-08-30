@@ -97,6 +97,8 @@ import {
   EVS3,
   EVS4,
   EVS5,
+  AwardBadgeStar,
+  Hourglass,
 } from '../../icons';
 
 export default {
@@ -247,6 +249,8 @@ const iconsList = [
   { name: 'EVS3', component: EVS3 },
   { name: 'EVS4', component: EVS4 },
   { name: 'EVS5', component: EVS5 },
+  { name: 'AwardBadgeStar', component: AwardBadgeStar },
+  { name: 'Hourglass', component: Hourglass },
 ];
 
 const useStyles = makeStyles<Theme>((theme) =>
