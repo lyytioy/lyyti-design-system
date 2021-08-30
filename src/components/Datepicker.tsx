@@ -42,6 +42,8 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       color: theme.palette.text.primary,
       display: 'inline-flex',
       flexDirection: 'column',
+      marginTop: (props) => (props.margin === 'dense' ? '8px' : '16px'),
+      marginBottom: (props) => (props.margin === 'dense' ? '4px' : '8px'),
       verticalAlign: 'top',
       width: (props) => (props.fullwidth ? '100%' : undefined),
       '& label': {
@@ -70,6 +72,12 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
               ? theme.palette.lightStates.disabledBg
               : theme.palette.text.secondary,
         },
+      },
+      '& .DateInput_fang': {
+        display: 'none',
+      },
+      '& .SingleDatePicker_picker, .DateRangePicker_picker': {
+        top: '100% !important',
       },
       '& .SingleDatePickerInput': {
         background: 'none',
