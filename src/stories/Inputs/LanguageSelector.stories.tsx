@@ -72,10 +72,11 @@ Disabled.args = {
   disabled: true,
 };
 
-export const White = SelectTemplate.bind({});
-White.args = {
+export const WhiteFullwidth = SelectTemplate.bind({});
+WhiteFullwidth.args = {
   color: 'white',
+  fullWidth: true,
 };
-White.parameters = {
+WhiteFullwidth.parameters = {
   backgrounds: { default: 'dark' },
 };
