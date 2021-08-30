@@ -11,8 +11,7 @@ export type SelectProps<T = OptionsType> = (
   multiple?: boolean;
 };
 
-const Select = (props: SelectProps): JSX.Element => {
-  const { adornment, options, multiple = false } = props;
+const Select = ({ adornment, options, multiple = false, ...props }: SelectProps): JSX.Element => {
   if (multiple) {
     return <Autocomplete {...(props as AutocompleteProps)} disableClearable />;
   }
