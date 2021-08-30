@@ -8,8 +8,7 @@ export type LanguageSelectProps<T = OptionsType> = Omit<SelectProps, 'adornment'
   error?: boolean;
 };
 
-const LanguageSelector = (props: LanguageSelectProps): JSX.Element => {
-  const { options } = props;
+const LanguageSelector = ({ options, ...props }: LanguageSelectProps): JSX.Element => {
   return (
     <Select {...(props as SelectProps)} adornment={<Globe fontSize="small" />} options={options} />
   );
