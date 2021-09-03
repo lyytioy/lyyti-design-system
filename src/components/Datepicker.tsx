@@ -65,7 +65,7 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         font: 'inherit',
         height: '1.1876em',
         lineHeight: 'inherit',
-        padding: (props) => (props.margin === 'dense' ? '10.5px 14px' : '18.5px 14px'),
+        padding: (props) => (props.margin === 'dense' ? '9.5px 14px' : '17.5px 14px'),
         '&::placeholder': {
           color: (props) =>
             props.color === 'white'

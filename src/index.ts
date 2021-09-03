@@ -22,6 +22,7 @@ export { default as Grid } from './components/Grid';
 export { default as Grow } from './components/Grow';
 export { default as InputAdornment } from './components/InputAdornment';
 export { default as InputLabel } from './components/InputLabel';
+export { default as LanguageSelector } from './components/LanguageSelector';
 export { default as Link } from './components/Link';
 export { default as MenuItem } from './components/MenuItem';
 export { default as MenuList } from './components/MenuList';
