@@ -1,16 +1,16 @@
-import { createTheme } from '@material-ui/core/styles';
-import ObjektivMk1RgTff from '../fonts/Objektiv-Mk1-Regular.ttf';
-import ObjektivMk1ItalicTff from '../fonts/Objektiv-Mk1-Italic.ttf';
-import ObjektivMk1MdTff from '../fonts/Objektiv-Mk1-Medium-Regular.ttf';
-import ObjektivMk1MdItalicTff from '../fonts/Objektiv-Mk1-Medium-Italic.ttf';
-import ObjektivMk1BoldTff from '../fonts/Objektiv-Mk1-Bold.ttf';
-import ObjektivMk1BoldItalicTff from '../fonts/Objektiv-Mk1-Bold-Italic.ttf';
-import ObjektivMk3RgTff from '../fonts/Objektiv-Mk3-Regular.ttf';
-import ObjektivMk3ItalicTff from '../fonts/Objektiv-Mk3-Italic.ttf';
-import ObjektivMk3MdTff from '../fonts/Objektiv-Mk3-Medium-Regular.ttf';
-import ObjektivMk3MdItalicTff from '../fonts/Objektiv-Mk3-Medium-Italic.ttf';
-import ObjektivMk3BoldTff from '../fonts/Objektiv-Mk3-Bold-Regular.ttf';
-import ObjektivMk3BoldItalicTff from '../fonts/Objektiv-Mk3-Bold-Italic.ttf';
+import { createMuiTheme } from '@material-ui/core/styles';
+import ObjektivMk1RgTff from '../fonts/Objektiv Mk1 Regular.ttf';
+import ObjektivMk1ItalicTff from '../fonts/Objektiv Mk1 Italic.ttf';
+import ObjektivMk1MdTff from '../fonts/Objektiv Mk1 Medium Regular.ttf';
+import ObjektivMk1MdItalicTff from '../fonts/Objektiv Mk1 Medium Italic.ttf';
+import ObjektivMk1BoldTff from '../fonts/Objektiv Mk1 Bold.ttf';
+import ObjektivMk1BoldItalicTff from '../fonts/Objektiv Mk1 Bold Italic.ttf';
+import ObjektivMk3RgTff from '../fonts/Objektiv Mk3 Regular.ttf';
+import ObjektivMk3ItalicTff from '../fonts/Objektiv Mk3 Italic.ttf';
+import ObjektivMk3MdTff from '../fonts/Objektiv Mk3 Medium Regular.ttf';
+import ObjektivMk3MdItalicTff from '../fonts/Objektiv Mk3 Medium Italic.ttf';
+import ObjektivMk3BoldTff from '../fonts/Objektiv Mk3 Bold Regular.ttf';
+import ObjektivMk3BoldItalicTff from '../fonts/Objektiv Mk3 Bold Italic.ttf';
 import type {} from '@material-ui/lab/themeAugmentation';
 
 const objektivMk1Rg = {
@@ -154,7 +154,7 @@ declare module '@material-ui/core/styles/createPalette' {
   }
 }
 
-export default createTheme({
+export default createMuiTheme({
   palette: {
     primary: {
       main: '#045B56',
