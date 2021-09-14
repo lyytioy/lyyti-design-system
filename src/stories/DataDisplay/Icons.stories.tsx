@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Source } from '@storybook/addon-docs';
+import { Source } from '@storybook/addon-docs/blocks';
 import ThemeSelector from '../../themes/ThemeSelector';
 import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core';
 import TextField from '../../components/TextField';
