@@ -248,7 +248,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     margin = 'dense',
     numberOfMonths = 2,
     onDateChange,
-    placeholder = moment(Date.now()).format('D.M.Y'),
+    placeholder = moment(Date.now()).format(locale),
   } = props as DatepickerProps;
 
   const range = !!props?.range;
