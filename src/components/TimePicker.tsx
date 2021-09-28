@@ -1,6 +1,6 @@
 import Autocomplete, { AutocompleteProps } from '@material-ui/lab/Autocomplete';
 import TextField, { MarginTypes } from './TextField';
-import { makeStyles, createStyles, Theme } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { Clock } from '../icons';
 
 const twentyFourHourTimes = [
@@ -102,13 +102,8 @@ const twelveHourTimes = [
   '11:30 PM',
 ];
 
-export const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    '& .MuiAutocomplete-popupIndicatorOpen': {
-      transform: 'none',
-    },
-  },
+const useStyles = makeStyles({
+  root: { width: '100%', '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' } },
 });
 
 export interface TimePickerProps
