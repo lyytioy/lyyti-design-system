@@ -103,7 +103,7 @@ const twelveHourTimes = [
 ];
 
 const useStyles = makeStyles({
-  root: { width: 'min-content', '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' } },
+  root: { width: '100%', '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' } },
 });
 
 export interface TimePickerProps

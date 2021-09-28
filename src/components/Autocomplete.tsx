@@ -41,7 +41,6 @@ export interface AutocompleteProps<T = OptionsType>
     'hiddenLabel' | 'renderInput' | 'startAdornment' | 'endAdornment' | 'variant'
   > {
   adornment?: string | JSX.Element;
-  fullWidth?: boolean;
   label?: string;
   margin?: MarginTypes;
   multiple?: boolean;
@@ -51,7 +50,6 @@ export interface AutocompleteProps<T = OptionsType>
 
 const Autocomplete = ({
   adornment,
-  fullWidth = false,
   getOptionLabel = (option: OptionsType) => option.value,
   label,
   margin = 'dense',
@@ -83,7 +81,6 @@ const Autocomplete = ({
       renderInput={(params) => (
         <TextField
           {...params}
-          fullWidth={fullWidth}
           label={label}
           margin={margin}
           placeholder={placeholder}
