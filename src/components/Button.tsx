@@ -105,7 +105,7 @@ const Button = ({
   children,
   chunky = false,
   variant = 'contained',
-  color = 'primary',
+  color = 'secondary',
   disabled = false,
   ...props
 }: ButtonProps): JSX.Element => {
