@@ -157,15 +157,15 @@ declare module '@material-ui/core/styles/createPalette' {
 export default createTheme({
   palette: {
     primary: {
-      main: '#045B56',
-      dark: '#034E49',
-      light: '#05756F',
-      contrastText: '#FFFFFF',
-    },
-    secondary: {
       main: '#EE8B3A',
       dark: '#DD6E13',
       light: '#F2A96D',
+      contrastText: '#FFFFFF',
+    },
+    secondary: {
+      main: '#045B56',
+      dark: '#034E49',
+      light: '#05756F',
       contrastText: '#FFFFFF',
     },
     light: {
