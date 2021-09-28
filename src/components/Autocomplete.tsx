@@ -38,7 +38,7 @@ export type OptionsType = { id: number | string; value: string };
 export interface AutocompleteProps<T = OptionsType>
   extends Omit<
     MuiAutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
-    'hiddenLabel' | 'renderInput' | 'startAdornment' | 'endAdornment' | 'variant'
+    'hiddenLabel' | 'startAdornment' | 'endAdornment' | 'variant'
   > {
   adornment?: string | JSX.Element;
   label?: string;
