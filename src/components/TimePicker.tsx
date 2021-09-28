@@ -112,6 +112,7 @@ export interface TimePickerProps
   error?: boolean;
   helperText?: JSX.Element | string;
   margin?: MarginTypes;
+  label?: string;
 }
 
 const TimePicker = ({
@@ -119,6 +120,7 @@ const TimePicker = ({
   error,
   helperText,
   margin = 'dense',
+  label,
   ...props
 }: TimePickerProps): JSX.Element => {
   const classes = useStyles();
@@ -133,7 +135,15 @@ const TimePicker = ({
       popupIcon={<Clock color={error ? 'error' : 'primary'} />}
       className={classes.root}
       renderInput={(params) => {
-        return <TextField {...params} error={error} helperText={helperText} margin={margin} />;
+        return (
+          <TextField
+            {...params}
+            error={error}
+            helperText={helperText}
+            margin={margin}
+            label={label}
+          />
+        );
       }}
     />
   );
