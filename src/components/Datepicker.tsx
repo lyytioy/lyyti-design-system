@@ -78,6 +78,7 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       },
       '& .SingleDatePicker_picker, .DateRangePicker_picker': {
         top: '100% !important',
+        zIndex: 10,
       },
       '& .SingleDatePickerInput': {
         background: 'none',
