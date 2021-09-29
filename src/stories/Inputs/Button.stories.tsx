@@ -23,32 +23,32 @@ const Template: Story<ButtonProps> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  color: 'primary',
+};
 
 export const Secondary = Template.bind({});
-Secondary.args = {
-  color: 'secondary',
-};
+Secondary.args = {};
 
 export const OutlinedPrimary = Template.bind({});
 OutlinedPrimary.args = {
+  color: 'primary',
   variant: 'outlined',
 };
 
 export const OutlinedSecondary = Template.bind({});
 OutlinedSecondary.args = {
-  color: 'secondary',
   variant: 'outlined',
 };
 
 export const TextPrimary = Template.bind({});
 TextPrimary.args = {
+  color: 'primary',
   variant: 'text',
 };
 
 export const TextSecondary = Template.bind({});
 TextSecondary.args = {
-  color: 'secondary',
   variant: 'text',
 };
 

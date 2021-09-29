@@ -84,7 +84,7 @@ export type TextFieldProps = {
 
 const TextField = ({
   endAdornment,
-  fullWidth = false,
+  fullWidth = true,
   margin = 'dense',
   startAdornment,
   color = 'primary',

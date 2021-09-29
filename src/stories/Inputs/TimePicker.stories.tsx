@@ -14,7 +14,7 @@ const Template: Story<TimePickerProps> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = { label: 'Label' };
 
 export const LargeTwelveHour = Template.bind({});
 LargeTwelveHour.args = { twelvehour: true, margin: 'normal' };

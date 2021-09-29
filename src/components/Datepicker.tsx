@@ -241,7 +241,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
   const {
     color = 'default',
     date,
-    fullwidth = false,
+    fullwidth = true,
     id,
     label,
     locale = 'en',
