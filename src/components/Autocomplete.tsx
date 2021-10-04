@@ -38,7 +38,7 @@ export type OptionsType = { id: number | string; value: string };
 export interface AutocompleteProps<T = OptionsType>
   extends Omit<
     MuiAutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
-    'hiddenLabel' | 'startAdornment' | 'endAdornment' | 'variant'
+    'hiddenLabel' | 'startAdornment' | 'endAdornment' | 'variant' | 'renderInput'
   > {
   adornment?: string | JSX.Element;
   label?: string;
@@ -46,6 +46,8 @@ export interface AutocompleteProps<T = OptionsType>
   multiple?: boolean;
   placeholder?: string;
   color?: ColorTypes;
+  error?: boolean;
+  helperText?: string;
 }
 
 const Autocomplete = ({
@@ -57,6 +59,8 @@ const Autocomplete = ({
   placeholder,
   color = 'primary',
   disabled = false,
+  error,
+  helperText,
   ...props
 }: AutocompleteProps): JSX.Element => {
   const classes = useStyles({ color, disabled });
@@ -83,6 +87,8 @@ const Autocomplete = ({
           {...params}
           label={label}
           margin={margin}
+          error={error}
+          helperText={helperText}
           placeholder={placeholder}
           InputProps={{
             ...params.InputProps,
