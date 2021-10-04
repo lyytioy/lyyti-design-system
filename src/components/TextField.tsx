@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, forwardRef } from 'react';
 import {
   TextField as MuiTextField,
   OutlinedTextFieldProps,
@@ -80,7 +80,12 @@ export type TextFieldProps = {
   startAdornment?: string | JSX.Element;
   color?: ColorTypes;
   variant?: VariantTypes;
-} & Omit<OutlinedTextFieldProps, 'variant' | 'color'>;
+  error?: boolean;
+  helperText?: string;
+} & Omit<
+  OutlinedTextFieldProps,
+  'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel'
+>;
 
 const TextField = ({
   endAdornment,
@@ -88,6 +93,8 @@ const TextField = ({
   margin = 'dense',
   startAdornment,
   color = 'primary',
+  error = false,
+  helperText = '',
   ...props
 }: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
@@ -97,6 +104,8 @@ const TextField = ({
     <MuiTextField
       fullWidth={fullWidth}
       margin={margin}
+      error={error}
+      helperText={helperText}
       onClick={() => muiTextField.current?.focus()}
       inputRef={muiTextField}
       {...props}
