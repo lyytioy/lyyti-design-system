@@ -78,6 +78,7 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
       },
       '& .SingleDatePicker_picker, .DateRangePicker_picker': {
         top: '100% !important',
+        zIndex: 10,
       },
       '& .SingleDatePickerInput': {
         background: 'none',
@@ -248,7 +249,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     margin = 'dense',
     numberOfMonths = 2,
     onDateChange,
-    placeholder = moment(Date.now()).format(locale),
+    placeholder = moment.localeData(locale).longDateFormat('L'),
   } = props as DatepickerProps;
 
   const range = !!props?.range;
