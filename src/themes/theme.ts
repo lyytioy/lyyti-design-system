@@ -18,7 +18,7 @@ const objektivMk1Rg = {
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 400,
-  src: `url('/${ObjektivMk1RgTff}') format('truetype')`,
+  src: `url('${ObjektivMk1RgTff}') format('truetype')`,
 };
 
 const objektivMk1Italic = {
@@ -26,7 +26,7 @@ const objektivMk1Italic = {
   fontStyle: 'italic',
   fontDisplay: 'swap' as const,
   fontWeight: 400,
-  src: `url('/${ObjektivMk1ItalicTff}') format('truetype')`,
+  src: `url('${ObjektivMk1ItalicTff}') format('truetype')`,
 };
 
 const objektivMk1Md = {
@@ -34,7 +34,7 @@ const objektivMk1Md = {
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 500,
-  src: `url('/${ObjektivMk1MdTff}') format('truetype')`,
+  src: `url('${ObjektivMk1MdTff}') format('truetype')`,
 };
 
 const objektivMk1MdItalic = {
@@ -42,7 +42,7 @@ const objektivMk1MdItalic = {
   fontStyle: 'italic',
   fontDisplay: 'swap' as const,
   fontWeight: 500,
-  src: `url('/${ObjektivMk1MdItalicTff}') format('truetype')`,
+  src: `url('${ObjektivMk1MdItalicTff}') format('truetype')`,
 };
 
 const objektivMk1Bold = {
@@ -50,7 +50,7 @@ const objektivMk1Bold = {
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 700,
-  src: `url('/${ObjektivMk1BoldTff}') format('truetype')`,
+  src: `url('${ObjektivMk1BoldTff}') format('truetype')`,
 };
 
 const objektivMk1BoldItalic = {
@@ -58,7 +58,7 @@ const objektivMk1BoldItalic = {
   fontStyle: 'italic',
   fontDisplay: 'swap' as const,
   fontWeight: 700,
-  src: `url('/${ObjektivMk1BoldItalicTff}') format('truetype')`,
+  src: `url('${ObjektivMk1BoldItalicTff}') format('truetype')`,
 };
 
 const objektivMk3Rg = {
@@ -66,7 +66,7 @@ const objektivMk3Rg = {
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 400,
-  src: ` url('/${ObjektivMk3RgTff}') format('truetype')`,
+  src: ` url('${ObjektivMk3RgTff}') format('truetype')`,
 };
 
 const objektivMk3Italic = {
@@ -74,7 +74,7 @@ const objektivMk3Italic = {
   fontStyle: 'italic',
   fontDisplay: 'swap' as const,
   fontWeight: 400,
-  src: `url('/${ObjektivMk3ItalicTff}') format('truetype')`,
+  src: `url('${ObjektivMk3ItalicTff}') format('truetype')`,
 };
 
 const objektivMk3Md = {
@@ -82,7 +82,7 @@ const objektivMk3Md = {
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 500,
-  src: `url('/${ObjektivMk3MdTff}') format('truetype')`,
+  src: `url('${ObjektivMk3MdTff}') format('truetype')`,
 };
 
 const objektivMk3MdItalic = {
@@ -90,7 +90,7 @@ const objektivMk3MdItalic = {
   fontStyle: 'italic',
   fontDisplay: 'swap' as const,
   fontWeight: 500,
-  src: `url('/${ObjektivMk3MdItalicTff}') format('truetype')`,
+  src: `url('${ObjektivMk3MdItalicTff}') format('truetype')`,
 };
 
 const objektivMk3Bold = {
@@ -98,7 +98,7 @@ const objektivMk3Bold = {
   fontStyle: 'normal',
   fontDisplay: 'swap' as const,
   fontWeight: 700,
-  src: `url('/${ObjektivMk3BoldTff}') format('truetype')`,
+  src: `url('${ObjektivMk3BoldTff}') format('truetype')`,
 };
 
 const objektivMk3BoldItalic = {
@@ -106,7 +106,7 @@ const objektivMk3BoldItalic = {
   fontStyle: 'italic',
   fontDisplay: 'swap' as const,
   fontWeight: 700,
-  src: `url('/${ObjektivMk3BoldItalicTff}') format('truetype')`,
+  src: `url('${ObjektivMk3BoldItalicTff}') format('truetype')`,
 };
 
 const baseFontStack = [

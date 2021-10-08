@@ -52,7 +52,7 @@ export interface AutocompleteProps<T = OptionsType>
 
 const Autocomplete = ({
   adornment,
-  getOptionLabel = (option: OptionsType) => option.value,
+  getOptionLabel = (option: OptionsType) => option.value ?? option,
   label,
   margin = 'dense',
   options,
