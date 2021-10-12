@@ -103,10 +103,14 @@ const twelveHourTimes = [
 ];
 
 const useStyles = makeStyles({
-  root: { width: '100%', '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' } },
+  root: {
+    width: '100%',
+    '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' },
+    padding: '0px',
+  },
 });
 
-export interface TimePickerProps extends Omit<AutocompleteProps, 'renderInput, options'> {
+export interface TimePickerProps extends Omit<AutocompleteProps, 'renderInput' | 'options'> {
   twelvehour?: boolean;
   error?: boolean;
   helperText?: string;
