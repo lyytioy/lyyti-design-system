@@ -102,6 +102,44 @@ export const useStyles = makeStyles<Theme, UseStylesProps>((theme) =>
         marginRight: 8,
         padding: 0,
       },
+      '& .SingleDatePickerInput__showClearDate': {
+        paddingRight: 0,
+      },
+      '& .SingleDatePickerInput_clearDate': {
+        marginRight: '40px',
+        lineHeight: '14px',
+        font: 'caption',
+        padding: '8px',
+      },
+      '& .SingleDatePickerInput_clearDate_svg': {
+        fill: (props: UseStylesProps) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
+      },
+      '& .SingleDatePickerInput_clearDate__default:hover': {
+        background: (props) =>
+          props.color === 'white'
+            ? theme.palette.primaryStates.activeContained
+            : theme.palette.primaryStates.selected,
+      },
+      '& .DateRangePickerInput__showClearDates': {
+        paddingRight: 0,
+      },
+      '& .DateRangePickerInput_clearDates': {
+        marginRight: '40px',
+        lineHeight: '14px',
+        font: 'caption',
+        padding: '8px',
+      },
+      '& .DateRangePickerInput_clearDates_svg': {
+        fill: (props: UseStylesProps) =>
+          props.color === 'white' ? theme.palette.common.white : theme.palette.grey[400],
+      },
+      '& .DateRangePickerInput_clearDates_default:hover': {
+        background: (props) =>
+          props.color === 'white'
+            ? theme.palette.primaryStates.activeContained
+            : theme.palette.primaryStates.selected,
+      },
       '& .DateRangePickerInput': {
         background: 'none',
         width: '100%',
@@ -214,6 +252,7 @@ export interface DatepickerProps extends Record<string, unknown> {
   placeholder?: string;
   /** Changes between date picker and date range picker */
   range?: boolean;
+  showClearDate?: boolean;
 }
 
 export interface DatepickerRangeProps
@@ -228,6 +267,7 @@ export interface DatepickerRangeProps
   range: boolean;
   startDateId: string;
   startDatePlaceholderText?: string;
+  showClearDates?: boolean;
 }
 
 interface UseStylesProps {
@@ -250,12 +290,14 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     numberOfMonths = 2,
     onDateChange,
     placeholder = moment.localeData(locale).longDateFormat('L'),
+    showClearDate,
   } = props as DatepickerProps;
 
   const range = !!props?.range;
 
   const classes = useStyles({ color, fullwidth, margin });
   let datepicker: JSX.Element;
+  moment.locale(momentLocaleMappings[locale]);
 
   useEffect(() => {
     moment.locale(momentLocaleMappings[locale]);
@@ -292,6 +334,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
       startDate,
       startDateId,
       startDatePlaceholderText,
+      showClearDates,
     } = props as DatepickerRangeProps;
 
     datepicker = (
@@ -315,6 +358,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
           startDatePlaceholderText={startDatePlaceholderText}
+          showClearDates={showClearDates}
         />
       </div>
     );
@@ -336,6 +380,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
           hideKeyboardShortcutsPanel
           firstDayOfWeek={1}
           placeholder={placeholder}
+          showClearDate={showClearDate}
         />
       </div>
     );
