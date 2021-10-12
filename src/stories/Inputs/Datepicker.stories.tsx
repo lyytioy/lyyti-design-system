@@ -106,6 +106,8 @@ DatepickerWhiteFullwidth.args = {
   id: 'fullwidthDatepicker',
   color: 'white',
   fullwidth: true,
+  showClearDate: true,
+  margin: 'normal',
 };
 DatepickerWhiteFullwidth.parameters = {
   backgrounds: { default: 'dark' },
@@ -116,4 +118,5 @@ DatepickerRangeFullwidth.args = {
   fullwidth: true,
   startDateId: 'start2',
   endDateId: 'end2',
+  showClearDates: true,
 };
