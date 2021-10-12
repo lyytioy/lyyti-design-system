@@ -256,6 +256,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
 
   const classes = useStyles({ color, fullwidth, margin });
   let datepicker: JSX.Element;
+  moment.locale(momentLocaleMappings[locale]);
 
   useEffect(() => {
     moment.locale(momentLocaleMappings[locale]);
