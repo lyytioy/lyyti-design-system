@@ -45,7 +45,7 @@ const Template: Story<AlertProps> = (args) => {
   return (
     <ThemeSelector>
       <Alert {...args} />
-      <Button variant="contained" color="primary" chunky={false} onClick={() => setAlertOpen(true)}>
+      <Button variant="contained" color="primary" onClick={() => setAlertOpen(true)}>
         {'Re-open'}
       </Button>
     </ThemeSelector>
@@ -57,11 +57,7 @@ Success.args = {};
 
 export const Error = Template.bind({});
 Error.args = {
-  action: (
-    <Button color="inherit" chunky={false}>
-      {'Undo'}
-    </Button>
-  ),
+  action: <Button color="inherit">{'Undo'}</Button>,
   severity: 'error',
   variant: 'outlined',
 };
