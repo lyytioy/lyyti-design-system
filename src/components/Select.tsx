@@ -9,9 +9,16 @@ export type SelectProps<T = OptionsType> = (
   options: T[];
   adornment?: AutocompleteProps<T>['adornment'];
   multiple?: boolean;
+  'data-testid'?: string;
 };
 
-const Select = ({ adornment, options, multiple = false, ...props }: SelectProps): JSX.Element => {
+const Select = ({
+  adornment,
+  options,
+  multiple = false,
+  'data-testid': testid,
+  ...props
+}: SelectProps): JSX.Element => {
   if (multiple) {
     return <Autocomplete {...(props as AutocompleteProps)} disableClearable />;
   }
@@ -32,7 +39,8 @@ const Select = ({ adornment, options, multiple = false, ...props }: SelectProps)
           },
           getContentAnchorEl: null,
         },
-      }}>
+      }}
+      inputProps={{ 'data-testid': testid }}>
       {options.map(({ id, value: label }) => (
         <MenuItem key={id} value={id}>
           {label}

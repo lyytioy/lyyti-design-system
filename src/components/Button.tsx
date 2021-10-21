@@ -99,6 +99,7 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'size'> {
   chunky?: boolean;
   children: MuiButtonProps['children'] & { $$typeof?: symbol };
   color?: 'primary' | 'secondary' | 'inherit';
+  'data-testid'?: string;
 }
 
 const Button = ({

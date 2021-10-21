@@ -36,6 +36,7 @@ export interface TooltipProps extends MuiTooltipProps {
     | 'top-start'
     | 'top';
   title: NonNullable<React.ReactNode>;
+  'data-testid'?: string;
 }
 
 const Tooltip = ({ arrow = false, placement = 'bottom', ...props }: TooltipProps): JSX.Element => {

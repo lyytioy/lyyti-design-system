@@ -39,6 +39,7 @@ export interface CircularProgressProps extends MuiCircularProgressProps {
   size?: number | string;
   value?: number;
   variant: 'determinate' | 'indeterminate' | 'static';
+  'data-testid'?: string;
 }
 
 const CircularProgress = ({
