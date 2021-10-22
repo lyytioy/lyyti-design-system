@@ -24,6 +24,7 @@ export interface ChipProps extends MuiChipProps {
   color?: 'primary' | 'secondary';
   clickable?: boolean;
   disabled?: boolean;
+  'data-testid'?: string;
 }
 
 const Chip = ({

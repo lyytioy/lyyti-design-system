@@ -7,6 +7,7 @@ export interface ProgressProps extends LinearProgressProps {
   type: 'circular' | 'linear';
   value?: number;
   variant: 'determinate' | 'indeterminate';
+  'data-testid'?: string;
 }
 
 const Progress = ({
