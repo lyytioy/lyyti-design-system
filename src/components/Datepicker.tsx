@@ -253,6 +253,7 @@ export interface DatepickerProps extends Record<string, unknown> {
   /** Changes between date picker and date range picker */
   range?: boolean;
   showClearDate?: boolean;
+  'data-testid'?: string;
 }
 
 export interface DatepickerRangeProps
@@ -268,6 +269,7 @@ export interface DatepickerRangeProps
   startDateId: string;
   startDatePlaceholderText?: string;
   showClearDates?: boolean;
+  'data-testid'?: string;
 }
 
 interface UseStylesProps {
@@ -291,6 +293,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     onDateChange,
     placeholder = moment.localeData(locale).longDateFormat('L'),
     showClearDate,
+    'data-testid': testid,
   } = props as DatepickerProps;
 
   const range = !!props?.range;
@@ -335,10 +338,11 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
       startDateId,
       startDatePlaceholderText,
       showClearDates,
+      'data-testid': testid,
     } = props as DatepickerRangeProps;
 
     datepicker = (
-      <div className={`${classes.root} ${focused ? classes.focused : ''}`}>
+      <div className={`${classes.root} ${focused ? classes.focused : ''}`} data-testid={testid}>
         {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
         <DateRangePicker
           startDateId={startDateId}
@@ -364,7 +368,7 @@ function Datepicker(props: Record<string, unknown>): JSX.Element {
     );
   } else {
     datepicker = (
-      <div className={`${classes.root} ${focused ? classes.focused : ''}`}>
+      <div className={`${classes.root} ${focused ? classes.focused : ''}`} data-testid={testid}>
         {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
         <SingleDatePicker
           id={id}

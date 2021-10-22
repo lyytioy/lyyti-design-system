@@ -82,6 +82,7 @@ export type TextFieldProps = {
   variant?: VariantTypes;
   error?: boolean;
   helperText?: string;
+  'data-testid'?: string;
 } & Omit<
   OutlinedTextFieldProps,
   'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel'
@@ -95,6 +96,7 @@ const TextField = ({
   color = 'primary',
   error = false,
   helperText = '',
+  'data-testid': testid,
   ...props
 }: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
@@ -119,6 +121,7 @@ const TextField = ({
         ...(props.InputProps ?? {}),
         notched: false,
       }}
+      inputProps={{ 'data-testid': testid }}
       variant="outlined"
       InputLabelProps={{ shrink: true }}
       classes={{ root: classes.root }}

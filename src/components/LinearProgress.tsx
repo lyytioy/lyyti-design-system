@@ -7,6 +7,7 @@ export interface LinearProgressProps extends MuiLinearProgressProps {
   color: 'primary' | 'secondary';
   value?: number;
   variant: 'buffer' | 'determinate' | 'indeterminate' | 'query';
+  'data-testid'?: string;
 }
 
 const LinearProgress = ({

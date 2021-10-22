@@ -6,6 +6,7 @@ export interface AlertProps extends AlertBaseProps {
   action?: React.ReactNode;
   onClose?: (event: React.SyntheticEvent) => void;
   open?: boolean;
+  'data-testid'?: string;
 }
 
 const Alert = ({

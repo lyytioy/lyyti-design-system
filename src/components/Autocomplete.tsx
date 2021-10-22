@@ -48,6 +48,7 @@ export interface AutocompleteProps<T = OptionsType>
   color?: ColorTypes;
   error?: boolean;
   helperText?: string;
+  'data-testid'?: string;
 }
 
 const Autocomplete = ({
@@ -61,6 +62,7 @@ const Autocomplete = ({
   disabled = false,
   error,
   helperText,
+  'data-testid': testid,
   ...props
 }: AutocompleteProps): JSX.Element => {
   const classes = useStyles({ color, disabled });
@@ -99,6 +101,7 @@ const Autocomplete = ({
               </>
             ),
           }}
+          data-testid={testid}
           color={color}
         />
       )}

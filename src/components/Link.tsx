@@ -35,7 +35,9 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export type LinkProps = MuiLinkProps;
+export interface LinkProps extends MuiLinkProps {
+  'data-testid'?: string;
+}
 
 const Link = (props: LinkProps): JSX.Element => {
   const classes = useStyles();

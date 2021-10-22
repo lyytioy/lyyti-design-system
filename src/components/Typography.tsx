@@ -21,6 +21,7 @@ export interface TypographyProps
   extends Omit<MuiTypographyProps, 'component' | 'gutterBottom' | 'variant' | 'variantMapping'> {
   variant?: VariantTypes;
   component?: ElementType;
+  'data-testid'?: string;
 }
 
 const Typography = ({ variant = 'body1', ...props }: TypographyProps): JSX.Element => {

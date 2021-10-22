@@ -39,6 +39,7 @@ export interface CardProps extends MuiCardProps {
   children: JSX.Element | string;
   actions?: JSX.Element;
   headerBackgroundColor?: string;
+  'data-testid'?: string;
 }
 
 const Card = ({

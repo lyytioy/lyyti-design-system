@@ -116,6 +116,7 @@ export interface TimePickerProps extends Omit<AutocompleteProps, 'renderInput' |
   helperText?: string;
   margin?: MarginTypes;
   label?: string;
+  'data-testid'?: string;
 }
 
 const TimePicker = ({

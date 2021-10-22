@@ -6,6 +6,7 @@ export type LanguageSelectProps<T = OptionsType> = Omit<SelectProps, 'adornment'
   options: T[];
   helperText?: string;
   error?: boolean;
+  'data-testid'?: string;
 };
 
 const LanguageSelector = ({ options, ...props }: LanguageSelectProps): JSX.Element => {
