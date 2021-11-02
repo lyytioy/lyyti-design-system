@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 import LanguageSelector, { LanguageSelectProps } from '../../components/LanguageSelector';
 import { ChangeEvent, useState } from 'react';
 

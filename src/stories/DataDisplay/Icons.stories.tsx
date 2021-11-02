@@ -2,6 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Source } from '@storybook/addon-docs';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core';
 import TextField from '../../components/TextField';
 import Grid from '../../components/Grid';

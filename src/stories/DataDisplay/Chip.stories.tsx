@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Chip, { ChipProps } from '../../components/Chip';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 import Avatar from '../../components/Avatar';
 import { StarFilled } from '../../icons';
 

@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 import DropdownMenu, { DropdownProps } from '../../components/DropdownMenu';
 
 export default {

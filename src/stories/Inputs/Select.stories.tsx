@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 import Select, { SelectProps } from '../../components/Select';
 import { ChangeEvent, useState } from 'react';
 import { AutocompleteProps } from '../../components/Autocomplete';

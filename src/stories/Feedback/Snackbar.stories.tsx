@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Snackbar, { SnackbarProps } from '../../components/Snackbar';
 import Button from '../../components/Button';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 
 export default {
   title: 'Components/Feedback/Snackbar',

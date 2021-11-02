@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Stepper, { StepperProps } from '../../components/Stepper';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 import { Step } from '@material-ui/core';
 import StepConnector from '../../components/StepConnector';
 import StepLabel from '../../components/StepLabel';

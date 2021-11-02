@@ -5,6 +5,7 @@ import Avatar from '../../components/Avatar';
 import Grid from '../../components/Grid';
 import { Star } from '../../icons';
 import ThemeSelector from '../../themes/ThemeSelector';
+import '../../styles/objektiv.css';
 import Button from '../../components/Button';
 
 export default {
