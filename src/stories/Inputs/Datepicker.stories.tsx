@@ -7,6 +7,7 @@ import Datepicker, {
 } from '../../components/Datepicker';
 import ThemeSelector from '../../themes/ThemeSelector';
 import moment from 'moment';
+import 'react-dates/lib/css/_datepicker.css';
 
 export default {
   title: 'Components/Inputs/Date Picker',
