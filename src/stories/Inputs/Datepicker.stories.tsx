@@ -6,7 +6,6 @@ import Datepicker, {
   DateRange,
 } from '../../components/Datepicker';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 import moment from 'moment';
 import 'react-dates/lib/css/_datepicker.css';
 

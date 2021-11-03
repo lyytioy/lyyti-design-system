@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Dialog, { DialogProps } from '../../components/Dialog';
 import Button from '../../components/Button';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 
 export default {
   title: 'Components/Feedback/Dialog',

@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Progress, { ProgressProps } from '../../components/Progress';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 
 export default {
   title: 'Components/Feedback/Progress',

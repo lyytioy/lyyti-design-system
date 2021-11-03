@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 import Search, { SearchProps } from '../../components/Search';
 
 const options = [

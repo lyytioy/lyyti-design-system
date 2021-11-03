@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Link, { LinkProps } from '../../components/Link';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 import { Cog } from '../../icons';
 
 export default {

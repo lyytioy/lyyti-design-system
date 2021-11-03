@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Grid, { GridProps } from '../../components/Grid';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 import { Rect } from '../Feedback/Skeleton.stories';
 
 export default {

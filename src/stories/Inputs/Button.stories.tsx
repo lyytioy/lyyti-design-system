@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Button, { ButtonProps } from '../../components/Button';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 import { Bin } from '../../icons';
 
 export default {

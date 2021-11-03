@@ -2,7 +2,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Switch, { SwitchProps } from '../../components/Switch';
 import FormControlLabel, { FormControlLabelProps } from '../../components/FormControlLabel';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 
 export default {
   title: 'Components/Inputs/Switch',

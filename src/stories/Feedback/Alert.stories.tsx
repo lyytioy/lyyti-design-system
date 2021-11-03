@@ -2,7 +2,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
 import Alert, { AlertProps } from '../../components/Alert';
 import ThemeSelector from '../../themes/ThemeSelector';
-import '../../styles/objektiv.css';
 import Button from '../../components/Button';
 import AlertTitle from '../../components/AlertTitle';
 
