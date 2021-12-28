@@ -1,3 +1,5 @@
+import '../src/styles/objektiv.css';
+
 export const parameters = {
   controls: {
     expanded: true,

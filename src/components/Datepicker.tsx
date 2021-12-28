@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import 'react-dates/initialize';
 import { DateRangePicker, SingleDatePicker, FocusedInputShape } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import 'moment/min/locales.min';
 import InputLabel from './InputLabel';
