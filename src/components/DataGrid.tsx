@@ -20,29 +20,32 @@ const useStyles = makeStyles<Theme>((theme) =>
 );
 
 export interface DataGridProps extends MuiDataGridProps {
-  rows: MuiGridRowsProp;
   columns: MuiGridColumns;
-  pageSize: number;
-  checkboxSelection: boolean;
-  disableColumnMenu: boolean;
-  hideFooter: boolean;
+  rows: MuiGridRowsProp;
+  autoHeight?: boolean;
+  checkboxSelection?: boolean;
+  disableColumnMenu?: boolean;
+  hideFooter?: boolean;
+  pageSize?: number;
 }
 
 const DataGrid = ({
-  pageSize = 100,
+  autoHeight = true,
   checkboxSelection = false,
   disableColumnMenu = false,
   hideFooter = false,
+  pageSize = 100,
   ...props
 }: DataGridProps): JSX.Element => {
   const classes = useStyles();
 
   return (
     <MuiDataGrid
-      pageSize={pageSize}
+      autoHeight={autoHeight}
       checkboxSelection={checkboxSelection}
       disableColumnMenu={disableColumnMenu}
       hideFooter={hideFooter}
+      pageSize={pageSize}
       {...props}
       className={classes.root}
     />
