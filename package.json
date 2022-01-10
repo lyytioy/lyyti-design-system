@@ -1,8 +1,8 @@
 {
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
-  "homepage": "https://beta.lyyti.fi:8080/",
-  "version": "0.5.3",
+  "homepage": "https://lyytioy.github.io/lyyti-design-system",
+  "version": "0.5.4",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/data-grid": "^4.0.0-alpha.19",
@@ -15,8 +15,8 @@
     "start": "yarn && start-storybook -p 6006 -s public",
     "lint": "tsc && eslint src",
     "lint:fix": "tsc && eslint src --fix",
-    "build": "rm -rf dist/* && tsc --project tsconfig.release.json && cp -r src/fonts dist && cp -r src/styles dist && cat ./package.json | grep -v '\"private\":' > dist/package.json",
-    "build-storybook": "yarn && build-storybook -s public"
+    "build": "rm -rf dist/* && tsc --project tsconfig.release.json && cp -r src/fonts dist && cp -r src/styles dist",
+    "build-storybook": "yarn && build-storybook -s public -o docs-build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -71,6 +71,5 @@
   "types": "index.d.ts",
   "repository": "git@bitbucket.org:lyyti/lyyti-design-system.git",
   "author": "Lyyti Oy <help@lyyti.com>",
-  "private": true,
-  "license": "UNLICENSED"
+  "license": "MIT"
 }
