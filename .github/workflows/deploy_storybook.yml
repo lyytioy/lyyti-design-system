@@ -5,8 +5,14 @@ name: Deploy Storybook
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'typings/**'
+      - '.storybook/**'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   deploy:

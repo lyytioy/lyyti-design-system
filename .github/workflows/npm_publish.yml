@@ -5,8 +5,13 @@ name: Publish Lyyti Design System
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'typings/**'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   create-release:
