@@ -1,3 +1,5 @@
+# This workflow runs lint scripts and compares package.json version with the main branch
+
 name: Quality check
 
 on:
