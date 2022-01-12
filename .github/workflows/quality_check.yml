@@ -24,7 +24,7 @@ jobs:
       - name: Get current package.json version
         id: current-package-version
         uses: martinbeentjes/npm-get-version-action@v1.1.0
-      - name: Check packege.json verson in main
+      - name: Compare package.json versions
         if: ${{ steps.version-in-main.outputs.current-version == steps.current-package-version.outputs.current-version }}
         run: |
           echo "You need to have a different package.json version than the one in main"
