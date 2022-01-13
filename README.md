@@ -52,8 +52,11 @@ Make sure to clone the repository and do the following
 6. Run `npm link @lyyti/design-system`
 
 ## Contribute
-We welcome contributors. Please make sure that you use our ESLint and Prettier rules and always use
-Typescript.
+We welcome contributors. In order to do so you need fork this repository and only make changes from there.
+Once you have made your changes please create a cross fork pull request. One of our developers will get to it
+as soon as possible.
+
+Please make sure that you use our ESLint and Prettier rules and always use Typescript.
 
 When you create a pull request with changes make sure to also bump the package.json version.
 Depending on what you have done run one of the following commands
