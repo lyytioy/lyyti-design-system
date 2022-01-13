@@ -1,0 +1,49 @@
+# This workflow creates a Tag, GitHub release and publishes the built package to NPM
+
+name: Publish Lyyti Design System
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'typings/**'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get package.json version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.1.0
+      - name: Create Tag
+        uses: hole19/git-tag-action@master
+        env:
+          TAG: v${{ steps.package-version.outputs.current-version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.TAG }}
+          name: Release ${{ env.TAG }}
+        env:
+          TAG: v${{ steps.package-version.outputs.current-version }}
+
+  publish-npm:
+    needs: create-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - name: Build and Publish
+        run: |
+          npm ci
+          npm run build
+          npm publish ./dist
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

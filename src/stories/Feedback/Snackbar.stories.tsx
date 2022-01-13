@@ -31,7 +31,7 @@ export default {
       description: 'The variant to use.',
     },
   },
-} as Meta;
+} as unknown as Meta;
 
 const Template: Story<SnackbarProps> = (args) => {
   const [showSnackbar, setShowSnackbar] = useState(false);

@@ -1,0 +1,40 @@
+# This workflow runs lint scripts and compares package.json version with the main branch
+
+name: Quality check
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'typings/**'
+
+jobs:
+  compare-versions:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+      - name: Get main branch package.json version
+        id: version-in-main
+        uses: martinbeentjes/npm-get-version-action@v1.1.0
+      - uses: actions/checkout@v2
+      - name: Get current package.json version
+        id: current-package-version
+        uses: martinbeentjes/npm-get-version-action@v1.1.0
+      - name: Compare package.json versions
+        if: ${{ steps.version-in-main.outputs.current-version == steps.current-package-version.outputs.current-version }}
+        run: |
+          echo "You need to have a different package.json version than the one in main"
+          exit 1
+
+  lint-files:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Lint
+        run: npm run lint
