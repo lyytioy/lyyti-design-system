@@ -1,0 +1,5 @@
+# Frontend is the default owner, unless a later match takes precedence.
+*                   @lyytioy/frontend
+
+# DevOps own pipeline and environment related stuff
+/.github/           @lyytioy/frontend    @lyytioy/team-devops
