@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/data-grid": "^4.0.0-alpha.19",
@@ -15,7 +15,7 @@
     "start": "npm ci && start-storybook -p 6006 -s public",
     "lint": "tsc && eslint src",
     "lint:fix": "tsc && eslint src --fix",
-    "build": "rm -rf dist/* && tsc --project tsconfig.release.json && cp -r src/fonts dist && cp -r src/styles dist && cp package.json dist",
+    "build": "rm -rf dist/* && tsc --project tsconfig.release.json && cp -r src/fonts dist && cp -r src/styles dist && cp package.json dist && cp README.md dist",
     "build-storybook": "npm ci && build-storybook -s public -o docs-build"
   },
   "eslintConfig": {
