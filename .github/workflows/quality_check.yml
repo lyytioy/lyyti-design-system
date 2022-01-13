@@ -9,8 +9,6 @@ on:
       - 'src/**'
       - 'public/**'
       - 'typings/**'
-      - 'package.json'
-      - 'package-lock.json'
 
 jobs:
   compare-versions:
