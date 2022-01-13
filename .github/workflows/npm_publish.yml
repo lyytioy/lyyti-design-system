@@ -9,6 +9,14 @@ on:
       - 'src/**'
       - 'public/**'
       - 'typings/**'
+  workflow_dispatch:
+    inputs:
+      accept:
+        type: boolean
+        required: true
+        description: >
+          I understand that this action may fail if the tag, release or the version of
+          the NPM package already exists
 
 jobs:
   create-release:
