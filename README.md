@@ -1,6 +1,7 @@
 ![publishing badge](https://github.com/lyytioy/lyyti-design-system/actions/workflows/npm_publish.yml/badge.svg)
 ![deploy storybook badge](https://github.com/lyytioy/lyyti-design-system/actions/workflows/deploy_storybook.yml/badge.svg)
 ![quality checks badge](https://github.com/lyytioy/lyyti-design-system/actions/workflows/quality_check.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # Lyyti Design System
 This is the official repository for Lyyti Design System.
