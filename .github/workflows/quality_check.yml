@@ -4,9 +4,10 @@ name: Quality check
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
       - 'src/**'
+      - 'stories/**'
       - 'public/**'
       - 'typings/**'
 

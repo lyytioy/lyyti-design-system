@@ -86,7 +86,7 @@ npm ci
 ```
 Once you have done that you can just run
 ```shell
-npm run start
+npm run dev
 ```
 That will start Storybook on `http://localhost:6006` and you can start working on what ever your heart desires.
 

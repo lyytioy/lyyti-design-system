@@ -19,5 +19,5 @@
     "removeComments": true
   },
   "include": ["src", "typings"],
-  "exclude": ["fonts", "src/stories"]
+  "exclude": ["fonts", "stories"]
 }
