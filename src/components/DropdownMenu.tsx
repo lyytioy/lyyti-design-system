@@ -49,7 +49,8 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
         aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
-        {...props.buttonProps}>
+        {...props.buttonProps}
+      >
         {props.title}
       </Button>
       <Popper
@@ -58,11 +59,13 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
         role={undefined}
         transition
         disablePortal
-        style={{ position: 'inherit' }}>
+        style={{ position: 'inherit' }}
+      >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
-            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
+            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+          >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>

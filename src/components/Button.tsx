@@ -138,7 +138,8 @@ const Button = ({
       variant={variant}
       color={color}
       disabled={disabled}
-      {...props}>
+      {...props}
+    >
       {children}
     </MuiButton>
   );

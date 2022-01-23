@@ -49,7 +49,8 @@ const Dialog = ({
         {dialogTitle}
         <Button
           onClick={onClose as MouseEventHandler<HTMLButtonElement>}
-          className={classes.closeIcon}>
+          className={classes.closeIcon}
+        >
           <Close fontSize="small" />
         </Button>
       </MuiDialogTitle>

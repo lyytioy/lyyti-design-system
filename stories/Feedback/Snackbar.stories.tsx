@@ -52,7 +52,8 @@ const Template: Story<SnackbarProps> = (args) => {
         variant="contained"
         color="primary"
         chunky={false}
-        onClick={() => setShowSnackbar(true)}>
+        onClick={() => setShowSnackbar(true)}
+      >
         {'Open snackbar'}
       </Button>
       <Snackbar {...args} />

@@ -40,7 +40,8 @@ const Select = ({
           getContentAnchorEl: null,
         },
       }}
-      inputProps={{ 'data-testid': testid }}>
+      inputProps={{ 'data-testid': testid }}
+    >
       {options.map(({ id, value: label }) => (
         <MenuItem key={id} value={id}>
           {label}

@@ -52,7 +52,8 @@ const Template: Story<DialogProps> = (args) => {
         variant="contained"
         color="primary"
         chunky={false}
-        onClick={() => setDialogOpen(true)}>
+        onClick={() => setDialogOpen(true)}
+      >
         {'Open Dialog'}
       </Button>
       <Dialog {...args} />

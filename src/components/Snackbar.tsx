@@ -32,9 +32,8 @@ const Snackbar = ({
       {...props}
       anchorOrigin={anchorOrigin}
       autoHideDuration={autoHideDuration}
-      TransitionComponent={(params: TransitionProps) => (
-        <Slide {...params} direction={direction} />
-      )}>
+      TransitionComponent={(params: TransitionProps) => <Slide {...params} direction={direction} />}
+    >
       <div>
         <AlertBase color={color} severity={severity} variant={variant}>
           {props.message}

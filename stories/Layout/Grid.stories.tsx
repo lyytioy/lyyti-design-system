@@ -115,7 +115,8 @@ const Template: Story<GridProps> = ({ spacing, direction, justify, alignItems, .
       spacing={spacing}
       direction={direction}
       justify={justify}
-      alignItems={alignItems}>
+      alignItems={alignItems}
+    >
       {[0, 1, 2].map((value) => (
         <Grid key={value} item {...args}>
           <Rect {...Rect.args} />
