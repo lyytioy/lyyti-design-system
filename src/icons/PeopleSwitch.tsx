@@ -1,8 +1,8 @@
-import * as React from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import { createElement } from 'react';
+import SvgIcon from '@mui/material/SvgIcon';
 
 const PeopleSwitch = (props: any) =>
-  React.createElement(
+  createElement(
     SvgIcon,
     props,
     <path d="M14.249 24a.767.767 0 01-.258-.046l-.017-.006a.748.748 0 01-.256-.167l-3-3a.752.752 0 01.53-1.281c.2 0 .389.078.53.22l1.72 1.72v-7.19a.75.75 0 011.5 0v7.189l1.72-1.72a.744.744 0 011.06 0 .752.752 0 010 1.061l-3 3a.74.74 0 01-.245.163l-.026.01a.716.716 0 01-.258.047z" />,

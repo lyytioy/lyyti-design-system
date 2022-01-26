@@ -1,8 +1,8 @@
-import * as React from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import { createElement } from 'react';
+import SvgIcon from '@mui/material/SvgIcon';
 
 const Link = (props: any) =>
-  React.createElement(
+  createElement(
     SvgIcon,
     props,
     <path d="M12.406 14.905a1 1 0 00-.543 1.307 1 1 0 01-.217 1.09l-2.828 2.829a2 2 0 01-2.828 0L3.868 18.01a2 2 0 010-2.829L6.7 12.353a1.013 1.013 0 011.091-.217 1 1 0 00.763-1.849 3.034 3.034 0 00-3.268.652l-2.832 2.828a4.006 4.006 0 000 5.657l2.122 2.121a4 4 0 005.656 0l2.829-2.828a3.008 3.008 0 00.651-3.27 1 1 0 00-1.306-.542z" />,
