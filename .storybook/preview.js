@@ -1,4 +1,17 @@
 import '../src/styles/objektiv.css';
+import ThemeSelector from '../src/themes/ThemeSelector';
+import { ThemeProvider } from 'emotion-theming';
+import Theme from '../src/themes/theme';
+
+export const decorators = [
+  (Story) => (
+    <ThemeSelector>
+      <ThemeProvider theme={Theme}>
+        <Story />
+      </ThemeProvider>
+    </ThemeSelector>
+  ),
+];
 
 export const parameters = {
   actions: { disable: true },
