@@ -1,7 +1,5 @@
-import {
-  AlertTitle as MuiAlertTitle,
-  AlertTitleProps as MuiAlertTitleProps,
-} from '@material-ui/lab';
+import { AlertTitle as MuiAlertTitle } from '@mui/material';
+import { AlertTitleProps as MuiAlertTitleProps } from '@mui/material';
 
 export type AlertTitleProps = MuiAlertTitleProps;
 

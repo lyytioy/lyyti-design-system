@@ -1,10 +1,7 @@
-import {
-  Switch as MuiSwitch,
-  SwitchProps as MuiSwitchProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
+import { Switch as MuiSwitch, SwitchProps as MuiSwitchProps, Theme } from '@mui/material';
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({

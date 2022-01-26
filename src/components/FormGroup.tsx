@@ -1,4 +1,4 @@
-import { FormGroup as MuiFormGroup, FormGroupProps as MuiFormGroupProps } from '@material-ui/core';
+import { FormGroup as MuiFormGroup, FormGroupProps as MuiFormGroupProps } from '@mui/material';
 
 export type FormGroupProps = MuiFormGroupProps;
 

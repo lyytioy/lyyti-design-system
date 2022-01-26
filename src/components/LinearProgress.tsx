@@ -1,7 +1,7 @@
 import {
   LinearProgress as MuiLinearProgress,
   LinearProgressProps as MuiLinearProgressProps,
-} from '@material-ui/core';
+} from '@mui/material';
 
 export interface LinearProgressProps extends MuiLinearProgressProps {
   color: 'primary' | 'secondary';

@@ -2,10 +2,12 @@ import {
   Button as MuiButton,
   ButtonProps as MuiButtonProps,
   IconButton,
-  createStyles,
-  makeStyles,
   Theme,
-} from '@material-ui/core';
+} from '@mui/material';
+import { forwardRef, Ref } from 'react';
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const containedBoxShadow =
   '0.79px 6.95px 11px rgb(0 0 0 / 1%), 0.52px 4.53px 6.44px rgb(0 0 0 / 2%), 0.31px 2.76px 3.5px rgb(0 0 0 / 2%), 0.17px 1.52px 1.79px rgb(0 0 0 / 2%), 0.08px 0.72px 0.9px rgb(0 0 0 / 3%), 0.03px 0.25px 0.43px rgb(0 0 0 / 4%), inset 0 0px 0 0 #034e49';
@@ -102,14 +104,17 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'size'> {
   'data-testid'?: string;
 }
 
-const Button = ({
-  children,
-  chunky = false,
-  variant = 'contained',
-  color = 'secondary',
-  disabled = false,
-  ...props
-}: ButtonProps): JSX.Element => {
+const Button = (
+  {
+    children,
+    chunky = false,
+    variant = 'contained',
+    color = 'secondary',
+    disabled = false,
+    ...props
+  }: ButtonProps,
+  ref: Ref<HTMLButtonElement>
+): JSX.Element => {
   const classes = useStyles({ chunky });
 
   if (
@@ -118,7 +123,7 @@ const Button = ({
     children.$$typeof === Symbol.for('react.element')
   ) {
     return (
-      <IconButton color={color} disabled={disabled}>
+      <IconButton color={color} disabled={disabled} size="large" ref={ref}>
         {children}
       </IconButton>
     );
@@ -138,11 +143,11 @@ const Button = ({
       variant={variant}
       color={color}
       disabled={disabled}
+      ref={ref}
       {...props}
     >
       {children}
     </MuiButton>
   );
 };
-
-export default Button;
+export default forwardRef(Button);

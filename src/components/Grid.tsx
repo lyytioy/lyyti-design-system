@@ -1,4 +1,4 @@
-import { Grid as MuiGrid, GridProps as MuiGridProps } from '@material-ui/core';
+import { Grid as MuiGrid, GridProps as MuiGridProps } from '@mui/material';
 
 export type GridProps = MuiGridProps;
 

@@ -1,5 +1,8 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import { Skeleton as MuiSkeleton, SkeletonProps as MuiSkeletonProps } from '@material-ui/lab';
+import { Theme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import { Skeleton as MuiSkeleton } from '@mui/material';
+import { SkeletonProps as MuiSkeletonProps } from '@mui/material';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({

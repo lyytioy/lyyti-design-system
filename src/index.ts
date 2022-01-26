@@ -46,4 +46,4 @@ export { default as TextField } from './components/TextField';
 export { default as TimePicker } from './components/TimePicker';
 export { default as Tooltip } from './components/Tooltip';
 export { default as Typography } from './components/Typography';
-export { ServerStyleSheets } from '@material-ui/styles';
+export { ServerStyleSheets } from '@mui/styles';

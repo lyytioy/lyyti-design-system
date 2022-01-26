@@ -1,4 +1,4 @@
-import { Avatar as MuiAvatar, AvatarProps as MuiAvatarProps } from '@material-ui/core';
+import { Avatar as MuiAvatar, AvatarProps as MuiAvatarProps } from '@mui/material';
 
 export interface AvatarProps extends MuiAvatarProps {
   'data-testid'?: string;

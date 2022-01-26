@@ -1,7 +1,7 @@
 import {
   ClickAwayListener as MuiClickAwayListener,
   ClickAwayListenerProps as MuiClickAwayListenerProps,
-} from '@material-ui/core';
+} from '@mui/material';
 
 export type ClickAwayListenerProps = MuiClickAwayListenerProps;
 

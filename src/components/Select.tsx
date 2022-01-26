@@ -1,4 +1,4 @@
-import { MenuItem } from '@material-ui/core';
+import { MenuItem } from '@mui/material';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
@@ -37,7 +37,6 @@ const Select = ({
             vertical: 'top',
             horizontal: 'left',
           },
-          getContentAnchorEl: null,
         },
       }}
       inputProps={{ 'data-testid': testid }}

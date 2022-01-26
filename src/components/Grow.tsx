@@ -1,4 +1,4 @@
-import { Grow as MuiGrow, GrowProps as MuiGrowProps } from '@material-ui/core';
+import { Grow as MuiGrow, GrowProps as MuiGrowProps } from '@mui/material';
 
 export type GrowProps = MuiGrowProps;
 

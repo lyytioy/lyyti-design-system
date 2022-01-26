@@ -4,10 +4,11 @@ import {
   CardHeader as MuiCardHeader,
   CardActions as MuiCardActions,
   CardContent as MuiCardContent,
-  createStyles,
-  makeStyles,
   Theme,
-} from '@material-ui/core';
+} from '@mui/material';
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles<Theme, { headerBackgroundColor: string }>((theme) =>
   createStyles({

@@ -1,10 +1,7 @@
-import {
-  Chip as MuiChip,
-  ChipProps as MuiChipProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
+import { Chip as MuiChip, ChipProps as MuiChipProps, Theme } from '@mui/material';
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({
@@ -29,7 +26,7 @@ export interface ChipProps extends MuiChipProps {
 
 const Chip = ({
   color = 'primary',
-  variant = 'default',
+  variant = 'filled',
   size = 'medium',
   clickable = false,
   disabled = false,

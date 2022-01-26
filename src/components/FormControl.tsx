@@ -1,7 +1,7 @@
 import {
   FormControl as MuiFormControl,
   FormControlProps as MuiFormControlProps,
-} from '@material-ui/core';
+} from '@mui/material';
 
 export type FormControlProps = MuiFormControlProps;
 

@@ -1,4 +1,5 @@
-import { Alert as MuiAlert, AlertProps as MuiAlertProps } from '@material-ui/lab';
+import { Alert as MuiAlert } from '@mui/material';
+import { AlertProps as MuiAlertProps } from '@mui/material';
 
 export interface AlertBaseProps extends MuiAlertProps {
   color?: 'success' | 'info' | 'warning' | 'error';

@@ -3,8 +3,11 @@ import {
   DataGridProps as MuiDataGridProps,
   GridColumns as MuiGridColumns,
   GridRowsProp as MuiGridRowsProp,
-} from '@material-ui/data-grid';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
+} from '@mui/x-data-grid';
+import { Theme } from '@mui/material';
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({

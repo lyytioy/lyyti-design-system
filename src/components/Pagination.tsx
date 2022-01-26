@@ -1,8 +1,8 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import {
-  Pagination as MuiPagination,
-  PaginationProps as MuiPaginationProps,
-} from '@material-ui/lab';
+import { Theme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import { Pagination as MuiPagination } from '@mui/material';
+import { PaginationProps as MuiPaginationProps } from '@mui/material';
 
 const useStyles = makeStyles<Theme>(() =>
   createStyles({

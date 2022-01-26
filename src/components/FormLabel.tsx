@@ -1,4 +1,4 @@
-import { FormLabel as MuiFormLabel, FormLabelProps as MuiFormLabelProps } from '@material-ui/core';
+import { FormLabel as MuiFormLabel, FormLabelProps as MuiFormLabelProps } from '@mui/material';
 
 export type FormLabelProps = MuiFormLabelProps;
 

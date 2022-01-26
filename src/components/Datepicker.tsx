@@ -5,7 +5,9 @@ import { DateRangePicker, SingleDatePicker, FocusedInputShape } from 'react-date
 import moment from 'moment';
 import 'moment/min/locales.min';
 import InputLabel from './InputLabel';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
+import { Theme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import ChevronLeft from '../icons/ChevronLeft';
 import ChevronRight from '../icons/ChevronRight';
 import { MarginTypes } from './TextField';

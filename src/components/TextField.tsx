@@ -1,11 +1,7 @@
 import { useRef } from 'react';
-import {
-  TextField as MuiTextField,
-  OutlinedTextFieldProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
+import { TextField as MuiTextField, OutlinedTextFieldProps, Theme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import InputAdornment from './InputAdornment';
 
 const useStyles = makeStyles<Theme>((theme) =>
@@ -68,18 +64,16 @@ const useStyles = makeStyles<Theme>((theme) =>
   })
 );
 
-export type MarginTypes = 'dense' | 'normal';
+export type SizeTypes = 'small' | 'medium';
 
-export type VariantTypes = 'outlined' | undefined;
 export type ColorTypes = 'primary' | 'white';
 
 export type TextFieldProps = {
   endAdornment?: string | JSX.Element;
   fullWidth?: boolean;
-  margin?: MarginTypes;
+  size?: SizeTypes;
   startAdornment?: string | JSX.Element;
   color?: ColorTypes;
-  variant?: VariantTypes;
   error?: boolean;
   helperText?: string;
   'data-testid'?: string;
@@ -91,7 +85,7 @@ export type TextFieldProps = {
 const TextField = ({
   endAdornment,
   fullWidth = true,
-  margin = 'dense',
+  size = 'small',
   startAdornment,
   color = 'primary',
   error = false,
@@ -104,7 +98,7 @@ const TextField = ({
   return (
     <MuiTextField
       fullWidth={fullWidth}
-      margin={margin}
+      size={size}
       error={error}
       helperText={helperText}
       onClick={() => muiTextField.current?.focus()}
@@ -120,7 +114,6 @@ const TextField = ({
         ...(props.InputProps ?? {}),
         notched: false,
       }}
-      variant="outlined"
       InputLabelProps={{ shrink: true }}
       classes={{ root: classes.root }}
     />

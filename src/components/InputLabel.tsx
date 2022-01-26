@@ -1,10 +1,7 @@
-import {
-  InputLabel as MuiInputLabel,
-  InputLabelProps as MuiInputLabelProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
+import { InputLabel as MuiInputLabel, InputLabelProps as MuiInputLabelProps, Theme } from '@mui/material';
+
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles<Theme>((theme) =>
   createStyles({

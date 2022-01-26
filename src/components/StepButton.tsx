@@ -1,7 +1,7 @@
 import {
   StepButton as MuiStepButton,
   StepButtonProps as MuiStepButtonProps,
-} from '@material-ui/core';
+} from '@mui/material';
 
 export type StepButtonProps = MuiStepButtonProps;
 

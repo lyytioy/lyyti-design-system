@@ -1,5 +1,5 @@
 import AlertBase, { AlertBaseProps } from './AlertBase';
-import Fade from '@material-ui/core/Fade';
+import Fade from '@mui/material/Fade';
 import React from 'react';
 
 export interface AlertProps extends AlertBaseProps {

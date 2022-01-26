@@ -1,4 +1,4 @@
-import { MenuItem as MuiMenuItem, MenuItemProps as MuiMenuItemProps } from '@material-ui/core';
+import { MenuItem as MuiMenuItem, MenuItemProps as MuiMenuItemProps } from '@mui/material';
 
 // Workaround for fixing the unassignable type {button: boolean | undefined} to {button: true | undefined}
 export interface MenuItemProps extends MuiMenuItemProps {

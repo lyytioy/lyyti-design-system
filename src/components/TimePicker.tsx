@@ -1,6 +1,6 @@
 import Autocomplete, { AutocompleteProps } from './Autocomplete';
 import { MarginTypes } from './TextField';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 import { Clock } from '../icons';
 
 const twentyFourHourTimes = [

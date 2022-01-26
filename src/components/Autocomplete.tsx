@@ -1,8 +1,8 @@
-import {
-  Autocomplete as MuiAutocomplete,
-  AutocompleteProps as MuiAutocompleteProps,
-} from '@material-ui/lab';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
+import { Autocomplete as MuiAutocomplete } from '@mui/material';
+import { AutocompleteProps as MuiAutocompleteProps } from '@mui/material';
+import { Theme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import TextField, { MarginTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
