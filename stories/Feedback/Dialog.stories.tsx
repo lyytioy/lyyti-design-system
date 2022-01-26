@@ -2,7 +2,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
 import Dialog, { DialogProps } from '../../src/components/Dialog';
 import Button from '../../src/components/Button';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Feedback/Dialog',
@@ -47,7 +46,7 @@ const Template: Story<DialogProps> = (args) => {
   args.open = dialogOpen;
   args.onClose = () => setDialogOpen(false);
   return (
-    <ThemeSelector>
+    <>
       <Button
         variant="contained"
         color="primary"
@@ -57,7 +56,7 @@ const Template: Story<DialogProps> = (args) => {
         {'Open Dialog'}
       </Button>
       <Dialog {...args} />
-    </ThemeSelector>
+    </>
   );
 };
 

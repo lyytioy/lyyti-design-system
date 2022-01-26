@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Switch, { SwitchProps } from '../../src/components/Switch';
 import FormControlLabel, { FormControlLabelProps } from '../../src/components/FormControlLabel';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Inputs/Switch',
@@ -16,17 +15,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SwitchProps> = (args) => (
-  <ThemeSelector>
-    <Switch {...args} />
-  </ThemeSelector>
-);
+const Template: Story<SwitchProps> = (args) => <Switch {...args} />;
 
-const LabelTemplate: Story<FormControlLabelProps> = (args) => (
-  <ThemeSelector>
-    <FormControlLabel {...args} />
-  </ThemeSelector>
-);
+const LabelTemplate: Story<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
 
 export const Medium = Template.bind({});
 Medium.args = {

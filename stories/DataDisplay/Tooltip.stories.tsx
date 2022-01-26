@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Tooltip, { TooltipProps } from '../../src/components/Tooltip';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Data Display/Tooltip',
@@ -18,11 +17,9 @@ export default {
 const SomeContent = (props) => <span {...props}>{'Hover over me!'}</span>;
 
 const Template: Story<TooltipProps> = (args) => (
-  <ThemeSelector>
-    <Tooltip {...args}>
-      <SomeContent />
-    </Tooltip>
-  </ThemeSelector>
+  <Tooltip {...args}>
+    <SomeContent />
+  </Tooltip>
 );
 
 export const NoDirection = Template.bind({});

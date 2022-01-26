@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
 import Alert, { AlertProps } from '../../src/components/Alert';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import Button from '../../src/components/Button';
 import AlertTitle from '../../src/components/AlertTitle';
 
@@ -43,12 +42,12 @@ const Template: Story<AlertProps> = (args) => {
   args.onClose = () => setAlertOpen(false);
 
   return (
-    <ThemeSelector>
+    <>
       <Alert {...args} />
       <Button variant="contained" color="primary" onClick={() => setAlertOpen(true)}>
         {'Re-open'}
       </Button>
-    </ThemeSelector>
+    </>
   );
 };
 

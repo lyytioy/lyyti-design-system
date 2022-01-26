@@ -1,5 +1,4 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import Search, { SearchProps } from '../../src/components/Search';
 
 const options = [
@@ -85,11 +84,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SearchProps> = (args) => (
-  <ThemeSelector>
-    <Search {...args} />
-  </ThemeSelector>
-);
+const Template: Story<SearchProps> = (args) => <Search {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Skeleton, { SkeletonProps } from '../../src/components/Skeleton';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Data Display/Skeleton',
@@ -33,11 +32,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SkeletonProps> = (args) => (
-  <ThemeSelector>
-    <Skeleton {...args} />
-  </ThemeSelector>
-);
+const Template: Story<SkeletonProps> = (args) => <Skeleton {...args} />;
 
 export const Text = Template.bind({});
 Text.args = {
@@ -48,14 +43,14 @@ Text.args = {
 
 export const Circle = Template.bind({});
 Circle.args = {
-  variant: 'circle',
+  variant: 'circular',
   width: 200,
   height: 200,
 };
 
 export const Rect = Template.bind({});
 Rect.args = {
-  variant: 'rect',
+  variant: 'rectangular',
   width: 300,
   height: 300,
 };

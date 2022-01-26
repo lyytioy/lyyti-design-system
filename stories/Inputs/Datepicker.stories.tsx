@@ -5,7 +5,6 @@ import Datepicker, {
   DatepickerRangeProps,
   DateRange,
 } from '../../src/components/Datepicker';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import moment from 'moment';
 import 'react-dates/lib/css/_datepicker.css';
 
@@ -63,11 +62,7 @@ export default {
 const DatepickerTemplate: Story<DatepickerProps> = (args) => {
   const [date, setDate] = useState<moment.Moment | null>(null);
 
-  return (
-    <ThemeSelector>
-      <Datepicker {...args} date={date} onDateChange={setDate} />
-    </ThemeSelector>
-  );
+  return <Datepicker {...args} date={date} onDateChange={setDate} />;
 };
 
 const DatepickerRangeTemplate: Story<DatepickerRangeProps> = (args) => {
@@ -80,15 +75,13 @@ const DatepickerRangeTemplate: Story<DatepickerRangeProps> = (args) => {
   };
 
   return (
-    <ThemeSelector>
-      <Datepicker
-        {...args}
-        range
-        startDate={startDate}
-        endDate={endDate}
-        onDateChange={handleDatesChange}
-      />
-    </ThemeSelector>
+    <Datepicker
+      {...args}
+      range
+      startDate={startDate}
+      endDate={endDate}
+      onDateChange={handleDatesChange}
+    />
   );
 };
 

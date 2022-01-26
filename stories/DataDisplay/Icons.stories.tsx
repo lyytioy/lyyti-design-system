@@ -1,8 +1,9 @@
 import { ChangeEvent, useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Source } from '@storybook/addon-docs';
-import ThemeSelector from '../../src/themes/ThemeSelector';
-import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core';
+import { SvgIconProps, Theme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
 import TextField from '../../src/components/TextField';
 import Grid from '../../src/components/Grid';
 import {
@@ -278,40 +279,38 @@ const Template: Story<SvgIconProps> = (args) => {
   };
 
   return (
-    <ThemeSelector>
-      <Grid container spacing={1}>
-        <Grid item xs={4}>
-          <TextField onChange={handleChange} value={search} placeholder="Search" />
-        </Grid>
-        <Grid item xs={8}>
-          <Source
-            language={'js'}
-            code={`
+    <Grid container spacing={1}>
+      <Grid item xs={4}>
+        <TextField onChange={handleChange} value={search} placeholder="Search" />
+      </Grid>
+      <Grid item xs={8}>
+        <Source
+          language={'js'}
+          code={`
           // import icon
 import { ${importIcon} } from '@lyyti/design-system/icons';
 // use in a component
 <${importIcon} ${args.color && args.color !== 'inherit' ? `color="${args.color}"` : ''}${
-              args.fontSize && args.fontSize !== 'default' ? ` fontSize="${args.fontSize}"` : ''
-            }${args.htmlColor && args.htmlColor ? ` htmlColor="${args.htmlColor}"` : ''}/>
+            args.fontSize && args.fontSize !== 'medium' ? ` fontSize="${args.fontSize}"` : ''
+          }${args.htmlColor && args.htmlColor ? ` htmlColor="${args.htmlColor}"` : ''}/>
         `}
-            dark
-          />
-        </Grid>
-        {iconsList
-          .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((icon, index) => {
-            return (
-              <Grid item xs={3} key={index} onClick={() => setImportIcon(icon.name)}>
-                <div className={classes.iconDiv}>
-                  <icon.component {...args} />
-                  <span>{icon.name}</span>
-                </div>
-              </Grid>
-            );
-          })}
+          dark
+        />
       </Grid>
-    </ThemeSelector>
+      {iconsList
+        .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((icon, index) => {
+          return (
+            <Grid item xs={3} key={index} onClick={() => setImportIcon(icon.name)}>
+              <div className={classes.iconDiv}>
+                <icon.component {...args} />
+                <span>{icon.name}</span>
+              </div>
+            </Grid>
+          );
+        })}
+    </Grid>
   );
 };
 
