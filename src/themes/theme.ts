@@ -224,18 +224,13 @@ export default createTheme({
     MuiMenuItem: {
       styleOverrides: {
         root: {
-          '&$selected': {
+          '&.Mui-selected': {
             backgroundColor: 'rgba(4, 91, 86, 0.08)',
             '&:hover': {
               backgroundColor: 'rgba(4, 91, 86, 0.1)',
             },
           },
         },
-        // button: {
-        //   '&:hover': {
-        //     backgroundColor: 'rgba(4, 91, 86, 0.1)',
-        //   },
-        // },
       },
     },
   },
