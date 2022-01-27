@@ -1,21 +1,4 @@
-import { Tooltip as MuiTooltip, TooltipProps as MuiTooltipProps, Theme } from '@mui/material';
-
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    tooltip: {
-      fontSize: '12px',
-      backgroundColor: theme.palette.grey[400],
-      borderRadius: '3px',
-    },
-    arrow: {
-      color: theme.palette.grey[400],
-      fontSize: '8px',
-    },
-  })
-);
+import { Tooltip as MuiTooltip, TooltipProps as MuiTooltipProps } from '@mui/material';
 
 export interface TooltipProps extends MuiTooltipProps {
   arrow: boolean;
@@ -36,16 +19,26 @@ export interface TooltipProps extends MuiTooltipProps {
   'data-testid'?: string;
 }
 
-const Tooltip = ({ arrow = false, placement = 'bottom', ...props }: TooltipProps): JSX.Element => {
-  const classes = useStyles();
-
+const Tooltip = ({
+  arrow = false,
+  placement = 'bottom',
+  children,
+  title,
+  ...props
+}: TooltipProps): JSX.Element => {
   return (
     <MuiTooltip
+      title={title}
       arrow={arrow}
       placement={placement}
+      componentsProps={{
+        tooltip: { sx: { fontSize: '12px', backgroundColor: 'grey.400', borderRadius: '3px' } },
+        arrow: { sx: { fontSize: '8px', color: 'grey.400' } },
+      }}
       {...props}
-      classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
-    />
+    >
+      {children}
+    </MuiTooltip>
   );
 };
 

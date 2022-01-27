@@ -14,11 +14,9 @@ export default {
   },
 } as Meta;
 
-const SomeContent = (props) => <span {...props}>{'Hover over me!'}</span>;
-
 const Template: Story<TooltipProps> = (args) => (
   <Tooltip {...args}>
-    <SomeContent />
+    <span>{'Hover over me!'}</span>
   </Tooltip>
 );
 
