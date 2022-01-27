@@ -6,7 +6,19 @@ export interface MenuItemProps extends MuiMenuItemProps {
 }
 
 const MenuItem = (props: MenuItemProps): JSX.Element => {
-  return <MuiMenuItem {...props} />;
+  return (
+    <MuiMenuItem
+      sx={{
+        '&.Mui-selected': {
+          backgroundColor: 'rgba(4, 91, 86, 0.08)',
+          '&:hover': {
+            backgroundColor: 'rgba(4, 91, 86, 0.1)',
+          },
+        },
+      }}
+      {...props}
+    />
+  );
 };
 
 export default MenuItem;

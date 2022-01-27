@@ -1,25 +1,14 @@
-import { MenuList as MuiMenuList, MenuListProps as MuiMenuListProps, Theme } from '@mui/material';
-
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-import { forwardRef, Ref } from 'react';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      '& .MuiButtonBase-root:hover': {
-        backgroundColor: theme.palette.primaryStates.hover,
-      },
-    },
-  })
-);
+import { MenuList as MuiMenuList, MenuListProps as MuiMenuListProps } from '@mui/material';
 
 export type MenuListProps = MuiMenuListProps;
 
-const MenuList = (props: MenuListProps, ref: Ref<HTMLUListElement>): JSX.Element => {
-  const classes = useStyles();
-
-  return <MuiMenuList {...props} classes={{ root: classes.root }} ref={ref} />;
+const MenuList = (props: MenuListProps): JSX.Element => {
+  return (
+    <MuiMenuList
+      sx={{ '& .MuiButtonBase-root:hover': { bgcolor: 'primaryStates.hover' } }}
+      {...props}
+    />
+  );
 };
 
-export default forwardRef(MenuList);
+export default MenuList;

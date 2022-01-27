@@ -1,72 +1,58 @@
-import { Stepper as MuiStepper, StepperProps as MuiStepperProps, Theme } from '@mui/material';
-
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      backgroundColor: 'transparent',
-      '& .MuiStep-horizontal': {
-        paddingLeft: '32px',
-        paddingRight: '32px',
-      },
-      '& .MuiStepIcon-root': {
-        color: '#FFF',
-        border: '2px solid',
-        borderColor: theme.palette.action.disabledBackground,
-        borderRadius: '50%',
-        height: '32px',
-        width: '32px',
-      },
-      '& .MuiStepIcon-text': {
-        fill: theme.palette.action.disabledBackground,
-        fontWeight: 'bold',
-      },
-      '& .MuiStepIcon-root.MuiStepIcon-completed': {
-        color: theme.palette.secondary.main,
-        borderColor: theme.palette.secondary.main,
-        borderRadius: '50%',
-        fill: '#FFF',
-        background: theme.palette.secondary.main,
-      },
-      '& .MuiStepIcon-root.MuiStepIcon-active': {
-        color: theme.palette.secondary.main,
-        borderColor: theme.palette.secondary.main,
-        borderRadius: '50%',
-        background: theme.palette.secondary.main,
-      },
-      '& .MuiStepIcon-root.MuiStepIcon-active .MuiStepIcon-text': {
-        fill: '#FFF',
-      },
-      '& .MuiStepLabel-label.MuiStepLabel-completed': {
-        color: theme.palette.secondary.main,
-      },
-      '& .MuiStepLabel-label.MuiStepLabel-active': {
-        color: theme.palette.secondary.main,
-      },
-      '& .MuiStepLabel-label': {
-        fontSize: '15px',
-        color: theme.palette.action.disabledBackground,
-      },
-      '& .MuiStepLabel-label.MuiStepLabel-alternativeLabel': {
-        marginTop: '8px',
-      },
-      '& .MuiStepLabel-iconContainer': {
-        boxSizing: 'border-box',
-      },
-    },
-  })
-);
+import { Stepper as MuiStepper, StepperProps as MuiStepperProps } from '@mui/material';
 
 export type OrientationTypes = 'horizontal';
 
 export type StepperProps = MuiStepperProps & { orientation: OrientationTypes };
 
 const Stepper = (props: StepperProps): JSX.Element => {
-  const classes = useStyles();
-
-  return <MuiStepper {...props} classes={{ root: classes.root }} />;
+  return (
+    <MuiStepper
+      sx={{
+        backgroundColor: 'transparent',
+        '& .MuiStep-horizontal': {
+          paddingLeft: '32px',
+          paddingRight: '32px',
+        },
+        '& .MuiStepIcon-root': {
+          color: '#FFF',
+          border: '2px solid',
+          borderColor: 'action.disabledBackground',
+          borderRadius: '50%',
+          height: '32px',
+          width: '32px',
+          '&.Mui-completed': {
+            fill: '#FFF',
+          },
+          '&.Mui-completed,&.Mui-active': {
+            color: 'secondary.main',
+            borderColor: 'secondary.main',
+            bgcolor: 'secondary.main',
+          },
+        },
+        '& .MuiStepIcon-text': {
+          fill: 'action.disabledBackground',
+          fontWeight: 'bold',
+        },
+        '& .MuiStepIcon-root.Mui-active .MuiStepIcon-text': {
+          fill: '#FFF',
+        },
+        '& .MuiStepLabel-label': {
+          fontSize: '15px',
+          color: 'action.disabledBackground',
+          '&.MuiStepLabel-alternativeLabel': {
+            marginTop: '8px',
+          },
+          '&.Mui-completed,.Mui-active': {
+            color: 'secondary.main',
+          },
+        },
+        '& .MuiStepLabel-iconContainer': {
+          boxSizing: 'border-box',
+        },
+      }}
+      {...props}
+    />
+  );
 };
 
 export default Stepper;
