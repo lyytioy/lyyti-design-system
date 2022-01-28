@@ -1,11 +1,13 @@
 import AlertBase, { AlertBaseProps } from './AlertBase';
+import AlertTitle from './AlertTitle';
 import Fade from '@mui/material/Fade';
-import React from 'react';
+import { ReactNode, SyntheticEvent } from 'react';
 
 export interface AlertProps extends AlertBaseProps {
-  action?: React.ReactNode;
-  onClose?: (event: React.SyntheticEvent) => void;
+  action?: ReactNode;
+  onClose?: (event: SyntheticEvent) => void;
   open?: boolean;
+  title?: string;
   'data-testid'?: string;
 }
 
@@ -15,17 +17,16 @@ const Alert = ({
   open,
   severity = 'success',
   variant = 'standard',
+  title = undefined,
+  children,
   ...props
 }: AlertProps): JSX.Element => {
   return (
     <Fade in={open}>
-      <AlertBase
-        action={action}
-        onClose={onClose}
-        severity={severity}
-        variant={variant}
-        {...props}
-      />
+      <AlertBase action={action} onClose={onClose} severity={severity} variant={variant} {...props}>
+        {title && <AlertTitle>{title}</AlertTitle>}
+        {children}
+      </AlertBase>
     </Fade>
   );
 };

@@ -22,6 +22,45 @@ export default {
       control: false,
     },
     dialogTitle: { description: 'Use to give a title to the Dialog.', control: false },
+    BackdropComponent: {
+      table: { disable: true },
+    },
+    BackdropProps: {
+      table: { disable: true },
+    },
+    closeAfterTransition: {
+      table: { disable: true },
+    },
+    components: {
+      table: { disable: true },
+    },
+    componentsProps: {
+      table: { disable: true },
+    },
+    container: {
+      table: { disable: true },
+    },
+    disableAutoFocus: {
+      table: { disable: true },
+    },
+    disableEnforceFocus: {
+      table: { disable: true },
+    },
+    disablePortal: {
+      table: { disable: true },
+    },
+    disableRestoreFocus: {
+      table: { disable: true },
+    },
+    disableScrollLock: {
+      table: { disable: true },
+    },
+    hideBackdrop: {
+      table: { disable: true },
+    },
+    keepMounted: {
+      table: { disable: true },
+    },
   },
   /*  TODO: Try removing these default values when this is released
       https://github.com/storybookjs/storybook/releases/tag/v6.2.0-alpha.30

@@ -2,7 +2,6 @@
 export { default as ThemeSelector } from './themes/ThemeSelector';
 
 export { default as Alert } from './components/Alert';
-export { default as AlertTitle } from './components/AlertTitle';
 export { default as Avatar } from './components/Avatar';
 export { default as Button } from './components/Button';
 export { default as Card } from './components/Card';

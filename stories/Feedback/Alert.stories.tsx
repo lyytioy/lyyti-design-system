@@ -2,7 +2,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
 import Alert, { AlertProps } from '../../src/components/Alert';
 import Button from '../../src/components/Button';
-import AlertTitle from '../../src/components/AlertTitle';
 
 export default {
   title: 'Components/Feedback/Alert',
@@ -29,6 +28,9 @@ export default {
     onClose: {
       control: false,
     },
+    title: {
+      description: 'The title of the alert.',
+    },
   },
   args: {
     children: 'This is the alert content',
@@ -43,10 +45,13 @@ const Template: Story<AlertProps> = (args) => {
 
   return (
     <>
-      <Alert {...args} />
-      <Button variant="contained" color="primary" onClick={() => setAlertOpen(true)}>
-        {'Re-open'}
-      </Button>
+      {alertOpen ? (
+        <Alert {...args} />
+      ) : (
+        <Button variant="contained" color="primary" onClick={() => setAlertOpen(true)}>
+          {'Re-open'}
+        </Button>
+      )}
     </>
   );
 };
@@ -69,6 +74,7 @@ Info.args = {
 
 export const Warning = Template.bind({});
 Warning.args = {
-  children: [<AlertTitle key={1}>{'Title'}</AlertTitle>, 'Alert content in here'],
+  title: 'Title',
+  children: 'Alert content in here',
   severity: 'warning',
 };
