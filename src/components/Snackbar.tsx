@@ -9,7 +9,7 @@ export interface SnackbarProps extends MuiSnackbarProps {
     vertical: 'bottom' | 'top';
   };
   autoHideDuration?: number;
-  color?: 'success' | 'info' | 'warning' | 'error' | undefined;
+  color?: 'success' | 'info' | 'warning' | 'error';
   direction?: 'right' | 'left' | 'up' | 'down';
   severity?: 'success' | 'info' | 'warning' | 'error';
   variant?: 'standard' | 'filled' | 'outlined';
