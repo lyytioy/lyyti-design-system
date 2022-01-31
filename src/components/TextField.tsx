@@ -1,68 +1,6 @@
 import { useRef } from 'react';
-import { TextField as MuiTextField, OutlinedTextFieldProps, Theme } from '@mui/material';
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import { TextField as MuiTextField, OutlinedTextFieldProps } from '@mui/material';
 import InputAdornment from './InputAdornment';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: (props: Record<string, unknown>) => {
-      const overrideColor = props.color === 'white' ? theme.palette.common.white : undefined;
-
-      return {
-        '&:hover': {
-          '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: overrideColor,
-          },
-        },
-        '& label': {
-          color: overrideColor ?? theme.palette.grey[400],
-          letterSpacing: '0.15px',
-          lineHeight: '26px',
-        },
-        '& .MuiFormLabel-root.Mui-focused': {
-          color: overrideColor,
-        },
-        '& .MuiFormLabel-root.Mui-disabled': {
-          color: overrideColor ?? theme.palette.grey[400],
-        },
-        '& .MuiInputLabel-shrink': {
-          transform: 'translate(0, 0) scale(1)',
-        },
-        '& .MuiInputLabel-formControl': {
-          position: 'relative',
-        },
-        '& .MuiInputBase-root.Mui-disabled': {
-          backgroundColor: overrideColor ?? theme.palette.action.selected,
-        },
-        '& .MuiFormHelperText-root': {
-          letterSpacing: '0.15px',
-        },
-        '& .MuiFormHelperText-contained': {
-          marginLeft: 0,
-        },
-        '& .MuiOutlinedInput-notchedOutline': {
-          borderColor: overrideColor,
-        },
-        '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-          borderColor: overrideColor,
-        },
-        '& .MuiInputBase-input::placeholder': {
-          color: overrideColor,
-        },
-        '& .MuiInputBase-input': {
-          color: overrideColor,
-        },
-        '& .MuiSelect-icon': {
-          color: overrideColor,
-        },
-        '& .MuiSvgIcon-root': {
-          color: overrideColor,
-        },
-      };
-    },
-  })
-);
 
 export type SizeTypes = 'small' | 'medium';
 
@@ -93,7 +31,7 @@ const TextField = ({
   ...props
 }: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
-  const classes = useStyles({ color });
+  const overrideColor = color === 'white' ? 'common.white' : undefined;
 
   return (
     <MuiTextField
@@ -115,7 +53,39 @@ const TextField = ({
         notched: false,
       }}
       InputLabelProps={{ shrink: true }}
-      classes={{ root: classes.root }}
+      sx={{
+        '& label': {
+          color: overrideColor ?? 'grey.400',
+          letterSpacing: '0.15px',
+          lineHeight: '26px',
+        },
+        '& .MuiFormLabel-root.Mui-disabled': {
+          color: overrideColor ?? 'grey.400',
+        },
+        '& .MuiInputLabel-shrink': {
+          transform: 'translate(0, 0) scale(1)',
+        },
+        '& .MuiInputLabel-formControl': {
+          position: 'relative',
+        },
+        '& .MuiInputBase-root.Mui-disabled': {
+          backgroundColor: overrideColor ?? 'action.selected',
+        },
+        '& .MuiFormHelperText-root': {
+          letterSpacing: '0.15px',
+        },
+        '& .MuiFormHelperText-contained': {
+          marginLeft: 0,
+        },
+        '& .MuiOutlinedInput-notchedOutline, .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, &:hover .MuiOutlinedInput-notchedOutline':
+          {
+            borderColor: overrideColor,
+          },
+        '& .MuiSvgIcon-root, .MuiSelect-icon, .MuiInputBase-input, .MuiInputBase-input::placeholder, .MuiFormLabel-root.Mui-focused':
+          {
+            color: overrideColor,
+          },
+      }}
     />
   );
 };

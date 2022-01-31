@@ -1,25 +1,19 @@
-import { Checkbox as MuiCheckbox, CheckboxProps as MuiCheckboxProps, Theme } from '@mui/material';
-
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      color: theme.palette.grey[200],
-      '&$root$root:hover': {
-        backgroundColor: '#045b561a',
-      },
-    },
-  })
-);
+import { Checkbox as MuiCheckbox, CheckboxProps as MuiCheckboxProps } from '@mui/material';
 
 export type CheckboxProps = MuiCheckboxProps;
 
 const Checkbox = (props: CheckboxProps): JSX.Element => {
-  const classes = useStyles();
-
-  return <MuiCheckbox {...props} classes={{ root: classes.root }} />;
+  return (
+    <MuiCheckbox
+      sx={{
+        color: 'grey.200',
+        '&:hover': {
+          bgcolor: 'primaryStates.hover',
+        },
+      }}
+      {...props}
+    />
+  );
 };
 
 export default Checkbox;
