@@ -1,8 +1,10 @@
-import { Stepper as MuiStepper, StepperProps as MuiStepperProps } from '@mui/material';
+import { Stepper as MuiStepper, StepperProps as MuiStepperProps, Theme } from '@mui/material';
 
 export type OrientationTypes = 'horizontal';
 
-export type StepperProps = MuiStepperProps & { orientation: OrientationTypes };
+export type StepperProps = Omit<MuiStepperProps, 'square' | 'variant' | 'elevation'> & {
+  orientation: OrientationTypes;
+};
 
 const Stepper = (props: StepperProps): JSX.Element => {
   return (
@@ -23,14 +25,15 @@ const Stepper = (props: StepperProps): JSX.Element => {
           '&.Mui-completed': {
             fill: '#FFF',
           },
-          '&.Mui-completed,&.Mui-active': {
+          '&.Mui-completed, &.Mui-active': {
             color: 'secondary.main',
             borderColor: 'secondary.main',
             bgcolor: 'secondary.main',
           },
         },
         '& .MuiStepIcon-text': {
-          fill: 'action.disabledBackground',
+          fill: (theme: Theme) => theme.palette.action.disabledBackground,
+          color: 'action.disabledBackground',
           fontWeight: 'bold',
         },
         '& .MuiStepIcon-root.Mui-active .MuiStepIcon-text': {
@@ -42,7 +45,7 @@ const Stepper = (props: StepperProps): JSX.Element => {
           '&.MuiStepLabel-alternativeLabel': {
             marginTop: '8px',
           },
-          '&.Mui-completed,.Mui-active': {
+          '&.Mui-completed, &.Mui-active': {
             color: 'secondary.main',
           },
         },
