@@ -1,8 +1,8 @@
 import { ChangeEvent, useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Source } from '@storybook/addon-docs';
-import ThemeSelector from '../../src/themes/ThemeSelector';
-import { SvgIconProps, makeStyles, Theme, createStyles } from '@material-ui/core';
+import { SvgIconProps } from '@mui/material';
+import Paper from '../../src/components/Paper';
 import TextField from '../../src/components/TextField';
 import Grid from '../../src/components/Grid';
 import {
@@ -255,21 +255,7 @@ const iconsList = [
   { name: 'Hourglass', component: Hourglass },
 ];
 
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    iconDiv: {
-      backgroundColor: theme.palette.grey[200],
-      borderRadius: '10px',
-      padding: '10px',
-      display: 'grid',
-      placeItems: 'center',
-      cursor: 'pointer',
-    },
-  })
-);
-
 const Template: Story<SvgIconProps> = (args) => {
-  const classes = useStyles();
   const [search, setSearch] = useState('');
   const [importIcon, setImportIcon] = useState('Cog');
 
@@ -278,8 +264,8 @@ const Template: Story<SvgIconProps> = (args) => {
   };
 
   return (
-    <ThemeSelector>
-      <Grid container spacing={1}>
+    <Grid container spacing={1} direction="column">
+      <Grid container alignItems={'center'} spacing={1}>
         <Grid item xs={4}>
           <TextField onChange={handleChange} value={search} placeholder="Search" />
         </Grid>
@@ -291,27 +277,38 @@ const Template: Story<SvgIconProps> = (args) => {
 import { ${importIcon} } from '@lyyti/design-system/icons';
 // use in a component
 <${importIcon} ${args.color && args.color !== 'inherit' ? `color="${args.color}"` : ''}${
-              args.fontSize && args.fontSize !== 'default' ? ` fontSize="${args.fontSize}"` : ''
+              args.fontSize && args.fontSize !== 'medium' ? ` fontSize="${args.fontSize}"` : ''
             }${args.htmlColor && args.htmlColor ? ` htmlColor="${args.htmlColor}"` : ''}/>
         `}
             dark
           />
         </Grid>
+      </Grid>
+      <Grid container spacing={1}>
         {iconsList
           .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((icon, index) => {
             return (
               <Grid item xs={3} key={index} onClick={() => setImportIcon(icon.name)}>
-                <div className={classes.iconDiv}>
+                <Paper
+                  sx={{
+                    backgroundColor: 'grey.200',
+                    borderRadius: '10px',
+                    padding: '10px',
+                    display: 'grid',
+                    placeItems: 'center',
+                    cursor: 'pointer',
+                  }}
+                >
                   <icon.component {...args} />
                   <span>{icon.name}</span>
-                </div>
+                </Paper>
               </Grid>
             );
           })}
       </Grid>
-    </ThemeSelector>
+    </Grid>
   );
 };
 

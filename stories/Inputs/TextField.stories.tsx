@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import TextField, { TextFieldProps } from '../../src/components/TextField';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Inputs/TextField',
@@ -38,11 +37,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TextFieldProps> = (args) => (
-  <ThemeSelector>
-    <TextField {...args} />
-  </ThemeSelector>
-);
+const Template: Story<TextFieldProps> = (args) => <TextField {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -51,7 +46,7 @@ Default.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  margin: 'normal',
+  size: 'medium',
 };
 
 export const HelperText = Template.bind({});

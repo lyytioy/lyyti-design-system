@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Radio, { RadioProps } from '../../src/components/Radio';
 import FormControlLabel, { FormControlLabelProps } from '../../src/components/FormControlLabel';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Inputs/Radio',
@@ -16,17 +15,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<RadioProps> = (args) => (
-  <ThemeSelector>
-    <Radio {...args} />
-  </ThemeSelector>
-);
+const Template: Story<RadioProps> = (args) => <Radio {...args} />;
 
-const LabelTemplate: Story<FormControlLabelProps> = (args) => (
-  <ThemeSelector>
-    <FormControlLabel {...args} />
-  </ThemeSelector>
-);
+const LabelTemplate: Story<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
 
 export const Medium = Template.bind({});
 Medium.args = {

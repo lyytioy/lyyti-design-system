@@ -1,5 +1,4 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import LanguageSelector, { LanguageSelectProps } from '../../src/components/LanguageSelector';
 import { ChangeEvent, useState } from 'react';
 
@@ -32,17 +31,15 @@ const SelectTemplate: Story<LanguageSelectProps> = (args) => {
   args.onChange = (e: ChangeEvent<HTMLInputElement>) => setSelectValue(e.target.value);
 
   return (
-    <ThemeSelector>
-      <LanguageSelector
-        {...args}
-        options={[
-          { id: 0, value: 'English' },
-          { id: 1, value: 'Espanol' },
-          { id: 2, value: 'Dansk' },
-          { id: 3, value: 'Italiana' },
-        ]}
-      />
-    </ThemeSelector>
+    <LanguageSelector
+      {...args}
+      options={[
+        { id: 0, value: 'English' },
+        { id: 1, value: 'Espanol' },
+        { id: 2, value: 'Dansk' },
+        { id: 3, value: 'Italiana' },
+      ]}
+    />
   );
 };
 

@@ -1,27 +1,14 @@
-import {
-  MenuList as MuiMenuList,
-  MenuListProps as MuiMenuListProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      '& .MuiListItem-button:hover': {
-        backgroundColor: theme.palette.primaryStates.hover,
-      },
-    },
-  })
-);
+import { MenuList as MuiMenuList, MenuListProps as MuiMenuListProps } from '@mui/material';
 
 export type MenuListProps = MuiMenuListProps;
 
 const MenuList = (props: MenuListProps): JSX.Element => {
-  const classes = useStyles();
-
-  return <MuiMenuList {...props} classes={{ root: classes.root }} />;
+  return (
+    <MuiMenuList
+      sx={{ '& .MuiButtonBase-root:hover': { bgcolor: 'primaryStates.hover' } }}
+      {...props}
+    />
+  );
 };
 
 export default MenuList;

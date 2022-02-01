@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Progress, { ProgressProps } from '../../src/components/Progress';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Feedback/Progress',
@@ -19,11 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ProgressProps> = (args) => (
-  <ThemeSelector>
-    <Progress {...args} />
-  </ThemeSelector>
-);
+const Template: Story<ProgressProps> = (args) => <Progress {...args} />;
 
 export const CircularProgress = Template.bind({});
 CircularProgress.args = {};

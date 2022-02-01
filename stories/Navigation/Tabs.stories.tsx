@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Tabs, { TabsProps } from '../../src/components/Tabs';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import Tab from '../../src/components/Tab';
 
 export default {
@@ -15,11 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TabsProps> = (args) => (
-  <ThemeSelector>
-    <Tabs {...args} />
-  </ThemeSelector>
-);
+const Template: Story<TabsProps> = (args) => <Tabs {...args} />;
 
 export const Horizontal = Template.bind({});
 Horizontal.args = {

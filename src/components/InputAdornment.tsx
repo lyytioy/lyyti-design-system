@@ -1,25 +1,12 @@
 import {
   InputAdornment as MuiInputAdornment,
   InputAdornmentProps as MuiInputAdornmentProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      color: theme.palette.text.primary,
-    },
-  })
-);
+} from '@mui/material';
 
 export type InputAdornmentProps = MuiInputAdornmentProps;
 
 const InputAdornment = (props: InputAdornmentProps): JSX.Element => {
-  const classes = useStyles();
-
-  return <MuiInputAdornment {...props} classes={{ root: classes.root }} />;
+  return <MuiInputAdornment sx={{ color: 'text.primary' }} {...props} />;
 };
 
 export default InputAdornment;

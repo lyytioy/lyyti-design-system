@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Grid, { GridProps } from '../../src/components/Grid';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import { Rect } from '../Feedback/Skeleton.stories';
 
 export default {
@@ -81,7 +80,7 @@ export default {
       description: 'Defines the flex-direction style property. It is applied for all screen sizes.',
       table: { defaultValue: { summary: 'row' } },
     },
-    justify: {
+    justifyContent: {
       description:
         'Defines the justify-content style property. It is applied for all screen sizes.',
       table: { defaultValue: { summary: 'flex-start' } },
@@ -107,34 +106,37 @@ export default {
   },
 } as Meta;
 
-// eslint-disable-next-line react/prop-types
-const Template: Story<GridProps> = ({ spacing, direction, justify, alignItems, ...args }) => (
-  <ThemeSelector>
-    <Grid
-      container
-      spacing={spacing}
-      direction={direction}
-      justify={justify}
-      alignItems={alignItems}
-    >
-      {[0, 1, 2].map((value) => (
-        <Grid key={value} item {...args}>
-          <Rect {...Rect.args} />
-        </Grid>
-      ))}
-    </Grid>
-  </ThemeSelector>
+const Template: Story<GridProps> = ({
+  spacing,
+  direction,
+  justifyContent,
+  alignItems,
+  ...args
+}) => (
+  <Grid
+    container
+    spacing={spacing}
+    direction={direction}
+    justifyContent={justifyContent}
+    alignItems={alignItems}
+  >
+    {[0, 1, 2].map((value) => (
+      <Grid key={value} item {...args}>
+        <Rect {...Rect.args} />
+      </Grid>
+    ))}
+  </Grid>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  justify: 'center',
+  justifyContent: 'center',
   item: true,
 };
 
 export const Column = Template.bind({});
 Column.args = {
   direction: 'column',
-  justify: 'space-between',
+  justifyContent: 'space-between',
   alignItems: 'center',
 };

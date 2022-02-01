@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Stepper, { StepperProps } from '../../src/components/Stepper';
-import ThemeSelector from '../../src/themes/ThemeSelector';
-import { Step } from '@material-ui/core';
+import { Step } from '@mui/material';
 import StepConnector from '../../src/components/StepConnector';
 import StepLabel from '../../src/components/StepLabel';
 import StepButton from '../../src/components/StepButton';
@@ -23,11 +22,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StepperProps> = (args) => (
-  <ThemeSelector>
-    <Stepper {...args} />
-  </ThemeSelector>
-);
+const Template: Story<StepperProps> = (args) => <Stepper {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

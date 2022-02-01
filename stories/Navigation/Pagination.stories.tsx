@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Pagination, { PaginationProps } from '../../src/components/Pagination';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Navigation/Pagination',
@@ -15,11 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<PaginationProps> = (args) => (
-  <ThemeSelector>
-    <Pagination {...args} />
-  </ThemeSelector>
-);
+const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = {

@@ -1,8 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { useState } from 'react';
+import { useState, SyntheticEvent } from 'react';
 import Snackbar, { SnackbarProps } from '../../src/components/Snackbar';
 import Button from '../../src/components/Button';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Feedback/Snackbar',
@@ -36,7 +35,7 @@ export default {
 const Template: Story<SnackbarProps> = (args) => {
   const [showSnackbar, setShowSnackbar] = useState(false);
 
-  const handleClose = (event: React.SyntheticEvent | MouseEvent, reason?: string) => {
+  const handleClose = (event: Event | SyntheticEvent<any, Event>, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -47,7 +46,7 @@ const Template: Story<SnackbarProps> = (args) => {
   args.onClose = handleClose;
 
   return (
-    <ThemeSelector>
+    <>
       <Button
         variant="contained"
         color="primary"
@@ -57,7 +56,7 @@ const Template: Story<SnackbarProps> = (args) => {
         {'Open snackbar'}
       </Button>
       <Snackbar {...args} />
-    </ThemeSelector>
+    </>
   );
 };
 

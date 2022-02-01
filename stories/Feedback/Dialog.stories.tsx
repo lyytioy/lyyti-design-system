@@ -2,7 +2,6 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
 import Dialog, { DialogProps } from '../../src/components/Dialog';
 import Button from '../../src/components/Button';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 
 export default {
   title: 'Components/Feedback/Dialog',
@@ -23,6 +22,45 @@ export default {
       control: false,
     },
     dialogTitle: { description: 'Use to give a title to the Dialog.', control: false },
+    BackdropComponent: {
+      table: { disable: true },
+    },
+    BackdropProps: {
+      table: { disable: true },
+    },
+    closeAfterTransition: {
+      table: { disable: true },
+    },
+    components: {
+      table: { disable: true },
+    },
+    componentsProps: {
+      table: { disable: true },
+    },
+    container: {
+      table: { disable: true },
+    },
+    disableAutoFocus: {
+      table: { disable: true },
+    },
+    disableEnforceFocus: {
+      table: { disable: true },
+    },
+    disablePortal: {
+      table: { disable: true },
+    },
+    disableRestoreFocus: {
+      table: { disable: true },
+    },
+    disableScrollLock: {
+      table: { disable: true },
+    },
+    hideBackdrop: {
+      table: { disable: true },
+    },
+    keepMounted: {
+      table: { disable: true },
+    },
   },
   /*  TODO: Try removing these default values when this is released
       https://github.com/storybookjs/storybook/releases/tag/v6.2.0-alpha.30
@@ -47,7 +85,7 @@ const Template: Story<DialogProps> = (args) => {
   args.open = dialogOpen;
   args.onClose = () => setDialogOpen(false);
   return (
-    <ThemeSelector>
+    <>
       <Button
         variant="contained"
         color="primary"
@@ -57,7 +95,7 @@ const Template: Story<DialogProps> = (args) => {
         {'Open Dialog'}
       </Button>
       <Dialog {...args} />
-    </ThemeSelector>
+    </>
   );
 };
 

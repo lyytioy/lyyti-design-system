@@ -1,5 +1,4 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import Typography, { TypographyProps } from '../../src/components/Typography';
 
 export default {
@@ -66,11 +65,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TypographyProps> = (args) => (
-  <ThemeSelector>
-    <Typography {...args} />
-  </ThemeSelector>
-);
+const Template: Story<TypographyProps> = (args) => <Typography {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Button, { ButtonProps } from '../../src/components/Button';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import { Bin } from '../../src/icons';
 
 export default {
@@ -16,11 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => (
-  <ThemeSelector>
-    <Button {...args} />
-  </ThemeSelector>
-);
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

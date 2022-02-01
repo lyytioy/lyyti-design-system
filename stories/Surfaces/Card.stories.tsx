@@ -1,10 +1,8 @@
-import { IconButton } from '@material-ui/core';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Card, { CardProps } from '../../src/components/Card';
 import Avatar from '../../src/components/Avatar';
 import Grid from '../../src/components/Grid';
 import { Star } from '../../src/icons';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import Button from '../../src/components/Button';
 
 export default {
@@ -62,11 +60,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CardProps> = (args) => (
-  <ThemeSelector>
-    <Card {...args} />
-  </ThemeSelector>
-);
+const Template: Story<CardProps> = (args) => <Card {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -75,9 +69,9 @@ export const HeaderAction = Template.bind({});
 HeaderAction.args = {
   headerBackgroundColor: 'rgba(4, 91, 86, 0.1)',
   headerAction: (
-    <IconButton>
+    <Button>
       <Star />
-    </IconButton>
+    </Button>
   ),
 };
 

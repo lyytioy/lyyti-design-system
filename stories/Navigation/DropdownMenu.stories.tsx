@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import DropdownMenu, { DropdownProps } from '../../src/components/DropdownMenu';
 
 export default {
@@ -17,11 +16,7 @@ const menuItems = [
   { id: 3, title: 'Menu item 3' },
 ];
 
-const Template: Story<DropdownProps> = (args) => (
-  <ThemeSelector>
-    <DropdownMenu {...args} />
-  </ThemeSelector>
-);
+const Template: Story<DropdownProps> = (args) => <DropdownMenu {...args} />;
 
 export const Dropdown = Template.bind({});
 Dropdown.args = {

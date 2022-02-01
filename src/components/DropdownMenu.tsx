@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useRef, MouseEvent, KeyboardEvent } from 'react';
+import { useState, useRef, MouseEvent as ReactMouseEvent, KeyboardEvent } from 'react';
 import Button, { ButtonProps } from './Button';
 import MenuList from './MenuList';
 import MenuItem from './MenuItem';
@@ -23,14 +23,14 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = (event: MouseEvent<EventTarget>) => {
+  const handleClose = (event: MouseEvent | TouchEvent | ReactMouseEvent) => {
     if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
       return;
     }
     setOpen(false);
   };
 
-  const selectItem = (event: MouseEvent<EventTarget>, id: number) => {
+  const selectItem = (event: ReactMouseEvent<HTMLLIElement, MouseEvent>, id: number) => {
     props.onSelect(id);
     handleClose(event);
   };

@@ -3,21 +3,7 @@ import {
   DataGridProps as MuiDataGridProps,
   GridColumns as MuiGridColumns,
   GridRowsProp as MuiGridRowsProp,
-} from '@material-ui/data-grid';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      '& .MuiDataGrid-root, .MuiDataGrid-iconSeparator': {
-        display: 'none',
-      },
-      '& .MuiDataGrid-root, .MuiDataGrid-columnsContainer': {
-        backgroundColor: theme.palette.grey[50],
-      },
-    },
-  })
-);
+} from '@mui/x-data-grid';
 
 export interface DataGridProps extends MuiDataGridProps {
   columns: MuiGridColumns;
@@ -37,8 +23,6 @@ const DataGrid = ({
   pageSize = 100,
   ...props
 }: DataGridProps): JSX.Element => {
-  const classes = useStyles();
-
   return (
     <MuiDataGrid
       autoHeight={autoHeight}
@@ -46,8 +30,15 @@ const DataGrid = ({
       disableColumnMenu={disableColumnMenu}
       hideFooter={hideFooter}
       pageSize={pageSize}
+      sx={{
+        '& .MuiDataGrid-iconSeparator': {
+          display: 'none',
+        },
+        '& .MuiDataGrid-columnHeaders': {
+          backgroundColor: 'grey.50',
+        },
+      }}
       {...props}
-      className={classes.root}
     />
   );
 };

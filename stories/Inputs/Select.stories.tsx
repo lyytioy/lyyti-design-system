@@ -1,5 +1,4 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import Select, { SelectProps } from '../../src/components/Select';
 import { ChangeEvent, useState } from 'react';
 import { AutocompleteProps } from '../../src/components/Autocomplete';
@@ -35,34 +34,30 @@ const SelectTemplate: Story<SelectProps> = (args) => {
   args.onChange = (e: ChangeEvent<HTMLInputElement>) => setSelectValue(e.target.value);
 
   return (
-    <ThemeSelector>
-      <Select
-        {...args}
-        options={[
-          { id: 0, value: 'Select...' },
-          { id: 1, value: 'Option 1' },
-          { id: 2, value: 'Option 2' },
-          { id: 3, value: 'Option 3' },
-          { id: 4, value: 'Option 4' },
-        ]}
-      />
-    </ThemeSelector>
+    <Select
+      {...args}
+      options={[
+        { id: 0, value: 'Select...' },
+        { id: 1, value: 'Option 1' },
+        { id: 2, value: 'Option 2' },
+        { id: 3, value: 'Option 3' },
+        { id: 4, value: 'Option 4' },
+      ]}
+    />
   );
 };
 
 const MultiSelectTemplate: Story<AutocompleteProps> = (args) => {
   return (
-    <ThemeSelector>
-      <Select
-        {...args}
-        options={[
-          { id: 1, value: 'Option 1' },
-          { id: 2, value: 'Option 2' },
-          { id: 3, value: 'Option 3' },
-          { id: 4, value: 'Option 4' },
-        ]}
-      />
-    </ThemeSelector>
+    <Select
+      {...args}
+      options={[
+        { id: 1, value: 'Option 1' },
+        { id: 2, value: 'Option 2' },
+        { id: 3, value: 'Option 3' },
+        { id: 4, value: 'Option 4' },
+      ]}
+    />
   );
 };
 

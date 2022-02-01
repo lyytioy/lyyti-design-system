@@ -1,8 +1,8 @@
-import * as React from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import { createElement } from 'react';
+import SvgIcon from '@mui/material/SvgIcon';
 
 const EyeClosed = (props: any) =>
-  React.createElement(
+  createElement(
     SvgIcon,
     props,
     <defs>

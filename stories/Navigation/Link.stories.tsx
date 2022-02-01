@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Link, { LinkProps } from '../../src/components/Link';
-import ThemeSelector from '../../src/themes/ThemeSelector';
 import { Cog } from '../../src/icons';
 
 export default {
@@ -8,11 +7,7 @@ export default {
   component: Link,
 } as Meta;
 
-const Template: Story<LinkProps> = (args) => (
-  <ThemeSelector>
-    <Link {...args} />
-  </ThemeSelector>
-);
+const Template: Story<LinkProps> = (args) => <Link {...args} />;
 
 export const ListLink = Template.bind({});
 ListLink.args = {

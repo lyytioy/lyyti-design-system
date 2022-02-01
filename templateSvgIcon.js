@@ -2,7 +2,7 @@ function template({ template }, opts, { imports, componentName, props, jsx, expo
   const typeScriptTpl = template.smart({ plugins: ['typescript'] });
   return typeScriptTpl.ast`
     ${imports}
-    import SvgIcon from '@material-ui/core/SvgIcon'
+    import SvgIcon from '@mui/material/SvgIcon'
     const ${componentName} = (props: any) => React.createElement(SvgIcon, props, ${jsx.children})
     ${exports}`;
 }

@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import ThemeSelector from '../../src/themes/ThemeSelector';
-import { GridColDef, GridValueGetterParams } from '@material-ui/data-grid';
+import { GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import DataGrid, { DataGridProps } from '../../src/components/DataGrid';
 
 const columns: GridColDef[] = [
@@ -69,11 +68,9 @@ export default {
 } as Meta;
 
 const Template: Story<DataGridProps> = (args) => (
-  <ThemeSelector>
-    <div style={{ height: '400px', width: '700px' }}>
-      <DataGrid {...args} />
-    </div>
-  </ThemeSelector>
+  <div style={{ height: '400px', width: '700px' }}>
+    <DataGrid {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});

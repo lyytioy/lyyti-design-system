@@ -1,4 +1,4 @@
-import { Popper as MuiPopper, PopperProps as MuiPopperProps } from '@material-ui/core';
+import { Popper as MuiPopper, PopperProps as MuiPopperProps } from '@mui/material';
 
 export type PopperProps = MuiPopperProps;
 

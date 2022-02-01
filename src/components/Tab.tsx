@@ -1,34 +1,16 @@
-import {
-  Tab as MuiTab,
-  TabProps as MuiTabProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    disabled: {
-      color: theme.palette.text.disabled,
-    },
-    root: {
-      fontSize: '16px',
-    },
-    wrapped: {
-      fontSize: '13px',
-    },
-  })
-);
+import { Tab as MuiTab, TabProps as MuiTabProps } from '@mui/material';
 
 export type TabProps = MuiTabProps;
 
 const Tab = (props: TabProps): JSX.Element => {
-  const classes = useStyles();
-
   return (
     <MuiTab
       {...props}
-      classes={{ disabled: classes.disabled, root: classes.root, wrapped: classes.wrapped }}
+      sx={{
+        fontSize: '16px',
+        '& .MuiTab.Mui-disabled': { color: 'text.disabled' },
+        '&.MuiTab-wrapped': { fontSize: '13px' },
+      }}
     />
   );
 };

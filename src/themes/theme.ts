@@ -1,5 +1,5 @@
-import { createTheme } from '@material-ui/core/styles';
-import type {} from '@material-ui/lab/themeAugmentation';
+import { createTheme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
 
 const baseFontStack = [
   '-apple-system',
@@ -33,16 +33,31 @@ interface ColorShadeOptions {
   contrastText: string;
 }
 
-declare module '@material-ui/core/styles/createPalette' {
+interface ColorRangeOptions {
+  50: string;
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+}
+
+declare module '@mui/styles' {
+  interface DefaultTheme extends Theme {}
+}
+
+declare module '@mui/material/styles/createPalette' {
   interface Palette {
     primaryStates: ColorStateOptions;
     light: ColorShadeOptions;
     lightStates: ColorStateOptions;
+    blue: ColorRangeOptions;
   }
   interface PaletteOptions {
     primaryStates: ColorStateOptions;
     light: ColorShadeOptions;
     lightStates: ColorStateOptions;
+    blue: ColorRangeOptions;
   }
 }
 
@@ -108,6 +123,14 @@ export default createTheme({
       '300': '#7A8389',
       '400': '#46545B',
       '500': '#192832',
+    },
+    blue: {
+      '50': '#CDF2F4',
+      '100': '#96E4E8',
+      '200': '#81DFE4',
+      '300': '#42CED6',
+      '400': '#0F8898',
+      '500': '#0A545D',
     },
     primaryStates: {
       activeContained: 'rgba(255, 255, 255, 0.3)',
@@ -193,39 +216,27 @@ export default createTheme({
     },
     overline: {},
   },
-  props: {
+  components: {
     MuiCheckbox: {
-      color: 'primary',
+      defaultProps: {
+        color: 'primary',
+      },
     },
     MuiRadio: {
-      color: 'primary',
+      defaultProps: {
+        color: 'primary',
+      },
     },
     MuiSwitch: {
-      color: 'primary',
+      defaultProps: {
+        color: 'primary',
+      },
     },
-    MuiTextField: {
-      variant: 'outlined',
-    },
-  },
-  overrides: {
     MuiPaper: {
-      elevation1: {
-        boxShadow:
-          '0.79px 6.95px 11px rgba(0, 0, 0, 0.0096), 0.52px 4.53px 6.44px rgba(0, 0, 0, 0.0157), 0.31px 2.76px 3.5px rgba(0, 0, 0, 0.02), 0.17px 1.52px 1.79px rgba(0, 0, 0, 0.0243), 0.08px 0.72px 0.9px rgba(0, 0, 0, 0.0304), 0.03px 0.25px 0.43px rgba(0, 0, 0, 0.04)',
-      },
-    },
-    MuiListItem: {
-      root: {
-        '&$selected': {
-          backgroundColor: 'rgba(4, 91, 86, 0.08)',
-          '&:hover': {
-            backgroundColor: 'rgba(4, 91, 86, 0.1)',
-          },
-        },
-      },
-      button: {
-        '&:hover': {
-          backgroundColor: 'rgba(4, 91, 86, 0.1)',
+      styleOverrides: {
+        elevation1: {
+          boxShadow:
+            '0.79px 6.95px 11px rgba(0, 0, 0, 0.0096), 0.52px 4.53px 6.44px rgba(0, 0, 0, 0.0157), 0.31px 2.76px 3.5px rgba(0, 0, 0, 0.02), 0.17px 1.52px 1.79px rgba(0, 0, 0, 0.0243), 0.08px 0.72px 0.9px rgba(0, 0, 0, 0.0304), 0.03px 0.25px 0.43px rgba(0, 0, 0, 0.04)',
         },
       },
     },

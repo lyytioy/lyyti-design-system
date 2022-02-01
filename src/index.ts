@@ -2,7 +2,6 @@
 export { default as ThemeSelector } from './themes/ThemeSelector';
 
 export { default as Alert } from './components/Alert';
-export { default as AlertTitle } from './components/AlertTitle';
 export { default as Avatar } from './components/Avatar';
 export { default as Button } from './components/Button';
 export { default as Card } from './components/Card';
@@ -46,4 +45,4 @@ export { default as TextField } from './components/TextField';
 export { default as TimePicker } from './components/TimePicker';
 export { default as Tooltip } from './components/Tooltip';
 export { default as Typography } from './components/Typography';
-export { ServerStyleSheets } from '@material-ui/styles';
+export { ServerStyleSheets } from '@mui/styles';
