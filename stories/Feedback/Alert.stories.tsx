@@ -19,10 +19,9 @@ export default {
       control: false,
     },
     children: { description: 'The content of the component.', control: 'text' },
-    color: { control: { type: 'select' }, options: ['success', 'error', 'warning', 'info'] },
+    options: ['success', 'error', 'warning', 'info'],
     closeText: {
       description: 'Override the default label for the close popup icon button.',
-      defaultValue: 'Close',
       control: 'text',
     },
     onClose: {
@@ -34,6 +33,7 @@ export default {
   },
   args: {
     children: 'This is the alert content',
+    closeText: 'Close',
   },
 } as Meta;
 

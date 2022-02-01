@@ -7,10 +7,7 @@ export default {
   component: Switch,
   argTypes: {
     size: {
-      control: {
-        type: 'radio',
-        options: ['small', 'medium'],
-      },
+      options: ['small', 'medium'],
     },
   },
 } as Meta;

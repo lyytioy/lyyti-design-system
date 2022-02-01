@@ -6,10 +6,7 @@ export default {
   component: Pagination,
   argTypes: {
     color: {
-      control: {
-        type: 'radio',
-        options: ['primary', 'secondary'],
-      },
+      options: ['primary', 'secondary'],
     },
   },
 } as Meta;

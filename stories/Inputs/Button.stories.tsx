@@ -7,7 +7,7 @@ export default {
   component: Button,
   argTypes: {
     color: {
-      control: { type: 'radio', options: ['primary', 'secondary', 'inherit'] },
+      options: ['primary', 'secondary', 'inherit'],
     },
   },
   args: {

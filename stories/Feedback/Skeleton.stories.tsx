@@ -13,7 +13,7 @@ export default {
   },
   argTypes: {
     animation: {
-      control: { type: 'radio', options: [false, 'wave', 'pulse'] },
+      options: [false, 'wave', 'pulse'],
       description: 'The animation. If false the animation effect is disabled.',
     },
     height: {

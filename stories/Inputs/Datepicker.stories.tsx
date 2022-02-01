@@ -49,9 +49,6 @@ export default {
         'zh',
         'yue',
       ],
-      control: {
-        type: 'select',
-      },
     },
   },
   args: {
