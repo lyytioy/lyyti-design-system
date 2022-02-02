@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState } from 'react';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Alert, { AlertProps } from '../../src/components/Alert';
 import Button from '../../src/components/Button';
 
@@ -13,6 +14,7 @@ export default {
           "Use alerts to display short, important messages that attracts the user's attention without interrupting the user's tasks.",
       },
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   argTypes: {
     action: {

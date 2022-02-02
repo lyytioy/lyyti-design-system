@@ -1,9 +1,13 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Pagination, { PaginationProps } from '../../src/components/Pagination';
 
 export default {
   title: 'Components/Navigation/Pagination',
   component: Pagination,
+  parameters: {
+    controls: { exclude: modifyExcludedParams(['color']) },
+  },
   argTypes: {
     color: {
       options: ['primary', 'secondary'],

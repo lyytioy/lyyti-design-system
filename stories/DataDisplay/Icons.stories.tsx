@@ -101,6 +101,7 @@ import {
   AwardBadgeStar,
   Hourglass,
 } from '../../src/icons';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Data Display/Icons',
@@ -112,6 +113,7 @@ export default {
           'Use icons to afford interactivity, communicate messages at quickly and draw attention to important information.',
       },
     },
+    controls: { exclude: modifyExcludedParams(['fontSize', 'color']) },
   },
   argTypes: {
     htmlColor: {

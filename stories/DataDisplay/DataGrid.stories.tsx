@@ -19,9 +19,7 @@ const columns: GridColDef[] = [
     sortable: false,
     width: 160,
     valueGetter: (params: GridValueGetterParams) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${
-        params.getValue(params.id, 'lastName') || ''
-      }`,
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
 ];
 
@@ -83,7 +81,7 @@ export const PageSize = Template.bind({});
 PageSize.args = {
   rows: rows,
   columns: columns,
-  pageSize: 5,
+  pageSize: 25,
 };
 
 export const CheckboxSelection = Template.bind({});

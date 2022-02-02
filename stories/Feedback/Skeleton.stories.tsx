@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Skeleton, { SkeletonProps } from '../../src/components/Skeleton';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Data Display/Skeleton',
@@ -10,6 +11,7 @@ export default {
         component: 'Fill this in from zeroheight',
       },
     },
+    controls: { exclude: modifyExcludedParams(['height', 'width']) },
   },
   argTypes: {
     animation: {

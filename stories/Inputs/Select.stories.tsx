@@ -2,6 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Select, { SelectProps } from '../../src/components/Select';
 import { ChangeEvent, useState } from 'react';
 import { AutocompleteProps } from '../../src/components/Autocomplete';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Inputs/Select',
@@ -20,6 +21,7 @@ export default {
         { name: 'dark', value: '#045b56' },
       ],
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   args: {
     label: 'Label',
@@ -112,7 +114,7 @@ MultipleSelectLargeWhite.args = {
   multiple: true,
   placeholder: 'Select',
   fullWidth: true,
-  margin: 'normal',
+  size: 'medium',
   color: 'white',
 };
 MultipleSelectLargeWhite.parameters = {

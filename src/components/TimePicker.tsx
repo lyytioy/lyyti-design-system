@@ -130,7 +130,6 @@ const TimePicker = ({
       error={error}
       helperText={helperText}
       sx={{
-        width: '125px',
         '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' },
       }}
       {...props}

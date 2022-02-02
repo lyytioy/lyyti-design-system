@@ -6,7 +6,8 @@ import {
   CardContent as MuiCardContent,
 } from '@mui/material';
 
-export interface CardProps extends MuiCardProps {
+export interface CardProps
+  extends Omit<MuiCardProps, 'elevation' | 'raised' | 'square' | 'variant'> {
   title?: string;
   subheader?: JSX.Element | string;
   headerAction?: JSX.Element;

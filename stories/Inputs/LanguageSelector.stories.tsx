@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import LanguageSelector, { LanguageSelectProps } from '../../src/components/LanguageSelector';
 import { ChangeEvent, useState } from 'react';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Inputs/LanguageSelector',
@@ -18,6 +19,7 @@ export default {
         { name: 'dark', value: '#045b56' },
       ],
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   args: {
     multiple: false,
@@ -48,7 +50,7 @@ Default.args = {};
 
 export const LargeWithLabel = SelectTemplate.bind({});
 LargeWithLabel.args = {
-  margin: 'normal',
+  size: 'medium',
   label: 'Label',
 };
 

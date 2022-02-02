@@ -1,13 +1,20 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Button, { ButtonProps } from '../../src/components/Button';
 import { Bin } from '../../src/icons';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Inputs/Button',
   component: Button,
+  parameters: {
+    controls: { exclude: modifyExcludedParams(['color']) },
+  },
   argTypes: {
     color: {
       options: ['primary', 'secondary', 'inherit'],
+    },
+    disabled: {
+      control: { type: 'boolean' },
     },
   },
   args: {

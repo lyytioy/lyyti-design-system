@@ -1,4 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Progress, { ProgressProps } from '../../src/components/Progress';
 
 export default {
@@ -11,6 +12,7 @@ export default {
           'Use progress indicators to inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates.',
       },
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   argTypes: {
     size: { description: 'Size can be adjusted only for the circular progress.' },

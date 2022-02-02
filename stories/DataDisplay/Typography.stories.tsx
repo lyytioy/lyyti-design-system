@@ -1,9 +1,13 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Typography, { TypographyProps } from '../../src/components/Typography';
 
 export default {
   title: 'Components/Data Display/Typography',
   component: Typography,
+  parameters: {
+    controls: { exclude: modifyExcludedParams(['color']) },
+  },
   argTypes: {
     align: {
       description: 'Set the text-align on the component.',
