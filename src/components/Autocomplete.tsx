@@ -28,6 +28,7 @@ const Autocomplete = ({
   label,
   size = 'medium',
   options,
+  multiple = false,
   placeholder,
   color = 'primary',
   disabled = false,
@@ -36,23 +37,13 @@ const Autocomplete = ({
   'data-testid': testid,
   ...props
 }: AutocompleteProps): JSX.Element => {
-  let iconColor = disabled ? 'action.disabled' : 'text.primary';
-  if (color === 'white') iconColor = '#fff';
-  iconColor = 'red';
-
   return (
     <MuiAutocomplete
       disabled={disabled}
       getOptionLabel={getOptionLabel}
       options={options}
+      multiple={multiple}
       sx={{
-        color: 'red' + ' !important',
-        endAdornment: {
-          color: 'red',
-        },
-        '& .MuiIconButton': {
-          color: 'red',
-        },
         option: {
           '&.Mui-selected': {
             bgcolor: 'primaryState.selected',

@@ -88,6 +88,7 @@ export default {
     alignItems: {
       description: "Defines the align-items style property. It's applied for all screen sizes.",
       table: { defaultValue: { summary: 'stretch' } },
+      controls: { expanded: true },
     },
     alignContent: {
       description: "Defines the align-content style property. It's applied for all screen sizes.",

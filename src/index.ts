@@ -3,6 +3,7 @@ export { default as ThemeSelector } from './themes/ThemeSelector';
 
 export { default as Alert } from './components/Alert';
 export { default as Avatar } from './components/Avatar';
+export { default as Box } from './components/Box';
 export { default as Button } from './components/Button';
 export { default as Card } from './components/Card';
 export { default as Checkbox } from './components/Checkbox';
@@ -24,7 +25,7 @@ export { default as InputLabel } from './components/InputLabel';
 export { default as LanguageSelector } from './components/LanguageSelector';
 export { default as Link } from './components/Link';
 export { default as MenuItem } from './components/MenuItem';
-export { default as MenuList } from './components/MenuList';
+export { default as MenuList } from './components/Menu';
 export { default as Pagination } from './components/Pagination';
 export { default as Paper } from './components/Paper';
 export { default as Popper } from './components/Popper';

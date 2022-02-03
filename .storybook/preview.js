@@ -2,6 +2,7 @@ import '../src/styles/objektiv.css';
 import ThemeSelector from '../src/themes/ThemeSelector';
 import { ThemeProvider } from 'emotion-theming';
 import Theme from '../src/themes/theme';
+import { excludedParams } from './excludedParams';
 
 export const decorators = [
   (Story) => (
@@ -19,6 +20,7 @@ export const parameters = {
   viewMode: 'docs',
   options: {
     storySort: {
+      method: 'alphabetical',
       order: [
         'Components',
         ['Layout', 'Inputs', 'Navigation', 'Surfaces', 'Feedback', 'Data Display'],
@@ -27,23 +29,7 @@ export const parameters = {
   },
   controls: {
     expanded: true,
-    exclude: [
-      'ref',
-      'centerRipple',
-      'disableElevation',
-      'disableFocusRipple',
-      'disableRipple',
-      'disableTouchRipple',
-      'focusRipple',
-      'focusVisibleClassName',
-      'TouchRippleProps',
-      'onFocusVisible',
-      'tabIndex',
-      'gutterBottom',
-      'edge',
-      'aria-label',
-      'aria-labelledby',
-    ],
+    exclude: excludedParams,
     sort: 'requiredFirst',
   },
 };
