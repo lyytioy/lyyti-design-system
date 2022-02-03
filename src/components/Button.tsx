@@ -92,6 +92,9 @@ const useStyles = makeStyles<Theme>((theme) =>
         backgroundColor: 'transparent',
       },
     },
+    disabled: {
+      border: 'none',
+    },
   })
 );
 
@@ -134,6 +137,7 @@ const Button = ({
         outlinedSecondary: classes.outlinedSecondary,
         textPrimary: classes.textPrimary,
         textSecondary: classes.textSecondary,
+        disabled: classes.disabled,
       }}
       variant={variant}
       color={color}

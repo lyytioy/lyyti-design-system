@@ -99,7 +99,7 @@ export default createTheme({
       hover: 'rgba(122, 131, 137, 0.1)',
       selected: 'rgba(122, 131, 137, 0.08)',
       disabled: '#B8BCBF',
-      disabledBackground: 'rgba(122, 131, 137, 0.5)',
+      disabledBackground: 'rgba(0, 0, 0, 0.12)',
     },
     grey: {
       '50': '#F9FAFB',
