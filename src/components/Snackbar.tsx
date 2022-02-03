@@ -5,15 +5,15 @@ import { TransitionProps } from '@mui/material/transitions';
 import { ReactElement } from 'react';
 
 export interface SnackbarProps extends MuiSnackbarProps {
-  anchorOrigin: {
+  anchorOrigin?: {
     horizontal: 'center' | 'left' | 'right';
     vertical: 'bottom' | 'top';
   };
-  autoHideDuration: number;
+  autoHideDuration?: number;
   color?: 'success' | 'info' | 'warning' | 'error';
-  direction: 'right' | 'left' | 'up' | 'down';
-  severity: 'success' | 'info' | 'warning' | 'error';
-  variant: 'standard' | 'filled' | 'outlined';
+  direction?: 'right' | 'left' | 'up' | 'down';
+  severity?: 'success' | 'info' | 'warning' | 'error';
+  variant?: 'standard' | 'filled' | 'outlined';
 }
 
 const Snackbar = ({
@@ -30,7 +30,6 @@ const Snackbar = ({
 }: SnackbarProps): JSX.Element => {
   return (
     <MuiSnackbar
-      {...props}
       anchorOrigin={anchorOrigin}
       autoHideDuration={autoHideDuration}
       TransitionComponent={(params: TransitionProps & { children: ReactElement<any, any> }) => (
