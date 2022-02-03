@@ -46,6 +46,25 @@ export default {
         },
       },
     },
+    label: {
+      control: { type: 'text' },
+      description: 'The label of the picker.',
+      table: {
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    showDaysOutsideCurrentMonth: {
+      control: { type: 'boolean' },
+      description: 'If true, days that have outsideCurrentMonth={true} are displayed.',
+      defaultValue: true,
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
   },
 } as Meta;
 
@@ -97,7 +116,7 @@ White.parameters = {
 
 export const DateFns = TemplateDateFns.bind({});
 DateFns.args = {
-  label: 'Birthdate',
+  label: 'Birthday',
   showDaysOutsideCurrentMonth: false,
   allowAllYears: true,
 };
