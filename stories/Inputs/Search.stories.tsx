@@ -1,5 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import Search, { SearchProps } from '../../src/components/Search';
+import Box from '../../src/components/Box';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 const options = [
   { id: 1, value: 'Option 1' },
@@ -25,6 +27,7 @@ export default {
         { name: 'dark', value: '#045b56' },
       ],
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   argTypes: {
     options: {
@@ -84,7 +87,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SearchProps> = (args) => <Search {...args} />;
+const Template: Story<SearchProps> = (args) => (
+  <Box sx={{ width: '300px' }}>
+    <Search {...args} />
+  </Box>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

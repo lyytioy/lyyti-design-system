@@ -2,6 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Chip, { ChipProps } from '../../src/components/Chip';
 import Avatar from '../../src/components/Avatar';
 import { StarFilled } from '../../src/icons';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Data Display/Chip',
@@ -12,6 +13,7 @@ export default {
         component: 'Use chips to represent an input, attribute, or action.',
       },
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   argTypes: {
     children: { table: { disable: true } },

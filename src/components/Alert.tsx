@@ -3,7 +3,7 @@ import AlertTitle from './AlertTitle';
 import Fade from '@mui/material/Fade';
 import { ReactNode, SyntheticEvent } from 'react';
 
-export interface AlertProps extends AlertBaseProps {
+export interface AlertProps extends Omit<AlertBaseProps, 'elevation' | 'options' | 'square'> {
   action?: ReactNode;
   onClose?: (event: SyntheticEvent) => void;
   open?: boolean;

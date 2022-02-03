@@ -1,10 +1,9 @@
 import { Paper as MuiPaper, PaperProps as MuiPaperProps } from '@mui/material';
-import { forwardRef, Ref } from 'react';
 
 export type PaperProps = MuiPaperProps;
 
-const Paper = (props: PaperProps, ref: Ref<HTMLDivElement>): JSX.Element => {
-  return <MuiPaper {...props} ref={ref} />;
+const Paper = (props: PaperProps): JSX.Element => {
+  return <MuiPaper {...props} />;
 };
 
-export default forwardRef(Paper);
+export default Paper;

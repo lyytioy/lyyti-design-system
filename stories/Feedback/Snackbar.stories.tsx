@@ -2,6 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { useState, SyntheticEvent } from 'react';
 import Snackbar, { SnackbarProps } from '../../src/components/Snackbar';
 import Button from '../../src/components/Button';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Feedback/Snackbar',
@@ -12,6 +13,7 @@ export default {
         component: 'Use snackbars to provide brief messages about app processes.',
       },
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   argTypes: {
     color: {

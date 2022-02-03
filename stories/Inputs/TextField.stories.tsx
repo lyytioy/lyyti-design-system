@@ -1,4 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import TextField, { TextFieldProps } from '../../src/components/TextField';
 
 export default {
@@ -17,6 +18,7 @@ export default {
         { name: 'dark', value: '#045b56' },
       ],
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
   },
   argTypes: {
     placeholder: {
