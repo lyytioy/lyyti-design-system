@@ -16,10 +16,8 @@ export default {
     controls: { exclude: modifyExcludedParams(['color']) },
   },
   argTypes: {
-    children: { table: { disable: true } },
     avatar: { control: false },
     deleteIcon: { control: false },
-
     icon: { control: false },
   },
   args: { label: 'Label', size: 'medium', variant: 'default' },
