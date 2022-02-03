@@ -3,6 +3,7 @@ import { useState } from 'react';
 import DatePicker, { DatePickerProps } from '../../src/components/DatePicker';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterMoment from '@mui/lab/AdapterMoment';
+import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
   title: 'Components/Inputs/DatePicker',
@@ -20,6 +21,29 @@ export default {
         { name: 'dark', value: '#045b56' },
       ],
     },
+    controls: { exclude: modifyExcludedParams(['color']) },
+  },
+  argTypes: {
+    value: {
+      control: 'object',
+      type: { name: 'string', required: true },
+      description: 'The value of the picker.',
+      table: {
+        type: {
+          summary: 'any | Date | number | string',
+        },
+      },
+    },
+    onChange: {
+      control: { type: 'null' },
+      type: { name: 'string', required: true },
+      description: 'Callback fired when the value (the selected date) changes @DateIOType.',
+      table: {
+        type: {
+          summary: 'func',
+        },
+      },
+    },
   },
 } as Meta;
 
@@ -32,7 +56,6 @@ const Template: Story<DatePickerProps<Date>> = (args) => {
         {...args}
         value={value}
         onChange={(newValue) => {
-          console.log(newValue);
           setValue(newValue);
         }}
       />
