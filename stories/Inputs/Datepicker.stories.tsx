@@ -1,116 +1,40 @@
-import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Datepicker, {
-  DatepickerProps,
-  DatepickerRangeProps,
-  DateRange,
-} from '../../src/components/Datepicker';
-import moment from 'moment';
-import 'react-dates/lib/css/_datepicker.css';
+import { useState } from 'react';
+import DatePicker, { DatePickerProps } from '../../src/components/DatePicker';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import AdapterMoment from '@mui/lab/AdapterMoment';
 
 export default {
-  title: 'Components/Inputs/Date Picker',
-  component: Datepicker,
-  parameters: {
-    layout: 'padded',
-    docs: {
-      description: {
-        component: 'Use to display past, present or future dates.',
-      },
-    },
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#045b56' },
-      ],
-    },
-  },
-  argTypes: {
-    locale: {
-      options: [
-        'da',
-        'de',
-        'en',
-        'es',
-        'et',
-        'fi',
-        'fr',
-        'hr',
-        'it',
-        'lv',
-        'nl',
-        'no',
-        'pl',
-        'pt',
-        'ru',
-        'sv',
-        'th',
-        'zh',
-        'yue',
-      ],
-      control: {
-        type: 'select',
-      },
-    },
-  },
-  args: {
-    label: 'Label',
-  },
+  title: 'Components/Inputs/DatePicker',
+  component: DatePicker,
 } as Meta;
 
-const DatepickerTemplate: Story<DatepickerProps> = (args) => {
-  const [date, setDate] = useState<moment.Moment | null>(null);
-
-  return <Datepicker {...args} date={date} onDateChange={setDate} />;
-};
-
-const DatepickerRangeTemplate: Story<DatepickerRangeProps> = (args) => {
-  const [startDate, setStartDate] = useState<moment.Moment | null>(null);
-  const [endDate, setEndDate] = useState<moment.Moment | null>(null);
-
-  const handleDatesChange = ({ startDate, endDate }: DateRange) => {
-    setStartDate(startDate);
-    setEndDate(endDate);
-  };
+const Template: Story<DatePickerProps<Date>> = (args) => {
+  const [value, setValue] = useState<Date | null>(null);
 
   return (
-    <Datepicker
-      {...args}
-      range
-      startDate={startDate}
-      endDate={endDate}
-      onDateChange={handleDatesChange}
-    />
+    <LocalizationProvider dateAdapter={AdapterMoment}>
+      <DatePicker
+        {...args}
+        value={value}
+        onChange={(newValue) => {
+          console.log(newValue);
+          setValue(newValue);
+        }}
+      />
+    </LocalizationProvider>
   );
 };
 
-export const Default = DatepickerTemplate.bind({});
-Default.args = { id: 'defaultDatepicker' };
+export const Default = Template.bind({});
+Default.args = { clearable: true };
 
-export const DatepickerRangeLarge = DatepickerRangeTemplate.bind({});
-DatepickerRangeLarge.args = {
-  margin: 'normal',
-  startDateId: 'start1',
-  endDateId: 'end1',
-};
-
-export const DatepickerWhiteFullwidth = DatepickerTemplate.bind({});
-DatepickerWhiteFullwidth.args = {
-  id: 'fullwidthDatepicker',
+export const White = Template.bind({});
+White.args = {
+  label: 'Event date',
   color: 'white',
-  fullwidth: true,
-  showClearDate: true,
-  margin: 'normal',
+  showDaysOutsideCurrentMonth: false,
 };
-DatepickerWhiteFullwidth.parameters = {
+White.parameters = {
   backgrounds: { default: 'dark' },
-};
-
-export const DatepickerRangeFullwidth = DatepickerRangeTemplate.bind({});
-DatepickerRangeFullwidth.args = {
-  fullwidth: true,
-  startDateId: 'start2',
-  endDateId: 'end2',
-  showClearDates: true,
 };

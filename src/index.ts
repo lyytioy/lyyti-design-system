@@ -10,7 +10,7 @@ export { default as Chip } from './components/Chip';
 export { default as CircularProgress } from './components/CircularProgress';
 export { default as ClickAwayListener } from './components/ClickAwayListener';
 export { default as DataGrid } from './components/DataGrid';
-export { default as Datepicker } from './components/Datepicker';
+export { default as DatePicker } from './components/DatePicker';
 export { default as Dialog } from './components/Dialog';
 export { default as DropdownMenu } from './components/DropdownMenu';
 export { default as FormControl } from './components/FormControl';
