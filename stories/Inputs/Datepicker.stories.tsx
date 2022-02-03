@@ -4,6 +4,7 @@ import DatePicker, { DatePickerProps } from '../../src/components/DatePicker';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterMoment from '@mui/lab/AdapterMoment';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 export default {
   title: 'Components/Inputs/DatePicker',
@@ -11,7 +12,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Date pickers let the user select a date.',
+        component:
+          'Date pickers let the user select a date. This component relies on the date management library of your choice. It supports date-fns, luxon, dayjs, moment and any other library via a public dateAdapter interface. Please install any of these libraries and set up the right date engine by wrapping your root (or the highest level you wish the pickers to be available) with LocalizationProvider.',
       },
     },
     backgrounds: {
@@ -47,7 +49,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<DatePickerProps<Date>> = (args) => {
+const TemplateMoment: Story<DatePickerProps<Date>> = (args) => {
   const [value, setValue] = useState<Date | null>(null);
 
   return (
@@ -63,10 +65,26 @@ const Template: Story<DatePickerProps<Date>> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
+const TemplateDateFns: Story<DatePickerProps<Date>> = (args) => {
+  const [value, setValue] = useState<Date | null>(null);
+
+  return (
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <DatePicker
+        {...args}
+        value={value}
+        onChange={(newValue) => {
+          setValue(newValue);
+        }}
+      />
+    </LocalizationProvider>
+  );
+};
+
+export const Default = TemplateMoment.bind({});
 Default.args = {};
 
-export const White = Template.bind({});
+export const White = TemplateMoment.bind({});
 White.args = {
   label: 'Event date',
   color: 'white',
@@ -75,4 +93,11 @@ White.args = {
 };
 White.parameters = {
   backgrounds: { default: 'dark' },
+};
+
+export const DateFns = TemplateDateFns.bind({});
+DateFns.args = {
+  label: 'Birthdate',
+  showDaysOutsideCurrentMonth: false,
+  allowAllYears: true,
 };
