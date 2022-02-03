@@ -7,6 +7,20 @@ import AdapterMoment from '@mui/lab/AdapterMoment';
 export default {
   title: 'Components/Inputs/DatePicker',
   component: DatePicker,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Date pickers let the user select a date.',
+      },
+    },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#045b56' },
+      ],
+    },
+  },
 } as Meta;
 
 const Template: Story<DatePickerProps<Date>> = (args) => {
@@ -27,13 +41,14 @@ const Template: Story<DatePickerProps<Date>> = (args) => {
 };
 
 export const Default = Template.bind({});
-Default.args = { clearable: true };
+Default.args = {};
 
 export const White = Template.bind({});
 White.args = {
   label: 'Event date',
   color: 'white',
   showDaysOutsideCurrentMonth: false,
+  allowAllYears: true,
 };
 White.parameters = {
   backgrounds: { default: 'dark' },

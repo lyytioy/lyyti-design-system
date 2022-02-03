@@ -4,9 +4,17 @@ import TextField, { ColorTypes, TextFieldProps } from './TextField';
 
 export interface DatePickerProps<TDate> extends MuiDatepickerProps<TDate> {
   color?: ColorTypes;
+  allowAllYears?: boolean;
 }
 
+const isDisallowedYear = (date: Date) => {
+  const year = new Date(date).getFullYear();
+  const maxYear = new Date().getFullYear() + 10;
+  return year < 2006 || year > maxYear;
+};
+
 const Datepicker = ({
+  allowAllYears = false,
   color,
   showDaysOutsideCurrentMonth = true,
   ...props
@@ -46,8 +54,21 @@ const Datepicker = ({
           '& .MuiIconButton-root:hover': {
             bgcolor: 'primaryStates.selected',
           },
+          ...(!allowAllYears && {
+            '& .PrivatePickersYear-root': {
+              height: 'min-content',
+              width: 'min-content',
+              '& .Mui-disabled': {
+                display: 'none',
+              },
+            },
+            '& .PrivatePickersYear-root:nth-of-type(-n+106)': {
+              display: 'none',
+            },
+          }),
         },
       }}
+      shouldDisableYear={!allowAllYears ? isDisallowedYear : undefined}
       showDaysOutsideCurrentMonth={showDaysOutsideCurrentMonth}
       {...props}
       renderInput={(params) => {
