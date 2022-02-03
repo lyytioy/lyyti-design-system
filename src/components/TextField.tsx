@@ -77,7 +77,7 @@ const TextField = ({
         '& .MuiFormHelperText-contained': {
           marginLeft: 0,
         },
-        '& .MuiOutlinedInput-notchedOutline, .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, &:hover .MuiOutlinedInput-notchedOutline':
+        '& .MuiOutlinedInput-notchedOutline, .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline':
           {
             borderColor: overrideColor,
           },
