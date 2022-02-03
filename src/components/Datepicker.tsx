@@ -13,9 +13,9 @@ const isDisallowedYear = (date: Date) => {
   return year < 2006 || year > maxYear;
 };
 
-const Datepicker = ({
+const DatePicker = ({
   allowAllYears = false,
-  color,
+  color = 'primary',
   showDaysOutsideCurrentMonth = true,
   ...props
 }: DatePickerProps<Date>): JSX.Element => {
@@ -78,4 +78,4 @@ const Datepicker = ({
   );
 };
 
-export default Datepicker;
+export default DatePicker;
