@@ -10,9 +10,11 @@ export default {
     color: {
       control: { type: 'radio', options: ['primary', 'secondary', 'inherit'] },
     },
+    disabled: { control: { type: 'boolean' } },
   },
   args: {
     children: 'Button',
+    disabled: false,
   },
 } as Meta;
 
