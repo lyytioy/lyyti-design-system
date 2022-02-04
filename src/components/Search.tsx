@@ -2,28 +2,32 @@ import { Search as SearchIcon } from '../icons';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
-export type SearchProps<T = OptionsType> = (
-  | Omit<
-      AutocompleteProps<T>,
-      'adornment' | 'filterSelectedOptions' | 'getOptionLabel' | 'multiple'
-    >
-  | Omit<
-      TextFieldProps,
-      'endAdornment' | 'getOptionLabel' | 'hiddenLabel' | 'startAdornment' | 'variant'
-    >
-) & {
-  freeSolo?: boolean;
-  options?: T[];
+export type SingleOptionSearchProps = Omit<
+  TextFieldProps,
+  'endAdornment' | 'getOptionLabel' | 'hiddenLabel' | 'startAdornment' | 'variant'
+>;
+
+export type MultipleOptionsSearchProps = Omit<
+  AutocompleteProps<OptionsType>,
+  'adornment' | 'filterSelectedOptions' | 'getOptionLabel' | 'multiple' | 'options'
+> & {
+  options?: AutocompleteProps['options'];
 };
 
-const Search = ({ freeSolo = true, ...props }: SearchProps): JSX.Element => {
+export type SearchProps = MultipleOptionsSearchProps | SingleOptionSearchProps;
+
+const Search = ({ ...props }: SearchProps): JSX.Element => {
   const searchIcon = <SearchIcon fontSize="small" />;
+
+  const { freeSolo = true, options = [], ...multiProps } = props as MultipleOptionsSearchProps;
+  const singleProps = props as SingleOptionSearchProps;
+
   if ((props as AutocompleteProps).options?.length) {
     return (
-      <Autocomplete {...(props as AutocompleteProps)} adornment={searchIcon} freeSolo={freeSolo} />
+      <Autocomplete adornment={searchIcon} freeSolo={freeSolo} options={options} {...multiProps} />
     );
   }
-  return <TextField {...(props as TextFieldProps)} startAdornment={searchIcon} />;
+  return <TextField startAdornment={searchIcon} {...singleProps} />;
 };
 
 export default Search;

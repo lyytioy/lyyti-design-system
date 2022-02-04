@@ -22,7 +22,7 @@ export interface TypographyProps
 }
 
 const Typography = ({ variant = 'body1', ...props }: TypographyProps): JSX.Element => {
-  return <MuiTypography {...props} variant={variant} />;
+  return <MuiTypography variant={variant} {...props} />;
 };
 
 export default Typography;

@@ -35,6 +35,7 @@ const Snackbar = ({
       TransitionComponent={(params: TransitionProps & { children: ReactElement<any, any> }) => (
         <Slide {...params} direction={direction} />
       )}
+      {...props}
     >
       <div>
         <AlertBase color={color} severity={severity} variant={variant}>
