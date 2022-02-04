@@ -1,55 +1,37 @@
-import {
-  Link as MuiLink,
-  LinkProps as MuiLinkProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      color: theme.palette.primary.light,
-      fontSize: '16px',
-      display: 'flex',
-      alignItems: 'center',
-    },
-    underlineHover: {
-      '&:hover': {
-        color: theme.palette.primary.main,
-        textDecorationColor: '#96E4E8',
-      },
-      '&:active': {
-        color: '#5E8A88',
-      },
-    },
-    underlineAlways: {
-      textDecorationColor: '#96E4E8',
-      '&:hover': {
-        color: theme.palette.primary.main,
-      },
-      '&:active': {
-        color: '#5E8A88',
-      },
-    },
-  })
-);
+import { Link as MuiLink, LinkProps as MuiLinkProps } from '@mui/material';
 
 export interface LinkProps extends MuiLinkProps {
   'data-testid'?: string;
 }
 
 const Link = (props: LinkProps): JSX.Element => {
-  const classes = useStyles();
-
   return (
     <MuiLink
-      {...props}
-      classes={{
-        root: classes.root,
-        underlineHover: classes.underlineHover,
-        underlineAlways: classes.underlineAlways,
+      sx={{
+        color: 'primary.light',
+        fontSize: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        '&.MuiLink-underlineHover': {
+          '&:hover': {
+            color: 'primary.main',
+            textDecorationColor: '#blue.100',
+          },
+          '&:active': {
+            color: 'primary.light',
+          },
+        },
+        '&.MuiLink-underlineAlways': {
+          textDecorationColor: 'blue.100',
+          '&:hover': {
+            color: 'primary.main',
+          },
+          '&:active': {
+            color: 'primary.light',
+          },
+        },
       }}
+      {...props}
     />
   );
 };

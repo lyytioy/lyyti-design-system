@@ -1,16 +1,12 @@
-import * as React from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import { createElement } from 'react';
+import SvgIcon from '@mui/material/SvgIcon';
 
 const EVS3 = (props: any) =>
-  React.createElement(
+  createElement(
     SvgIcon,
     props,
     <defs>
-      <style>
-        {
-          '.cls-1{opacity:0.1;isolation:isolate;}.cls-2{fill-rule:evenodd;}'
-        }
-      </style>
+      <style>{'.cls-1{opacity:0.1;isolation:isolate;}.cls-2{fill-rule:evenodd;}'}</style>
     </defs>,
     <circle className="cls-1" cx="12" cy="12" r="12" />,
     <path

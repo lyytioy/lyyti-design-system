@@ -1,6 +1,6 @@
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import Theme from './theme';
-import { CssBaseline } from '@material-ui/core';
+import CssBaseline from '@mui/material/CssBaseline';
 
 interface ThemeSelectorProps {
   children: JSX.Element | JSX.Element[];

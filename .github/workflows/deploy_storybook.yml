@@ -4,9 +4,10 @@ name: Deploy Storybook
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - 'src/**'
+      - 'stories/**'
       - 'public/**'
       - 'typings/**'
       - '.storybook/**'

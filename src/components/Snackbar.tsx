@@ -1,7 +1,8 @@
-import { Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@material-ui/core';
+import { Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@mui/material';
 import AlertBase from './AlertBase';
-import Slide from '@material-ui/core/Slide';
-import { TransitionProps } from '@material-ui/core/transitions';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+import { ReactElement } from 'react';
 
 export interface SnackbarProps extends MuiSnackbarProps {
   anchorOrigin?: {
@@ -31,8 +32,10 @@ const Snackbar = ({
     <MuiSnackbar
       anchorOrigin={anchorOrigin}
       autoHideDuration={autoHideDuration}
-      TransitionComponent={(params: TransitionProps) => <Slide {...params} direction={direction} />}
-      {...props}>
+      TransitionComponent={(params: TransitionProps & { children: ReactElement<any, any> }) => (
+        <Slide {...params} direction={direction} />
+      )}
+    >
       <div>
         <AlertBase color={color} severity={severity} variant={variant}>
           {props.message}

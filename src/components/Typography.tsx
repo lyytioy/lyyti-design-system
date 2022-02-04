@@ -1,7 +1,4 @@
-import {
-  Typography as MuiTypography,
-  TypographyProps as MuiTypographyProps,
-} from '@material-ui/core';
+import { Typography as MuiTypography, TypographyProps as MuiTypographyProps } from '@mui/material';
 import { ElementType } from 'react';
 
 export type VariantTypes =

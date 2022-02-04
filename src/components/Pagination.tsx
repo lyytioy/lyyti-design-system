@@ -1,26 +1,20 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import {
-  Pagination as MuiPagination,
-  PaginationProps as MuiPaginationProps,
-} from '@material-ui/lab';
-
-const useStyles = makeStyles<Theme>(() =>
-  createStyles({
-    root: {
-      '& .MuiPaginationItem-root': {
-        fontSize: '15px',
-        lineHeight: '16px',
-      },
-    },
-  })
-);
+import { Pagination as MuiPagination } from '@mui/material';
+import { PaginationProps as MuiPaginationProps } from '@mui/material';
 
 export type PaginationProps = MuiPaginationProps;
 
 const Pagination = (props: PaginationProps): JSX.Element => {
-  const classes = useStyles();
-
-  return <MuiPagination {...props} classes={{ root: classes.root }} />;
+  return (
+    <MuiPagination
+      sx={{
+        '& .MuiPaginationItem-root': {
+          fontSize: '15px',
+          lineHeight: '16px',
+        },
+      }}
+      {...props}
+    />
+  );
 };
 
 export default Pagination;

@@ -1,13 +1,5 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import { Skeleton as MuiSkeleton, SkeletonProps as MuiSkeletonProps } from '@material-ui/lab';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      backgroundColor: theme.palette.action.hover,
-    },
-  })
-);
+import { Skeleton as MuiSkeleton } from '@mui/material';
+import { SkeletonProps as MuiSkeletonProps } from '@mui/material';
 
 export type SkeletonProps = MuiSkeletonProps;
 
@@ -16,14 +8,12 @@ const Skeleton = ({
   variant = 'text',
   ...props
 }: SkeletonProps): JSX.Element => {
-  const classes = useStyles();
-
   return (
     <MuiSkeleton
       animation={animation}
       variant={variant}
+      sx={{ backgroundColor: 'action.hover' }}
       {...props}
-      classes={{ root: classes.root }}
     />
   );
 };

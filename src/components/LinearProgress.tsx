@@ -1,7 +1,7 @@
 import {
   LinearProgress as MuiLinearProgress,
   LinearProgressProps as MuiLinearProgressProps,
-} from '@material-ui/core';
+} from '@mui/material';
 
 export interface LinearProgressProps extends MuiLinearProgressProps {
   color: 'primary' | 'secondary';
@@ -16,7 +16,15 @@ const LinearProgress = ({
   variant = 'indeterminate',
   ...props
 }: LinearProgressProps): JSX.Element => {
-  return <MuiLinearProgress {...props} color={color} value={value} variant={variant} />;
+  return (
+    <MuiLinearProgress
+      color={color}
+      value={value}
+      variant={variant}
+      sx={{ minWidth: '200px', width: '100%' }}
+      {...props}
+    />
+  );
 };
 
 export default LinearProgress;

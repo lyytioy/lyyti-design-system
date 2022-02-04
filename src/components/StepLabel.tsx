@@ -1,4 +1,4 @@
-import { StepLabel as MuiStepLabel, StepLabelProps as MuiStepLabelProps } from '@material-ui/core';
+import { StepLabel as MuiStepLabel, StepLabelProps as MuiStepLabelProps } from '@mui/material';
 
 export type StepLabelProps = MuiStepLabelProps;
 

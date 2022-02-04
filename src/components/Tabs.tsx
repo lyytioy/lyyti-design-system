@@ -1,4 +1,4 @@
-import { Tabs as MuiTabs, TabsProps as MuiTabsProps } from '@material-ui/core';
+import { Tabs as MuiTabs, TabsProps as MuiTabsProps } from '@mui/material';
 
 export type TabsProps = MuiTabsProps;
 

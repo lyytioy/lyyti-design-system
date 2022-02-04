@@ -1,26 +1,9 @@
-import {
-  InputLabel as MuiInputLabel,
-  InputLabelProps as MuiInputLabelProps,
-  createStyles,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: {
-      color: theme.palette.grey[400],
-      letterSpacing: '0.15px',
-    },
-  })
-);
+import { InputLabel as MuiInputLabel, InputLabelProps as MuiInputLabelProps } from '@mui/material';
 
 export type InputLabelProps = MuiInputLabelProps;
 
 const InputLabel = (props: InputLabelProps): JSX.Element => {
-  const classes = useStyles();
-
-  return <MuiInputLabel {...props} classes={{ root: classes.root }} />;
+  return <MuiInputLabel sx={{ color: 'grey.400', letterSpacing: '0.15px' }} {...props} />;
 };
 
 export default InputLabel;

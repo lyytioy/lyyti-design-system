@@ -1,37 +1,8 @@
-import {
-  Autocomplete as MuiAutocomplete,
-  AutocompleteProps as MuiAutocompleteProps,
-} from '@material-ui/lab';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import TextField, { MarginTypes, ColorTypes } from './TextField';
+import { Autocomplete as MuiAutocomplete } from '@mui/material';
+import { AutocompleteProps as MuiAutocompleteProps } from '@mui/material';
+import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
-
-const useStyles = makeStyles<Theme>((theme) =>
-  createStyles({
-    root: (props: Record<string, unknown>) => {
-      let iconColor = props.disabled ? theme.palette.action.disabled : theme.palette.text.primary;
-      if (props.color === 'white') iconColor = '#fff';
-
-      return {
-        '& .MuiInputAdornment-positionStart': {
-          marginLeft: '6px',
-        },
-        '& .MuiSvgIcon-root': {
-          color: iconColor,
-        },
-      };
-    },
-    option: {
-      '&[aria-selected="true"]': {
-        backgroundColor: theme.palette.primaryStates.selected,
-      },
-      '&[data-focus="true"]': {
-        backgroundColor: theme.palette.primaryStates.hover,
-      },
-    },
-  })
-);
 
 export type OptionsType = { id: number | string; value: string };
 
@@ -42,7 +13,7 @@ export interface AutocompleteProps<T = OptionsType>
   > {
   adornment?: string | JSX.Element;
   label?: string;
-  margin?: MarginTypes;
+  size?: SizeTypes;
   multiple?: boolean;
   placeholder?: string;
   color?: ColorTypes;
@@ -55,8 +26,9 @@ const Autocomplete = ({
   adornment,
   getOptionLabel = (option: OptionsType) => option.value ?? option,
   label,
-  margin = 'dense',
+  size = 'medium',
   options,
+  multiple = false,
   placeholder,
   color = 'primary',
   disabled = false,
@@ -65,30 +37,32 @@ const Autocomplete = ({
   'data-testid': testid,
   ...props
 }: AutocompleteProps): JSX.Element => {
-  const classes = useStyles({ color, disabled });
-
   return (
     <MuiAutocomplete
       disabled={disabled}
       getOptionLabel={getOptionLabel}
       options={options}
-      {...props}
-      classes={{ root: classes.root, option: classes.option }}
+      multiple={multiple}
+      sx={{
+        option: {
+          '&.Mui-selected': {
+            bgcolor: 'primaryState.selected',
+          },
+          '&:hover': {
+            bgcolor: 'primaryStates.hover',
+          },
+        },
+      }}
       renderTags={(value: OptionsType[], getTagProps) =>
         value.map((value: OptionsType, index: number) => (
-          <Chip
-            key={value.id}
-            label={value.value}
-            size={margin === 'dense' ? 'small' : 'medium'}
-            {...getTagProps({ index })}
-          />
+          <Chip label={value.value} size={size} {...getTagProps({ index })} key={index} />
         ))
       }
       renderInput={(params) => (
         <TextField
           {...params}
           label={label}
-          margin={margin}
+          size={size}
           error={error}
           helperText={helperText}
           placeholder={placeholder}
@@ -105,6 +79,7 @@ const Autocomplete = ({
           color={color}
         />
       )}
+      {...props}
     />
   );
 };

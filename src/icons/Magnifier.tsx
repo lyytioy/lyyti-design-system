@@ -1,8 +1,8 @@
-import * as React from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
+import { createElement } from 'react';
+import SvgIcon from '@mui/material/SvgIcon';
 
 const Magnifier = (props: any) =>
-  React.createElement(
+  createElement(
     SvgIcon,
     props,
     <path d="M.75 23.999a.743.743 0 01-.53-.22c-.142-.141-.22-.33-.22-.53s.078-.389.22-.53L11.979 10.96A6.738 6.738 0 0110.5 6.749c0-3.722 3.028-6.75 6.75-6.75S24 3.027 24 6.749s-3.028 6.75-6.75 6.75a6.734 6.734 0 01-4.21-1.479L1.28 23.779a.743.743 0 01-.53.22zm16.5-22.5c-2.895 0-5.25 2.355-5.25 5.25s2.355 5.25 5.25 5.25 5.25-2.355 5.25-5.25-2.355-5.25-5.25-5.25z" />,

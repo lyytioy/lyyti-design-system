@@ -1,6 +1,5 @@
 import Autocomplete, { AutocompleteProps } from './Autocomplete';
-import { MarginTypes } from './TextField';
-import { makeStyles } from '@material-ui/styles';
+import { SizeTypes } from './TextField';
 import { Clock } from '../icons';
 
 const twentyFourHourTimes = [
@@ -102,19 +101,11 @@ const twelveHourTimes = [
   { id: '11:30 PM', value: '11:30 PM' },
 ];
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' },
-    padding: '0px',
-  },
-});
-
 export interface TimePickerProps extends Omit<AutocompleteProps, 'renderInput' | 'options'> {
   twelvehour?: boolean;
   error?: boolean;
   helperText?: string;
-  margin?: MarginTypes;
+  size?: SizeTypes;
   label?: string;
   'data-testid'?: string;
 }
@@ -123,25 +114,25 @@ const TimePicker = ({
   twelvehour,
   error,
   helperText,
-  margin = 'dense',
+  size = 'small',
   label,
   ...props
 }: TimePickerProps): JSX.Element => {
-  const classes = useStyles();
-
   return (
     <Autocomplete
-      {...props}
       freeSolo
       forcePopupIcon
       popupIcon={<Clock color="inherit" />}
-      className={classes.root}
       options={twelvehour ? twelveHourTimes : twentyFourHourTimes}
       disableClearable={true}
-      margin={margin}
+      size={size}
       label={label}
       error={error}
       helperText={helperText}
+      sx={{
+        '& .MuiAutocomplete-popupIndicatorOpen': { transform: 'none' },
+      }}
+      {...props}
     />
   );
 };

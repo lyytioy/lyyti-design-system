@@ -1,4 +1,4 @@
-import { MenuItem } from '@material-ui/core';
+import { MenuItem } from '@mui/material';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
@@ -6,7 +6,7 @@ export type SelectProps<T = OptionsType> = (
   | AutocompleteProps<T>
   | Omit<TextFieldProps, 'startAdornment' | 'endAdornment' | 'variant'>
 ) & {
-  options: T[];
+  options: OptionsType[];
   adornment?: AutocompleteProps<T>['adornment'];
   multiple?: boolean;
   'data-testid'?: string;
@@ -14,13 +14,20 @@ export type SelectProps<T = OptionsType> = (
 
 const Select = ({
   adornment,
-  options,
+  options = [],
   multiple = false,
   'data-testid': testid,
   ...props
 }: SelectProps): JSX.Element => {
   if (multiple) {
-    return <Autocomplete {...(props as AutocompleteProps)} disableClearable />;
+    return (
+      <Autocomplete
+        {...(props as AutocompleteProps)}
+        multiple={multiple}
+        options={options}
+        disableClearable
+      />
+    );
   }
   return (
     <TextField
@@ -37,10 +44,10 @@ const Select = ({
             vertical: 'top',
             horizontal: 'left',
           },
-          getContentAnchorEl: null,
         },
       }}
-      inputProps={{ 'data-testid': testid }}>
+      inputProps={{ 'data-testid': testid }}
+    >
       {options.map(({ id, value: label }) => (
         <MenuItem key={id} value={id}>
           {label}

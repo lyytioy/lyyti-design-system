@@ -1,4 +1,6 @@
-import { Alert as MuiAlert, AlertProps as MuiAlertProps } from '@material-ui/lab';
+import { forwardRef, Ref } from 'react';
+import { Alert as MuiAlert } from '@mui/material';
+import { AlertProps as MuiAlertProps } from '@mui/material';
 
 export interface AlertBaseProps extends MuiAlertProps {
   color?: 'success' | 'info' | 'warning' | 'error';
@@ -6,12 +8,11 @@ export interface AlertBaseProps extends MuiAlertProps {
   variant: 'standard' | 'filled' | 'outlined';
 }
 
-const AlertBase = ({
-  severity = 'success',
-  variant = 'standard',
-  ...props
-}: AlertBaseProps): JSX.Element => {
-  return <MuiAlert severity={severity} variant={variant} {...props} />;
+const AlertBase = (
+  { severity = 'success', variant = 'standard', ...props }: AlertBaseProps,
+  ref: Ref<HTMLDivElement>
+): JSX.Element => {
+  return <MuiAlert ref={ref} severity={severity} variant={variant} {...props} />;
 };
 
-export default AlertBase;
+export default forwardRef(AlertBase);
