@@ -5,7 +5,7 @@ const containedBoxShadow =
 
 export interface ButtonProps extends Omit<MuiButtonProps, 'size'> {
   chunky?: boolean;
-  children: MuiButtonProps['children'] & { $$typeof?: symbol; props: any };
+  children: MuiButtonProps['children'] & { $$typeof?: symbol; props?: any };
   color?: 'primary' | 'secondary' | 'inherit';
   'data-testid'?: string;
 }
