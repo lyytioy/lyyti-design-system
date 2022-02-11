@@ -8,11 +8,11 @@
     "npm": "^8"
   },
   "scripts": {
-    "dev": "start-storybook -p 6006 -s public",
+    "dev": "start-storybook -p 6006",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "check-types": "tsc",
-    "build-storybook": "npm ci && build-storybook -s public -o docs-build",
+    "build-storybook": "npm ci && build-storybook -o docs-build",
     "build": "rm -rf dist/* && tsc --project tsconfig.release.json && cp -r src/fonts dist && cp -r src/styles dist && cp package.json dist && cp README.md dist"
   },
   "resolutions": {
@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",
+    "@date-io/dayjs": "^2.13.1",
+    "@date-io/moment": "^2.13.1",
     "@storybook/addon-actions": "^6.4.18",
     "@storybook/addon-essentials": "^6.4.18",
     "@storybook/addon-links": "^6.4.18",
@@ -37,11 +39,11 @@
     "@types/node": "17.0.14",
     "@types/react": "17.0.38",
     "babel-loader": "^8.2.3",
+    "dayjs": "^1.10.7",
     "eslint": "8.8.0",
     "eslint-config-next": "12.0.10",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-storybook": "^0.5.6",
-    "date-fns": "^2.28.0",
     "moment": "^2.29.1",
     "next": "12.0.10",
     "react": "17.0.2",

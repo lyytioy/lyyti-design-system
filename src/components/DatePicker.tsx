@@ -1,10 +1,12 @@
-import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatepickerProps } from '@mui/lab';
+import MuiDatePicker, { DatePickerProps as MuiDatepickerProps } from '@mui/lab/DatePicker';
 import Calendar from '../icons/Calendar';
-import TextField, { ColorTypes, TextFieldProps } from './TextField';
 
-export interface DatePickerProps<TDate> extends MuiDatepickerProps<TDate> {
-  color?: ColorTypes;
+import TextField, { TextFieldProps } from './TextField';
+
+export interface DatePickerProps<TDate>
+  extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
+  InputProps?: TextFieldProps;
 }
 
 const isDisallowedYear = (date: Date) => {
@@ -15,8 +17,8 @@ const isDisallowedYear = (date: Date) => {
 
 const DatePicker = ({
   allowAllYears = false,
-  color = 'primary',
   showDaysOutsideCurrentMonth = true,
+  InputProps = { color: 'primary', id: 'datepicker' },
   ...props
 }: DatePickerProps<Date>): JSX.Element => {
   return (
@@ -72,7 +74,7 @@ const DatePicker = ({
       showDaysOutsideCurrentMonth={showDaysOutsideCurrentMonth}
       {...props}
       renderInput={(params) => {
-        return <TextField {...(params as TextFieldProps)} color={color} />;
+        return <TextField {...(params as TextFieldProps)} {...InputProps} />;
       }}
     />
   );
