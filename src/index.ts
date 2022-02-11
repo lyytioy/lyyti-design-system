@@ -1,6 +1,5 @@
 // https://www.learnstorybook.com/design-systems-for-developers/react/en/distribute/
 export { default as ThemeSelector } from './themes/ThemeSelector';
-
 export { default as Alert } from './components/Alert';
 export { default as Avatar } from './components/Avatar';
 export { default as Box } from './components/Box';
@@ -13,10 +12,6 @@ export { default as ClickAwayListener } from './components/ClickAwayListener';
 export { default as DataGrid } from './components/DataGrid';
 export { default as DatePicker } from './components/DatePicker';
 export { default as LocalizationProvider } from '@mui/lab/LocalizationProvider';
-export { default as AdapterMoment } from '@mui/lab/AdapterMoment';
-export { default as AdapterDateFns } from '@mui/lab/AdapterDateFns';
-export { default as AdapterDayjs } from '@mui/lab/AdapterDayjs';
-export { default as AdapterLuxon } from '@mui/lab/AdapterLuxon';
 export { default as Dialog } from './components/Dialog';
 export { default as DropdownMenu } from './components/DropdownMenu';
 export { default as FormControl } from './components/FormControl';
@@ -50,5 +45,8 @@ export { default as Tabs } from './components/Tabs';
 export { default as TextField } from './components/TextField';
 export { default as TimePicker } from './components/TimePicker';
 export { default as Tooltip } from './components/Tooltip';
+export { default as TreeView } from '@mui/lab/TreeView';
+export { default as TreeItem } from '@mui/lab/TreeItem';
+export type { TreeItemProps } from '@mui/lab/TreeItem';
 export { default as Typography } from './components/Typography';
 export { ServerStyleSheets } from '@mui/styles';
