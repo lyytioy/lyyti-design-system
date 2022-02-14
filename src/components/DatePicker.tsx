@@ -2,10 +2,9 @@ import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatepickerProps } fr
 import Calendar from '../icons/Calendar';
 import TextField, { ColorTypes, TextFieldProps } from './TextField';
 
-export interface DatePickerProps<TDate> extends Omit<MuiDatepickerProps<TDate>, 'renderInput'> {
+export interface DatePickerProps<TDate> extends MuiDatepickerProps<TDate> {
   color?: ColorTypes;
   allowAllYears?: boolean;
-  renderInput?: MuiDatepickerProps['renderInput'];
 }
 
 const isDisallowedYear = (date: Date) => {
@@ -71,10 +70,10 @@ const DatePicker = ({
       }}
       shouldDisableYear={!allowAllYears ? isDisallowedYear : undefined}
       showDaysOutsideCurrentMonth={showDaysOutsideCurrentMonth}
+      {...props}
       renderInput={(params) => {
         return <TextField {...(params as TextFieldProps)} color={color} />;
       }}
-      {...props}
     />
   );
 };
