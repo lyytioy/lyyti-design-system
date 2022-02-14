@@ -1,6 +1,5 @@
 import MuiDatePicker, { DatePickerProps as MuiDatepickerProps } from '@mui/lab/DatePicker';
 import Calendar from '../icons/Calendar';
-
 import TextField, { TextFieldProps } from './TextField';
 
 export interface DatePickerProps<TDate>
