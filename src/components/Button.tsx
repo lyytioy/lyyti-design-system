@@ -37,7 +37,6 @@ const Button = ({
       variant={variant}
       color={color}
       disabled={disabled}
-      {...props}
       sx={{
         borderRadius: '3px',
         padding: chunky ? '15px 23px' : '5px 15px',
@@ -116,6 +115,7 @@ const Button = ({
           },
         },
       }}
+      {...props}
     >
       {children}
     </MuiButton>

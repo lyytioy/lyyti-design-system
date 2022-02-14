@@ -35,13 +35,13 @@ const TextField = ({
 
   return (
     <MuiTextField
+      variant='outlined'
       fullWidth={fullWidth}
       size={size}
       error={error}
       helperText={helperText}
       onClick={() => muiTextField.current?.focus()}
       inputRef={muiTextField}
-      {...props}
       InputProps={{
         endAdornment: endAdornment ? (
           <InputAdornment position="end">{endAdornment}</InputAdornment>
@@ -86,6 +86,7 @@ const TextField = ({
             color: overrideColor,
           },
       }}
+      {...props}
     />
   );
 };

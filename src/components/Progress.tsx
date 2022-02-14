@@ -21,10 +21,10 @@ const Progress = ({
   return (
     <>
       {type === 'circular' && (
-        <CircularProgress {...props} color={color} size={size} value={value} variant={variant} />
+        <CircularProgress color={color} size={size} value={value} variant={variant} {...props} />
       )}
       {type === 'linear' && (
-        <LinearProgress {...props} color={color} value={value} variant={variant} />
+        <LinearProgress color={color} value={value} variant={variant} {...props} />
       )}
     </>
   );
