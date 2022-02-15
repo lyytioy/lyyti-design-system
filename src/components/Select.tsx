@@ -2,15 +2,21 @@ import { MenuItem } from '@mui/material';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 
-export type SelectProps<T = OptionsType> = (
-  | AutocompleteProps<T>
-  | Omit<TextFieldProps, 'startAdornment' | 'endAdornment' | 'variant'>
-) & {
-  options: OptionsType[];
-  adornment?: AutocompleteProps<T>['adornment'];
+type CommonProps = {
+  options?: AutocompleteProps['options'];
+  adornment?: AutocompleteProps<OptionsType>['adornment'];
   multiple?: boolean;
   'data-testid'?: string;
 };
+
+export type MultipleSelectProps = Omit<AutocompleteProps, 'options'> & CommonProps;
+export type SingleSelectProps = Omit<
+  TextFieldProps,
+  'startAdornment' | 'endAdornment' | 'variant'
+> &
+  CommonProps;
+
+export type SelectProps = MultipleSelectProps | SingleSelectProps;
 
 const Select = ({
   adornment,
@@ -22,16 +28,15 @@ const Select = ({
   if (multiple) {
     return (
       <Autocomplete
-        {...(props as AutocompleteProps)}
         multiple={multiple}
         options={options}
         disableClearable
+        {...(props as MultipleSelectProps)}
       />
     );
   }
   return (
     <TextField
-      {...(props as TextFieldProps)}
       select
       startAdornment={adornment}
       SelectProps={{
@@ -47,6 +52,7 @@ const Select = ({
         },
       }}
       inputProps={{ 'data-testid': testid }}
+      {...(props as SingleSelectProps)}
     >
       {options.map(({ id, value: label }) => (
         <MenuItem key={id} value={id}>

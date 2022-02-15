@@ -3,11 +3,16 @@ import {
   DataGridProps as MuiDataGridProps,
   GridColumns as MuiGridColumns,
   GridRowsProp as MuiGridRowsProp,
+  GridSelectionModel as MuiGridSelectionModel,
 } from '@mui/x-data-grid';
 
+export interface GridColumns extends MuiGridColumns {}
+export interface GridRowsProp extends MuiGridRowsProp {}
+export interface GridSelectionModel extends MuiGridSelectionModel {}
+
 export interface DataGridProps extends MuiDataGridProps {
-  columns: MuiGridColumns;
-  rows: MuiGridRowsProp;
+  columns: GridColumns;
+  rows: GridRowsProp;
   autoHeight?: boolean;
   checkboxSelection?: boolean;
   disableColumnMenu?: boolean;
