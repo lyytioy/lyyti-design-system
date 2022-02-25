@@ -1,7 +1,7 @@
 import { Tooltip as MuiTooltip, TooltipProps as MuiTooltipProps } from '@mui/material';
 
 export interface TooltipProps extends MuiTooltipProps {
-  arrow: boolean;
+  arrow?: boolean;
   placement?:
     | 'bottom-end'
     | 'bottom-start'
