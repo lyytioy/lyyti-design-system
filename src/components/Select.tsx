@@ -31,6 +31,7 @@ const Select = ({
         multiple={multiple}
         options={options}
         disableClearable
+        data-testid={testid}
         {...(props as MultipleSelectProps)}
       />
     );
