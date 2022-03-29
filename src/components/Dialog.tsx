@@ -34,11 +34,7 @@ const Dialog = ({
         <Button
           onClick={onClose as MouseEventHandler<HTMLButtonElement>}
           sx={{
-            position: 'absolute',
-            right: '24px',
-            padding: '4px',
-            width: 'min-content',
-            minWidth: '32px',
+            padding: '12px',
             borderRadius: '50%',
           }}
         >
