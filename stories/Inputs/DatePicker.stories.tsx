@@ -74,7 +74,7 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const TemplateDateFns: Story<DatePickerProps<Date>> = (args) => {
+const TemplateDateJs: Story<DatePickerProps<Date>> = (args) => {
   // Run `npm install @date-io/dayjs` to install the adapter
 
   // import AdapterDateFns from '@date-io/dayjs';
@@ -114,10 +114,10 @@ const TemplateMoment: Story<DatePickerProps<Date>> = (args) => {
   );
 };
 
-export const Default = TemplateMoment.bind({});
+export const Default = TemplateDateJs.bind({});
 Default.args = {};
 
-export const White = TemplateMoment.bind({});
+export const White = TemplateDateJs.bind({});
 White.args = {
   label: 'Event date',
   InputProps: { color: 'white' },
@@ -128,8 +128,8 @@ White.parameters = {
   backgrounds: { default: 'dark' },
 };
 
-export const DateFns = TemplateDateFns.bind({});
-DateFns.args = {
+export const DateMoment = TemplateMoment.bind({});
+DateMoment.args = {
   InputProps: { label: 'Birthday' },
   showDaysOutsideCurrentMonth: false,
   allowAllYears: true,

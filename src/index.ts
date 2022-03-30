@@ -49,6 +49,7 @@ export { default as StepLabel } from './components/StepLabel';
 export { default as Stepper } from './components/Stepper';
 export { default as Switch } from './components/Switch';
 export { default as Tab } from './components/Tab';
+export { default as TabPanel } from '@mui/lab/TabPanel';
 export { default as Tabs } from './components/Tabs';
 export { default as TextField } from './components/TextField';
 export { default as TimePicker } from './components/TimePicker';
