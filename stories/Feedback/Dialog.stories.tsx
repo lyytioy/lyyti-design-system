@@ -76,6 +76,7 @@ export default {
       </>
     ),
     dialogTitle: 'This is the dialog title',
+    fullWidth: true,
   },
 } as Meta;
 
