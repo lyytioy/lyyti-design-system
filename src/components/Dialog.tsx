@@ -39,6 +39,7 @@ const Dialog = ({
             top: 10,
             right: 8,
           }}
+          data-testid="mui-dialog-close-button"
         >
           <Close fontSize="small" />
         </Button>
