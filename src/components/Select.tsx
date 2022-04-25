@@ -55,8 +55,8 @@ const Select = ({
       inputProps={{ 'data-testid': testid }}
       {...(props as SingleSelectProps)}
     >
-      {options.map(({ id, value: label }) => (
-        <MenuItem key={id} value={id}>
+      {options.map(({ id, value: label, disabled }) => (
+        <MenuItem key={id} value={id} disabled={disabled}>
           {label}
         </MenuItem>
       ))}

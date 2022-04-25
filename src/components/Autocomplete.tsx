@@ -4,7 +4,11 @@ import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
 
-export type OptionsType = { id: number | string; value: string };
+export type OptionsType = {
+  id: number | string;
+  value: string;
+  disabled?: boolean;
+};
 
 export interface AutocompleteProps<T = OptionsType>
   extends Omit<
