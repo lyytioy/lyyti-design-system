@@ -49,12 +49,14 @@ declare module '@mui/styles' {
 declare module '@mui/material/styles/createPalette' {
   interface Palette {
     primaryStates: ColorStateOptions;
+    secondaryStates: ColorStateOptions;
     light: ColorShadeOptions;
     lightStates: ColorStateOptions;
     blue: ColorRangeOptions;
   }
   interface PaletteOptions {
     primaryStates: ColorStateOptions;
+    secondaryStates: ColorStateOptions;
     light: ColorShadeOptions;
     lightStates: ColorStateOptions;
     blue: ColorRangeOptions;
@@ -133,12 +135,20 @@ export default createTheme({
       '500': '#0A545D',
     },
     primaryStates: {
-      activeContained: 'rgba(255, 255, 255, 0.3)',
+      activeContained: 'rgba(4, 91, 86, 0.3)',
       hover: 'rgba(4, 91, 86, 0.1)',
       selected: 'rgba(4, 91, 86, 0.08)',
       activeOutlined: 'rgba(4, 91, 86, 0.24)',
       outlinedStroke: '#045B56',
       disabledBg: '#739C9A',
+    },
+    secondaryStates: {
+      activeContained: 'rgba(238, 139, 58, 0.3)',
+      hover: 'rgba(238, 139, 58, 0.1)',
+      selected: 'rgba(238, 139, 58, 0.08)',
+      activeOutlined: 'rgba(238, 139, 58, 0.24)',
+      outlinedStroke: '#EE8B3A',
+      disabledBg: '#E4BE9F',
     },
     lightStates: {
       activeContained: 'rgba(250, 250, 250, 0.3)',

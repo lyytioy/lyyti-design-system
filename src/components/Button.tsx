@@ -1,11 +1,13 @@
 import { Button as MuiButton, ButtonProps as MuiButtonProps, IconButton } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 
 const containedBoxShadow =
-  '0.79px 6.95px 11px rgb(0 0 0 / 1%), 0.52px 4.53px 6.44px rgb(0 0 0 / 2%), 0.31px 2.76px 3.5px rgb(0 0 0 / 2%), 0.17px 1.52px 1.79px rgb(0 0 0 / 2%), 0.08px 0.72px 0.9px rgb(0 0 0 / 3%), 0.03px 0.25px 0.43px rgb(0 0 0 / 4%), inset 0 0px 0 0 #034e49';
+  '0.79px 6.95px 11px rgba(0, 0, 0, 0.0096), 0.52px 4.53px 6.44px rgba(0, 0, 0, 0.0157), 0.31px 2.76px 3.5px rgba(0, 0, 0, 0.02), 0.17px 1.52px 1.79px rgba(0, 0, 0, 0.0243), 0.08px 0.72px 0.9px rgba(0, 0, 0, 0.0304), 0.03px 0.25px 0.43px rgba(0, 0, 0, 0.04);';
 
 export interface ButtonProps extends Omit<MuiButtonProps, 'size'> {
   chunky?: boolean;
-  children: MuiButtonProps['children'] & { $$typeof?: symbol };
+  children: MuiButtonProps['children'] & { $$typeof?: symbol; props?: any };
   color?: 'primary' | 'secondary' | 'inherit';
   'data-testid'?: string;
 }
@@ -18,6 +20,8 @@ const Button = ({
   disabled = false,
   ...props
 }: ButtonProps): JSX.Element => {
+  const theme = useTheme();
+
   if (
     children &&
     Object.keys(children).includes('$$typeof') &&
@@ -26,18 +30,119 @@ const Button = ({
     children.props.fontSize
   ) {
     return (
-      <IconButton color={color} disabled={disabled} size="large">
+      <IconButton color={color} disabled={disabled} size="large" {...props}>
         {children}
       </IconButton>
     );
   }
+
+  const containedPrimary = {
+    boxShadow: containedBoxShadow,
+    '&::before': {
+      backgroundColor: 'primary.dark',
+    },
+    '&:hover': {
+      backgroundColor: 'primary.main',
+    },
+    '&:active': {
+      backgroundColor: 'primaryStates.activeContained',
+    },
+    '&.Mui-disabled': {
+      backgroundColor: 'primaryStates.disabledBg',
+      color: 'primary.contrastText',
+    },
+  };
+
+  const containedSecondary = {
+    boxShadow: containedBoxShadow,
+    '&::before': {
+      backgroundColor: 'secondary.dark',
+    },
+    '&:hover': {
+      backgroundColor: 'secondary.main',
+    },
+    '&:active': {
+      backgroundColor: 'secondaryStates.activeContained',
+    },
+    '&.Mui-disabled': {
+      backgroundColor: 'secondaryStates.disabledBg',
+      color: 'secondary.contrastText',
+    },
+  };
+
+  const outlinedPrimary = {
+    boxShadow: containedBoxShadow,
+    '&::before': {
+      backgroundColor: 'primaryStates.hover',
+    },
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&:active': {
+      backgroundColor: 'primaryStates.activeOutlined',
+    },
+    '&.Mui-disabled': {
+      border: '1px solid',
+      borderColor: alpha(theme.palette.primary.main, 0.5),
+      color: alpha(theme.palette.primary.main, 0.5),
+    },
+  };
+
+  const outlinedSecondary = {
+    boxShadow: containedBoxShadow,
+    '&::before': {
+      backgroundColor: 'secondaryStates.hover',
+    },
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&:active': {
+      backgroundColor: 'secondaryStates.activeOutlined',
+    },
+    '&.Mui-disabled': {
+      border: '1px solid',
+      borderColor: alpha(theme.palette.secondary.main, 0.5),
+      color: alpha(theme.palette.secondary.main, 0.5),
+    },
+  };
+
+  const textPrimary = {
+    boxShadow: containedBoxShadow,
+    '&::before': {
+      backgroundColor: 'primaryStates.hover',
+    },
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&:active': {
+      backgroundColor: 'primaryStates.activeOutlined',
+    },
+    '&.Mui-disabled': {
+      color: alpha(theme.palette.primary.main, 0.5),
+    },
+  };
+
+  const textSecondary = {
+    boxShadow: containedBoxShadow,
+    '&::before': {
+      backgroundColor: 'secondaryStates.hover',
+    },
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&:active': {
+      backgroundColor: 'secondaryStates.activeOutlined',
+    },
+    '&.Mui-disabled': {
+      color: alpha(theme.palette.secondary.main, 0.5),
+    },
+  };
 
   return (
     <MuiButton
       variant={variant}
       color={color}
       disabled={disabled}
-      {...props}
       sx={{
         borderRadius: '3px',
         padding: chunky ? '15px 23px' : '5px 15px',
@@ -57,65 +162,14 @@ const Button = ({
             width: '100%',
           },
         },
-        '&.MuiButton-containedPrimary': {
-          border: '1px solid',
-          borderColor: 'primary.main',
-          boxShadow: containedBoxShadow,
-          '&::before': {
-            backgroundColor: 'primary.dark',
-          },
-          '&:hover': {
-            backgroundColor: 'primary.main',
-            boxShadow: containedBoxShadow,
-          },
-        },
-        '&.MuiButton-containedSecondary': {
-          border: '1px solid',
-          borderColor: 'secondary.main',
-          boxShadow: containedBoxShadow,
-          '&::before': {
-            backgroundColor: 'secondary.dark',
-          },
-          '&:hover': {
-            backgroundColor: 'secondary.main',
-            boxShadow: containedBoxShadow,
-          },
-        },
-        '&.MuiButton-outlinedPrimary': {
-          '&::before': {
-            backgroundColor: 'rgba(4, 91, 86,.06)',
-          },
-          '&:hover': {
-            backgroundColor: 'transparent',
-          },
-        },
-        '&.MuiButton-outlinedSecondary': {
-          '&::before': {
-            backgroundColor: 'rgba(238, 139, 58,.06)',
-          },
-          '&:hover': {
-            backgroundColor: 'transparent',
-          },
-        },
-        '&.MuiButton-textPrimary': {
-          border: '1px solid rgba(4, 91, 86, 0.1)',
-          '&::before': {
-            backgroundColor: 'rgba(4, 91, 86, 0.1)',
-          },
-          '&:hover': {
-            backgroundColor: 'transparent',
-          },
-        },
-        '&.MuiButton-textSecondary': {
-          border: '1px solid rgba(238, 139, 58, 0.1)',
-          '&::before': {
-            backgroundColor: 'rgba(238, 139, 58, 0.1)',
-          },
-          '&:hover': {
-            backgroundColor: 'transparent',
-          },
-        },
+        '&.MuiButton-containedPrimary': containedPrimary,
+        '&.MuiButton-containedSecondary': containedSecondary,
+        '&.MuiButton-outlinedPrimary': outlinedPrimary,
+        '&.MuiButton-outlinedSecondary': outlinedSecondary,
+        '&.MuiButton-textPrimary': textPrimary,
+        '&.MuiButton-textSecondary': textSecondary,
       }}
+      {...props}
     >
       {children}
     </MuiButton>

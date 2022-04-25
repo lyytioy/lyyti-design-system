@@ -1,18 +1,11 @@
 import { OptionsType } from './Autocomplete';
 import { Globe } from '../icons';
-import Select, { SelectProps } from './Select';
+import Select, { SingleSelectProps } from './Select';
 
-export type LanguageSelectProps<T = OptionsType> = Omit<SelectProps, 'adornment' | 'multiple'> & {
-  options: T[];
-  helperText?: string;
-  error?: boolean;
-  'data-testid'?: string;
-};
+export type LanguageSelectProps = Omit<SingleSelectProps, 'adornment' | 'multiple'>;
 
-const LanguageSelector = ({ options, ...props }: LanguageSelectProps): JSX.Element => {
-  return (
-    <Select {...(props as SelectProps)} adornment={<Globe fontSize="small" />} options={options} />
-  );
+const LanguageSelector = ({ ...props }: LanguageSelectProps): JSX.Element => {
+  return <Select multiple={false} adornment={<Globe fontSize="small" />} {...props} />;
 };
 
 export default LanguageSelector;

@@ -1,12 +1,12 @@
 import CircularProgress from './CircularProgress';
 import LinearProgress, { LinearProgressProps } from './LinearProgress';
 
-export interface ProgressProps extends LinearProgressProps {
-  color: 'primary' | 'secondary';
+export interface ProgressProps extends Omit<LinearProgressProps, 'color' | 'variant'> {
+  color?: 'primary' | 'secondary';
   size?: number | string;
-  type: 'circular' | 'linear';
+  type?: 'circular' | 'linear';
   value?: number;
-  variant: 'determinate' | 'indeterminate';
+  variant?: 'determinate' | 'indeterminate';
   'data-testid'?: string;
 }
 
@@ -21,10 +21,10 @@ const Progress = ({
   return (
     <>
       {type === 'circular' && (
-        <CircularProgress {...props} color={color} size={size} value={value} variant={variant} />
+        <CircularProgress color={color} size={size} value={value} variant={variant} {...props} />
       )}
       {type === 'linear' && (
-        <LinearProgress {...props} color={color} value={value} variant={variant} />
+        <LinearProgress color={color} value={value} variant={variant} {...props} />
       )}
     </>
   );

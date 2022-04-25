@@ -29,18 +29,17 @@ const Dialog = ({
 }: DialogProps): JSX.Element => {
   return (
     <MuiDialog fullScreen={fullScreen} open={open} onClose={onClose} {...props}>
-      <MuiDialogTitle>
+      <MuiDialogTitle sx={{ pr: 8 }}>
         {dialogTitle}
         <Button
           onClick={onClose as MouseEventHandler<HTMLButtonElement>}
           sx={{
-            position: 'absolute',
-            right: '24px',
-            padding: '4px',
-            width: 'min-content',
-            minWidth: '32px',
             borderRadius: '50%',
+            position: 'absolute',
+            top: 10,
+            right: 8,
           }}
+          data-testid="mui-dialog-close-button"
         >
           <Close fontSize="small" />
         </Button>
