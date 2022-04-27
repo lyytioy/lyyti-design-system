@@ -74,17 +74,17 @@ const Button = ({
   const containedDanger = {
     boxShadow: containedBoxShadow,
     '&::before': {
-      backgroundColor: 'danger.dark',
+      backgroundColor: 'error.dark',
     },
     '&:hover': {
-      backgroundColor: 'danger.main',
+      backgroundColor: 'error.main',
     },
     '&:active': {
-      backgroundColor: 'dangerStates.activeContained',
+      backgroundColor: 'errorStates.activeContained',
     },
     '&.Mui-disabled': {
-      backgroundColor: 'dangerStates.disabledBg',
-      color: 'danger.contrastText',
+      backgroundColor: 'errorStates.disabledBg',
+      color: 'error.contrastText',
     },
   };
 
@@ -127,18 +127,18 @@ const Button = ({
   const outlinedDanger = {
     boxShadow: containedBoxShadow,
     '&::before': {
-      backgroundColor: 'dangerStates.hover',
+      backgroundColor: 'errorStates.hover',
     },
     '&:hover': {
       backgroundColor: 'transparent',
     },
     '&:active': {
-      backgroundColor: 'dangerStates.activeOutlined',
+      backgroundColor: 'errorStates.activeOutlined',
     },
     '&.Mui-disabled': {
       border: '1px solid',
-      borderColor: alpha(theme.palette.danger.main, 0.5),
-      color: alpha(theme.palette.danger.main, 0.5),
+      borderColor: alpha(theme.palette.error.main, 0.5),
+      color: alpha(theme.palette.error.main, 0.5),
     },
   };
 
@@ -177,16 +177,16 @@ const Button = ({
   const textDanger = {
     boxShadow: containedBoxShadow,
     '&::before': {
-      backgroundColor: 'dangerStates.hover',
+      backgroundColor: 'errorStates.hover',
     },
     '&:hover': {
       backgroundColor: 'transparent',
     },
     '&:active': {
-      backgroundColor: 'dangerStates.activeOutlined',
+      backgroundColor: 'errorStates.activeOutlined',
     },
     '&.Mui-disabled': {
-      color: alpha(theme.palette.danger.main, 0.5),
+      color: alpha(theme.palette.error.main, 0.5),
     },
   };
 
