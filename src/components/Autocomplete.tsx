@@ -1,8 +1,20 @@
-import { Autocomplete as MuiAutocomplete } from '@mui/material';
+import { Autocomplete as MuiAutocomplete, ChipTypeMap } from '@mui/material';
 import { AutocompleteProps as MuiAutocompleteProps } from '@mui/material';
 import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
+
+declare module '@mui/material' {
+  interface AutocompleteProps<
+    T,
+    Multiple extends boolean | undefined,
+    DisableClearable extends boolean | undefined,
+    FreeSolo extends boolean | undefined,
+    ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
+  > {
+    getOptionLabel?: (option: OptionsType) => string;
+  }
+}
 
 export type OptionsType = {
   id: number | string;
@@ -28,7 +40,7 @@ export interface AutocompleteProps<T = OptionsType>
 
 const Autocomplete = ({
   adornment,
-  getOptionLabel = (option: OptionsType) => option.value ?? option,
+  getOptionLabel = (option: OptionsType) => option.value,
   label,
   size = 'medium',
   options,
