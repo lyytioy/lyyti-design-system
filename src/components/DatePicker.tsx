@@ -16,7 +16,6 @@ const isDisallowedYear = (date: Date) => {
 
 const DatePicker = ({
   allowAllYears = false,
-  showDaysOutsideCurrentMonth = true,
   InputProps = { color: 'primary', id: 'datepicker' },
   ...props
 }: DatePickerProps<Date>): JSX.Element => {
@@ -70,7 +69,6 @@ const DatePicker = ({
         },
       }}
       shouldDisableYear={!allowAllYears ? isDisallowedYear : undefined}
-      showDaysOutsideCurrentMonth={showDaysOutsideCurrentMonth}
       {...props}
       renderInput={(params) => {
         return <TextField {...(params as TextFieldProps)} {...InputProps} />;
