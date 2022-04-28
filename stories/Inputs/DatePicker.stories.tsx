@@ -61,16 +61,6 @@ Please install any of these date management libraries, @date-io adapter for it a
         },
       },
     },
-    showDaysOutsideCurrentMonth: {
-      control: { type: 'boolean' },
-      description: 'If true, days that have outsideCurrentMonth={true} are displayed.',
-      table: {
-        defaultValue: true,
-        type: {
-          summary: 'boolean',
-        },
-      },
-    },
   },
 } as Meta;
 

@@ -10,17 +10,16 @@ const TimePicker = ({ ampm = false, InputProps = {}, ...props }: TimePickerProps
   return (
     <MuiTimePicker
       ampm={ampm}
+      open={false}
       {...props}
-      PopperProps={{
-        // @ts-ignore
+      InputAdornmentProps={{
         sx: {
-          '& .MuiClockPicker-arrowSwitcher': {
-            width: '70px',
-
-            '& button:hover': {
-              backgroundColor: 'primary.light',
-            },
-          },
+          ml: '0px',
+        },
+      }}
+      OpenPickerButtonProps={{
+        sx: {
+          pointerEvents: 'none',
         },
       }}
       renderInput={(params) => <TextField {...(params as TextFieldProps)} {...InputProps} />}
