@@ -12,6 +12,11 @@ const TimePicker = ({ ampm = false, InputProps = {}, ...props }: TimePickerProps
       ampm={ampm}
       open={false}
       {...props}
+      InputAdornmentProps={{
+        sx: {
+          ml: '0px',
+        },
+      }}
       OpenPickerButtonProps={{
         sx: {
           pointerEvents: 'none',
