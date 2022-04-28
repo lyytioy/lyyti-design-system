@@ -11,7 +11,7 @@ export default {
   },
   argTypes: {
     color: {
-      options: ['primary', 'secondary', 'inherit'],
+      options: ['primary', 'secondary', 'danger', 'inherit'],
     },
     disabled: {
       control: { type: 'boolean' },
@@ -32,6 +32,11 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {};
 
+export const Danger = Template.bind({});
+Danger.args = {
+  color: 'danger'
+};
+
 export const OutlinedPrimary = Template.bind({});
 OutlinedPrimary.args = {
   color: 'primary',
@@ -43,6 +48,12 @@ OutlinedSecondary.args = {
   variant: 'outlined',
 };
 
+export const OutlinedDanger = Template.bind({});
+OutlinedDanger.args = {
+  color: 'danger',
+  variant: 'outlined',
+};
+
 export const TextPrimary = Template.bind({});
 TextPrimary.args = {
   color: 'primary',
@@ -51,6 +62,12 @@ TextPrimary.args = {
 
 export const TextSecondary = Template.bind({});
 TextSecondary.args = {
+  variant: 'text',
+};
+
+export const TextDanger = Template.bind({});
+TextDanger.args = {
+  color: 'danger',
   variant: 'text',
 };
 
