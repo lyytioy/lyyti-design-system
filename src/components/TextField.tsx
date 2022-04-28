@@ -28,6 +28,8 @@ const TextField = ({
   color = 'primary',
   error = false,
   helperText = '',
+  sx = {},
+  InputLabelProps = {},
   ...props
 }: TextFieldProps): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
@@ -35,7 +37,7 @@ const TextField = ({
 
   return (
     <MuiTextField
-      variant='outlined'
+      variant="outlined"
       fullWidth={fullWidth}
       size={size}
       error={error}
@@ -52,7 +54,7 @@ const TextField = ({
         ...(props.InputProps ?? {}),
         notched: false,
       }}
-      InputLabelProps={{ shrink: true }}
+      InputLabelProps={{ shrink: true, ...InputLabelProps }}
       sx={{
         '& label': {
           color: overrideColor ?? 'grey.400',
@@ -85,6 +87,7 @@ const TextField = ({
           {
             color: overrideColor,
           },
+        ...sx,
       }}
       {...props}
     />
