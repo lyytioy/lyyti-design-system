@@ -20,6 +20,7 @@ const Button = (
     variant = 'contained',
     color = 'secondary',
     disabled = false,
+    sx = {},
     ...props
   }: ButtonProps,
   ref: Ref<HTMLButtonElement>
@@ -228,6 +229,7 @@ const Button = (
         '&.MuiButton-textPrimary': textPrimary,
         '&.MuiButton-textSecondary': textSecondary,
         '&.MuiButton-textError': textDanger,
+        ...sx,
       }}
       {...props}
     >
