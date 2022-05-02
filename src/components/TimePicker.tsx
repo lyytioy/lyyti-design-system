@@ -10,7 +10,6 @@ const TimePicker = ({ ampm = false, InputProps = {}, ...props }: TimePickerProps
   return (
     <MuiTimePicker
       ampm={ampm}
-      open={false}
       {...props}
       InputAdornmentProps={{
         sx: {
