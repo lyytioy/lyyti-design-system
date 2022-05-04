@@ -15,25 +15,26 @@ export type TextFieldProps = {
   error?: boolean;
   helperText?: string;
   'data-testid'?: string;
-  ref: Ref<HTMLInputElement>;
 } & Omit<
   OutlinedTextFieldProps,
   'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel'
 >;
 
-const TextField = ({
-  endAdornment,
-  fullWidth = true,
-  size = 'small',
-  startAdornment,
-  color = 'primary',
-  error = false,
-  helperText = '',
-  sx = {},
-  InputLabelProps = {},
-  ref,
-  ...props
-}: TextFieldProps): JSX.Element => {
+const TextField = (
+  {
+    endAdornment,
+    fullWidth = true,
+    size = 'small',
+    startAdornment,
+    color = 'primary',
+    error = false,
+    helperText = '',
+    sx = {},
+    InputLabelProps = {},
+    ...props
+  }: TextFieldProps,
+  ref: Ref<HTMLInputElement>
+): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
   const overrideColor = color === 'white' ? 'common.white' : undefined;
 
