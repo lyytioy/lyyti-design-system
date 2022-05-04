@@ -4,8 +4,10 @@ import {
   GridColumns as MuiGridColumns,
   GridRowsProp as MuiGridRowsProp,
   GridSelectionModel as MuiGridSelectionModel,
+  GridColumnHeaderParams as MuiGridColumnHeaderParams,
 } from '@mui/x-data-grid';
 
+export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
 export interface GridColumns extends MuiGridColumns {}
 export interface GridRowsProp extends MuiGridRowsProp {}
 export interface GridSelectionModel extends MuiGridSelectionModel {}
