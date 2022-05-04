@@ -1,6 +1,7 @@
 import MuiDatePicker, { DatePickerProps as MuiDatepickerProps } from '@mui/lab/DatePicker';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
+import { forwardRef, Ref } from 'react';
 
 export interface DatePickerProps<TDate>
   extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
@@ -14,11 +15,14 @@ const isDisallowedYear = (date: Date) => {
   return year < 2006 || year > maxYear;
 };
 
-const DatePicker = ({
-  allowAllYears = false,
-  InputProps = { color: 'primary', id: 'datepicker' },
-  ...props
-}: DatePickerProps<Date>): JSX.Element => {
+const DatePicker = (
+  {
+    allowAllYears = false,
+    InputProps = { color: 'primary', id: 'datepicker' },
+    ...props
+  }: DatePickerProps<Date>,
+  ref: Ref<HTMLInputElement>
+): JSX.Element => {
   return (
     <MuiDatePicker
       components={{ OpenPickerIcon: (props) => Calendar({ fontSize: 'small', ...props }) }}
@@ -71,10 +75,10 @@ const DatePicker = ({
       shouldDisableYear={!allowAllYears ? isDisallowedYear : undefined}
       {...props}
       renderInput={(params) => {
-        return <TextField {...(params as TextFieldProps)} {...InputProps} />;
+        return <TextField {...(params as TextFieldProps)} {...InputProps} ref={ref} />;
       }}
     />
   );
 };
 
-export default DatePicker;
+export default forwardRef(DatePicker);
