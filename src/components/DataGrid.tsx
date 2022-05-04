@@ -6,6 +6,7 @@ import {
   GridSelectionModel as MuiGridSelectionModel,
 } from '@mui/x-data-grid';
 
+export * from '@mui/x-data-grid';
 export interface GridColumns extends MuiGridColumns {}
 export interface GridRowsProp extends MuiGridRowsProp {}
 export interface GridSelectionModel extends MuiGridSelectionModel {}
