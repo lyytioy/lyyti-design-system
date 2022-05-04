@@ -33,9 +33,9 @@ const TextField = (
     InputLabelProps = {},
     ...props
   }: TextFieldProps,
-  ref: Ref<HTMLInputElement>
+  ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-  const muiTextField = useRef<HTMLInputElement>(null);
+  const muiTextField = useRef<HTMLDivElement>(null);
   const overrideColor = color === 'white' ? 'common.white' : undefined;
 
   return (
