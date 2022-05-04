@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { forwardRef, Ref, useRef } from 'react';
 import { TextField as MuiTextField, OutlinedTextFieldProps } from '@mui/material';
 import InputAdornment from './InputAdornment';
 
@@ -20,18 +20,21 @@ export type TextFieldProps = {
   'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel'
 >;
 
-const TextField = ({
-  endAdornment,
-  fullWidth = true,
-  size = 'small',
-  startAdornment,
-  color = 'primary',
-  error = false,
-  helperText = '',
-  sx = {},
-  InputLabelProps = {},
-  ...props
-}: TextFieldProps): JSX.Element => {
+const TextField = (
+  {
+    endAdornment,
+    fullWidth = true,
+    size = 'small',
+    startAdornment,
+    color = 'primary',
+    error = false,
+    helperText = '',
+    sx = {},
+    InputLabelProps = {},
+    ...props
+  }: TextFieldProps,
+  ref: Ref<HTMLInputElement>
+): JSX.Element => {
   const muiTextField = useRef<HTMLInputElement>(null);
   const overrideColor = color === 'white' ? 'common.white' : undefined;
 
@@ -89,9 +92,10 @@ const TextField = ({
           },
         ...sx,
       }}
+      ref={ref}
       {...props}
     />
   );
 };
 
-export default TextField;
+export default forwardRef(TextField);
