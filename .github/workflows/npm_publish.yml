@@ -1,4 +1,4 @@
-# This workflow creates a Tag, GitHub release and publishes the built package to NPM
+# This workflow creates a Tag, GitHub release, publishes the built package to NPM and to Github packages
 
 name: Publish Lyyti Design System
 

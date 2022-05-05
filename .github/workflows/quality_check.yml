@@ -1,4 +1,5 @@
----
+# This workflow runs lint and type checking scripts
+
 name: Quality check (lint + type checking)
 
 on:
