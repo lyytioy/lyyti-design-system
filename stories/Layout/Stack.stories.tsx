@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Stack, { StackProps } from '../../src/components/Stack';
+import { Stack, StackProps } from '../../src';
 import { Rect } from '../Feedback/Skeleton.stories';
 
 export default {
