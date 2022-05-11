@@ -40,7 +40,7 @@ jobs:
         with:
           tag: ${{ env.TAG }}
           name: Release ${{ env.TAG }}
-          body: ${{ github.event.pull_request.pull_request.body }}
+          body: ${{ github.event.pull_request.body }}
         env:
           TAG: v${{ steps.package-version.outputs.current-version }}
 
