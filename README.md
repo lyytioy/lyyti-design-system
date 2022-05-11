@@ -54,30 +54,21 @@ as soon as possible.
 
 Please make sure that you use our ESLint and Prettier rules and always use Typescript.
 
-When you create a pull request with changes make sure to also bump the package.json version.
-Depending on what you have done run one of the following commands
+### Version bumping
 
-Bump patch version.
+When you create a pull request with changes make sure to also bump the package.json version with one of the commands below. If you are unsure which one you should bump, ask in your PR.
 
 ```shell
 npm --no-git-tag-version version patch # Goes from 1.0.0 -> 1.0.1
 ```
 
-Bump minor version.
+Or replace patch with minor (1.0.0 -> 1.1.0) or major (1.0.0 -> 2.0.0).
 
-```shell
-npm --no-git-tag-version version minor # Goes from 1.0.0 -> 1.1.0
-```
+### Release
 
-Bump major version.
+When your pull request is merged to `next`, you should make a release PR from `next` to `main`. Typically a release PR should have title of "Version 1.0.1" and the description list what changes are introduced.
 
-```shell
-npm --no-git-tag-version version major # Goes from 1.0.0 -> 2.0.0
-```
-
-If you are un sure which one you should bump ask in your PR.
-
-Our publishing is completely automated. As soon as something is merged to main a tag and release are created
+Our release process from there on is completely automated. As soon as a PR is merged to main a tag and release are created
 then that is published to the NPM registry.
 
 ## Get started

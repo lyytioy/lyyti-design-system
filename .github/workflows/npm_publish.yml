@@ -3,8 +3,11 @@
 name: Publish Lyyti Design System
 
 on:
-  push:
-    branches: [main]
+  pull_request:
+    branches:
+      - 'main'
+    types:
+      - 'closed'
     paths:
       - 'src/**'
       - 'public/**'
@@ -20,6 +23,7 @@ on:
 
 jobs:
   create-release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -36,10 +40,12 @@ jobs:
         with:
           tag: ${{ env.TAG }}
           name: Release ${{ env.TAG }}
+          body: ${{ github.event.pull_request.body }}
         env:
           TAG: v${{ steps.package-version.outputs.current-version }}
 
   publish-npm:
+    if: github.event.pull_request.merged == true
     needs: create-release
     runs-on: ubuntu-latest
     steps:
@@ -57,6 +63,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-github:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: read
