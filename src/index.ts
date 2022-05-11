@@ -43,6 +43,8 @@ export { default as Search } from './components/Search';
 export { default as Select } from './components/Select';
 export { default as Skeleton } from './components/Skeleton';
 export { default as Snackbar } from './components/Snackbar';
+export { default as Stack } from '@mui/material/Stack';
+export type { StackProps } from '@mui/material/Stack';
 export { default as StepButton } from './components/StepButton';
 export { default as StepConnector } from './components/StepConnector';
 export { default as StepLabel } from './components/StepLabel';
