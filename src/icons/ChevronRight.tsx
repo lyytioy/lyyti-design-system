@@ -11,7 +11,7 @@ const ChevronRight = (props: any) =>
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M.75.75l10.27 10.27L.75 21.29"
+      d="M6.9,1.7L17.1,12L6.9,22.3"
     />
   );
 

@@ -1,41 +1,18 @@
-# This workflow runs lint scripts and compares package.json version with the main branch
+# This workflow runs lint and type checking scripts
 
-name: Quality check
+name: Quality check (lint + type checking)
 
 on:
   pull_request:
-    branches: [main]
-    paths:
-      - 'src/**'
-      - 'stories/**'
-      - 'public/**'
-      - 'typings/**'
 
 jobs:
-  compare-versions:
-    runs-on: 'ubuntu-latest'
+  run-linters:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: main
-      - name: Get main branch package.json version
-        id: version-in-main
-        uses: martinbeentjes/npm-get-version-action@v1.1.0
-      - uses: actions/checkout@v2
-      - name: Get current package.json version
-        id: current-package-version
-        uses: martinbeentjes/npm-get-version-action@v1.1.0
-      - name: Compare package.json versions
-        if: ${{ steps.version-in-main.outputs.current-version == steps.current-package-version.outputs.current-version }}
-        run: |
-          echo "You need to have a different package.json version than the one in main"
-          exit 1
-
-  lint-files:
-    runs-on: 'ubuntu-latest'
-    steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
-      - name: Run Lint
+      - name: Run ESLint
         run: npm run lint
+      - name: Check types
+        run: npm run check-types
