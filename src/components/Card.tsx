@@ -7,8 +7,8 @@ import {
 } from '@mui/material';
 
 export interface CardProps
-  extends Omit<MuiCardProps, 'elevation' | 'raised' | 'square' | 'variant'> {
-  title?: string;
+  extends Omit<MuiCardProps, 'elevation' | 'raised' | 'square' | 'variant' | 'title'> {
+  title?: JSX.Element | string;
   subheader?: JSX.Element | string;
   headerAction?: JSX.Element;
   headerAvatar?: JSX.Element;
