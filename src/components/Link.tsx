@@ -7,6 +7,7 @@ export interface LinkProps extends MuiLinkProps {
 const Link = (props: LinkProps): JSX.Element => {
   return (
     <MuiLink
+      {...props}
       sx={{
         color: 'primary.light',
         fontSize: '16px',
@@ -32,7 +33,6 @@ const Link = (props: LinkProps): JSX.Element => {
         },
         ...props.sx
       }}
-      {...props}
     />
   );
 };
