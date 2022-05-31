@@ -30,6 +30,7 @@ const Link = (props: LinkProps): JSX.Element => {
             color: 'primary.light',
           },
         },
+        ...props.sx
       }}
       {...props}
     />
