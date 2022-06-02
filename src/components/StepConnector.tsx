@@ -8,7 +8,7 @@ export type StepConnectorProps = MuiStepConnectorProps;
 
 const StepConnector = (
   { sx = {}, ...props }: StepConnectorProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLSpanElement>
 ): JSX.Element => {
   return (
     <MuiStepConnector

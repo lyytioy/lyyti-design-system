@@ -3,7 +3,7 @@ import { forwardRef, Ref } from 'react';
 
 export type StepLabelProps = MuiStepLabelProps;
 
-const StepLabel = (props: StepLabelProps, ref: Ref<unknown>): JSX.Element => {
+const StepLabel = (props: StepLabelProps, ref: Ref<HTMLSpanElement>): JSX.Element => {
   return <MuiStepLabel ref={ref} {...props} />;
 };
 
