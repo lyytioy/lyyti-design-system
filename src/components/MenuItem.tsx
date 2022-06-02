@@ -3,7 +3,7 @@ import { forwardRef, Ref } from 'react';
 
 // Workaround for fixing the unassignable type {button: boolean | undefined} to {button: true | undefined}
 export interface MenuItemProps extends MuiMenuItemProps {
-  button: true | undefined;
+  button?: true;
 }
 
 const MenuItem = ({ sx = {}, ...props }: MenuItemProps, ref: Ref<HTMLLIElement>): JSX.Element => {

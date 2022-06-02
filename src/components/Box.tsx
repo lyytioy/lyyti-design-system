@@ -3,7 +3,7 @@ import { forwardRef, Ref } from 'react';
 
 export type BoxProps = MuiBoxProps;
 
-const Box = (props: BoxProps, ref: Ref<HTMLDivElement>): JSX.Element => {
+const Box = (props: BoxProps, ref: Ref<unknown>): JSX.Element => {
   return <MuiBox ref={ref} {...props} />;
 };
 

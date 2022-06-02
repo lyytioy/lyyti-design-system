@@ -8,7 +8,7 @@ export type FormControlLabelProps = MuiFormControlLabelProps;
 
 const FormControlLabel = (
   { sx = {}, ...props }: FormControlLabelProps,
-  ref: Ref<HTMLLabelElement>
+  ref: Ref<unknown>
 ): JSX.Element => {
   return (
     <MuiFormControlLabel
