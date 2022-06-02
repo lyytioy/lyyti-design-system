@@ -2,12 +2,17 @@ import {
   StepConnector as MuiStepConnector,
   StepConnectorProps as MuiStepConnectorProps,
 } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export type StepConnectorProps = MuiStepConnectorProps;
 
-const StepConnector = (props: StepConnectorProps): JSX.Element => {
+const StepConnector = (
+  { sx = {}, ...props }: StepConnectorProps,
+  ref: Ref<unknown>
+): JSX.Element => {
   return (
     <MuiStepConnector
+      ref={ref}
       sx={{
         '& .MuiStepConnector-line': {
           border: '1px solid',
@@ -28,10 +33,11 @@ const StepConnector = (props: StepConnectorProps): JSX.Element => {
           left: 'calc(-50% + 35px)',
           right: 'calc(50% + 35px)',
         },
+        ...sx,
       }}
       {...props}
     />
   );
 };
 
-export default StepConnector;
+export default forwardRef(StepConnector);

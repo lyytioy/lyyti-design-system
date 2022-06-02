@@ -1,4 +1,4 @@
-import { MouseEventHandler } from 'react';
+import { forwardRef, MouseEventHandler, Ref } from 'react';
 import {
   Dialog as MuiDialog,
   DialogTitle as MuiDialogTitle,
@@ -18,17 +18,20 @@ export interface DialogProps extends MuiDialogProps {
   open: boolean;
 }
 
-const Dialog = ({
-  children,
-  dialogActions,
-  dialogTitle,
-  fullScreen = false,
-  onClose,
-  open,
-  ...props
-}: DialogProps): JSX.Element => {
+const Dialog = (
+  {
+    children,
+    dialogActions,
+    dialogTitle,
+    fullScreen = false,
+    onClose,
+    open,
+    ...props
+  }: DialogProps,
+  ref: Ref<HTMLDivElement>
+): JSX.Element => {
   return (
-    <MuiDialog fullScreen={fullScreen} open={open} onClose={onClose} {...props}>
+    <MuiDialog ref={ref} fullScreen={fullScreen} open={open} onClose={onClose} {...props}>
       <MuiDialogTitle sx={{ pr: 8 }}>
         {dialogTitle}
         <Button
@@ -50,4 +53,4 @@ const Dialog = ({
   );
 };
 
-export default Dialog;
+export default forwardRef(Dialog);

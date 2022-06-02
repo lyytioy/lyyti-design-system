@@ -1,4 +1,5 @@
 import { Stepper as MuiStepper, StepperProps as MuiStepperProps, Theme } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export type OrientationTypes = 'horizontal';
 
@@ -6,9 +7,10 @@ export type StepperProps = Omit<MuiStepperProps, 'square' | 'variant' | 'elevati
   orientation: OrientationTypes;
 };
 
-const Stepper = (props: StepperProps): JSX.Element => {
+const Stepper = ({ sx = {}, ...props }: StepperProps, ref: Ref<HTMLDivElement>): JSX.Element => {
   return (
     <MuiStepper
+      ref={ref}
       sx={{
         backgroundColor: 'transparent',
         '& .MuiStep-horizontal': {
@@ -52,10 +54,11 @@ const Stepper = (props: StepperProps): JSX.Element => {
         '& .MuiStepLabel-iconContainer': {
           boxSizing: 'border-box',
         },
+        ...sx,
       }}
       {...props}
     />
   );
 };
 
-export default Stepper;
+export default forwardRef(Stepper);

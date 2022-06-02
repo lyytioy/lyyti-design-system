@@ -1,12 +1,14 @@
 import { Link as MuiLink, LinkProps as MuiLinkProps } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export interface LinkProps extends MuiLinkProps {
   'data-testid'?: string;
 }
 
-const Link = ({ sx, ...props }: LinkProps): JSX.Element => {
+const Link = ({ sx, ...props }: LinkProps, ref: Ref<HTMLAnchorElement>): JSX.Element => {
   return (
     <MuiLink
+      ref={ref}
       sx={{
         color: 'primary.light',
         fontSize: '16px',
@@ -30,11 +32,11 @@ const Link = ({ sx, ...props }: LinkProps): JSX.Element => {
             color: 'primary.light',
           },
         },
-        ...sx
+        ...sx,
       }}
       {...props}
     />
   );
 };
 
-export default Link;
+export default forwardRef(Link);

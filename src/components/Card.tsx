@@ -5,6 +5,7 @@ import {
   CardActions as MuiCardActions,
   CardContent as MuiCardContent,
 } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export interface CardProps
   extends Omit<MuiCardProps, 'elevation' | 'raised' | 'square' | 'variant' | 'title'> {
@@ -26,10 +27,11 @@ const Card = ({
   actions,
   headerBackgroundColor = 'inherit',
   children,
+  sx={},
   ...props
-}: CardProps): JSX.Element => {
+}: CardProps, ref: Ref<HTMLDivElement>): JSX.Element => {
   return (
-    <MuiCard sx={{ borderRadius: '3px', border: '1px solid', borderColor: 'grey.100' }} {...props}>
+    <MuiCard ref={ref} sx={{ borderRadius: '3px', border: '1px solid', borderColor: 'grey.100', ...sx }} {...props}>
       {(title || subheader) && (
         <MuiCardHeader
           title={title}
@@ -53,4 +55,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default forwardRef(Card);
