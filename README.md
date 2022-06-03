@@ -41,10 +41,17 @@ Make sure to clone the repository and do the following
 
 1. Run `npm run build`
 2. Run `cd dist`
-3. Run `npm ci`
+3. Run `npm install`
 4. Run `npm link`
 5. Go to your own project directory
 6. Run `npm link @lyyti/design-system`
+
+If you run into an `Invalid hook` error in the project, here's what to do.
+The error is about having two copies of the react packace caused by the link. More info can be found [in the React docs](https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react).
+
+- Go to the design system directory
+- Run `npm link [..path/to/yourproject]/node_modules/react`
+- Repeat steps `5` and `6` of the linking process
 
 ## Contribute
 
