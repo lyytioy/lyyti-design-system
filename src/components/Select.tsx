@@ -1,6 +1,7 @@
 import { MenuItem } from '@mui/material';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
+import { forwardRef, Ref } from 'react';
 
 type CommonProps = {
   options?: AutocompleteProps['options'];
@@ -18,13 +19,10 @@ export type SingleSelectProps = Omit<
 
 export type SelectProps = MultipleSelectProps | SingleSelectProps;
 
-const Select = ({
-  adornment,
-  options = [],
-  multiple = false,
-  'data-testid': testid,
-  ...props
-}: SelectProps): JSX.Element => {
+const Select = (
+  { adornment, options = [], multiple = false, 'data-testid': testid, ...props }: SelectProps,
+  ref: Ref<unknown>
+): JSX.Element => {
   if (multiple) {
     return (
       <Autocomplete
@@ -33,6 +31,7 @@ const Select = ({
         disableClearable
         data-testid={testid}
         {...(props as MultipleSelectProps)}
+        ref={ref}
       />
     );
   }
@@ -54,6 +53,7 @@ const Select = ({
       }}
       inputProps={{ 'data-testid': testid }}
       {...(props as SingleSelectProps)}
+      ref={ref as Ref<HTMLDivElement>}
     >
       {options.map(({ id, value: label, disabled }) => (
         <MenuItem key={id} value={id} disabled={disabled}>
@@ -64,4 +64,4 @@ const Select = ({
   );
 };
 
-export default Select;
+export default forwardRef(Select);
