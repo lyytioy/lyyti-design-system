@@ -1,5 +1,6 @@
 // https://www.learnstorybook.com/design-systems-for-developers/react/en/distribute/
 export { default as ThemeSelector } from './themes/ThemeSelector';
+export { default as Accordion } from './components/Accordion';
 export { default as Alert } from './components/Alert';
 export { default as Avatar } from './components/Avatar';
 export { default as Box } from './components/Box';
