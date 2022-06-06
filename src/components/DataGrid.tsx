@@ -6,6 +6,7 @@ import {
   GridSelectionModel as MuiGridSelectionModel,
   GridColumnHeaderParams as MuiGridColumnHeaderParams,
 } from '@mui/x-data-grid';
+import { forwardRef, Ref } from 'react';
 
 export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
 export interface GridColumns extends MuiGridColumns {}
@@ -22,16 +23,21 @@ export interface DataGridProps extends MuiDataGridProps {
   pageSize?: number;
 }
 
-const DataGrid = ({
-  autoHeight = true,
-  checkboxSelection = false,
-  disableColumnMenu = false,
-  hideFooter = false,
-  pageSize = 100,
-  ...props
-}: DataGridProps): JSX.Element => {
+const DataGrid = (
+  {
+    autoHeight = true,
+    checkboxSelection = false,
+    disableColumnMenu = false,
+    hideFooter = false,
+    pageSize = 100,
+    sx = {},
+    ...props
+  }: DataGridProps,
+  ref: Ref<HTMLDivElement>
+): JSX.Element => {
   return (
     <MuiDataGrid
+      ref={ref}
       autoHeight={autoHeight}
       checkboxSelection={checkboxSelection}
       disableColumnMenu={disableColumnMenu}
@@ -44,10 +50,11 @@ const DataGrid = ({
         '& .MuiDataGrid-columnHeaders': {
           backgroundColor: 'grey.50',
         },
+        ...sx,
       }}
       {...props}
     />
   );
 };
 
-export default DataGrid;
+export default forwardRef(DataGrid);

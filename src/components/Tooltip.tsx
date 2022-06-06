@@ -1,4 +1,5 @@
 import { Tooltip as MuiTooltip, TooltipProps as MuiTooltipProps } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export interface TooltipProps extends MuiTooltipProps {
   arrow?: boolean;
@@ -19,13 +20,10 @@ export interface TooltipProps extends MuiTooltipProps {
   'data-testid'?: string;
 }
 
-const Tooltip = ({
-  arrow = false,
-  placement = 'bottom',
-  children,
-  title,
-  ...props
-}: TooltipProps): JSX.Element => {
+const Tooltip = (
+  { arrow = false, placement = 'bottom', children, title, ...props }: TooltipProps,
+  ref: Ref<unknown>
+): JSX.Element => {
   return (
     <MuiTooltip
       title={title}
@@ -35,6 +33,7 @@ const Tooltip = ({
         tooltip: { sx: { fontSize: '12px', backgroundColor: 'grey.400', borderRadius: '3px' } },
         arrow: { sx: { fontSize: '8px', color: 'grey.400' } },
       }}
+      ref={ref}
       {...props}
     >
       {children}
@@ -42,4 +41,4 @@ const Tooltip = ({
   );
 };
 
-export default Tooltip;
+export default forwardRef(Tooltip);

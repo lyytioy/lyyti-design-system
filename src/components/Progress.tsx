@@ -1,3 +1,4 @@
+import { forwardRef, Ref } from 'react';
 import CircularProgress from './CircularProgress';
 import LinearProgress, { LinearProgressProps } from './LinearProgress';
 
@@ -10,24 +11,34 @@ export interface ProgressProps extends Omit<LinearProgressProps, 'color' | 'vari
   'data-testid'?: string;
 }
 
-const Progress = ({
-  color = 'primary',
-  size = 40,
-  type = 'circular',
-  value,
-  variant = 'indeterminate',
-  ...props
-}: ProgressProps): JSX.Element => {
+const Progress = (
+  {
+    color = 'primary',
+    size = 40,
+    type = 'circular',
+    value,
+    variant = 'indeterminate',
+    ...props
+  }: ProgressProps,
+  ref: Ref<unknown>
+): JSX.Element => {
   return (
     <>
       {type === 'circular' && (
-        <CircularProgress color={color} size={size} value={value} variant={variant} {...props} />
+        <CircularProgress
+          ref={ref}
+          color={color}
+          size={size}
+          value={value}
+          variant={variant}
+          {...props}
+        />
       )}
       {type === 'linear' && (
-        <LinearProgress color={color} value={value} variant={variant} {...props} />
+        <LinearProgress ref={ref} color={color} value={value} variant={variant} {...props} />
       )}
     </>
   );
 };
 
-export default Progress;
+export default forwardRef(Progress);

@@ -1,9 +1,19 @@
 import { InputLabel as MuiInputLabel, InputLabelProps as MuiInputLabelProps } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export type InputLabelProps = MuiInputLabelProps;
 
-const InputLabel = (props: InputLabelProps): JSX.Element => {
-  return <MuiInputLabel sx={{ color: 'grey.400', letterSpacing: '0.15px' }} {...props} />;
+const InputLabel = (
+  { sx = {}, ...props }: InputLabelProps,
+  ref: Ref<HTMLLabelElement>
+): JSX.Element => {
+  return (
+    <MuiInputLabel
+      ref={ref}
+      sx={{ color: 'grey.400', letterSpacing: '0.15px', ...sx }}
+      {...props}
+    />
+  );
 };
 
-export default InputLabel;
+export default forwardRef(InputLabel);

@@ -1,10 +1,12 @@
 import { Switch as MuiSwitch, SwitchProps as MuiSwitchProps } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export type SwitchProps = MuiSwitchProps;
 
-const Switch = (props: SwitchProps): JSX.Element => {
+const Switch = ({ sx = {}, ...props }: SwitchProps, ref: Ref<HTMLButtonElement>): JSX.Element => {
   return (
     <MuiSwitch
+      ref={ref}
       sx={{
         width: '54px',
         height: '36px',
@@ -52,10 +54,11 @@ const Switch = (props: SwitchProps): JSX.Element => {
             padding: '5px',
           },
         },
+        ...sx,
       }}
       {...props}
     />
   );
 };
 
-export default Switch;
+export default forwardRef(Switch);

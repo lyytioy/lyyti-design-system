@@ -23,7 +23,7 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
     setAnchorEl(null);
   };
 
-  const selectItem = (event: ReactMouseEvent<HTMLLIElement, MouseEvent>, id: number) => {
+  const selectItem = (_event: ReactMouseEvent<HTMLLIElement, MouseEvent>, id: number) => {
     props.onSelect(id);
     handleClose();
   };

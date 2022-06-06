@@ -25,7 +25,7 @@ const DatePicker = (
 ): JSX.Element => {
   return (
     <MuiDatePicker
-      components={{ OpenPickerIcon: (props) => Calendar({ fontSize: 'small', ...props }) }}
+      components={{ OpenPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
       PaperProps={{
         sx: {
           '& .MuiPickersDay-today': {
