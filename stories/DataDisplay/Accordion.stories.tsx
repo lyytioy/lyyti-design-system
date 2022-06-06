@@ -37,6 +37,7 @@ export default {
     },
     elevation: {
       control: { type: 'number' },
+      defaultValue: 0,
       table: { type: { summary: 'number' }, defaultValue: { summary: 0 } },
       description:
         'Shadow depth, corresponds to `dp` in the spec. It accepts values between 0 and 24 inclusive.',
@@ -54,9 +55,15 @@ export default {
       defaultValue: false,
     },
     expandIcon: {
-      description: 'Icon displayed next to the title',
+      description: 'Icon displayed in the accordion summary section',
       control: false,
       table: { type: { summary: 'ReactNode' }, defaultValue: { summary: '<ChevronDown />' } },
+    },
+    expandIconInline: {
+      description: 'If `true`, the icon is displayed right next to the title',
+      control: { type: 'boolean'},
+      table: { type: { summary: 'boolean' }, defaultValue: { summary: 'false' } },
+      defaultValue: false
     },
   },
 } as Meta;

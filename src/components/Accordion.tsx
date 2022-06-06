@@ -13,13 +13,17 @@ export interface AccordionProps extends MuiAccordionProps {
   title: string;
   titleProps?: TypographyProps;
   expandIcon?: React.ReactNode;
+  expandIconInline?: boolean;
 }
 
 const Accordion = (
   {
     title,
-    titleProps = {},
+    titleProps = {
+      fontSize: '24px',
+    },
     expandIcon = <ChevronDown sx={{ color: 'text.primary' }} />,
+    expandIconInline,
     elevation = 0,
     children,
     sx,
@@ -34,7 +38,12 @@ const Accordion = (
         sx={{
           justifyContent: 'flex-start',
           columnGap: 2,
-          '& .MuiAccordionSummary-content': { flexGrow: 0 },
+          '& .MuiAccordionSummary-content': { flexGrow: expandIconInline ? 0 : 1 },
+          '& .MuiSvgIcon-root': {
+            fontSize: `calc(${titleProps.fontSize}${
+              typeof titleProps.fontSize === 'number' ? 'px' : ''
+            } * 0.75)`,
+          },
         }}
       >
         <Typography fontWeight="bold" fontSize="24px" {...titleProps}>
