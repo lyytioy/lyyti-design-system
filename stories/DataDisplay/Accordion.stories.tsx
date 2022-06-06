@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { modifyExcludedParams } from '../../.storybook/excludedParams';
-import { Skeleton } from '../../src';
+import { Skeleton, Typography } from '../../src';
 import Accordion, { AccordionProps } from '../../src/components/Accordion';
 import { Stack } from '@mui/material';
+import { useState } from 'react';
 
 export default {
   title: 'Components/Data Display/Accordion',
@@ -76,4 +76,56 @@ Default.args = {
       <Skeleton key={3} height={100} variant="rectangular" />
     </Stack>
   ),
+};
+
+export const Multiple = () => (
+  <div style={{ width: '700px' }}>
+    {['First', 'Second'].map((a) => (
+      <Accordion key={a} title={`${a} accordion`}>
+        <Typography>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio necessitatibus impedit
+          recusandae voluptate accusamus eaque, dicta aliquid aspernatur quo minima officiis hic
+          alias, sunt itaque totam error pariatur est architecto!
+        </Typography>
+        <Typography>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio necessitatibus impedit
+          recusandae voluptate accusamus eaque, dicta aliquid aspernatur quo minima officiis hic
+          alias, sunt itaque totam error pariatur est architecto!
+        </Typography>
+      </Accordion>
+    ))}
+  </div>
+);
+
+export const Controlled = () => {
+  type PanelId = 'first' | 'second' | 'third';
+  const [expanded, setExpanded] = useState<PanelId | null>(null);
+
+  const handleChange = (panel: PanelId) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
+    setExpanded(isExpanded ? panel : null);
+  };
+
+  return (
+    <div style={{ width: '700px' }}>
+      {['First', 'Second', 'Third'].map((a) => (
+        <Accordion
+          key={a}
+          title={`${a} accordion`}
+          expanded={expanded === a.toLowerCase()}
+          onChange={handleChange(a.toLowerCase() as PanelId)}
+        >
+          <Typography>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio necessitatibus impedit
+            recusandae voluptate accusamus eaque, dicta aliquid aspernatur quo minima officiis hic
+            alias, sunt itaque totam error pariatur est architecto!
+          </Typography>
+          <Typography>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio necessitatibus impedit
+            recusandae voluptate accusamus eaque, dicta aliquid aspernatur quo minima officiis hic
+            alias, sunt itaque totam error pariatur est architecto!
+          </Typography>
+        </Accordion>
+      ))}
+    </div>
+  );
 };
