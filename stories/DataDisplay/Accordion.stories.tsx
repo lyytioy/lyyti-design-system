@@ -78,6 +78,19 @@ Default.args = {
   ),
 };
 
+export const Outlined = Template.bind({});
+Outlined.args = {
+  variant: 'outlined',
+  title: 'Outlined accordion',
+  children: (
+    <Stack spacing={2}>
+      <Skeleton key={1} height={100} variant="rectangular" />
+      <Skeleton key={2} height={100} variant="rectangular" />
+      <Skeleton key={3} height={100} variant="rectangular" />
+    </Stack>
+  ),
+};
+
 export const Multiple = () => (
   <div style={{ width: '700px' }}>
     {['First', 'Second'].map((a) => (
@@ -110,7 +123,7 @@ export const Controlled = () => {
       {['First', 'Second', 'Third'].map((a) => (
         <Accordion
           key={a}
-          title={`${a} accordion`}
+          title={`${a} controlled accordion`}
           expanded={expanded === a.toLowerCase()}
           onChange={handleChange(a.toLowerCase() as PanelId)}
         >
