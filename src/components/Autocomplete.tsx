@@ -1,8 +1,12 @@
-import { Autocomplete as MuiAutocomplete, ChipTypeMap } from '@mui/material';
-import { AutocompleteProps as MuiAutocompleteProps } from '@mui/material';
+import {
+  Autocomplete as MuiAutocomplete,
+  ChipTypeMap,
+  AutocompleteProps as MuiAutocompleteProps,
+} from '@mui/material';
 import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
+import { forwardRef, Ref } from 'react';
 
 declare module '@mui/material' {
   interface AutocompleteProps<
@@ -38,27 +42,32 @@ export interface AutocompleteProps<T = OptionsType>
   'data-testid'?: string;
 }
 
-const Autocomplete = ({
-  adornment,
-  getOptionLabel = (option: OptionsType) => option.value,
-  label,
-  size = 'medium',
-  options,
-  multiple = false,
-  placeholder,
-  color = 'primary',
-  disabled = false,
-  error,
-  helperText,
-  'data-testid': testid,
-  ...props
-}: AutocompleteProps): JSX.Element => {
+const Autocomplete = (
+  {
+    adornment,
+    getOptionLabel = (option: OptionsType) => option.value,
+    label,
+    size = 'medium',
+    options,
+    multiple = false,
+    placeholder,
+    color = 'primary',
+    disabled = false,
+    error,
+    helperText,
+    'data-testid': testid,
+    sx = {},
+    ...props
+  }: AutocompleteProps,
+  ref: Ref<unknown>
+): JSX.Element => {
   return (
     <MuiAutocomplete
       disabled={disabled}
       getOptionLabel={getOptionLabel}
       options={options}
       multiple={multiple}
+      ref={ref}
       sx={{
         option: {
           '&.Mui-selected': {
@@ -68,10 +77,11 @@ const Autocomplete = ({
             bgcolor: 'primaryStates.hover',
           },
         },
+        ...sx,
       }}
-      renderTags={(value: OptionsType[], getTagProps) =>
-        value.map((value: OptionsType, index: number) => (
-          <Chip label={value.value} size={size} {...getTagProps({ index })} key={index} />
+      renderTags={(tags: OptionsType[], getTagProps) =>
+        tags.map((tag: OptionsType, index: number) => (
+          <Chip label={tag.value} size={size} {...getTagProps({ index })} key={index} />
         ))
       }
       renderInput={(params) => (
@@ -100,4 +110,4 @@ const Autocomplete = ({
   );
 };
 
-export default Autocomplete;
+export default forwardRef(Autocomplete);

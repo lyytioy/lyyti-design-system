@@ -1,5 +1,6 @@
 // https://www.learnstorybook.com/design-systems-for-developers/react/en/distribute/
 export { default as ThemeSelector } from './themes/ThemeSelector';
+export { default as Accordion } from './components/Accordion';
 export { default as Alert } from './components/Alert';
 export { default as Avatar } from './components/Avatar';
 export { default as Box } from './components/Box';
@@ -10,6 +11,7 @@ export { default as Chip } from './components/Chip';
 export { default as CircularProgress } from './components/CircularProgress';
 export { default as ClickAwayListener } from './components/ClickAwayListener';
 export { default as Collapse } from '@mui/material/Collapse';
+export { default as Container } from '@mui/material/Container';
 export { default as DataGrid } from './components/DataGrid';
 export { default as DatePicker } from './components/DatePicker';
 export { default as LocalizationProvider } from '@mui/lab/LocalizationProvider';

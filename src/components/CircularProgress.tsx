@@ -2,6 +2,7 @@ import {
   CircularProgress as MuiCircularProgress,
   CircularProgressProps as MuiCircularProgressProps,
 } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 export interface CircularProgressProps extends MuiCircularProgressProps {
   color: 'primary' | 'secondary';
   size?: number | string;
@@ -10,15 +11,20 @@ export interface CircularProgressProps extends MuiCircularProgressProps {
   'data-testid'?: string;
 }
 
-const CircularProgress = ({
-  color = 'primary',
-  size = 40,
-  value,
-  variant = 'indeterminate',
-  ...props
-}: CircularProgressProps): JSX.Element => {
+const CircularProgress = (
+  {
+    color = 'primary',
+    size = 40,
+    value,
+    variant = 'indeterminate',
+    sx = {},
+    ...props
+  }: CircularProgressProps,
+  ref: Ref<unknown>
+): JSX.Element => {
   return (
     <MuiCircularProgress
+      ref={ref}
       color={color}
       size={size}
       value={value}
@@ -33,6 +39,7 @@ const CircularProgress = ({
         '& .circleIndeterminate': {
           animation: `$circular-dash 2s linear infinite`,
         },
+        ...sx,
         '@keyframes circular-rotate': {
           '0%': {
             transform: 'rotate(0deg)',
@@ -57,4 +64,4 @@ const CircularProgress = ({
   );
 };
 
-export default CircularProgress;
+export default forwardRef(CircularProgress);

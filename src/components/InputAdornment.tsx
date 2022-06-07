@@ -5,8 +5,8 @@ import {
 
 export type InputAdornmentProps = MuiInputAdornmentProps;
 
-const InputAdornment = (props: InputAdornmentProps): JSX.Element => {
-  return <MuiInputAdornment sx={{ color: 'text.primary' }} {...props} />;
+const InputAdornment = ({ sx = {}, ...props }: InputAdornmentProps): JSX.Element => {
+  return <MuiInputAdornment sx={{ color: 'text.primary', ...sx }} {...props} />;
 };
 
 export default InputAdornment;

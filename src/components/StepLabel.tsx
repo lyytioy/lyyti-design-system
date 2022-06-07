@@ -1,9 +1,10 @@
 import { StepLabel as MuiStepLabel, StepLabelProps as MuiStepLabelProps } from '@mui/material';
+import { forwardRef, Ref } from 'react';
 
 export type StepLabelProps = MuiStepLabelProps;
 
-const StepLabel = (props: StepLabelProps): JSX.Element => {
-  return <MuiStepLabel {...props} />;
+const StepLabel = (props: StepLabelProps, ref: Ref<HTMLSpanElement>): JSX.Element => {
+  return <MuiStepLabel ref={ref} {...props} />;
 };
 
-export default StepLabel;
+export default forwardRef(StepLabel);

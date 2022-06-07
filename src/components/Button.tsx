@@ -1,6 +1,5 @@
 import { Button as MuiButton, ButtonProps as MuiButtonProps, IconButton } from '@mui/material';
-import { alpha } from '@mui/material/styles';
-import { useTheme } from '@mui/material/styles';
+import { alpha, useTheme } from '@mui/material/styles';
 import { forwardRef, Ref } from 'react';
 
 const containedBoxShadow =
