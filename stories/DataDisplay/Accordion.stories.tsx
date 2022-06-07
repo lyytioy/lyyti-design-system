@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Skeleton, Typography } from '../../src';
 import Accordion, { AccordionProps } from '../../src/components/Accordion';
 import { Stack } from '@mui/material';
-import { useState } from 'react';
+import { useState, SyntheticEvent } from 'react';
 
 export default {
   title: 'Components/Data Display/Accordion',
@@ -98,9 +98,12 @@ Outlined.args = {
   ),
 };
 
+type PanelId = 'First' | 'Second' | 'Third';
+const accordionPanels: PanelId[] = ['First', 'Second', 'Third']; 
+
 export const Multiple = () => (
   <div style={{ width: '700px' }}>
-    {['First', 'Second'].map((a) => (
+    {accordionPanels.map((a) => (
       <Accordion key={a} title={`${a} accordion`}>
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio necessitatibus impedit
@@ -118,21 +121,19 @@ export const Multiple = () => (
 );
 
 export const Controlled = () => {
-  type PanelId = 'first' | 'second' | 'third';
   const [expanded, setExpanded] = useState<PanelId | null>(null);
-
-  const handleChange = (panel: PanelId) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
+  const handleChange = (panel: PanelId) => (_event: SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : null);
   };
 
   return (
     <div style={{ width: '700px' }}>
-      {['First', 'Second', 'Third'].map((a) => (
+      {accordionPanels.map((a) => (
         <Accordion
           key={a}
           title={`${a} controlled accordion`}
-          expanded={expanded === a.toLowerCase()}
-          onChange={handleChange(a.toLowerCase() as PanelId)}
+          expanded={expanded === a}
+          onChange={handleChange(a)}
         >
           <Typography>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio necessitatibus impedit

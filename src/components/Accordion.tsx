@@ -12,7 +12,7 @@ import { ChevronDown } from '../icons';
 export interface AccordionProps extends MuiAccordionProps {
   title: string;
   titleProps?: TypographyProps;
-  expandIcon?: React.ReactNode;
+  expandIcon?: JSX.Element;
   expandIconInline?: boolean;
 }
 
@@ -31,6 +31,10 @@ const Accordion = (
   }: AccordionProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
+
+  const fontSize = titleProps.fontSize + typeof titleProps.fontSize === 'number' ? 'px' : '';
+  const iconSize = `calc(${fontSize} * 0.75)`
+
   return (
     <MuiAccordion ref={ref} elevation={elevation} sx={sx} {...props}>
       <AccordionSummary
@@ -40,13 +44,11 @@ const Accordion = (
           columnGap: 2,
           '& .MuiAccordionSummary-content': { flexGrow: expandIconInline ? 0 : 1 },
           '& .MuiSvgIcon-root': {
-            fontSize: `calc(${titleProps.fontSize}${
-              typeof titleProps.fontSize === 'number' ? 'px' : ''
-            } * 0.75)`,
+            fontSize: iconSize,
           },
         }}
       >
-        <Typography fontWeight="bold" fontSize="24px" {...titleProps}>
+        <Typography fontWeight="bold" {...titleProps}>
           {title}
         </Typography>
       </AccordionSummary>
