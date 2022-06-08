@@ -58,6 +58,7 @@ export { default as Tabs } from './components/Tabs';
 export { default as TextField } from './components/TextField';
 export { default as TimePicker } from './components/TimePicker';
 export { default as Tooltip } from './components/Tooltip';
+export { default as RadioGroup } from './components/RadioGroup';
 export { default as TreeView } from '@mui/lab/TreeView';
 export { default as TreeItem } from '@mui/lab/TreeItem';
 export type { TreeItemProps } from '@mui/lab/TreeItem';
