@@ -1,9 +1,11 @@
 import { Box as MuiBox, BoxProps as MuiBoxProps } from '@mui/material';
 import { forwardRef, Ref } from 'react';
 
-export type BoxProps = MuiBoxProps;
+export interface BoxProps extends MuiBoxProps {
+  ref?: Ref<HTMLElement>;
+}
 
-const Box = (props: BoxProps, ref: Ref<unknown>): JSX.Element => {
+const Box = (props: BoxProps, ref: Ref<HTMLElement>): JSX.Element => {
   return <MuiBox ref={ref} {...props} />;
 };
 

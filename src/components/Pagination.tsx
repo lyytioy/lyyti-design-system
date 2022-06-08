@@ -1,9 +1,11 @@
 import { Pagination as MuiPagination, PaginationProps as MuiPaginationProps } from '@mui/material';
 import { forwardRef, Ref } from 'react';
 
-export type PaginationProps = MuiPaginationProps;
+export interface PaginationProps extends MuiPaginationProps {
+  ref?: Ref<HTMLElement>;
+}
 
-const Pagination = ({ sx = {}, ...props }: PaginationProps, ref: Ref<unknown>): JSX.Element => {
+const Pagination = ({ sx = {}, ...props }: PaginationProps, ref: Ref<HTMLElement>): JSX.Element => {
   return (
     <MuiPagination
       ref={ref}
