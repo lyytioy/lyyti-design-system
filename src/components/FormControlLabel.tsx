@@ -4,11 +4,13 @@ import {
 } from '@mui/material';
 import { forwardRef, Ref } from 'react';
 
-export type FormControlLabelProps = MuiFormControlLabelProps;
+export interface FormControlLabelProps extends MuiFormControlLabelProps {
+  ref?: Ref<HTMLLabelElement>;
+}
 
 const FormControlLabel = (
   { sx = {}, ...props }: FormControlLabelProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLLabelElement>
 ): JSX.Element => {
   return (
     <MuiFormControlLabel
