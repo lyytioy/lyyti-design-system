@@ -100,6 +100,8 @@ import {
   Globe,
   AwardBadgeStar,
   Hourglass,
+  Write,
+  Note,
 } from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
@@ -249,6 +251,8 @@ const iconsList = [
   { name: 'Globe', component: Globe },
   { name: 'AwardBadgeStar', component: AwardBadgeStar },
   { name: 'Hourglass', component: Hourglass },
+  { name: 'Write', component: Write },
+  { name: 'Note', component: Note },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {
