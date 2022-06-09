@@ -102,6 +102,7 @@ import {
   Hourglass,
   Write,
   Note,
+  MailSend,
 } from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
@@ -253,6 +254,7 @@ const iconsList = [
   { name: 'Hourglass', component: Hourglass },
   { name: 'Write', component: Write },
   { name: 'Note', component: Note },
+  { name: 'MailSend', component: MailSend },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {
