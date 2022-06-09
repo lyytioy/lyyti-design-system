@@ -9,6 +9,7 @@ export interface ProgressProps extends Omit<LinearProgressProps, 'color' | 'vari
   value?: number;
   variant?: 'determinate' | 'indeterminate';
   'data-testid'?: string;
+  ref?: Ref<HTMLSpanElement>;
 }
 
 const Progress = (
@@ -20,7 +21,7 @@ const Progress = (
     variant = 'indeterminate',
     ...props
   }: ProgressProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLSpanElement>
 ): JSX.Element => {
   return (
     <>

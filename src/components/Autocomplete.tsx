@@ -29,7 +29,7 @@ export type OptionsType = {
 export interface AutocompleteProps<T = OptionsType>
   extends Omit<
     MuiAutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
-    'hiddenLabel' | 'startAdornment' | 'endAdornment' | 'variant' | 'renderInput'
+    'hiddenLabel' | 'startAdornment' | 'endAdornment' | 'variant' | 'renderInput' | 'ref'
   > {
   adornment?: string | JSX.Element;
   label?: string;
@@ -40,6 +40,7 @@ export interface AutocompleteProps<T = OptionsType>
   error?: boolean;
   helperText?: string;
   'data-testid'?: string;
+  ref?: Ref<HTMLDivElement>;
 }
 
 const Autocomplete = (
@@ -59,7 +60,7 @@ const Autocomplete = (
     sx = {},
     ...props
   }: AutocompleteProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLDivElement>
 ): JSX.Element => {
   return (
     <MuiAutocomplete

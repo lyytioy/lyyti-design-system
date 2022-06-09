@@ -14,6 +14,7 @@ export interface SnackbarProps extends MuiSnackbarProps {
   direction?: 'right' | 'left' | 'up' | 'down';
   severity?: 'success' | 'info' | 'warning' | 'error';
   variant?: 'standard' | 'filled' | 'outlined';
+  ref?: Ref<HTMLDivElement>
 }
 
 const Snackbar = (
@@ -29,7 +30,7 @@ const Snackbar = (
     variant = 'standard',
     ...props
   }: SnackbarProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLDivElement>
 ): JSX.Element => {
   return (
     <MuiSnackbar

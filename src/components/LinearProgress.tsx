@@ -9,11 +9,12 @@ export interface LinearProgressProps extends MuiLinearProgressProps {
   value?: number;
   variant: 'buffer' | 'determinate' | 'indeterminate' | 'query';
   'data-testid'?: string;
+  ref?: Ref<HTMLSpanElement>
 }
 
 const LinearProgress = (
   { color = 'primary', value, variant = 'indeterminate', sx = {}, ...props }: LinearProgressProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLSpanElement>
 ): JSX.Element => {
   return (
     <MuiLinearProgress

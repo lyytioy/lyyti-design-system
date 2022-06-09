@@ -8,6 +8,7 @@ type CommonProps = {
   adornment?: AutocompleteProps<OptionsType>['adornment'];
   multiple?: boolean;
   'data-testid'?: string;
+  ref?: Ref<HTMLDivElement>;
 };
 
 export type MultipleSelectProps = Omit<AutocompleteProps, 'options'> & CommonProps;
@@ -21,7 +22,7 @@ export type SelectProps = MultipleSelectProps | SingleSelectProps;
 
 const Select = (
   { adornment, options = [], multiple = false, 'data-testid': testid, ...props }: SelectProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLDivElement>
 ): JSX.Element => {
   if (multiple) {
     return (

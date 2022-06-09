@@ -3,6 +3,7 @@ import {
   CircularProgressProps as MuiCircularProgressProps,
 } from '@mui/material';
 import { forwardRef, Ref } from 'react';
+
 export interface CircularProgressProps extends MuiCircularProgressProps {
   color: 'primary' | 'secondary';
   size?: number | string;
@@ -20,7 +21,7 @@ const CircularProgress = (
     sx = {},
     ...props
   }: CircularProgressProps,
-  ref: Ref<unknown>
+  ref: Ref<HTMLSpanElement>
 ): JSX.Element => {
   return (
     <MuiCircularProgress
