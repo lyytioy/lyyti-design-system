@@ -1,30 +1,34 @@
 import { DatePickerProps as MuiDatepickerProps } from '@mui/x-date-pickers/DatePicker';
-import { DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
+import { DatePicker as MuiDatePicker, MuiPickersAdapterContext } from '@mui/x-date-pickers';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
-import { forwardRef, Ref } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
+import { forwardRef, Ref, useContext } from 'react';
+import { Dayjs } from 'dayjs';
+import { MuiPickersAdapterContextValue } from '@mui/x-date-pickers/LocalizationProvider/LocalizationProvider';
+import { MuiPickersAdapter } from '@mui/x-date-pickers/internals/models';
 
-export interface DatePickerProps
-  extends Omit<MuiDatepickerProps<Dayjs, Dayjs>, 'renderInput' | 'InputProps'> {
+export interface DatePickerProps<TInputDate = Dayjs, TDate = Dayjs>
+  extends Omit<MuiDatepickerProps<TInputDate, TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
   InputProps?: TextFieldProps;
 }
 
-const isDisallowedYear = (date: Dayjs) => {
-  const year = date.year();
-  const maxYear = dayjs().year() + 10;
+const isDisallowedYear = (date: any, adapter: MuiPickersAdapter<unknown>) => {
+  const year = adapter.getYear(date);
+  const maxYear = new Date().getFullYear() + 10;
   return year < 2006 || year > maxYear;
 };
 
-const DatePicker = (
+const DatePicker = <TInputDate, TDate>(
   {
     allowAllYears = false,
     InputProps = { color: 'primary', id: 'datepicker' },
     ...props
-  }: DatePickerProps,
+  }: DatePickerProps<TInputDate, TDate>,
   ref: Ref<HTMLInputElement>
 ): JSX.Element => {
+  const { utils } = useContext(MuiPickersAdapterContext) as MuiPickersAdapterContextValue<unknown>;
+
   return (
     <MuiDatePicker
       components={{ OpenPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
@@ -74,7 +78,7 @@ const DatePicker = (
           }),
         },
       }}
-      shouldDisableYear={!allowAllYears ? isDisallowedYear : undefined}
+      shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year, utils) : false}
       {...props}
       renderInput={(params) => {
         return <TextField {...(params as TextFieldProps)} {...InputProps} ref={ref} />;
