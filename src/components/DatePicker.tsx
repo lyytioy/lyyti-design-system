@@ -1,17 +1,19 @@
-import MuiDatePicker, { DatePickerProps as MuiDatepickerProps } from '@mui/lab/DatePicker';
+import { DatePickerProps as MuiDatepickerProps } from '@mui/x-date-pickers/DatePicker';
+import { DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
 import { forwardRef, Ref } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
 
-export interface DatePickerProps<TDate>
-  extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
+export interface DatePickerProps
+  extends Omit<MuiDatepickerProps<Dayjs, Dayjs>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
   InputProps?: TextFieldProps;
 }
 
-const isDisallowedYear = (date: Date) => {
-  const year = new Date(date).getFullYear();
-  const maxYear = new Date().getFullYear() + 10;
+const isDisallowedYear = (date: Dayjs) => {
+  const year = date.year();
+  const maxYear = dayjs().year() + 10;
   return year < 2006 || year > maxYear;
 };
 
@@ -20,7 +22,7 @@ const DatePicker = (
     allowAllYears = false,
     InputProps = { color: 'primary', id: 'datepicker' },
     ...props
-  }: DatePickerProps<Date>,
+  }: DatePickerProps,
   ref: Ref<HTMLInputElement>
 ): JSX.Element => {
   return (

@@ -1,10 +1,12 @@
-import MuiTimePicker, { TimePickerProps as MuiTimePickerProps } from '@mui/lab/TimePicker';
+import { TimePickerProps as MuiTimePickerProps } from '@mui/x-date-pickers/TimePicker';
+import { TimePicker as MuiTimePicker } from '@mui/x-date-pickers';
 import TextField, { TextFieldProps } from './TextField';
 import { forwardRef, Ref } from 'react';
+import { Dayjs } from 'dayjs';
 
-export interface TimePickerProps extends Omit<MuiTimePickerProps, 'renderInput' | 'InputProps'> {
+export interface TimePickerProps extends Omit<MuiTimePickerProps<Dayjs, Dayjs>, 'renderInput' | 'InputProps'> {
   InputProps?: TextFieldProps;
-  'data-testid'?: string;
+  'data-testid'?: string; 
 }
 
 const TimePicker = (
