@@ -31,9 +31,8 @@ const Accordion = (
   }: AccordionProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-
-  const fontSize = titleProps.fontSize + typeof titleProps.fontSize === 'number' ? 'px' : '';
-  const iconSize = `calc(${fontSize} * 0.75)`
+  const fontSize = titleProps.fontSize + (typeof titleProps.fontSize === 'number' ? 'px' : '');
+  const iconSize = `calc(${fontSize} * 0.75)`;
 
   return (
     <MuiAccordion ref={ref} elevation={elevation} sx={sx} {...props}>
