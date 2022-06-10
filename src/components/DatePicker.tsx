@@ -2,7 +2,7 @@ import { DatePickerProps as MuiDatepickerProps } from '@mui/x-date-pickers/DateP
 import { DatePicker as MuiDatePicker, MuiPickersAdapterContext } from '@mui/x-date-pickers';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
-import { forwardRef, FunctionComponent, Ref, useContext } from 'react';
+import { forwardRef, Ref, useContext } from 'react';
 import { Dayjs } from 'dayjs';
 import { MuiPickersAdapterContextValue } from '@mui/x-date-pickers/LocalizationProvider/LocalizationProvider';
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals/models';
