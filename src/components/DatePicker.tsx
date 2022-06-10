@@ -2,10 +2,16 @@ import { DatePickerProps as MuiDatepickerProps } from '@mui/x-date-pickers/DateP
 import { DatePicker as MuiDatePicker, MuiPickersAdapterContext } from '@mui/x-date-pickers';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
-import { forwardRef, Ref, useContext } from 'react';
+import { forwardRef, FunctionComponent, Ref, useContext } from 'react';
 import { Dayjs } from 'dayjs';
 import { MuiPickersAdapterContextValue } from '@mui/x-date-pickers/LocalizationProvider/LocalizationProvider';
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals/models';
+
+declare module "react" {
+  function forwardRef<T, P = {}>(
+    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
 
 export interface DatePickerProps<TInputDate = Dayjs, TDate = Dayjs>
   extends Omit<MuiDatepickerProps<TInputDate, TDate>, 'renderInput' | 'InputProps'> {
@@ -19,7 +25,7 @@ const isDisallowedYear = (date: any, adapter: MuiPickersAdapter<unknown>) => {
   return year < 2006 || year > maxYear;
 };
 
-const DatePicker = <TInputDate, TDate>(
+const DatePicker = <TInputDate extends unknown, TDate extends unknown>(
   {
     allowAllYears = false,
     InputProps = { color: 'primary', id: 'datepicker' },

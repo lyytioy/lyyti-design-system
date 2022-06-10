@@ -5,7 +5,8 @@ import { LocalizationProvider } from '../../src';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import AdapterDayjs from '@date-io/dayjs';
 import AdapterMoment from '@date-io/moment';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
+import moment, { Moment } from 'moment';
 
 export default {
   title: 'Components/Inputs/DatePicker',
@@ -65,12 +66,12 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const TemplateDateJs: Story<DatePickerProps> = (args) => {
+const TemplateDateJs: Story<DatePickerProps<Dayjs, Dayjs>> = (args) => {
   // Run `npm install @date-io/dayjs` to install the adapter
 
   // import AdapterDateFns from '@date-io/dayjs';
 
-  const [value, setValue] = useState<Dayjs | null>(null);
+  const [value, setValue] = useState<Dayjs | null>(dayjs());
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -85,12 +86,12 @@ const TemplateDateJs: Story<DatePickerProps> = (args) => {
   );
 };
 
-const TemplateMoment: Story<DatePickerProps> = (args) => {
+const TemplateMoment: Story<DatePickerProps<Moment, Moment>> = (args) => {
   // Run `npm install @date-io/moment` to install the adapter
 
   // import AdapterMoment from '@date-io/moment';
 
-  const [value, setValue] = useState<Dayjs | null>(null);
+  const [value, setValue] = useState<Moment | null>(moment());
 
   return (
     <LocalizationProvider dateAdapter={AdapterMoment}>
