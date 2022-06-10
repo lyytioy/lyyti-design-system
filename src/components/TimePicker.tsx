@@ -2,15 +2,20 @@ import { TimePickerProps as MuiTimePickerProps } from '@mui/x-date-pickers/TimeP
 import { TimePicker as MuiTimePicker } from '@mui/x-date-pickers';
 import TextField, { TextFieldProps } from './TextField';
 import { forwardRef, Ref } from 'react';
-import { Dayjs } from 'dayjs';
 
-export interface TimePickerProps<TInputDate = Dayjs, TDate = Dayjs> extends Omit<MuiTimePickerProps<TInputDate, TDate>, 'renderInput' | 'InputProps'> {
+declare module "react" {
+  function forwardRef<T, P = {}>(
+    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
+
+export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProps<TDate, TDate>, 'renderInput' | 'InputProps'> {
   InputProps?: TextFieldProps;
   'data-testid'?: string; 
 }
 
-const TimePicker = <TInputDate = Dayjs, TDate = Dayjs>(
-  { ampm = false, InputProps = {}, ...props }: TimePickerProps<TInputDate, TDate>,
+const TimePicker = <TDate = unknown>(
+  { ampm = false, InputProps = {}, ...props }: TimePickerProps<TDate>,
   ref: Ref<HTMLInputElement>
 ): JSX.Element => {
   return (

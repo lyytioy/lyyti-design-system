@@ -1,11 +1,8 @@
 import { DatePickerProps as MuiDatepickerProps } from '@mui/x-date-pickers/DatePicker';
-import { DatePicker as MuiDatePicker, MuiPickersAdapterContext } from '@mui/x-date-pickers';
+import { DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
-import { forwardRef, Ref, useContext } from 'react';
-import { Dayjs } from 'dayjs';
-import { MuiPickersAdapterContextValue } from '@mui/x-date-pickers/LocalizationProvider/LocalizationProvider';
-import { MuiPickersAdapter } from '@mui/x-date-pickers/internals/models';
+import { forwardRef, Ref } from 'react';
 
 declare module "react" {
   function forwardRef<T, P = {}>(
@@ -13,19 +10,19 @@ declare module "react" {
   ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
 }
 
-export interface DatePickerProps<TInputDate = Dayjs, TDate = Dayjs>
+export interface DatePickerProps<TInputDate = unknown, TDate = unknown>
   extends Omit<MuiDatepickerProps<TInputDate, TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
   InputProps?: TextFieldProps;
 }
 
-const isDisallowedYear = (date: any, adapter: MuiPickersAdapter<unknown>) => {
-  const year = adapter.getYear(date);
+const isDisallowedYear = (date: any) => {
+  const year = new Date(date).getFullYear();
   const maxYear = new Date().getFullYear() + 10;
   return year < 2006 || year > maxYear;
 };
 
-const DatePicker = <TInputDate extends unknown, TDate extends unknown>(
+const DatePicker = <TInputDate = unknown, TDate = unknown>(
   {
     allowAllYears = false,
     InputProps = { color: 'primary', id: 'datepicker' },
@@ -33,8 +30,6 @@ const DatePicker = <TInputDate extends unknown, TDate extends unknown>(
   }: DatePickerProps<TInputDate, TDate>,
   ref: Ref<HTMLInputElement>
 ): JSX.Element => {
-  const { utils } = useContext(MuiPickersAdapterContext) as MuiPickersAdapterContextValue<unknown>;
-
   return (
     <MuiDatePicker
       components={{ OpenPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
@@ -84,7 +79,7 @@ const DatePicker = <TInputDate extends unknown, TDate extends unknown>(
           }),
         },
       }}
-      shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year, utils) : false}
+      shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year) : false}
       {...props}
       renderInput={(params) => {
         return <TextField {...(params as TextFieldProps)} {...InputProps} ref={ref} />;

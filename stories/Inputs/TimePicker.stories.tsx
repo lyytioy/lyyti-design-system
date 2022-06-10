@@ -88,7 +88,7 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const Template: Story<TimePickerProps> = (args) => {
+const Template: Story<TimePickerProps<Dayjs>> = (args) => {
   const [value, setValue] = useState<Dayjs | null>(dayjs());
 
   return (
