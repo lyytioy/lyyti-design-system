@@ -87,8 +87,8 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const Template: Story<TimePickerProps> = (args) => {
-  const [value, setValue] = useState<unknown>(new Date());
+const Template: Story<TimePickerProps<Date>> = (args) => {
+  const [value, setValue] = useState<Date | null>(new Date());
 
   return (
     <Box sx={{ width: '150px' }}>
