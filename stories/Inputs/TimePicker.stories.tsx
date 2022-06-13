@@ -5,6 +5,7 @@ import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import { LocalizationProvider } from '../../src';
 import AdapterDayjs from '@date-io/dayjs';
 import { useState } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
 
 export default {
   title: 'Components/Inputs/TimePicker',
@@ -87,8 +88,8 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const Template: Story<TimePickerProps> = (args) => {
-  const [value, setValue] = useState<unknown>(new Date());
+const Template: Story<TimePickerProps<Dayjs>> = (args) => {
+  const [value, setValue] = useState<Dayjs | null>(dayjs());
 
   return (
     <Box sx={{ width: '150px' }}>
