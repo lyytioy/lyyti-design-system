@@ -2,13 +2,6 @@ import { DatePickerProps as MuiDatepickerProps } from '@mui/x-date-pickers/DateP
 import { DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
-import { forwardRef, Ref } from 'react';
-
-declare module "react" {
-  function forwardRef<T, P = {}>(
-    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
-  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
-}
 
 export interface DatePickerProps<TInputDate = unknown, TDate = unknown>
   extends Omit<MuiDatepickerProps<TInputDate, TDate>, 'renderInput' | 'InputProps'> {
@@ -28,7 +21,6 @@ const DatePicker = <TInputDate = unknown, TDate = unknown>(
     InputProps = { color: 'primary', id: 'datepicker' },
     ...props
   }: DatePickerProps<TInputDate, TDate>,
-  ref: Ref<HTMLInputElement>
 ): JSX.Element => {
   return (
     <MuiDatePicker
@@ -82,10 +74,10 @@ const DatePicker = <TInputDate = unknown, TDate = unknown>(
       shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year) : false}
       {...props}
       renderInput={(params) => {
-        return <TextField {...(params as TextFieldProps)} {...InputProps} ref={ref} />;
+        return <TextField {...(params as TextFieldProps)} {...InputProps} />;
       }}
     />
   );
 };
 
-export default forwardRef(DatePicker);
+export default DatePicker;
