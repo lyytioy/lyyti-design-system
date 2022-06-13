@@ -1,5 +1,7 @@
-import { TimePickerProps as MuiTimePickerProps } from '@mui/x-date-pickers/TimePicker';
-import { TimePicker as MuiTimePicker } from '@mui/x-date-pickers';
+import {
+  TimePicker as MuiTimePicker,
+  TimePickerProps as MuiTimePickerProps,
+} from '@mui/x-date-pickers/TimePicker';
 import TextField, { TextFieldProps } from './TextField';
 
 export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProps<TDate, TDate>, 'renderInput' | 'InputProps'> {

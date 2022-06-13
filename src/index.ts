@@ -14,7 +14,7 @@ export { default as Collapse } from '@mui/material/Collapse';
 export { default as Container } from '@mui/material/Container';
 export { default as DataGrid } from './components/DataGrid';
 export { default as DatePicker } from './components/DatePicker';
-export { LocalizationProvider } from '@mui/x-date-pickers';
+export { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 export { default as Dialog } from './components/Dialog';
 export { default as Divider } from '@mui/material/Divider';
 export { default as Drawer } from '@mui/material/Drawer';

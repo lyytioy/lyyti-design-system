@@ -1,5 +1,7 @@
-import { DatePickerProps as MuiDatepickerProps } from '@mui/x-date-pickers/DatePicker';
-import { DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
+import {
+  DatePicker as MuiDatePicker,
+  DatePickerProps as MuiDatepickerProps,
+} from '@mui/x-date-pickers/DatePicker';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
 

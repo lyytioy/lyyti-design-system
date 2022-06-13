@@ -117,5 +117,11 @@ We convert our SVG files to React components using a custom written template and
 To convert a `.svg` file to a React component please run the following command
 
 ```shell
-npx @svgr/cli --template templateSvgIcon.js -d src/icons --ext tsx path/to/file.svg
+npm run generate-icon --path=path/to/file.svg
 ```
+
+After converting
+
+- Add an export to `src/icons/index.ts` for the icon
+
+- Add an import + add it to `iconsList` in `stories/DataDisplay/Icons.stories.tsx`

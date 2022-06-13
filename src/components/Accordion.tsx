@@ -22,7 +22,7 @@ const Accordion = (
     titleProps = {
       fontSize: '24px',
     },
-    expandIcon = <ChevronDown sx={{ color: 'text.primary' }} />,
+    expandIcon = <ChevronDown />,
     expandIconInline,
     elevation = 0,
     children,
@@ -31,9 +31,8 @@ const Accordion = (
   }: AccordionProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-
-  const fontSize = titleProps.fontSize + typeof titleProps.fontSize === 'number' ? 'px' : '';
-  const iconSize = `calc(${fontSize} * 0.75)`
+  const fontSize = titleProps.fontSize + (typeof titleProps.fontSize === 'number' ? 'px' : '');
+  const iconSize = `calc(${fontSize} * 0.75)`;
 
   return (
     <MuiAccordion ref={ref} elevation={elevation} sx={sx} {...props}>
@@ -44,6 +43,7 @@ const Accordion = (
           columnGap: 2,
           '& .MuiAccordionSummary-content': { flexGrow: expandIconInline ? 0 : 1 },
           '& .MuiSvgIcon-root': {
+            color: 'text.primary',
             fontSize: iconSize,
           },
         }}

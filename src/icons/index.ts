@@ -92,3 +92,6 @@ export { default as EVS5 } from './EVS5';
 export { default as Globe } from './Globe';
 export { default as AwardBadgeStar } from './AwardBadgeStar';
 export { default as Hourglass } from './Hourglass';
+export { default as Write } from './Write';
+export { default as Note } from './Note';
+export { default as MailSend } from './MailSend';
