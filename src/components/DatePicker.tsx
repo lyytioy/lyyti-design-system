@@ -1,10 +1,13 @@
-import MuiDatePicker, { DatePickerProps as MuiDatepickerProps } from '@mui/lab/DatePicker';
+import {
+  DatePicker as MuiDatePicker,
+  DatePickerProps as MuiDatepickerProps,
+} from '@mui/x-date-pickers/DatePicker';
 import Calendar from '../icons/Calendar';
 import TextField, { TextFieldProps } from './TextField';
 import { forwardRef, Ref } from 'react';
 
 export interface DatePickerProps<TDate>
-  extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
+  extends Omit<MuiDatepickerProps<TDate, TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
   InputProps?: TextFieldProps;
 }
