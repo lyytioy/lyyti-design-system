@@ -1,5 +1,4 @@
 export { default as Excel } from './Excel';
-import PaginationDown from './PaginationDown';
 export { default as Pdf } from './Pdf';
 export { default as Link } from './Link';
 export { default as CreditCard } from './CreditCard';
