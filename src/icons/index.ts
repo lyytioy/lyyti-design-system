@@ -40,6 +40,8 @@ export { default as ArrowRight } from './ArrowRight';
 export { default as Loading } from './Loading';
 export { default as PaginationLeft } from './PaginationLeft';
 export { default as PaginationRight } from './PaginationRight';
+export { default as PaginationDown } from './PaginationDown';
+export { default as PaginationUp } from './PaginationUp';
 export { default as PaginationFirst } from './PaginationFirst';
 export { default as PaginationLast } from './PaginationLast';
 export { default as Clock } from './Clock';
