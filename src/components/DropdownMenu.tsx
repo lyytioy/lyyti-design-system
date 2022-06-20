@@ -29,7 +29,7 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
   };
 
   return (
-    <div>
+    <>
       <Button
         aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
@@ -40,12 +40,12 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
       </Button>
       <Menu id="menu-list-grow" anchorEl={anchorEl} open={open} onClose={handleClose}>
         {props.items.map((item) => (
-          <MenuItem key={item.id} onClick={(event) => selectItem(event, item.id)}>
+          <MenuItem key={item.id} onClick={(event) => selectItem(event, item.id)} data-testid={`menu-item-${item.title.replaceAll(' ', '-').toLowerCase()}`}>
             {item.title}
           </MenuItem>
         ))}
       </Menu>
-    </div>
+    </>
   );
 };
 
