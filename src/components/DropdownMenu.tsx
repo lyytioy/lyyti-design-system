@@ -11,6 +11,10 @@ export interface DropdownProps {
   buttonProps: ButtonProps;
 }
 
+const toHMTLAttribute = (item: string) => {
+  return item.replaceAll(' ', '-').toLowerCase();
+}
+
 const DropdownMenu = (props: DropdownProps): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const open = Boolean(anchorEl);
@@ -40,7 +44,7 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
       </Button>
       <Menu id="menu-list-grow" anchorEl={anchorEl} open={open} onClose={handleClose}>
         {props.items.map((item) => (
-          <MenuItem key={item.id} onClick={(event) => selectItem(event, item.id)} data-testid={`menu-item-${item.title.replaceAll(' ', '-').toLowerCase()}`}>
+          <MenuItem key={item.id} onClick={(event) => selectItem(event, item.id)} data-testid={toHMTLAttribute(item.title)}>
             {item.title}
           </MenuItem>
         ))}
