@@ -105,6 +105,7 @@ import {
   Write,
   Note,
   MailSend,
+  MapPin,
 } from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
@@ -259,6 +260,7 @@ const iconsList = [
   { name: 'Write', component: Write },
   { name: 'Note', component: Note },
   { name: 'MailSend', component: MailSend },
+  { name: 'MapPin', component: MapPin },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {

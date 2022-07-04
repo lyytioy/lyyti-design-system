@@ -97,3 +97,4 @@ export { default as Hourglass } from './Hourglass';
 export { default as Write } from './Write';
 export { default as Note } from './Note';
 export { default as MailSend } from './MailSend';
+export { default as MapPin } from './MapPin';
