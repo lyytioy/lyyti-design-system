@@ -66,7 +66,7 @@ Please make sure that you use our ESLint and Prettier rules and always use Types
 When you create a pull request with changes make sure to also bump the package.json version with one of the commands below. If you are unsure which one you should bump, ask in your PR.
 
 ```shell
-npm --no-git-tag-version version patch # Goes from 1.0.0 -> 1.0.1
+npm run bump patch # Goes from 1.0.0 -> 1.0.1
 ```
 
 Or replace patch with minor (1.0.0 -> 1.1.0) or major (1.0.0 -> 2.0.0).
