@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "engines": {
     "node": "^16",
     "npm": "^8"
@@ -14,6 +14,7 @@
     "check-types": "tsc",
     "build-storybook": "npm ci && build-storybook -o docs-build",
     "build": "rm -rf dist/* && tsc --project tsconfig.release.json && cp -r src/fonts dist && cp -r src/styles dist && cp package.json dist && cp README.md dist",
+    "bump": "npm --no-git-tag-version version",
     "generate-icon": "npx @svgr/cli --typescript --template templateSvgIcon.ts -d src/icons --ext tsx $npm_config_path"
   },
   "resolutions": {
