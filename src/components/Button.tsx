@@ -35,7 +35,14 @@ const Button = (
     children.props.fontSize
   ) {
     return (
-      <IconButton ref={ref} color={buttonColor} disabled={disabled} size="large" {...props}>
+      <IconButton
+        ref={ref}
+        color={buttonColor}
+        disabled={disabled}
+        size="large"
+        sx={{ ...sx }}
+        {...props}
+      >
         {children}
       </IconButton>
     );
