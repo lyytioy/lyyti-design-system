@@ -124,4 +124,4 @@ After converting
 
 - Add an export to `src/icons/index.ts` for the icon
 
-- Add an import + add it to `iconsList` in `stories/DataDisplay/Icons.stories.tsx`
+- Add the icon to `iconsList` in `stories/DataDisplay/Icons.stories.tsx`
