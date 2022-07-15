@@ -1,4 +1,5 @@
 export { default as Excel } from './Excel';
+import LightBulb from './LightBulb';
 export { default as Pdf } from './Pdf';
 export { default as Link } from './Link';
 export { default as CreditCard } from './CreditCard';
@@ -98,3 +99,4 @@ export { default as Write } from './Write';
 export { default as Note } from './Note';
 export { default as MailSend } from './MailSend';
 export { default as MapPin } from './MapPin';
+export { default as LightBulb } from './LightBulb';
