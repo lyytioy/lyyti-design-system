@@ -161,6 +161,7 @@ const iconsList = [
   { name: 'MailSend', component: i.MailSend },
   { name: 'MapPin', component: i.MapPin },
   { name: 'LightBulb', component: i.LightBulb },
+  { name: 'NotAllowed', component: i.NotAllowed },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {
