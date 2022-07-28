@@ -100,3 +100,4 @@ export { default as Note } from './Note';
 export { default as MailSend } from './MailSend';
 export { default as MapPin } from './MapPin';
 export { default as LightBulb } from './LightBulb';
+export { default as NotAllowed } from './NotAllowed';
