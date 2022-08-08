@@ -23,6 +23,7 @@ const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, ...props }
         sx: {
           pointerEvents: 'none',
         },
+        tabIndex: -1
       }}
       renderInput={(params) => (
         <TextField {...(params as TextFieldProps)} {...InputProps} />
