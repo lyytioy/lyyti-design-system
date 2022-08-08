@@ -9,7 +9,7 @@ export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProp
   'data-testid'?: string;
 }
 
-const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, ...props }: TimePickerProps<TDate>): JSX.Element => {
+const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, InputAdornmentProps = {}, OpenPickerButtonProps = {}, ...props }: TimePickerProps<TDate>): JSX.Element => {
   return (
     <MuiTimePicker
       ampm={ampm}
@@ -18,12 +18,14 @@ const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, ...props }
         sx: {
           ml: '0px',
         },
+        ...InputAdornmentProps
       }}
       OpenPickerButtonProps={{
         sx: {
           pointerEvents: 'none',
         },
-        tabIndex: -1
+        tabIndex: -1,
+        ...OpenPickerButtonProps
       }}
       renderInput={(params) => (
         <TextField {...(params as TextFieldProps)} {...InputProps} />
