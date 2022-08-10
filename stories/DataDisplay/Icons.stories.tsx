@@ -153,6 +153,7 @@ const iconsList = [
   { name: 'EVS3', component: i.EVS3 },
   { name: 'EVS4', component: i.EVS4 },
   { name: 'EVS5', component: i.EVS5 },
+  { name: 'EVSSleeping', component: i.EVSSleeping },
   { name: 'Globe', component: i.Globe },
   { name: 'AwardBadgeStar', component: i.AwardBadgeStar },
   { name: 'Hourglass', component: i.Hourglass },
