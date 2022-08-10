@@ -53,7 +53,12 @@ declare module '@mui/material/styles/createPalette' {
     errorStates: ColorStateOptions;
     light: ColorShadeOptions;
     lightStates: ColorStateOptions;
-    blue: ColorRangeOptions;
+    sky: ColorRangeOptions;
+    balticSea: ColorRangeOptions;
+    coral: ColorRangeOptions;
+    sunset: ColorRangeOptions;
+    sun: ColorRangeOptions;
+    sand: ColorRangeOptions;
   }
   interface PaletteOptions {
     primaryStates: ColorStateOptions;
@@ -61,7 +66,12 @@ declare module '@mui/material/styles/createPalette' {
     errorStates: ColorStateOptions;
     light: ColorShadeOptions;
     lightStates: ColorStateOptions;
-    blue: ColorRangeOptions;
+    sky: ColorRangeOptions;
+    balticSea: ColorRangeOptions;
+    coral: ColorRangeOptions;
+    sunset: ColorRangeOptions;
+    sun: ColorRangeOptions;
+    sand: ColorRangeOptions;
   }
 }
 
@@ -128,13 +138,53 @@ export default createTheme({
       '400': '#46545B',
       '500': '#192832',
     },
-    blue: {
+    sky: {
       '50': '#CDF2F4',
       '100': '#96E4E8',
       '200': '#81DFE4',
       '300': '#42CED6',
       '400': '#0F8898',
       '500': '#0A545D',
+    },
+    balticSea: {
+      '50': '#BFEDE4',
+      '100': '#07A8A0',
+      '200': '#05756F',
+      '300': '#045B56',
+      '400': '#11403D',
+      '500': '#11302E',
+    },
+    coral: {
+      '50': '#F9C8CB',
+      '100': '#F4959C',
+      '200': '#F2828B',
+      '300': '#EF6872',
+      '400': '#9E1919',
+      '500': '#690000',
+    },
+    sunset: {
+      '50': '#FADEC7',
+      '100': '#F3AF77',
+      '200': '#F19E5B',
+      '300': '#EE8B3A',
+      '400': '#C24700',
+      '500': '#561F00',
+    },
+    sun: {
+      '50': '#FEECBD',
+      '100': '#FEE095',
+      '200': '#FED671',
+      '300': '#FDCB49',
+      '400': '#D49A00',
+      '500': '#805D00',
+    },
+    sand: {
+      '50': '#FCF8F3',
+      '100': '#F9F1E7',
+      '200': '#F7ECDF',
+      '300': '#F4E6D4',
+      '400': '#E0C9AC',
+      '500': '#735632',
     },
     primaryStates: {
       activeContained: 'rgba(4, 91, 86, 0.3)',
