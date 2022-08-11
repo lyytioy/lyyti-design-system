@@ -35,8 +35,8 @@ const Table = (
 
           '.MuiTableBody-root': {
             '.MuiTableRow-root': {
-              '&:nth-child(even)': { backgroundColor: 'light.light' },
-              '&:nth-child(odd)': { backgroundColor: color },
+              '&:nth-of-type(even)': { backgroundColor: 'light.light' },
+              '&:nth-of-type(odd)': { backgroundColor: color },
             },
           },
           ...sx,
