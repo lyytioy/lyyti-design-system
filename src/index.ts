@@ -36,6 +36,7 @@ export { default as ListItemIcon } from '@mui/material/ListItemIcon';
 export { default as ListItemText } from '@mui/material/ListItemText';
 export { default as MenuItem } from './components/MenuItem';
 export { default as MenuList } from './components/Menu';
+export { default as Modal } from '@mui/material/Modal';
 export { default as Pagination } from './components/Pagination';
 export { default as Paper } from './components/Paper';
 export { default as Popper } from './components/Popper';
