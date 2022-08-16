@@ -17,14 +17,14 @@ const Link = ({ sx, ...props }: LinkProps, ref: Ref<HTMLAnchorElement>): JSX.Ele
         '&.MuiLink-underlineHover': {
           '&:hover': {
             color: 'primary.main',
-            textDecorationColor: '#blue.100',
+            textDecorationColor: 'sky.100',
           },
           '&:active': {
             color: 'primary.light',
           },
         },
         '&.MuiLink-underlineAlways': {
-          textDecorationColor: 'blue.100',
+          textDecorationColor: 'sky.100',
           '&:hover': {
             color: 'primary.main',
           },
