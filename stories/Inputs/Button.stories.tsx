@@ -34,7 +34,7 @@ Secondary.args = {};
 
 export const Danger = Template.bind({});
 Danger.args = {
-  color: 'danger'
+  color: 'danger',
 };
 
 export const OutlinedPrimary = Template.bind({});
@@ -83,5 +83,6 @@ WithIcon.args = {
 
 export const Icon = Template.bind({});
 Icon.args = {
-  children: <Bin fontSize="small" />,
+  variant: 'icon',
+  children: <Bin />,
 };
