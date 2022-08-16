@@ -71,4 +71,3 @@ export { default as TableCell } from '@mui/material/TableCell';
 export { default as TableFooter } from '@mui/material/TableFooter';
 export { default as TableRow } from '@mui/material/TableRow';
 export { useTheme } from '@mui/system';
-export { default as theme } from './themes/theme';
