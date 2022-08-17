@@ -12,6 +12,16 @@ export interface ProgressProps extends Omit<LinearProgressProps, 'color' | 'vari
   ref?: Ref<HTMLSpanElement>;
 }
 
+const parseSize = (size?: number | string) => {
+  if (typeof size === 'number') return `${size}px`;
+  if (typeof size === 'string') {
+    if (!size.length) return undefined;
+    const sizeAsNumber = Number(size);
+    if (!isNaN(sizeAsNumber)) return `${sizeAsNumber}px`;
+  }
+  return size;
+};
+
 const Progress = (
   {
     color = 'primary',
@@ -24,22 +34,13 @@ const Progress = (
   }: ProgressProps,
   ref: Ref<HTMLSpanElement>
 ): JSX.Element => {
-  const parseSize = () => {
-    if (typeof size === 'number') return `${size}px`;
-    else if (typeof size === 'string') {
-      if (!size.length) return undefined;
-      else if (!isNaN(+size)) return `${+size}px`;
-    }
-    return size;
-  };
-
   return (
     <>
       {type === 'circular' && (
         <CircularProgress
           ref={ref}
           color={color}
-          size={parseSize()}
+          size={parseSize(size)}
           value={value}
           variant={variant}
           sx={sx}
@@ -52,7 +53,7 @@ const Progress = (
           color={color}
           value={value}
           variant={variant}
-          sx={{ height: parseSize(), ...sx }}
+          sx={{ height: parseSize(size), ...sx }}
           {...props}
         />
       )}
