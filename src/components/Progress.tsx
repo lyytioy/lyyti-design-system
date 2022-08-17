@@ -15,28 +15,46 @@ export interface ProgressProps extends Omit<LinearProgressProps, 'color' | 'vari
 const Progress = (
   {
     color = 'primary',
-    size = 40,
+    size,
     type = 'circular',
     value,
     variant = 'indeterminate',
+    sx = {},
     ...props
   }: ProgressProps,
   ref: Ref<HTMLSpanElement>
 ): JSX.Element => {
+  const parseSize = () => {
+    if (typeof size === 'number') return `${size}px`;
+    else if (typeof size === 'string') {
+      if (!size.length) return undefined;
+      else if (!isNaN(+size)) return `${+size}px`;
+    }
+    return size;
+  };
+
   return (
     <>
       {type === 'circular' && (
         <CircularProgress
           ref={ref}
           color={color}
-          size={size}
+          size={parseSize()}
           value={value}
           variant={variant}
+          sx={sx}
           {...props}
         />
       )}
       {type === 'linear' && (
-        <LinearProgress ref={ref} color={color} value={value} variant={variant} {...props} />
+        <LinearProgress
+          ref={ref}
+          color={color}
+          value={value}
+          variant={variant}
+          sx={{ height: parseSize(), ...sx }}
+          {...props}
+        />
       )}
     </>
   );
