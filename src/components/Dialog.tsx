@@ -35,6 +35,7 @@ const Dialog = (
       <MuiDialogTitle sx={{ pr: 8 }}>
         {dialogTitle}
         <Button
+          variant="icon"
           onClick={onClose as MouseEventHandler<HTMLButtonElement>}
           sx={{
             borderRadius: '50%',
