@@ -102,7 +102,7 @@ export default createTheme({
       contrastText: '#1F98CD',
     },
     error: {
-      main: '#D1492E',
+      main: '#CF482E',
       dark: '#A33924',
       light: '#F4A094',
       contrastText: '#FFFFFF',
