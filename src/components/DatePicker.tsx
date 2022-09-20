@@ -76,7 +76,8 @@ const DatePicker = <TInputDate = unknown, TDate = unknown>(
       shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year) : false}
       {...props}
       renderInput={(params) => {
-        return <TextField {...(params as TextFieldProps)} {...InputProps} />;
+        const {inputProps, ...props} = InputProps;
+        return <TextField {...(params as TextFieldProps)} inputProps={{...params.inputProps, ...inputProps}} {...props} />;
       }}
     />
   );
