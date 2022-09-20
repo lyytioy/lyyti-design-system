@@ -27,9 +27,10 @@ const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, InputAdorn
         tabIndex: -1,
         ...OpenPickerButtonProps
       }}
-      renderInput={(params) => (
-        <TextField {...(params as TextFieldProps)} {...InputProps} />
-      )}
+      renderInput={(params) => {
+        const {inputProps, ...props} = InputProps;
+        return <TextField {...(params as TextFieldProps)} inputProps={{...params.inputProps, ...inputProps}} {...props} />;
+      }}
     />
   );
 };
