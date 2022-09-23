@@ -237,7 +237,19 @@ const Button = (
     ...props
   }
 
-  const muiButton = (
+  if (loading) {
+    return (
+      <LoadingButton
+        color={buttonColor}
+        loading={loading}
+        {...buttonProps}
+      >
+        {children}
+      </LoadingButton>
+    );
+  }
+
+  return (
     <MuiButton
       color={buttonColor}
       {...buttonProps}
@@ -245,17 +257,5 @@ const Button = (
       {children}
     </MuiButton>
   );
-
-  const loadingButton = (
-    <LoadingButton
-      color={buttonColor}
-      loading={loading}
-      {...buttonProps}
-    >
-      {children}
-    </LoadingButton>
-  );
-
-  return loading ? loadingButton : muiButton;
 };
 export default forwardRef(Button);
