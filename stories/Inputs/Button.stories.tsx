@@ -76,6 +76,11 @@ Chunky.args = {
   chunky: true,
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true,
+};
+
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   startIcon: <Bin fontSize="small" />,

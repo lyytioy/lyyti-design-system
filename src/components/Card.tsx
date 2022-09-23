@@ -19,19 +19,26 @@ export interface CardProps
   'data-testid'?: string;
 }
 
-const Card = ({
-  title,
-  subheader,
-  headerAction,
-  headerAvatar,
-  actions,
-  headerBackgroundColor = 'inherit',
-  children,
-  sx={},
-  ...props
-}: CardProps, ref: Ref<HTMLDivElement>): JSX.Element => {
+const Card = (
+  {
+    title,
+    subheader,
+    headerAction,
+    headerAvatar,
+    actions,
+    headerBackgroundColor = 'inherit',
+    children,
+    sx = {},
+    ...props
+  }: CardProps,
+  ref: Ref<HTMLDivElement>
+): JSX.Element => {
   return (
-    <MuiCard ref={ref} sx={{ borderRadius: '3px', border: '1px solid', borderColor: 'grey.100', ...sx }} {...props}>
+    <MuiCard
+      ref={ref}
+      sx={{ borderRadius: '3px', border: '1px solid', borderColor: 'grey.100', ...sx }}
+      {...props}
+    >
       {(title || subheader) && (
         <MuiCardHeader
           title={title}
@@ -49,7 +56,15 @@ const Card = ({
           }}
         />
       )}
-      <MuiCardContent>{children}</MuiCardContent>
+      <MuiCardContent
+        sx={{
+          '&:last-child': {
+            pb: '16px',
+          },
+        }}
+      >
+        {children}
+      </MuiCardContent>
       {actions && <MuiCardActions sx={{ padding: '16px' }}>{actions}</MuiCardActions>}
     </MuiCard>
   );
