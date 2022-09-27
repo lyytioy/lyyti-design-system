@@ -204,7 +204,7 @@ const Button = (
     variant,
     disabled,
     sx: {
-      color: loading ? 'transparent !important' : 'inherit',
+      ...(loading && { color: 'transparent !important' }),
       borderRadius: '3px',
       padding: chunky ? '15px 23px' : '5px 15px',
       zIndex: 1,
