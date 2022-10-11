@@ -163,6 +163,7 @@ const iconsList = [
   { name: 'MapPin', component: i.MapPin },
   { name: 'LightBulb', component: i.LightBulb },
   { name: 'NotAllowed', component: i.NotAllowed },
+  { name: 'Trigger', component: i.Trigger },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {
