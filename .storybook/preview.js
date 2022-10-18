@@ -22,6 +22,7 @@ export const parameters = {
     storySort: {
       method: 'alphabetical',
       order: [
+        'Introduction',
         'Components',
         ['Layout', 'Inputs', 'Navigation', 'Surfaces', 'Feedback', 'Data Display'],
       ],
