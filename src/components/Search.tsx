@@ -9,7 +9,7 @@ export type SingleOptionSearchProps = Omit<
 
 export type MultipleOptionsSearchProps = Omit<
   AutocompleteProps<OptionsType>,
-  'adornment' | 'filterSelectedOptions' | 'getOptionLabel' | 'multiple' | 'options'
+  'adornment' | 'filterSelectedOptions' | 'multiple' | 'options'
 > & {
   options?: AutocompleteProps['options'];
 };
@@ -22,7 +22,7 @@ const Search = ({ ...props }: SearchProps): JSX.Element => {
   const { freeSolo = true, options = [], ...multiProps } = props as MultipleOptionsSearchProps;
   const singleProps = props as SingleOptionSearchProps;
 
-  if ((props as AutocompleteProps).options?.length) {
+  if (options.length) {
     return (
       <Autocomplete adornment={searchIcon} freeSolo={freeSolo} options={options} {...multiProps} />
     );
