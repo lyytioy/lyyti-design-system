@@ -49,6 +49,7 @@ const Autocomplete = (
     getOptionLabel = (option: OptionsType) => option.value,
     label,
     size = 'medium',
+    freeSolo = false,
     options,
     multiple = false,
     placeholder,
@@ -68,6 +69,7 @@ const Autocomplete = (
       getOptionLabel={getOptionLabel}
       options={options}
       multiple={multiple}
+      freeSolo={freeSolo}
       ref={ref}
       sx={{
         option: {
