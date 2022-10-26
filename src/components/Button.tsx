@@ -1,4 +1,9 @@
-import { Button as MuiButton, ButtonProps as MuiButtonProps, IconButton } from '@mui/material';
+import {
+  Button as MuiButton,
+  buttonClasses,
+  ButtonProps as MuiButtonProps,
+  IconButton,
+} from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { forwardRef, Ref } from 'react';
 import { LoadingButton } from '@mui/lab';
@@ -232,28 +237,27 @@ const Button = (
       '&.MuiButton-textPrimary': textPrimary,
       '&.MuiButton-textSecondary': textSecondary,
       '&.MuiButton-textError': textDanger,
+      [`& .${buttonClasses.startIcon} > *:nth-of-type(1)`]: {
+        fontSize: chunky ? '20px' : '16px',
+      },
+      [`& .${buttonClasses.endIcon} > *:nth-of-type(1)`]: {
+        fontSize: chunky ? '20px' : '16px',
+      },
       ...sx,
     },
-    ...props
-  }
+    ...props,
+  };
 
   if (loading) {
     return (
-      <LoadingButton
-        color={buttonColor}
-        loading={loading}
-        {...buttonProps}
-      >
+      <LoadingButton color={buttonColor} loading={loading} {...buttonProps}>
         {children}
       </LoadingButton>
     );
   }
 
   return (
-    <MuiButton
-      color={buttonColor}
-      {...buttonProps}
-    >
+    <MuiButton color={buttonColor} {...buttonProps}>
       {children}
     </MuiButton>
   );
