@@ -83,7 +83,13 @@ Loading.args = {
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  startIcon: <Bin fontSize="small" />,
+  startIcon: <Bin />,
+};
+
+export const ChunkyWithIcon = Template.bind({});
+ChunkyWithIcon.args = {
+  endIcon: <Bin />,
+  chunky: true,
 };
 
 export const Icon = Template.bind({});

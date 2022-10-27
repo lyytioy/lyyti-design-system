@@ -20,7 +20,7 @@ const Accordion = (
   {
     title,
     titleProps = {
-      fontSize: '24px',
+      fontSize: '16px',
     },
     expandIcon = <ChevronDown />,
     expandIconInline,
