@@ -213,9 +213,9 @@ const Button = (
         width: '0%',
         right: 0,
         position: 'absolute',
-        boxShadow: 'none',
-        transition:
-          'width 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000), boxShadow 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000)',
+        transitionProperty: 'width, box-shadow',
+        transitionDuration: '500ms',
+        transitionTimingFunction: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
         zIndex: -1,
         borderRadius: '3px',
       },
