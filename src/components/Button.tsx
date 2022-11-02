@@ -47,7 +47,7 @@ const Button = (
   }
 
   const containedPrimary = {
-    boxShadow: containedBoxShadow,
+    boxShadow: 'none',
     '&::before': {
       backgroundColor: 'primary.dark',
     },
@@ -64,7 +64,7 @@ const Button = (
   };
 
   const containedSecondary = {
-    boxShadow: containedBoxShadow,
+    boxShadow: 'none',
     '&::before': {
       backgroundColor: 'secondary.dark',
     },
@@ -81,7 +81,7 @@ const Button = (
   };
 
   const containedDanger = {
-    boxShadow: containedBoxShadow,
+    boxShadow: 'none',
     '&::before': {
       backgroundColor: 'error.dark',
     },
@@ -98,7 +98,6 @@ const Button = (
   };
 
   const outlinedPrimary = {
-    boxShadow: containedBoxShadow,
     '&::before': {
       backgroundColor: 'primaryStates.hover',
     },
@@ -116,7 +115,6 @@ const Button = (
   };
 
   const outlinedSecondary = {
-    boxShadow: containedBoxShadow,
     '&::before': {
       backgroundColor: 'secondaryStates.hover',
     },
@@ -134,7 +132,6 @@ const Button = (
   };
 
   const outlinedDanger = {
-    boxShadow: containedBoxShadow,
     '&::before': {
       backgroundColor: 'errorStates.hover',
     },
@@ -152,7 +149,6 @@ const Button = (
   };
 
   const textPrimary = {
-    boxShadow: containedBoxShadow,
     '&::before': {
       backgroundColor: 'primaryStates.hover',
     },
@@ -168,7 +164,6 @@ const Button = (
   };
 
   const textSecondary = {
-    boxShadow: containedBoxShadow,
     '&::before': {
       backgroundColor: 'secondaryStates.hover',
     },
@@ -184,7 +179,6 @@ const Button = (
   };
 
   const textDanger = {
-    boxShadow: containedBoxShadow,
     '&::before': {
       backgroundColor: 'errorStates.hover',
     },
@@ -214,15 +208,19 @@ const Button = (
         width: '0%',
         right: 0,
         position: 'absolute',
-        transition: 'width 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000)',
+        transitionProperty: 'width, box-shadow',
+        transitionDuration: '500ms',
+        transitionTimingFunction: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
         zIndex: -1,
         borderRadius: '3px',
       },
       '&:hover': {
         '&::before': {
           width: '100%',
+          boxShadow: containedBoxShadow,
         },
       },
+      '&:active': { boxShadow: containedBoxShadow },
       '&.MuiButton-containedPrimary': containedPrimary,
       '&.MuiButton-containedSecondary': containedSecondary,
       '&.MuiButton-containedError': containedDanger,
@@ -232,28 +230,27 @@ const Button = (
       '&.MuiButton-textPrimary': textPrimary,
       '&.MuiButton-textSecondary': textSecondary,
       '&.MuiButton-textError': textDanger,
+      [`& .MuiButton-startIcon > *:nth-of-type(1)`]: {
+        fontSize: chunky ? '20px' : '16px',
+      },
+      [`& .MuiButton-endIcon > *:nth-of-type(1)`]: {
+        fontSize: chunky ? '20px' : '16px',
+      },
       ...sx,
     },
-    ...props
-  }
+    ...props,
+  };
 
   if (loading) {
     return (
-      <LoadingButton
-        color={buttonColor}
-        loading={loading}
-        {...buttonProps}
-      >
+      <LoadingButton color={buttonColor} loading={loading} {...buttonProps}>
         {children}
       </LoadingButton>
     );
   }
 
   return (
-    <MuiButton
-      color={buttonColor}
-      {...buttonProps}
-    >
+    <MuiButton color={buttonColor} {...buttonProps}>
       {children}
     </MuiButton>
   );
