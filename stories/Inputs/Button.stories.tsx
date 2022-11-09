@@ -97,3 +97,9 @@ Icon.args = {
   variant: 'icon',
   children: <Bin />,
 };
+
+export const Fab = Template.bind({});
+Fab.args = {
+  variant: 'fab',
+  children: <Bin />,
+};
