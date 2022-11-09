@@ -164,6 +164,7 @@ const iconsList = [
   { name: 'LightBulb', component: i.LightBulb },
   { name: 'NotAllowed', component: i.NotAllowed },
   { name: 'Trigger', component: i.Trigger },
+  { name: 'Phone', component: i.Phone },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {

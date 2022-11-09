@@ -1,4 +1,4 @@
-import { Button as MuiButton, ButtonProps as MuiButtonProps, IconButton } from '@mui/material';
+import { Button as MuiButton, ButtonProps as MuiButtonProps, Fab, IconButton } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { forwardRef, Ref } from 'react';
 import { LoadingButton } from '@mui/lab';
@@ -8,7 +8,7 @@ const containedBoxShadow =
 
 export interface ButtonProps extends Omit<MuiButtonProps, 'color' | 'variant' | 'size'> {
   chunky?: boolean;
-  variant?: MuiButtonProps['variant'] | 'icon';
+  variant?: MuiButtonProps['variant'] | 'icon' | 'fab';
   children: MuiButtonProps['children'] & { $$typeof?: symbol; props?: any };
   color?: 'primary' | 'secondary' | 'danger' | 'inherit';
   loading?: boolean;
@@ -43,6 +43,21 @@ const Button = (
       >
         {children}
       </IconButton>
+    );
+  }
+
+  if (variant === 'fab') {
+    return (
+      <Fab
+        ref={ref}
+        color={buttonColor}
+        disabled={disabled}
+        size="large"
+        sx={{ ...sx }}
+        {...props}
+      >
+        {children}
+      </Fab>
     );
   }
 
