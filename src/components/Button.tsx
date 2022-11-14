@@ -31,6 +31,38 @@ const Button = (
   const theme = useTheme();
   const buttonColor = color === 'danger' ? 'error' : color;
 
+  const iconPrimary = {
+    '&::before': {
+      backgroundColor: 'primary.dark',
+    },
+    '&:hover': {
+      backgroundColor: 'primaryStates.hover',
+    },
+    '&:active': {
+      backgroundColor: 'primaryStates.activeContained',
+    },
+    '&.Mui-disabled': {
+      backgroundColor: 'primaryStates.disabledBg',
+      color: 'primary.contrastText',
+    },
+  };
+
+  const iconSecondary = {
+    '&::before': {
+      backgroundColor: 'secondary.dark',
+    },
+    '&:hover': {
+      backgroundColor: 'secondaryStates.hover',
+    },
+    '&:active': {
+      backgroundColor: 'secondaryStates.activeContained',
+    },
+    '&.Mui-disabled': {
+      backgroundColor: 'secondaryStates.disabledBg',
+      color: 'secondary.contrastText',
+    },
+  };
+
   if (variant === 'icon') {
     return (
       <IconButton
@@ -38,7 +70,11 @@ const Button = (
         color={buttonColor}
         disabled={disabled}
         size="large"
-        sx={{ ...sx }}
+        sx={{
+          ...sx,
+          '&.MuiIconButton-colorPrimary': iconPrimary,
+          '&.MuiIconButton-colorSecondary': iconSecondary,
+        }}
         {...props}
       >
         {children}
@@ -48,14 +84,7 @@ const Button = (
 
   if (variant === 'fab') {
     return (
-      <Fab
-        ref={ref}
-        color={buttonColor}
-        disabled={disabled}
-        size="large"
-        sx={{ ...sx }}
-        {...props}
-      >
+      <Fab ref={ref} color={buttonColor} disabled={disabled} size="large" sx={{ ...sx }} {...props}>
         {children}
       </Fab>
     );
