@@ -98,6 +98,13 @@ Icon.args = {
   children: <Bin />,
 };
 
+export const IconPrimary = Template.bind({});
+IconPrimary.args = {
+  variant: 'icon',
+  color: 'primary',
+  children: <Bin />,
+};
+
 export const Fab = Template.bind({});
 Fab.args = {
   variant: 'fab',
