@@ -1,7 +1,7 @@
 import { ContainerProps } from '@mui/material';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Container } from '../../src';
-import { lorem_ipsum } from '../assets/example_text.json'
+import lorem_ipsum from '../assets/example_text.json'
 
 export default {
   title: 'Components/Layout/Container',
