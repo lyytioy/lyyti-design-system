@@ -63,6 +63,22 @@ const Button = (
     },
   };
 
+  const iconDanger = {
+    '&::before': {
+      backgroundColor: 'error.dark',
+    },
+    '&:hover': {
+      backgroundColor: 'errorStates.hover',
+    },
+    '&:active': {
+      backgroundColor: 'errorStates.activeContained',
+    },
+    '&.Mui-disabled': {
+      backgroundColor: 'errorStates.disabledBg',
+      color: 'error.contrastText',
+    },
+  };
+
   if (variant === 'icon') {
     return (
       <IconButton
@@ -74,6 +90,7 @@ const Button = (
           ...sx,
           '&.MuiIconButton-colorPrimary': iconPrimary,
           '&.MuiIconButton-colorSecondary': iconSecondary,
+          '&.MuiIconButton-colorError': iconDanger,
         }}
         {...props}
       >
