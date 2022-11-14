@@ -40,7 +40,7 @@
     "@storybook/manager-webpack5": "6.5.13",
     "@storybook/react": "6.5.13",
     "@svgr/cli": "6.5.1",
-    "@types/node": "16.18.3",
+    "@types/node": "17.0.45",
     "@types/react": "17.0.43",
     "babel-loader": "9.1.0",
     "dayjs": "1.11.6",
