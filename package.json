@@ -45,7 +45,7 @@
     "babel-loader": "9.1.0",
     "dayjs": "1.11.6",
     "eslint": "8.27.0",
-    "eslint-config-next": "12.1.6",
+    "eslint-config-next": "12.3.3",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-storybook": "0.6.7",
     "moment": "2.29.4",
