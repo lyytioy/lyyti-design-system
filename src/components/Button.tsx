@@ -31,7 +31,7 @@ const Button = (
   const theme = useTheme();
   const buttonColor = color === 'danger' ? 'error' : color;
 
-  const iconPrimary = {
+  const iconPrimaryStyles = {
     '&::before': {
       backgroundColor: 'primary.dark',
     },
@@ -47,7 +47,7 @@ const Button = (
     },
   };
 
-  const iconSecondary = {
+  const iconSecondaryStyles = {
     '&::before': {
       backgroundColor: 'secondary.dark',
     },
@@ -63,7 +63,7 @@ const Button = (
     },
   };
 
-  const iconDanger = {
+  const iconDangerStyles = {
     '&::before': {
       backgroundColor: 'error.dark',
     },
@@ -87,10 +87,10 @@ const Button = (
         disabled={disabled}
         size="large"
         sx={{
+          '&.MuiIconButton-colorPrimary': iconPrimaryStyles,
+          '&.MuiIconButton-colorSecondary': iconSecondaryStyles,
+          '&.MuiIconButton-colorError': iconDangerStyles,
           ...sx,
-          '&.MuiIconButton-colorPrimary': iconPrimary,
-          '&.MuiIconButton-colorSecondary': iconSecondary,
-          '&.MuiIconButton-colorError': iconDanger,
         }}
         {...props}
       >
