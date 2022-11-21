@@ -8,6 +8,8 @@ import {
 } from '@mui/x-data-grid';
 import { forwardRef, Ref } from 'react';
 
+export { useGridApiRef, useGridApiContext } from '@mui/x-data-grid';
+
 export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
 export interface GridColumns extends MuiGridColumns {}
 export interface GridRowsProp extends MuiGridRowsProp {}
