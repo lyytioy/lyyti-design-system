@@ -5,6 +5,8 @@ import {
   GridRowsProp as MuiGridRowsProp,
   GridSelectionModel as MuiGridSelectionModel,
   GridColumnHeaderParams as MuiGridColumnHeaderParams,
+  GridCallbackDetails as MuiGridCallbackDetails,
+  GridSortModel as MuiGridSortModel,
 } from '@mui/x-data-grid';
 import { forwardRef, Ref } from 'react';
 
@@ -14,6 +16,8 @@ export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
 export interface GridColumns extends MuiGridColumns {}
 export interface GridRowsProp extends MuiGridRowsProp {}
 export interface GridSelectionModel extends MuiGridSelectionModel {}
+export interface GridCallbackDetails extends MuiGridCallbackDetails {}
+export interface GridSortModel extends MuiGridSortModel {}
 
 export interface DataGridProps extends MuiDataGridProps {
   columns: GridColumns;
