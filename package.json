@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "engines": {
     "node": "^16",
     "npm": "^8"
@@ -23,14 +23,14 @@
   "dependencies": {
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
-    "@mui/lab": "5.0.0-alpha.108",
-    "@mui/material": "5.10.14",
-    "@mui/styles": "5.10.14",
-    "@mui/x-data-grid": "5.17.12",
-    "@mui/x-date-pickers": "5.0.8"
+    "@mui/lab": "5.0.0-alpha.110",
+    "@mui/material": "5.10.15",
+    "@mui/styles": "5.10.16",
+    "@mui/x-data-grid": "5.17.13",
+    "@mui/x-date-pickers": "5.0.9"
   },
   "devDependencies": {
-    "@babel/core": "7.20.2",
+    "@babel/core": "7.20.5",
     "@date-io/dayjs": "2.16.0",
     "@date-io/moment": "2.16.1",
     "@storybook/addon-actions": "6.5.13",
@@ -44,8 +44,8 @@
     "@types/react": "17.0.43",
     "babel-loader": "9.1.0",
     "dayjs": "1.11.6",
-    "eslint": "8.27.0",
-    "eslint-config-next": "12.3.3",
+    "eslint": "8.28.0",
+    "eslint-config-next": "12.3.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-storybook": "0.6.7",
     "moment": "2.29.4",
