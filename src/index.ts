@@ -64,7 +64,6 @@ export { default as TreeView } from '@mui/lab/TreeView';
 export { default as TreeItem } from '@mui/lab/TreeItem';
 export type { TreeItemProps } from '@mui/lab/TreeItem';
 export { default as Typography } from './components/Typography';
-export { ServerStyleSheets } from '@mui/styles';
 export { default as Table } from './components/Table';
 export { default as TableHead } from '@mui/material/TableHead';
 export { default as TableBody } from '@mui/material/TableBody';

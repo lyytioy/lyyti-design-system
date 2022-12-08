@@ -42,10 +42,6 @@ interface ColorRangeOptions {
   500: string;
 }
 
-declare module '@mui/styles' {
-  interface DefaultTheme extends Theme {}
-}
-
 declare module '@mui/material/styles/createPalette' {
   interface Palette {
     primaryStates: ColorStateOptions;
