@@ -38,7 +38,7 @@
     "@storybook/addon-links": "6.5.13",
     "@storybook/builder-webpack5": "6.5.13",
     "@storybook/manager-webpack5": "6.5.13",
-    "@storybook/react": "6.5.13",
+    "@storybook/react": "6.5.14",
     "@svgr/cli": "6.5.1",
     "@types/node": "16.18.4",
     "@types/react": "17.0.43",
