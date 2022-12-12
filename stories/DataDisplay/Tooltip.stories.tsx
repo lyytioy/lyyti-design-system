@@ -53,3 +53,21 @@ ArrowRight.args = {
   placement: 'left',
   arrow: true,
 };
+
+export const Styling = Template.bind({});
+Styling.args = {
+  title: 'My Tooltip',
+  arrow: true,
+  sx: {
+    '& .MuiTooltip-tooltip': {
+      fontSize: '24px',
+      backgroundColor: '#045B56',
+      borderRadius: '12px',
+      color: '#FCF8F3',
+    },
+    '& .MuiTooltip-arrow': {
+      fontSize: '16px',
+      color: '#045B56',
+    },
+  },
+};
