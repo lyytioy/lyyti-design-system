@@ -18,11 +18,11 @@ export interface TooltipProps extends MuiTooltipProps {
     | 'top';
   title: NonNullable<React.ReactNode>;
   'data-testid'?: string;
-  ref?: Ref<HTMLDivElement>
+  ref?: Ref<HTMLDivElement>;
 }
 
 const Tooltip = (
-  { arrow = false, placement = 'bottom', children, title, ...props }: TooltipProps,
+  { arrow = false, placement = 'bottom', children, title, sx = {}, ...props }: TooltipProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
   return (
@@ -30,9 +30,14 @@ const Tooltip = (
       title={title}
       arrow={arrow}
       placement={placement}
-      componentsProps={{
-        tooltip: { sx: { fontSize: '12px', backgroundColor: 'grey.400', borderRadius: '3px' } },
-        arrow: { sx: { fontSize: '8px', color: 'grey.400' } },
+      sx={{
+        '& .MuiTooltip-tooltip': {
+          fontSize: '12px',
+          backgroundColor: 'grey.400',
+          borderRadius: '3px',
+        },
+        '& .MuiTooltip-arrow': { fontSize: '8px', color: 'grey.400' },
+        ...sx,
       }}
       ref={ref}
       {...props}
