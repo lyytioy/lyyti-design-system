@@ -30,14 +30,12 @@ const Tooltip = (
       title={title}
       arrow={arrow}
       placement={placement}
-      sx={{
-        '& .MuiTooltip-tooltip': {
-          fontSize: '12px',
-          backgroundColor: 'grey.400',
-          borderRadius: '3px',
+      slotProps={{
+        tooltip: { sx: { fontSize: '12px', backgroundColor: 'grey.400', borderRadius: '3px' } },
+        arrow: { sx: { fontSize: '8px', color: 'grey.400' } },
+        popper: {
+          sx: { ...sx },
         },
-        '& .MuiTooltip-arrow': { fontSize: '8px', color: 'grey.400' },
-        ...sx,
       }}
       ref={ref}
       {...props}
