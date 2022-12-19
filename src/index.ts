@@ -29,7 +29,7 @@ export { default as Grow } from './components/Grow';
 export { default as InputAdornment } from './components/InputAdornment';
 export { default as InputLabel } from './components/InputLabel';
 export { default as LanguageSelector } from './components/LanguageSelector';
-export { default as LicenseInfo } from '@mui/x-license-pro';
+export { LicenseInfo as LicenseInfo } from '@mui/x-license-pro';
 export { default as Link } from './components/Link';
 export { default as List } from '@mui/material/List';
 export { default as ListItem } from '@mui/material/ListItem';
