@@ -23,7 +23,7 @@
   "dependencies": {
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
-    "@mui/lab": "5.0.0-alpha.111",
+    "@mui/lab": "5.0.0-alpha.112",
     "@mui/material": "5.10.15",
     "@mui/styles": "5.10.16",
     "@mui/x-data-grid": "5.17.14",
