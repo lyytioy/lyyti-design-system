@@ -10,7 +10,7 @@ import Button from './Button';
 import { Close } from '../icons';
 
 export interface DialogProps extends MuiDialogProps {
-  children: JSX.Element | string;
+  children: JSX.Element | JSX.Element[] | string;
   dialogActions?: JSX.Element | JSX.Element[];
   dialogTitle: JSX.Element | string;
   fullScreen?: boolean;
