@@ -26,7 +26,7 @@
     "@mui/lab": "5.0.0-alpha.112",
     "@mui/material": "5.10.15",
     "@mui/styles": "5.11.0",
-    "@mui/x-data-grid": "5.17.14",
+    "@mui/x-data-grid": "5.17.16",
     "@mui/x-data-grid-pro": "^5.17.16",
     "@mui/x-date-pickers": "5.0.11",
     "@mui/x-license-pro": "^5.17.12"
