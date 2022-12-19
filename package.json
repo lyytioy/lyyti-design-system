@@ -27,7 +27,7 @@
     "@mui/material": "5.10.15",
     "@mui/styles": "5.10.16",
     "@mui/x-data-grid": "5.17.14",
-    "@mui/x-date-pickers": "5.0.10"
+    "@mui/x-date-pickers": "5.0.11"
   },
   "devDependencies": {
     "@babel/core": "7.20.5",
