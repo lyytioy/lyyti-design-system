@@ -25,12 +25,10 @@ export default {
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
-};
+Primary.args = {};
 
 export const Secondary = Template.bind({});
-Secondary.args = {};
+Secondary.args = { color: 'secondary' };
 
 export const Danger = Template.bind({});
 Danger.args = {
@@ -39,12 +37,12 @@ Danger.args = {
 
 export const OutlinedPrimary = Template.bind({});
 OutlinedPrimary.args = {
-  color: 'primary',
   variant: 'outlined',
 };
 
 export const OutlinedSecondary = Template.bind({});
 OutlinedSecondary.args = {
+  color: 'secondary',
   variant: 'outlined',
 };
 
@@ -56,12 +54,12 @@ OutlinedDanger.args = {
 
 export const TextPrimary = Template.bind({});
 TextPrimary.args = {
-  color: 'primary',
   variant: 'text',
 };
 
 export const TextSecondary = Template.bind({});
 TextSecondary.args = {
+  color: 'secondary',
   variant: 'text',
 };
 
@@ -92,16 +90,16 @@ ChunkyWithIcon.args = {
   chunky: true,
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const IconPrimary = Template.bind({});
+IconPrimary.args = {
   variant: 'icon',
   children: <Bin />,
 };
 
-export const IconPrimary = Template.bind({});
-IconPrimary.args = {
+export const IconSecondary = Template.bind({});
+IconSecondary.args = {
   variant: 'icon',
-  color: 'primary',
+  color: 'secondary',
   children: <Bin />,
 };
 

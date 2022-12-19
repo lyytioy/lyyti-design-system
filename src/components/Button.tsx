@@ -20,7 +20,7 @@ const Button = (
     children,
     chunky = false,
     variant = 'contained',
-    color = 'secondary',
+    color = 'primary',
     loading = false,
     disabled = false,
     sx = {},
