@@ -165,6 +165,7 @@ const iconsList = [
   { name: 'NotAllowed', component: i.NotAllowed },
   { name: 'Trigger', component: i.Trigger },
   { name: 'Phone', component: i.Phone },
+  { name: 'QrCode', component: i.QrCode },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {
