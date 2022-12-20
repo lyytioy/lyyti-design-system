@@ -104,3 +104,4 @@ export { default as LightBulb } from './LightBulb';
 export { default as NotAllowed } from './NotAllowed';
 export { default as Trigger } from './Trigger';
 export { default as Phone } from './Phone';
+export { default as QrCode } from './QrCode';
