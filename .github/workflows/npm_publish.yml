@@ -1,4 +1,4 @@
-# This workflow creates a Tag, GitHub release, publishes the built package to NPM and to Github packages
+# This workflow creates a Tag, GitHub release, publishes the built package to NPM
 
 name: Publish Lyyti Design System
 
@@ -62,12 +62,3 @@ jobs:
         run: npm publish ./dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com
-          scope: '@lyytioy'
-      - name: Publish Github
-        run: npm publish ./dist
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
