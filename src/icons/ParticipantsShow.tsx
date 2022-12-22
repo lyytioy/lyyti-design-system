@@ -1,46 +1,23 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
 
-const ParticipantsShow = (props: any) =>
+const ParticipantShow = (props: any) =>
   createElement(
     SvgIcon,
     props,
-    <defs>
-      <style />
-    </defs>,
     <path
-      d="M18.75 11.31a4.49 4.49 0 014.5 4.5c0 1.92-2.69 5.57-3.91 7.14a.78.78 0 01-1.18 0c-1.22-1.57-3.91-5.22-3.91-7.14a4.49 4.49 0 014.5-4.5z"
-      fill="#5ab12f"
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={0}
-    />,
-    <circle
-      cx={7.5}
-      cy={4.88}
-      r={4.13}
+      d="M7.7 9.2a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2ZM12.4 12.6c-2.7-2.6-6.9-2.6-9.5.1C1.7 14 1 15.7 1 17.4"
       fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      stroke="currentcolor"
-    />,
-    <path
-      d="M12.21 12.43A6.74 6.74 0 00.75 17.26"
-      transform="translate(0 -.01)"
-      fill="none"
-      stroke="currentcolor"
+      stroke="#7A8389"
+      strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
     />,
     <path
-      d="M18.85 15.23a.48.48 0 01.47.48.47.47 0 01-.94 0 .48.48 0 01.47-.48"
-      fill="none"
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={1.9}
+      d="M17.7 7c-3.8 0-6.7 3.1-6.7 6.7 0 2.9 4 8.4 5.9 10.6 0 0 0 .1.1.1.4.4 1.3.4 1.7-.1 1.8-2.4 5.9-7.8 5.9-10.6C24.4 10 21.5 7 17.7 7Zm0 8.9c-1.4 0-2.4-1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.4 0 2.5 1.1 2.5 2.4 0 1.4-1.1 2.4-2.5 2.4Z"
+      transform="translate(-0.6 -0.6)"
+      fill="#50B54E"
     />
   );
 
-export default ParticipantsShow;
+export default ParticipantShow;

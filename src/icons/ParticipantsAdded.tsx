@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
 
-const ParticipantRegistered = (props: any) =>
+const ParticipantAdded = (props: any) =>
   createElement(
     SvgIcon,
     props,
@@ -13,16 +13,15 @@ const ParticipantRegistered = (props: any) =>
       strokeLinecap="round"
       strokeLinejoin="round"
     />,
-    <circle cx={17.5} cy={16.5} r={7.5} fill="#50B54E" transform="translate(-0.95 0)" />,
+    <circle cx={17.5} cy={16.5} r={7.5} fill="#1F98CD" transform="translate(-0.95 0)" />,
     <path
-      d="m21.25 12.75-4.688 7.5-2.812-3.375"
       transform="translate(-0.95 0)"
       fill="none"
       stroke="#fff"
-      strokeWidth={2}
+      strokeWidth={2.2}
       strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M17.6 11.1v10.8M22.9 16.6H12.1"
     />
   );
 
-export default ParticipantRegistered;
+export default ParticipantAdded;
