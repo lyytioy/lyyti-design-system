@@ -18,7 +18,7 @@ const ParticipantsDeclined = (props: any) =>
     <path
       d="m19.714 13.286-6.428 6.428M13.286 13.286l6.428 6.428"
       stroke="#fff"
-      strokeWidth={2.301}
+      strokeWidth={2.3}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
