@@ -10,6 +10,8 @@ on:
       - 'stories/**'
       - 'public/**'
       - 'typings/**'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   compare-versions:
