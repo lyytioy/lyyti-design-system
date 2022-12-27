@@ -5,41 +5,18 @@ const ParticipantsShow = (props: any) =>
   createElement(
     SvgIcon,
     props,
-    <defs>
-      <style />
-    </defs>,
     <path
-      d="M18.75 11.31a4.49 4.49 0 014.5 4.5c0 1.92-2.69 5.57-3.91 7.14a.78.78 0 01-1.18 0c-1.22-1.57-3.91-5.22-3.91-7.14a4.49 4.49 0 014.5-4.5z"
-      fill="#5ab12f"
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={0}
-    />,
-    <circle
-      cx={7.5}
-      cy={4.88}
-      r={4.13}
+      className="participants_show_svg"
+      d="M7.7 9.2a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2ZM12.4 12.6c-2.7-2.6-6.9-2.6-9.5.1C1.7 14 1 15.7 1 17.4"
       fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      stroke="currentcolor"
-    />,
-    <path
-      d="M12.21 12.43A6.74 6.74 0 00.75 17.26"
-      transform="translate(0 -.01)"
-      fill="none"
-      stroke="currentcolor"
+      stroke="currentColor"
+      strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
     />,
     <path
-      d="M18.85 15.23a.48.48 0 01.47.48.47.47 0 01-.94 0 .48.48 0 01.47-.48"
-      fill="none"
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={1.9}
+      d="M16.404 7C12.772 7 10 9.98 10 13.44c0 2.786 3.823 8.072 5.64 10.187 0 0 0 .096.095.096.383.384 1.243.384 1.625-.096C19.08 21.32 23 16.13 23 13.439 22.809 9.883 20.037 7 16.404 7Zm0 8.554c-1.338 0-2.294-.962-2.294-2.307 0-1.25 1.052-2.307 2.294-2.307 1.339 0 2.39 1.058 2.39 2.307 0 1.345-1.051 2.307-2.39 2.307Z"
+      fill="#50B54E"
     />
   );
 
