@@ -47,7 +47,7 @@ jobs:
           TAG: v${{ steps.package-version.outputs.current-version }}
 
   publish-package:
-    if: github.event.pull_request.merged == true || inputs.accept == true
+    if: github.event.pull_request.merged == true || github.event.inputs.accept == 'true'
     needs: create-release
     runs-on: ubuntu-latest
     steps:
