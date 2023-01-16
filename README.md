@@ -125,3 +125,10 @@ After converting
 - Add an export to `src/icons/index.ts` for the icon
 
 - Add the icon to `iconsList` in `stories/DataDisplay/Icons.stories.tsx`
+
+## Prerequisites
+
+- Node v18 (active LTS)
+- npm v8
+
+You can install them from [https://nodejs.org](https://nodejs.org)

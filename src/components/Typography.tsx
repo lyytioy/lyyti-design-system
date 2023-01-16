@@ -1,5 +1,5 @@
 import { Typography as MuiTypography, TypographyProps as MuiTypographyProps } from '@mui/material';
-import { ElementType } from 'react';
+import { ElementType, forwardRef, Ref } from 'react';
 
 export type VariantTypes =
   | 'h1'
@@ -21,8 +21,11 @@ export interface TypographyProps
   'data-testid'?: string;
 }
 
-const Typography = ({ variant = 'body1', ...props }: TypographyProps): JSX.Element => {
-  return <MuiTypography variant={variant} {...props} />;
+const Typography = (
+  { variant = 'body1', ...props }: TypographyProps,
+  ref: Ref<HTMLElement>
+): JSX.Element => {
+  return <MuiTypography variant={variant} ref={ref} {...props} />;
 };
 
-export default Typography;
+export default forwardRef(Typography);

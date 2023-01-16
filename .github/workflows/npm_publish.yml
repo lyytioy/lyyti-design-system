@@ -25,7 +25,7 @@ on:
 
 jobs:
   create-release:
-    if: github.event.pull_request.merged == true || github.event.inputs.accept == true
+    if: github.event.pull_request.merged == true || github.event.inputs.accept == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -47,14 +47,14 @@ jobs:
           TAG: v${{ steps.package-version.outputs.current-version }}
 
   publish-package:
-    if: github.event.pull_request.merged == true || github.event.inputs.accept == true
+    if: github.event.pull_request.merged == true || github.event.inputs.accept == 'true'
     needs: create-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18.13.0
           registry-url: https://registry.npmjs.org/
       - name: Build package
         run: |
