@@ -83,3 +83,9 @@ PStyledAsH1.args = {
   component: 'p',
   color: 'primary',
 };
+
+export const Body2 = Template.bind({});
+Body2.args = {
+  variant: 'body2',
+  children: 'Back to previous page',
+};
