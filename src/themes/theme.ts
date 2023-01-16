@@ -268,8 +268,11 @@ export default createTheme({
       letterSpacing: '0em',
     },
     body2: {
-      fontSize: '1rem',
-      letterSpacing: '0em',
+      fontFamily: objektivMk1FontFamily,
+      fontSize: '0.75rem',
+      letterSpacing: '0.8px',
+      textTransform: 'uppercase',
+      color: 'text.primary',
     },
     button: {
       fontFamily: objektivMk1FontFamily,
