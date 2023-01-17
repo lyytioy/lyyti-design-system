@@ -12,6 +12,7 @@ export type VariantTypes =
   | 'body1'
   | 'body2'
   | 'caption'
+  | 'navigationLink'
   | 'inherit';
 
 export interface TypographyProps
