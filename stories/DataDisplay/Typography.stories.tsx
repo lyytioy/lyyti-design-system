@@ -84,8 +84,8 @@ PStyledAsH1.args = {
   color: 'primary',
 };
 
-export const Body2 = Template.bind({});
-Body2.args = {
-  variant: 'body2',
+export const NavigationLink = Template.bind({});
+NavigationLink.args = {
+  variant: 'navigationLink',
   children: 'Back to previous page',
 };

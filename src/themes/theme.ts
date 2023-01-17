@@ -1,5 +1,4 @@
-import { createTheme } from '@mui/material/styles';
-import { Theme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles';
 
 const baseFontStack = [
   '-apple-system',
@@ -72,6 +71,24 @@ declare module '@mui/material/styles/createPalette' {
     sunset: ColorRangeOptions;
     sun: ColorRangeOptions;
     sand: ColorRangeOptions;
+  }
+}
+
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    navigationLink: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    navigationLink?: React.CSSProperties;
+  }
+}
+
+// Update the Typography's variant prop options
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    navigationLink: true;
   }
 }
 
@@ -268,11 +285,8 @@ export default createTheme({
       letterSpacing: '0em',
     },
     body2: {
-      fontFamily: objektivMk1FontFamily,
-      fontSize: '0.75rem',
-      letterSpacing: '0.8px',
-      textTransform: 'uppercase',
-      color: 'text.primary',
+      fontSize: '1rem',
+      letterSpacing: '0em',
     },
     button: {
       fontFamily: objektivMk1FontFamily,
@@ -288,6 +302,11 @@ export default createTheme({
       letterSpacing: '0em',
     },
     overline: {},
+    navigationLink: {
+      fontFamily: objektivMk1FontFamily,
+      fontSize: '0.75rem',
+      letterSpacing: '0.8px',
+    },
   },
   components: {
     MuiCheckbox: {
