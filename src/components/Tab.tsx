@@ -1,7 +1,7 @@
 import { Tab as MuiTab, TabProps as MuiTabProps } from '@mui/material';
 import { forwardRef, Ref } from 'react';
 
-export type TabProps = MuiTabProps;
+export type TabProps = Omit<MuiTabProps, 'textColor' | 'indicatorColor'>;
 
 const Tab = ({ sx = {}, ...props }: TabProps, ref: Ref<HTMLDivElement>): JSX.Element => {
   return (
@@ -9,7 +9,6 @@ const Tab = ({ sx = {}, ...props }: TabProps, ref: Ref<HTMLDivElement>): JSX.Ele
       ref={ref}
       sx={{
         fontSize: '16px',
-        '& .MuiTab.Mui-disabled': { color: 'text.disabled' },
         '&.MuiTab-wrapped': { fontSize: '13px' },
         ...sx,
       }}

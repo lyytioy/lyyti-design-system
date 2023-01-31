@@ -103,6 +103,13 @@ IconSecondary.args = {
   children: <Bin />,
 };
 
+export const IconDisabled = Template.bind({});
+IconDisabled.args = {
+  variant: 'icon',
+  children: <Bin />,
+  disabled: true,
+};
+
 export const Fab = Template.bind({});
 Fab.args = {
   variant: 'fab',

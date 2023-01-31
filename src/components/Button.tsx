@@ -41,10 +41,6 @@ const Button = (
     '&:active': {
       backgroundColor: 'primaryStates.activeContained',
     },
-    '&.Mui-disabled': {
-      backgroundColor: 'primaryStates.disabledBg',
-      color: 'primary.contrastText',
-    },
   };
 
   const iconSecondaryStyles = {
@@ -57,10 +53,6 @@ const Button = (
     '&:active': {
       backgroundColor: 'secondaryStates.activeContained',
     },
-    '&.Mui-disabled': {
-      backgroundColor: 'secondaryStates.disabledBg',
-      color: 'secondary.contrastText',
-    },
   };
 
   const iconDangerStyles = {
@@ -72,10 +64,6 @@ const Button = (
     },
     '&:active': {
       backgroundColor: 'errorStates.activeContained',
-    },
-    '&.Mui-disabled': {
-      backgroundColor: 'errorStates.disabledBg',
-      color: 'error.contrastText',
     },
   };
 
