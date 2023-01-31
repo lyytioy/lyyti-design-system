@@ -23,6 +23,7 @@ const Tabs = ({ color = 'sky', sx = {}, ...props }: TabsProps): JSX.Element => {
         '& .MuiTabs-indicator': {
           bgcolor: tabColor,
         },
+        ...sx,
       }}
       {...props}
     />
