@@ -18,8 +18,6 @@ const Template: Story<TabsProps> = (args) => <Tabs {...args} />;
 
 export const Horizontal = Template.bind({});
 Horizontal.args = {
-  indicatorColor: 'primary',
-  textColor: 'primary',
   value: 0,
   children: [
     <Tab key={1} label="Active" />,
@@ -32,8 +30,7 @@ Horizontal.args = {
 export const Vertical = Template.bind({});
 Vertical.args = {
   orientation: 'vertical',
-  indicatorColor: 'secondary',
-  textColor: 'secondary',
+  color: 'secondary',
   value: 1,
   children: [
     <Tab key={1} label="Default" />,
