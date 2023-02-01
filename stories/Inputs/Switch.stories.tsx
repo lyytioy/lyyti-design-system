@@ -35,3 +35,15 @@ Label.args = {
   control: <Switch />,
   label: 'Label',
 };
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  checked: true,
+  color: 'secondary',
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  checked: true,
+  color: 'error',
+};

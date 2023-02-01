@@ -20,6 +20,18 @@ const Switch = ({ sx = {}, ...props }: SwitchProps, ref: Ref<HTMLButtonElement>)
             '&:hover': {
               backgroundColor: 'primaryStates.hover',
             },
+            '&.MuiSwitch-colorSecondary': {
+              color: 'secondary.main',
+              '&:hover': {
+                backgroundColor: 'secondaryStates.hover',
+              },
+            },
+            '&.MuiSwitch-colorError': {
+              color: 'error.main',
+              '&:hover': {
+                backgroundColor: 'errorStates.hover',
+              },
+            },
           },
           '&.Mui-disabled': {
             color: 'grey.100',
