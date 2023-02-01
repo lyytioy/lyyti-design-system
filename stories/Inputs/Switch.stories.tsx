@@ -41,9 +41,3 @@ Secondary.args = {
   checked: true,
   color: 'secondary',
 };
-
-export const Error = Template.bind({});
-Error.args = {
-  checked: true,
-  color: 'error',
-};
