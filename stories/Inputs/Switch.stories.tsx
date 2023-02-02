@@ -35,9 +35,3 @@ Label.args = {
   control: <Switch />,
   label: 'Label',
 };
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  checked: true,
-  color: 'secondary',
-};

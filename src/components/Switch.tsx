@@ -1,7 +1,7 @@
 import { Switch as MuiSwitch, SwitchProps as MuiSwitchProps } from '@mui/material';
 import { forwardRef, Ref } from 'react';
 
-export type SwitchProps = MuiSwitchProps;
+export type SwitchProps = Omit<MuiSwitchProps, 'color'>;
 
 const Switch = ({ sx = {}, ...props }: SwitchProps, ref: Ref<HTMLButtonElement>): JSX.Element => {
   return (
@@ -19,12 +19,6 @@ const Switch = ({ sx = {}, ...props }: SwitchProps, ref: Ref<HTMLButtonElement>)
             color: 'primary.main',
             '&:hover': {
               backgroundColor: 'primaryStates.hover',
-            },
-            '&.MuiSwitch-colorSecondary': {
-              color: 'secondary.main',
-              '&:hover': {
-                backgroundColor: 'secondaryStates.hover',
-              },
             },
           },
           '&.Mui-disabled': {
