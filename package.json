@@ -27,7 +27,7 @@
     "@mui/material": "5.11.7",
     "@mui/styles": "5.11.7",
     "@mui/x-data-grid": "5.17.21",
-    "@mui/x-data-grid-pro": "5.17.21",
+    "@mui/x-data-grid-pro": "5.17.22",
     "@mui/x-date-pickers": "5.0.16",
     "@mui/x-license-pro": "5.17.12"
   },
