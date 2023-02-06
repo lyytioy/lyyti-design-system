@@ -1,7 +1,7 @@
 import { InputLabel as MuiInputLabel, InputLabelProps as MuiInputLabelProps } from '@mui/material';
 import { forwardRef, Ref } from 'react';
 
-export type InputLabelProps = MuiInputLabelProps;
+export interface InputLabelProps extends MuiInputLabelProps {}
 
 const InputLabel = (
   { sx = {}, ...props }: InputLabelProps,
