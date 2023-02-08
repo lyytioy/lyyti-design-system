@@ -105,3 +105,4 @@ export { default as NotAllowed } from './NotAllowed';
 export { default as Trigger } from './Trigger';
 export { default as Phone } from './Phone';
 export { default as QrCode } from './QrCode';
+export { default as HeavyPlus } from './HeavyPlus';
