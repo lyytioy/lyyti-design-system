@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
-const ParticipantsNoShowOutline = (props: any) =>
+const ParticipantsNoShowOutlined = (props: any) =>
   createElement(
     SvgIcon,
     props,
@@ -27,4 +27,4 @@ const ParticipantsNoShowOutline = (props: any) =>
       strokeLinejoin="round"
     />
   );
-export default ParticipantsNoShowOutline;
+export default ParticipantsNoShowOutlined;

@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
-const ParticipantsAddedOutline = (props: any) =>
+const ParticipantsDeclinedOutlined = (props: any) =>
   createElement(
     SvgIcon,
     props,
@@ -13,11 +13,12 @@ const ParticipantsAddedOutline = (props: any) =>
       strokeLinejoin="round"
     />,
     <path
+      d="m22.714 10.286-6.428 6.428M16.286 10.286l6.428 6.428"
       fill="none"
       stroke="currentColor"
-      strokeWidth={2.2}
+      strokeWidth={2.301}
       strokeLinecap="round"
-      d="M16.5 13.1v6.8M19.9 16.5h-6.8"
+      strokeLinejoin="round"
     />
   );
-export default ParticipantsAddedOutline;
+export default ParticipantsDeclinedOutlined;
