@@ -1,5 +1,6 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
+
 const Rectangle = (props: any) =>
   createElement(
     SvgIcon,
@@ -14,4 +15,5 @@ const Rectangle = (props: any) =>
       strokeLinejoin="round"
     />
   );
+
 export default Rectangle;
