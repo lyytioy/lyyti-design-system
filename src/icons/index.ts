@@ -111,3 +111,6 @@ export { default as Trigger } from './Trigger';
 export { default as Phone } from './Phone';
 export { default as QrCode } from './QrCode';
 export { default as HeavyPlus } from './HeavyPlus';
+export { default as Checkbox } from './Checkbox';
+export { default as Radio } from './Radio';
+export { default as Rectangle } from './Rectangle';
