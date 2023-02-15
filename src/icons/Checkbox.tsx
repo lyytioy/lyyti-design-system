@@ -1,5 +1,6 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
+
 const Checkbox = (props: any) =>
   createElement(
     SvgIcon,
@@ -18,4 +19,5 @@ const Checkbox = (props: any) =>
       fill="none"
     />
   );
+
 export default Checkbox;
