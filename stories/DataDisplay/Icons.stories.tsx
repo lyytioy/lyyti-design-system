@@ -60,6 +60,9 @@ export default {
 } as Meta;
 
 const iconsList = [
+  { name: 'Checkbox', component: i.Checkbox },
+  { name: 'Radio', component: i.Radio },
+  { name: 'Rectangle', component: i.Rectangle },
   { name: 'Excel', component: i.Excel },
   { name: 'Pdf', component: i.Pdf },
   { name: 'Link', component: i.Link },
