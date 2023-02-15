@@ -114,6 +114,7 @@ npm run build
 ### Icons
 
 We convert our SVG files to React components using a custom written template and a tool called [SVGR](https://react-svgr.com/).
+Before converting an SVG file to a React component, make sure the viewbox's dimensions are 24 24.
 To convert a `.svg` file to a React component please run the following command
 
 ```shell
