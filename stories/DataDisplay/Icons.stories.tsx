@@ -142,6 +142,7 @@ const iconsList = [
   { name: 'ParticipantsShowOutlined', component: i.ParticipantsShowOutlined },
   { name: 'ParticipantsDeclinedOutlined', component: i.ParticipantsDeclinedOutlined },
   { name: 'ParticipantsNoShowOutlined', component: i.ParticipantsNoShowOutlined },
+  { name: 'ParticipantEmail', component: i.ParticipantEmail },
   { name: 'Bill', component: i.Bill },
   { name: 'BrowserPage', component: i.BrowserPage },
   { name: 'EmptyFile', component: i.EmptyFile },
