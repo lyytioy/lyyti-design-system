@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { MenuItemProps, MenuProps } from '@mui/material';
 import { useState, MouseEvent as ReactMouseEvent } from 'react';
 import Button, { ButtonProps } from './Button';
 import Menu from './Menu';
@@ -7,12 +8,9 @@ import MenuItem from './MenuItem';
 export interface DropdownProps {
   title: string;
   onSelect: (clickedItem: number) => void;
-  items: Array<{ id: number; title: string }>;
+  items: Array<{ id: number; title: string | JSX.Element, props: MenuItemProps }>;
   buttonProps: ButtonProps;
-}
-
-const toHMTLAttribute = (item: string) => {
-  return item.replaceAll(' ', '-').toLowerCase();
+  menuProps: MenuProps;
 }
 
 const DropdownMenu = (props: DropdownProps): JSX.Element => {
@@ -42,9 +40,13 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
       >
         {props.title}
       </Button>
-      <Menu id="menu-list-grow" anchorEl={anchorEl} open={open} onClose={handleClose}>
+      <Menu {...props.menuProps} id="menu-list-grow" anchorEl={anchorEl} open={open} onClose={handleClose}>
         {props.items.map((item) => (
-          <MenuItem key={item.id} onClick={(event) => selectItem(event, item.id)} data-testid={toHMTLAttribute(item.title)}>
+          <MenuItem
+            key={item.id}
+            onClick={(event) => selectItem(event, item.id)}
+            {...item.props}
+          >
             {item.title}
           </MenuItem>
         ))}
