@@ -78,6 +78,7 @@ export { default as ParticipantsRegisteredOutlined } from './ParticipantsRegiste
 export { default as ParticipantsShowOutlined } from './ParticipantsShowOutlined';
 export { default as ParticipantsDeclinedOutlined } from './ParticipantsDeclinedOutlined';
 export { default as ParticipantsNoShowOutlined } from './ParticipantsNoShowOutlined';
+export { default as ParticipantEmail } from './ParticipantEmail';
 export { default as Bill } from './Bill';
 export { default as BrowserPage } from './BrowserPage';
 export { default as EmptyFile } from './EmptyFile';
