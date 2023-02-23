@@ -8,7 +8,7 @@ import MenuItem from './MenuItem';
 export interface DropdownProps {
   title: string;
   onSelect: (clickedItem: number) => void;
-  items: Array<{ id: number; title: string | JSX.Element, props: MenuItemProps }>;
+  items: Array<{ id: number; title: string | JSX.Element, props?: MenuItemProps }>;
   buttonProps: ButtonProps;
   menuProps: MenuProps;
 }
