@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import DropdownMenu, { DropdownProps } from '../../src/components/DropdownMenu';
+import { Calendar, ChevronDown, Radio, Rectangle } from '../../src/icons';
 
 export default {
   title: 'Components/Navigation/Menu',
@@ -12,11 +13,37 @@ const menuItems = [
   { id: 3, title: 'Menu item 3' },
 ];
 
+const menuItems2 = [
+  { id: 1, title: 'Menu item 1', icon: <Calendar fontSize="small" /> },
+  { id: 2, title: 'Menu item 2', icon: <Rectangle fontSize="small" /> },
+  { id: 3, title: 'Menu item 2', icon: <Radio fontSize="small" /> },
+];
+
 const Template: Story<DropdownProps> = (args) => <DropdownMenu {...args} />;
 
 export const Dropdown = Template.bind({});
 Dropdown.args = {
   title: 'Open menu',
   items: menuItems,
-  buttonProps: { children: '', variant: 'outlined', color: 'primary', chunky: false },
+  buttonProps: {
+    children: '',
+    variant: 'outlined',
+    color: 'primary',
+    chunky: false,
+  },
+};
+
+export const DropdownIcons = Template.bind({});
+DropdownIcons.args = {
+  title: 'Open menu',
+  items: menuItems2,
+  subtitle: 'Subtitle',
+  buttonProps: {
+    children: '',
+    color: 'primary',
+    chunky: true,
+    endIcon: <ChevronDown />,
+  },
+  menuItemProps: { sx: { py: 1.5, pl: 3 } },
+  textProps: { color: 'primary' },
 };
