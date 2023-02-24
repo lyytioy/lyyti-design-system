@@ -9,16 +9,12 @@ import { TypographyProps } from './Typography';
 export interface DropdownProps {
   title: string;
   onSelect: (clickedItem: number) => void;
-  items: Array<{ id: number; title: string; icon?: any }>;
-  buttonProps: ButtonProps;
+  items: Array<{ id: number; title: string; icon?: any; menuItemProps?: Partial<MenuItemProps>  }>;
+  buttonProps?: Partial<ButtonProps>;
   subtitle?: string;
-  menuItemProps?: MenuItemProps;
-  textProps?: TypographyProps;
+  menuItemProps?: Partial<MenuItemProps>;
+  textProps?: Partial<TypographyProps>;
 }
-
-const toHMTLAttribute = (item: string) => {
-  return item.replaceAll(' ', '-').toLowerCase();
-};
 
 const DropdownMenu = (props: DropdownProps): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -57,8 +53,8 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
           <MenuItem
             key={item.id}
             onClick={(event) => selectItem(event, item.id)}
-            data-testid={toHMTLAttribute(item.title)}
             {...props.menuItemProps}
+            {...item.menuItemProps}
           >
             {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}
             <ListItemText primaryTypographyProps={{ ...props.textProps }}>
