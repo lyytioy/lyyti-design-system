@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { ListItemIcon, ListItemText } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuProps } from '@mui/material';
 import { useState, MouseEvent as ReactMouseEvent } from 'react';
 import Button, { ButtonProps } from './Button';
 import Menu from './Menu';
@@ -14,6 +14,9 @@ export interface DropdownProps {
   subtitle?: string;
   menuItemProps?: Partial<MenuItemProps>;
   textProps?: Partial<TypographyProps>;
+  menuProps?: Partial<MenuProps>;
+  onClose?: () => void;
+  onOpen?: () => void;
 }
 
 const DropdownMenu = (props: DropdownProps): JSX.Element => {
@@ -22,10 +25,12 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
+    props.onOpen && props.onOpen();
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+    props.onClose && props.onClose();
   };
 
   const selectItem = (_event: ReactMouseEvent<HTMLLIElement, MouseEvent>, id: number) => {
@@ -43,7 +48,7 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
       >
         {props.title}
       </Button>
-      <Menu id="menu-list-grow" anchorEl={anchorEl} open={open} onClose={handleClose}>
+      <Menu id="menu-list-grow" anchorEl={anchorEl} open={open} onClose={handleClose} {...props.menuProps}>
         {props.subtitle && (
           <ListItemText primaryTypographyProps={{ ...props.textProps }} sx={{ pl: 1.5, pb: 0.5 }}>
             {props.subtitle}
