@@ -2,6 +2,7 @@ import { MenuItem } from '@mui/material';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 import { forwardRef, Ref } from 'react';
+import Typography from './Typography';
 
 type CommonProps = {
   options?: AutocompleteProps['options'];
@@ -51,14 +52,22 @@ const Select = (
             horizontal: 'left',
           },
         },
+        renderValue: (value) => options.find((o) => o.id === +(value as number | string))?.value,
       }}
       inputProps={{ 'data-testid': testid }}
+      InputProps={{}}
       {...(props as SingleSelectProps)}
       ref={ref as Ref<HTMLDivElement>}
     >
-      {options.map(({ id, value: label, disabled }) => (
-        <MenuItem key={id} value={id} disabled={disabled}>
+      {options.map(({ id, value: label, description, disabled }) => (
+        <MenuItem
+          key={id}
+          value={id}
+          disabled={disabled}
+          sx={{ ...(description && { flexDirection: 'column', alignItems: 'flex-start' }) }}
+        >
           {label}
+          {description && <Typography variant="caption">{description}</Typography>}
         </MenuItem>
       ))}
     </TextField>

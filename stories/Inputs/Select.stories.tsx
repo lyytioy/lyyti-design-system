@@ -35,32 +35,31 @@ const SelectTemplate: Story<SelectProps> = (args) => {
   args.value = selectValue;
   args.onChange = (e: ChangeEvent<HTMLInputElement>) => setSelectValue(e.target.value);
 
-  return (
-    <Select
-      {...args}
-      options={[
-        { id: 0, value: 'Select...' },
-        { id: 1, value: 'Option 1' },
-        { id: 2, value: 'Option 2' },
-        { id: 3, value: 'Option 3' },
-        { id: 4, value: 'Option 4' },
-      ]}
-    />
-  );
+  if (!args.options) {
+    args.options = [
+      { id: 0, value: 'Select...' },
+      { id: 1, value: 'Option 1' },
+      { id: 2, value: 'Option 2' },
+      { id: 3, value: 'Option 3' },
+      { id: 4, value: 'Option 4' },
+    ];
+  }
+
+  return <Select {...args} />;
 };
 
 const MultiSelectTemplate: Story<AutocompleteProps> = (args) => {
-  return (
-    <Select
-      {...args}
-      options={[
-        { id: 1, value: 'Option 1' },
-        { id: 2, value: 'Option 2' },
-        { id: 3, value: 'Option 3' },
-        { id: 4, value: 'Option 4' },
-      ]}
-    />
-  );
+  if (!args.options) {
+    args.options = [
+      { id: 0, value: 'Select...' },
+      { id: 1, value: 'Option 1' },
+      { id: 2, value: 'Option 2' },
+      { id: 3, value: 'Option 3' },
+      { id: 4, value: 'Option 4' },
+    ];
+  }
+
+  return <Select {...args} />;
 };
 
 export const Default = SelectTemplate.bind({});
@@ -88,6 +87,18 @@ StartAdornment.args = {
   adornment: 'Kg',
 };
 
+export const OptionDescription = SelectTemplate.bind({});
+OptionDescription.args = {
+  helperText: 'Helper text',
+  options: [
+    { id: 0, value: 'Select...' },
+    { id: 1, value: 'Option 1', description: 'lorem ipsum dolor' },
+    { id: 2, value: 'Option 2', description: 'lorem ipsum dolor' },
+    { id: 3, value: 'Option 3', description: 'lorem ipsum dolor' },
+    { id: 4, value: 'Option 4', description: 'lorem ipsum dolor' },
+  ],
+};
+
 export const Disabled = SelectTemplate.bind({});
 Disabled.args = {
   helperText: 'Helper text',
@@ -107,6 +118,19 @@ MultipleSelect.args = {
   multiple: true,
   placeholder: 'Select',
   fullWidth: true,
+};
+export const MultipleSelectOptionDescription = MultiSelectTemplate.bind({});
+MultipleSelectOptionDescription.args = {
+  multiple: true,
+  placeholder: 'Select',
+  fullWidth: true,
+  options: [
+    { id: 0, value: 'Select...' },
+    { id: 1, value: 'Option 1', description: 'lorem ipsum dolor' },
+    { id: 2, value: 'Option 2', description: 'lorem ipsum dolor' },
+    { id: 3, value: 'Option 3', description: 'lorem ipsum dolor' },
+    { id: 4, value: 'Option 4', description: 'lorem ipsum dolor' },
+  ],
 };
 
 export const MultipleSelectLargeWhite = MultiSelectTemplate.bind({});

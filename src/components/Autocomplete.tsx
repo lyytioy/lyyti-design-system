@@ -7,6 +7,8 @@ import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
 import { forwardRef, Ref } from 'react';
+import MenuItem from './MenuItem';
+import Typography from './Typography';
 
 declare module '@mui/material' {
   interface AutocompleteProps<
@@ -23,6 +25,7 @@ declare module '@mui/material' {
 export type OptionsType = {
   id: number | string;
   value: string;
+  description?: string;
   disabled?: boolean;
 };
 
@@ -108,6 +111,20 @@ const Autocomplete = (
           color={color}
         />
       )}
+      renderOption={(props, { value: label, description }, state) => {
+        console.log({ state });
+        return (
+          <MenuItem
+            {...props}
+            sx={{
+              ...(description && { flexDirection: 'column', alignItems: 'flex-start !important' }),
+            }}
+          >
+            {label}
+            {description && <Typography variant="caption">{description}</Typography>}
+          </MenuItem>
+        );
+      }}
       {...props}
     />
   );
