@@ -67,7 +67,7 @@ const Select = (
           sx={{ ...(description && { flexDirection: 'column', alignItems: 'flex-start' }) }}
         >
           {label}
-          {description && <Typography variant="caption">{description}</Typography>}
+          {description && <Typography variant="caption" color="grey.400">{description}</Typography>}
         </MenuItem>
       ))}
     </TextField>

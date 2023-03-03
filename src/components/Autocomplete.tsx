@@ -121,7 +121,7 @@ const Autocomplete = (
             }}
           >
             {label}
-            {description && <Typography variant="caption">{description}</Typography>}
+            {description && <Typography variant="caption" color="grey.400">{description}</Typography>}
           </MenuItem>
         );
       }}
