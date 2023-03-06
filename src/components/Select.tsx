@@ -6,6 +6,7 @@ import Typography from './Typography';
 
 type CommonProps = {
   options?: AutocompleteProps['options'];
+  optionDivider?: boolean;
   adornment?: AutocompleteProps<OptionsType>['adornment'];
   multiple?: boolean;
   'data-testid'?: string;
@@ -22,7 +23,14 @@ export type SingleSelectProps = Omit<
 export type SelectProps = MultipleSelectProps | SingleSelectProps;
 
 const Select = (
-  { adornment, options = [], multiple = false, 'data-testid': testid, ...props }: SelectProps,
+  {
+    adornment,
+    options = [],
+    multiple = false,
+    'data-testid': testid,
+    optionDivider,
+    ...props
+  }: SelectProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
   if (multiple) {
@@ -64,10 +72,23 @@ const Select = (
           key={id}
           value={id}
           disabled={disabled}
-          sx={{ ...(description && { flexDirection: 'column', alignItems: 'flex-start' }) }}
+          sx={{
+            ...(description && {
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              
+            }),
+            ...(optionDivider && {
+              '&:not(:last-child)': { borderBottom: '1px solid rgba(0,0,0,.23)' },
+            }),
+          }}
         >
           {label}
-          {description && <Typography variant="caption" color="grey.400">{description}</Typography>}
+          {description && (
+            <Typography variant="caption" color="grey.400">
+              {description}
+            </Typography>
+          )}
         </MenuItem>
       ))}
     </TextField>

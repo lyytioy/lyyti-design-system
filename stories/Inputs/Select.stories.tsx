@@ -87,6 +87,12 @@ StartAdornment.args = {
   adornment: 'Kg',
 };
 
+export const OptionDivider = SelectTemplate.bind({});
+OptionDivider.args = {
+  helperText: 'Helper text',
+  optionDivider: true
+};
+
 export const OptionDescription = SelectTemplate.bind({});
 OptionDescription.args = {
   helperText: 'Helper text',
