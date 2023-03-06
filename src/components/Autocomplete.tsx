@@ -7,6 +7,8 @@ import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
 import { forwardRef, Ref } from 'react';
+import MenuItem from './MenuItem';
+import Typography from './Typography';
 
 declare module '@mui/material' {
   interface AutocompleteProps<
@@ -23,6 +25,7 @@ declare module '@mui/material' {
 export type OptionsType = {
   id: number | string;
   value: string;
+  description?: string;
   disabled?: boolean;
 };
 
@@ -39,6 +42,7 @@ export interface AutocompleteProps<T = OptionsType>
   color?: ColorTypes;
   error?: boolean;
   helperText?: string;
+  optionDivider?: boolean;
   'data-testid'?: string;
   ref?: Ref<HTMLDivElement>;
 }
@@ -57,6 +61,7 @@ const Autocomplete = (
     disabled = false,
     error,
     helperText,
+    optionDivider,
     'data-testid': testid,
     sx = {},
     ...props
@@ -108,6 +113,26 @@ const Autocomplete = (
           color={color}
         />
       )}
+      renderOption={(props, { value: label, description }, state) => {
+        return (
+          <MenuItem
+            {...props}
+            sx={{
+              ...(description && { flexDirection: 'column', alignItems: 'flex-start !important' }),
+              ...(optionDivider && {
+                '&:not(:last-child)': { borderBottom: '1px solid rgba(0,0,0,.23)' },
+              }),
+            }}
+          >
+            {label}
+            {description && (
+              <Typography variant="caption" color="grey.400">
+                {description}
+              </Typography>
+            )}
+          </MenuItem>
+        );
+      }}
       {...props}
     />
   );

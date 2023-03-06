@@ -2,9 +2,11 @@ import { MenuItem } from '@mui/material';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 import { forwardRef, Ref } from 'react';
+import Typography from './Typography';
 
 type CommonProps = {
   options?: AutocompleteProps['options'];
+  optionDivider?: boolean;
   adornment?: AutocompleteProps<OptionsType>['adornment'];
   multiple?: boolean;
   'data-testid'?: string;
@@ -21,7 +23,14 @@ export type SingleSelectProps = Omit<
 export type SelectProps = MultipleSelectProps | SingleSelectProps;
 
 const Select = (
-  { adornment, options = [], multiple = false, 'data-testid': testid, ...props }: SelectProps,
+  {
+    adornment,
+    options = [],
+    multiple = false,
+    'data-testid': testid,
+    optionDivider,
+    ...props
+  }: SelectProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
   if (multiple) {
@@ -31,6 +40,7 @@ const Select = (
         options={options}
         disableClearable
         data-testid={testid}
+        optionDivider={optionDivider}
         {...(props as MultipleSelectProps)}
         ref={ref}
       />
@@ -51,14 +61,34 @@ const Select = (
             horizontal: 'left',
           },
         },
+        renderValue: (value) => options.find((o) => o.id === +(value as number | string))?.value,
       }}
       inputProps={{ 'data-testid': testid }}
       {...(props as SingleSelectProps)}
       ref={ref as Ref<HTMLDivElement>}
     >
-      {options.map(({ id, value: label, disabled }) => (
-        <MenuItem key={id} value={id} disabled={disabled}>
+      {options.map(({ id, value: label, description, disabled }) => (
+        <MenuItem
+          key={id}
+          value={id}
+          disabled={disabled}
+          sx={{
+            ...(description && {
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              
+            }),
+            ...(optionDivider && {
+              '&:not(:last-child)': { borderBottom: '1px solid rgba(0,0,0,.23)' },
+            }),
+          }}
+        >
           {label}
+          {description && (
+            <Typography variant="caption" color="grey.400">
+              {description}
+            </Typography>
+          )}
         </MenuItem>
       ))}
     </TextField>
