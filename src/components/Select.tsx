@@ -40,6 +40,7 @@ const Select = (
         options={options}
         disableClearable
         data-testid={testid}
+        optionDivider={optionDivider}
         {...(props as MultipleSelectProps)}
         ref={ref}
       />

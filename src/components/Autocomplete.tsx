@@ -42,6 +42,7 @@ export interface AutocompleteProps<T = OptionsType>
   color?: ColorTypes;
   error?: boolean;
   helperText?: string;
+  optionDivider?: boolean;
   'data-testid'?: string;
   ref?: Ref<HTMLDivElement>;
 }
@@ -60,6 +61,7 @@ const Autocomplete = (
     disabled = false,
     error,
     helperText,
+    optionDivider,
     'data-testid': testid,
     sx = {},
     ...props
@@ -118,10 +120,17 @@ const Autocomplete = (
             {...props}
             sx={{
               ...(description && { flexDirection: 'column', alignItems: 'flex-start !important' }),
+              ...(optionDivider && {
+                '&:not(:last-child)': { borderBottom: '1px solid rgba(0,0,0,.23)' },
+              }),
             }}
           >
             {label}
-            {description && <Typography variant="caption" color="grey.400">{description}</Typography>}
+            {description && (
+              <Typography variant="caption" color="grey.400">
+                {description}
+              </Typography>
+            )}
           </MenuItem>
         );
       }}

@@ -125,6 +125,16 @@ MultipleSelect.args = {
   placeholder: 'Select',
   fullWidth: true,
 };
+
+export const MultipleSelectOptionDivider = MultiSelectTemplate.bind({});
+MultipleSelectOptionDivider.args = {
+  multiple: true,
+  placeholder: 'Select',
+  fullWidth: true,
+  optionDivider: true
+};
+
+
 export const MultipleSelectOptionDescription = MultiSelectTemplate.bind({});
 MultipleSelectOptionDescription.args = {
   multiple: true,
