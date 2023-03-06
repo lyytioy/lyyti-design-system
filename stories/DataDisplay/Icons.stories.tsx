@@ -176,6 +176,8 @@ const iconsList = [
   { name: 'Phone', component: i.Phone },
   { name: 'QrCode', component: i.QrCode },
   { name: 'HeavyPlus', component: i.HeavyPlus },
+  { name: 'Folder', component: i.Folder },
+  { name: 'Person', component: i.Person },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {

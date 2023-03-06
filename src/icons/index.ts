@@ -1,5 +1,4 @@
 export { default as Excel } from './Excel';
-import LightBulb from './LightBulb';
 export { default as Pdf } from './Pdf';
 export { default as Link } from './Link';
 export { default as CreditCard } from './CreditCard';
@@ -7,6 +6,7 @@ export { default as Attachment } from './Attachment';
 export { default as Bank } from './Bank';
 export { default as Chat } from './Chat';
 export { default as Filter } from './Filter';
+export { default as Folder } from './Folder';
 export { default as Mobile } from './Mobile';
 export { default as Lock } from './Lock';
 export { default as Code } from './Code';
@@ -79,6 +79,7 @@ export { default as ParticipantsShowOutlined } from './ParticipantsShowOutlined'
 export { default as ParticipantsDeclinedOutlined } from './ParticipantsDeclinedOutlined';
 export { default as ParticipantsNoShowOutlined } from './ParticipantsNoShowOutlined';
 export { default as ParticipantEmail } from './ParticipantEmail';
+export { default as Person } from './Person';
 export { default as Bill } from './Bill';
 export { default as BrowserPage } from './BrowserPage';
 export { default as EmptyFile } from './EmptyFile';
