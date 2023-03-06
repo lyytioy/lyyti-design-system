@@ -114,7 +114,6 @@ const Autocomplete = (
         />
       )}
       renderOption={(props, { value: label, description }, state) => {
-        console.log({ state });
         return (
           <MenuItem
             {...props}

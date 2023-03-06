@@ -64,7 +64,6 @@ const Select = (
         renderValue: (value) => options.find((o) => o.id === +(value as number | string))?.value,
       }}
       inputProps={{ 'data-testid': testid }}
-      InputProps={{}}
       {...(props as SingleSelectProps)}
       ref={ref as Ref<HTMLDivElement>}
     >
