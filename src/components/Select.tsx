@@ -61,7 +61,7 @@ const Select = (
             horizontal: 'left',
           },
         },
-        renderValue: (value) => options.find((o) => Number(o.id) === Number(value))?.value,
+        renderValue: (value) => options.find((o) => o.id == value)?.value,
       }}
       inputProps={{ 'data-testid': testid }}
       {...(props as SingleSelectProps)}
