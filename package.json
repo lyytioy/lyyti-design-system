@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "engines": {
     "node": "^18",
     "npm": "^8"
@@ -24,7 +24,7 @@
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
     "@mui/lab": "5.0.0-alpha.122",
-    "@mui/material": "5.11.11",
+    "@mui/material": "5.11.13",
     "@mui/styles": "5.11.11",
     "@mui/x-data-grid": "5.17.25",
     "@mui/x-data-grid-pro": "5.17.25",
@@ -42,7 +42,7 @@
     "@storybook/manager-webpack5": "6.5.16",
     "@storybook/react": "6.5.15",
     "@svgr/cli": "6.5.1",
-    "@types/node": "16.18.14",
+    "@types/node": "16.18.16",
     "@types/react": "17.0.43",
     "babel-loader": "9.1.2",
     "dayjs": "1.11.7",
@@ -55,7 +55,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "typescript": "4.9.5",
-    "webpack": "5.75.0"
+    "webpack": "5.76.1"
   },
   "main": "index.js",
   "types": "index.d.ts",
