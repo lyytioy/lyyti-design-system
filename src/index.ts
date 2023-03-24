@@ -26,6 +26,7 @@ export { default as FormGroup } from './components/FormGroup';
 export { default as FormLabel } from './components/FormLabel';
 export { default as Grid } from './components/Grid';
 export { default as Grow } from './components/Grow';
+export type { IconProps } from '@mui/material'
 export { default as InputAdornment } from './components/InputAdornment';
 export { default as InputLabel } from './components/InputLabel';
 export { default as LanguageSelector } from './components/LanguageSelector';
