@@ -83,6 +83,14 @@ declare module '@mui/material/styles' {
   interface TypographyVariantsOptions {
     navigationLink?: React.CSSProperties;
   }
+  interface PaletteColor {
+    darkText?: string;
+    lightBg?: string;
+  }
+  interface SimplePaletteColorOptions {
+    darkText?: string;
+    lightBg?: string;
+  }
 }
 
 // Update the Typography's variant prop options
@@ -117,24 +125,32 @@ export default createTheme({
       dark: '#18769F',
       light: '#7CCEE9',
       contrastText: '#1F98CD',
+      darkText: '#0C3D52',
+      lightBg: '#D2EAF5',
     },
     error: {
       main: '#CF482E',
       dark: '#A33924',
       light: '#F4A094',
       contrastText: '#FFFFFF',
+      darkText: '#531D11',
+      lightBg: '#F5DAD5',
     },
     warning: {
       main: '#F09000',
       dark: '#B86D00',
       light: '#FFC573',
       contrastText: '#F09000',
+      darkText: '#603A00',
+      lightBg: '#FCE9CC',
     },
     success: {
       main: '#50B54E',
       dark: '#3E903C',
       light: '#99DCA1',
       contrastText: '#50B54E',
+      darkText: '#20481F',
+      lightBg: '#DCF0DC',
     },
     text: {
       primary: '#192832',

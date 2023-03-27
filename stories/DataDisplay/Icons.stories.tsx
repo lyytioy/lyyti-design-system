@@ -178,6 +178,12 @@ const iconsList = [
   { name: 'HeavyPlus', component: i.HeavyPlus },
   { name: 'Folder', component: i.Folder },
   { name: 'Person', component: i.Person },
+  { name: 'TextQuestion', component: i.TextQuestion },
+  { name: 'SelectOneQuestion', component: i.SelectOneQuestion },
+  { name: 'SelectManyQuestion', component: i.SelectManyQuestion },
+  { name: 'DateQuestion', component: i.DateQuestion },
+  { name: 'EmailQuestion', component: i.EmailQuestion },
+  { name: 'Check', component: i.Check },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {
