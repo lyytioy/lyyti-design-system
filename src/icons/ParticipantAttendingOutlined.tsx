@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
-const ParticipantsShowOutlined = (props: any) =>
+
+const ParticipantAttendingOutlined = (props: any) =>
   createElement(
     SvgIcon,
     props,
@@ -19,4 +20,4 @@ const ParticipantsShowOutlined = (props: any) =>
       strokeWidth={1.3}
     />
   );
-export default ParticipantsShowOutlined;
+export default ParticipantAttendingOutlined;
