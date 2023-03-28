@@ -14,7 +14,7 @@ export { default as FaceId } from './FaceId';
 export { default as Hierarchy } from './Hierarchy';
 export { default as HierarchyTree } from './HierarchyTree';
 export { default as ShareHierarchy } from './ShareHierarchy';
-export { default as Magnifier } from './Magnifier';
+export { default as AddressPin } from './AddressPin';
 export { default as Pin } from './Pin';
 export { default as Share } from './Share';
 export { default as Layout } from './Layout';

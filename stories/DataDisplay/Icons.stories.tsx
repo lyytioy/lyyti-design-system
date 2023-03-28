@@ -78,7 +78,7 @@ const iconsList = [
   { name: 'Hierarchy', component: i.Hierarchy },
   { name: 'HierarchyTree', component: i.HierarchyTree },
   { name: 'ShareHierarchy', component: i.ShareHierarchy },
-  { name: 'Magnifier', component: i.Magnifier },
+  { name: 'AddressPin', component: i.AddressPin },
   { name: 'Pin', component: i.Pin },
   { name: 'Share', component: i.Share },
   { name: 'Layout', component: i.Layout },

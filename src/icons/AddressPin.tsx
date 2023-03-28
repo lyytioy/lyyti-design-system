@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
 
-const Magnifier = (props: any) =>
+const AddressPin = (props: any) =>
   createElement(
     SvgIcon,
     props,
@@ -9,4 +9,4 @@ const Magnifier = (props: any) =>
     <path d="M14.25 8.25a.75.75 0 01-.75-.75c0-1.202.468-2.332 1.317-3.182a4.468 4.468 0 013.182-1.319c.207 0 .375.168.375.375l.001.75A.376.376 0 0118 4.5a2.98 2.98 0 00-2.122.879A2.98 2.98 0 0015 7.5a.75.75 0 01-.75.75z" />
   );
 
-export default Magnifier;
+export default AddressPin;
