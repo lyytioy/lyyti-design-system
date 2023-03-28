@@ -184,6 +184,8 @@ const iconsList = [
   { name: 'DateQuestion', component: i.DateQuestion },
   { name: 'EmailQuestion', component: i.EmailQuestion },
   { name: 'Check', component: i.Check },
+  { name: 'Play', component: i.Play },
+  { name: 'Pause', component: i.Pause },
 ];
 
 const Template: Story<SvgIconProps> = (args) => {

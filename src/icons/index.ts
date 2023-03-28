@@ -122,3 +122,5 @@ export { default as SelectManyQuestion } from './SelectManyQuestion';
 export { default as DateQuestion } from './DateQuestion';
 export { default as EmailQuestion } from './EmailQuestion';
 export { default as Check } from './Check';
+export { default as Play } from './Play';
+export { default as Pause } from './Pause';
