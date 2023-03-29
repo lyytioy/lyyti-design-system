@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
 
-const ParticipantsShow = (props: any) =>
+const ParticipantAttending = (props: any) =>
   createElement(
     SvgIcon,
     props,
@@ -20,4 +20,4 @@ const ParticipantsShow = (props: any) =>
     />
   );
 
-export default ParticipantsShow;
+export default ParticipantAttending;
