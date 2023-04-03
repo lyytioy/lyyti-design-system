@@ -2,6 +2,7 @@
 export { default as ThemeSelector } from './themes/ThemeSelector';
 export { default as Accordion } from './components/Accordion';
 export { default as Alert } from './components/Alert';
+export { default as Autocomplete } from './components/Autocomplete';
 export { default as Avatar } from './components/Avatar';
 export { default as Box } from './components/Box';
 export { default as Button } from './components/Button';
@@ -26,7 +27,7 @@ export { default as FormGroup } from './components/FormGroup';
 export { default as FormLabel } from './components/FormLabel';
 export { default as Grid } from './components/Grid';
 export { default as Grow } from './components/Grow';
-export type { IconProps } from '@mui/material'
+export type { IconProps } from '@mui/material';
 export { default as InputAdornment } from './components/InputAdornment';
 export { default as InputLabel } from './components/InputLabel';
 export { default as LanguageSelector } from './components/LanguageSelector';
