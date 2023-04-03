@@ -2,6 +2,7 @@ import {
   Autocomplete as MuiAutocomplete,
   ChipTypeMap,
   AutocompleteProps as MuiAutocompleteProps,
+  TextFieldProps,
 } from '@mui/material';
 import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
@@ -45,6 +46,7 @@ export interface AutocompleteProps<T = OptionsType>
   optionDivider?: boolean;
   'data-testid'?: string;
   ref?: Ref<HTMLDivElement>;
+  name?: string;
 }
 
 const Autocomplete = (
@@ -64,6 +66,7 @@ const Autocomplete = (
     optionDivider,
     'data-testid': testid,
     sx = {},
+    name,
     ...props
   }: AutocompleteProps,
   ref: Ref<HTMLDivElement>
@@ -100,6 +103,7 @@ const Autocomplete = (
           error={error}
           helperText={helperText}
           placeholder={placeholder}
+          name={name}
           InputProps={{
             ...params.InputProps,
             startAdornment: (
