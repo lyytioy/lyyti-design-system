@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Get package.json version
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.2.3
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: Create Tag
         uses: hole19/git-tag-action@master
         env:
