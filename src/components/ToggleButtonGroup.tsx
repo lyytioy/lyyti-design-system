@@ -27,15 +27,19 @@ const ToggleButtonGroup = ({
 }: ToggleButtonGroupProps) => {
   const theme = useTheme();
 
-    return <MuiToggleButtonGroup
+  return <MuiToggleButtonGroup
     data-testid={testId}
     value={value}
     exclusive
     onChange={onChange}
     aria-label={ariaLabel ?? 'toggle button group'}
     sx={{
+      color: `${theme.palette.primary.main} !important`,
       height: '40px',
       border: `1px solid ${theme.palette.primary.main}`,
+      '& .MuiToggleButton-root': {
+        width: '130px', color:theme.palette.primary.main 
+      },
       '& .Mui-selected, & .Mui-selected:hover': {
         bgcolor: `${theme.palette.primary.main} !important`,
         color: 'white !important',
@@ -46,12 +50,13 @@ const ToggleButtonGroup = ({
     {options.map(option => <MuiToggleButton 
       data-testid={option.testId} 
       key={option.value} 
-      sx={{ width: '130px', ...option.sx}} 
+      sx={{ option.sx }} 
       value={option.value} 
       aria-label={option.ariaLabel ?? `toggle button ${option.value}`}
     >
       {option.value}
-    </MuiToggleButton>)}
+    </MuiToggleButton>
+    )}
   </MuiToggleButtonGroup>
 }
 

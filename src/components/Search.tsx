@@ -5,7 +5,7 @@ import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 export type SingleOptionSearchProps = Omit<
   TextFieldProps,
  'getOptionLabel' | 'hiddenLabel' | 'variant' | 'startAdornment' | 'endAdornment'
-> & {adornmentOnRight?: boolean};
+>
 
 export type MultipleOptionsSearchProps = Omit<
   AutocompleteProps<OptionsType>,
@@ -14,10 +14,15 @@ export type MultipleOptionsSearchProps = Omit<
   options?: AutocompleteProps['options'];
 };
 
-export type SearchProps = MultipleOptionsSearchProps | SingleOptionSearchProps;
+export type SearchCustomFieldProps = {
+  adornmentOnRight?: boolean;
+  adornmentColor?: string;
+}
+
+export type SearchProps = (MultipleOptionsSearchProps | SingleOptionSearchProps) & SearchCustomFieldProps;
 
 const Search = ({ ...props }: SearchProps): JSX.Element => {
-  const searchIcon = <SearchIcon fontSize="small" />;
+  const searchIcon = <SearchIcon fontSize="small" sx={{color: props.adornmentColor ?? 'inherit'  }} />;
 
   const { freeSolo = true, options = [], ...multiProps } = props as MultipleOptionsSearchProps;
   const singleProps = props as SingleOptionSearchProps;
@@ -28,7 +33,7 @@ const Search = ({ ...props }: SearchProps): JSX.Element => {
     );
   }
 
-  return <TextField startAdornment={singleProps.adornmentOnRight ? undefined : searchIcon} endAdornment={singleProps.adornmentOnRight ? searchIcon : undefined} {...singleProps} />;
+  return <TextField startAdornment={props.adornmentOnRight ? undefined : searchIcon} endAdornment={props.adornmentOnRight ? searchIcon : undefined} {...singleProps} />;
 };
 
 export default Search;
