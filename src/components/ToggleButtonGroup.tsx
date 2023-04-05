@@ -50,7 +50,7 @@ const ToggleButtonGroup = ({
     {options.map(option => <MuiToggleButton 
       data-testid={option.testId} 
       key={option.value} 
-      sx={{ option.sx }} 
+      sx={option.sx} 
       value={option.value} 
       aria-label={option.ariaLabel ?? `toggle button ${option.value}`}
     >
