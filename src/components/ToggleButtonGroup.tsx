@@ -1,8 +1,7 @@
-import { useTheme } from '@mui/material/styles';
 import { ToggleButtonGroup as MuiToggleButtonGroup, ToggleButton as MuiToggleButton, type SxProps as MuiSxProps, type ToggleButtonGroupProps as MuiToggleButtonGroupProps } from "@mui/material"
 
 export interface ToggleButtonOption {
-    value: number | string;
+    value: string;
     text: string;
     sx?: MuiSxProps;
     ariaLabel?: string;
@@ -26,8 +25,6 @@ const ToggleButtonGroup = ({
   testId,
   ...props
 }: ToggleButtonGroupProps) => {
-  const theme = useTheme();
-
   return <MuiToggleButtonGroup
     data-testid={testId}
     value={value}
@@ -35,14 +32,15 @@ const ToggleButtonGroup = ({
     onChange={onChange}
     aria-label={ariaLabel ?? 'toggle button group'}
     sx={{
-      color: `${theme.palette.primary.main} !important`,
+      color: theme => theme.palette.primary.main,
       height: '40px',
-      border: `1px solid ${theme.palette.primary.main}`,
+      border: theme => `1px solid ${theme.palette.primary.main}`,
       '& .MuiToggleButton-root': {
-        width: '130px', color:theme.palette.primary.main 
+        width: '130px', 
+        color: theme => theme.palette.primary.main 
       },
       '& .Mui-selected, & .Mui-selected:hover': {
-        bgcolor: `${theme.palette.primary.main} !important`,
+        bgcolor: theme => `${theme.palette.primary.main} !important`,
         color: 'white !important',
       },
       ...sx
@@ -56,7 +54,7 @@ const ToggleButtonGroup = ({
       value={option.value} 
       aria-label={option.ariaLabel ?? `toggle button ${option.value}`}
     >
-      {option.value}
+      {option.text}
     </MuiToggleButton>
     )}
   </MuiToggleButtonGroup>
