@@ -23,7 +23,8 @@ const ToggleButtonGroup = ({
   options, 
   sx, 
   ariaLabel, 
-  testId
+  testId,
+  ...props
 }: ToggleButtonGroupProps) => {
   const theme = useTheme();
 
@@ -46,6 +47,7 @@ const ToggleButtonGroup = ({
       },
       ...sx
     }}
+    {...props}
   >
     {options.map(option => <MuiToggleButton 
       data-testid={option.testId} 
