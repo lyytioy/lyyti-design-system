@@ -60,6 +60,8 @@ jobs:
         run: |
           npm ci
           npm run build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
       - name: Publish npm
         run: npm publish ./dist
         env:
