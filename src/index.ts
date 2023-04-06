@@ -75,4 +75,6 @@ export { default as TableBody } from '@mui/material/TableBody';
 export { default as TableCell } from '@mui/material/TableCell';
 export { default as TableFooter } from '@mui/material/TableFooter';
 export { default as TableRow } from '@mui/material/TableRow';
+export { default as ToggleButtonGroup } from './components/ToggleButtonGroup';
+export type { ToggleButtonOption } from './components/ToggleButtonGroup';
 export { useTheme } from '@mui/system';
