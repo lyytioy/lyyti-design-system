@@ -33,6 +33,17 @@ export default {
     options: {
       description: 'Array of options, expects a array of objects that contain id and value',
     },
+    adornmentOnRight: {
+      description: 'Applies only to Search with no options. If true, the search icon adornment will be positioned at the end. If not set or false, adornment stays at the start.',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
     disabled: {
       description: 'If true, the input element will be disabled.',
       control: {
@@ -113,5 +124,10 @@ White.args = {
 White.parameters = {
   backgrounds: { default: 'dark' },
 };
+
+export const WithEndAdornment = Template.bind({});
+WithEndAdornment.args = {
+  adornmentOnRight: true
+}
 
 export const NoOptions = Template.bind({});
