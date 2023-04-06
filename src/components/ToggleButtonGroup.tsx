@@ -2,7 +2,7 @@ import { useTheme } from '@mui/material/styles';
 import { ToggleButtonGroup as MuiToggleButtonGroup, ToggleButton as MuiToggleButton, type SxProps as MuiSxProps, type ToggleButtonGroupProps as MuiToggleButtonGroupProps } from "@mui/material"
 
 export interface ToggleButtonOption {
-    value: number | string;
+    value: string;
     text: string;
     sx?: MuiSxProps;
     ariaLabel?: string;
@@ -56,7 +56,7 @@ const ToggleButtonGroup = ({
       value={option.value} 
       aria-label={option.ariaLabel ?? `toggle button ${option.value}`}
     >
-      {option.value}
+      {option.text}
     </MuiToggleButton>
     )}
   </MuiToggleButtonGroup>
