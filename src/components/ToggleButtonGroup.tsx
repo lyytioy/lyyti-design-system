@@ -13,7 +13,14 @@ export type ToggleButtonGroupProps = MuiToggleButtonGroupProps & {
     sx?: MuiSxProps;
     ariaLabel?: string;
     testId?: string;
-    onChange: (event: React.MouseEvent<HTMLElement>, value: ToggleButtonOption['value']) => void;
+    /* 
+      value is typed as "any" in MuiToggleButtonGroupProps as it covers both cases 
+      for MuiToggleButtonGroup having exclusive prop set to true and false
+      we always have it marked as exclusive=true so we can narrow down values, 
+      hence the ToggleButtonOption['value'] when selecting new value 
+      and null when clicking on already selected value as it does not change
+    */ 
+    onChange: (event: React.MouseEvent<HTMLElement>, value: ToggleButtonOption['value'] | null) => void;
 }
 
 const ToggleButtonGroup = ({ 
