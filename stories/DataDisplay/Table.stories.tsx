@@ -78,7 +78,7 @@ const rows = [
   },
 ];
 
-const Template: Story = (args) => (
+const Template: StoryFn = (args) => (
   <Table {...args}>
     <TableHead>
       <TableRow>

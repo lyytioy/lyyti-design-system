@@ -98,7 +98,7 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<SearchProps> = (args) => (
+const Template: StoryFn<SearchProps> = (args: SearchProps) => (
   <Box sx={{ width: '300px' }}>
     <Search {...args} />
   </Box>

@@ -29,7 +29,7 @@ export default {
   },
 } as Meta;
 
-const SelectTemplate: StoryFn<SelectProps> = (args) => {
+const SelectTemplate: StoryFn<SelectProps> = (args: SelectProps) => {
   const [selectValue, setSelectValue] = useState('0');
 
   args.value = selectValue;
