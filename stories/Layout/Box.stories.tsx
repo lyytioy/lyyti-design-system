@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Box, { BoxProps } from '../../src/components/Box';
 import { Rect } from '../Feedback/Skeleton.stories';
 
@@ -15,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<BoxProps> = ({ ...args }) => (
+const Template: StoryFn<BoxProps> = ({ ...args }) => (
   <Box {...args}>
     <Rect {...Rect.args} />
   </Box>

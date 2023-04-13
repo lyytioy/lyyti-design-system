@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import ToggleButtonGroup, { ToggleButtonGroupProps, ToggleButtonOption } from '../../src/components/ToggleButtonGroup';
 
 const options: ToggleButtonOption[] = [
@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ToggleButtonGroupProps> = (args) => <ToggleButtonGroup {...args} />;
+const Template: StoryFn<ToggleButtonGroupProps> = (args) => <ToggleButtonGroup {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = {

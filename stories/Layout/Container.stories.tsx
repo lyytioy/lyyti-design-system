@@ -1,7 +1,7 @@
 import { ContainerProps } from '@mui/material';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { Container } from '../../src';
-import lorem_ipsum from '../assets/example_text.json'
+import { lorem_ipsum } from '../../public/assets/example_text.json'
 
 export default {
   title: 'Components/Layout/Container',
@@ -44,7 +44,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ContainerProps> = ({ ...args }) => (
+const Template: StoryFn<ContainerProps> = ({ ...args }) => (
   <Container {...args}>
     {lorem_ipsum}
   </Container>

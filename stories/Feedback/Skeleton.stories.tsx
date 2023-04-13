@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Skeleton, { SkeletonProps } from '../../src/components/Skeleton';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
@@ -34,7 +34,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SkeletonProps> = (args) => <Skeleton {...args} />;
+const Template: StoryFn<SkeletonProps> = (args) => <Skeleton {...args} />;
 
 export const Text = Template.bind({});
 Text.args = {

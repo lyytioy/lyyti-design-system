@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Button, { ButtonProps } from '../../src/components/Button';
 import { Bin } from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
@@ -22,7 +22,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

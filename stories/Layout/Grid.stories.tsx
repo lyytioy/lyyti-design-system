@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Grid, { GridProps } from '../../src/components/Grid';
 import { Rect } from '../Feedback/Skeleton.stories';
 
@@ -107,7 +107,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<GridProps> = ({
+const Template: StoryFn<GridProps> = ({
   spacing,
   direction,
   justifyContent,

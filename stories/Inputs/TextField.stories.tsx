@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import TextField, { TextFieldProps } from '../../src/components/TextField';
 
@@ -39,7 +39,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TextFieldProps> = (args) => <TextField {...args} />;
+const Template: StoryFn<TextFieldProps> = (args) => <TextField {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

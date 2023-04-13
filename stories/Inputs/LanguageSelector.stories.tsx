@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import LanguageSelector, { LanguageSelectProps } from '../../src/components/LanguageSelector';
 import { ChangeEvent, useState } from 'react';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
@@ -26,7 +26,7 @@ export default {
   },
 } as Meta;
 
-const SelectTemplate: Story<LanguageSelectProps> = (args) => {
+const SelectTemplate: StoryFn<LanguageSelectProps> = (args) => {
   const [selectValue, setSelectValue] = useState('0');
 
   args.value = selectValue;

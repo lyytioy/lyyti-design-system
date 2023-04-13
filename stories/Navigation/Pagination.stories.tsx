@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Pagination, { PaginationProps } from '../../src/components/Pagination';
 
@@ -15,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
+const Template: StoryFn<PaginationProps> = (args) => <Pagination {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = {

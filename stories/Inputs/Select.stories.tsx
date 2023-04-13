@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Select, { SelectProps } from '../../src/components/Select';
 import { ChangeEvent, useState } from 'react';
 import { AutocompleteProps } from '../../src/components/Autocomplete';
@@ -29,7 +29,7 @@ export default {
   },
 } as Meta;
 
-const SelectTemplate: Story<SelectProps> = (args) => {
+const SelectTemplate: StoryFn<SelectProps> = (args) => {
   const [selectValue, setSelectValue] = useState('0');
 
   args.value = selectValue;
@@ -48,7 +48,7 @@ const SelectTemplate: Story<SelectProps> = (args) => {
   return <Select {...args} />;
 };
 
-const MultiSelectTemplate: Story<AutocompleteProps> = (args) => {
+const MultiSelectTemplate: StoryFn<AutocompleteProps> = (args) => {
   if (!args.options) {
     args.options = [
       { id: 0, value: 'Select...' },

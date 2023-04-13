@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Card, { CardProps } from '../../src/components/Card';
 import Avatar from '../../src/components/Avatar';
 import Grid from '../../src/components/Grid';
@@ -60,7 +60,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CardProps> = (args) => <Card {...args} />;
+const Template: StoryFn<CardProps> = (args) => <Card {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
