@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Stepper, { StepperProps } from '../../src/components/Stepper';
 import { Step } from '@mui/material';
 import StepConnector from '../../src/components/StepConnector';
@@ -22,7 +22,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StepperProps> = (args) => <Stepper {...args} />;
+const Template: StoryFn<StepperProps> = (args) => <Stepper {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

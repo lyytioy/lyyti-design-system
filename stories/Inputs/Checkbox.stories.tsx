@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Checkbox, { CheckboxProps } from '../../src/components/Checkbox';
 import FormControlLabel, { FormControlLabelProps } from '../../src/components/FormControlLabel';
 
@@ -12,9 +12,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CheckboxProps> = (args) => <Checkbox {...args} />;
+const Template: StoryFn<CheckboxProps> = (args) => <Checkbox {...args} />;
 
-const LabelTemplate: Story<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
+const LabelTemplate: StoryFn<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
 
 export const Medium = Template.bind({});
 Medium.args = {

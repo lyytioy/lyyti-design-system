@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Table from '../../src/components/Table';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import { TableBody, TableCell, TableHead, TableRow } from '../../src';
@@ -78,7 +78,7 @@ const rows = [
   },
 ];
 
-const Template: Story = (args) => (
+const Template: StoryFn = (args) => (
   <Table {...args}>
     <TableHead>
       <TableRow>

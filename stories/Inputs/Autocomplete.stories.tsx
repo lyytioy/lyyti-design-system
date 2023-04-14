@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Autocomplete, { AutocompleteProps } from '../../src/components/Autocomplete';
 import Box from '../../src/components/Box';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
@@ -82,7 +82,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AutocompleteProps> = (args) => (
+const Template: StoryFn<AutocompleteProps> = (args) => (
   <Box sx={{ width: '300px' }}>
     <Autocomplete {...args} />
   </Box>

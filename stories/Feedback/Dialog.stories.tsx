@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { useState } from 'react';
 import Dialog, { DialogProps } from '../../src/components/Dialog';
 import Button from '../../src/components/Button';
@@ -80,7 +80,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<DialogProps> = (args) => {
+const Template: StoryFn<DialogProps> = (args) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   args.open = dialogOpen;

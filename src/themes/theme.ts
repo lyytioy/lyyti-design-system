@@ -1,4 +1,4 @@
-import { createTheme, Theme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 const baseFontStack = [
   '-apple-system',
@@ -39,10 +39,6 @@ interface ColorRangeOptions {
   300: string;
   400: string;
   500: string;
-}
-
-declare module '@mui/styles' {
-  interface DefaultTheme extends Theme {}
 }
 
 declare module '@mui/material/styles/createPalette' {

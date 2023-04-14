@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Progress, { ProgressProps } from '../../src/components/Progress';
 
@@ -68,7 +68,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ProgressProps> = (args) => <Progress {...args} />;
+const Template: StoryFn<ProgressProps> = (args) => <Progress {...args} />;
 
 export const CircularProgress = Template.bind({});
 CircularProgress.args = {};

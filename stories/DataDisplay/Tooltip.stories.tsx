@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Tooltip, { TooltipProps } from '../../src/components/Tooltip';
 
 export default {
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TooltipProps> = (args) => (
+const Template: StoryFn<TooltipProps> = (args) => (
   <Tooltip {...args}>
     <span>{'Hover over me!'}</span>
   </Tooltip>

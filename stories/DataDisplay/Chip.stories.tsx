@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Chip, { ChipProps } from '../../src/components/Chip';
 import Avatar from '../../src/components/Avatar';
 import { StarFilled } from '../../src/icons';
@@ -23,7 +23,7 @@ export default {
   args: { label: 'Label', size: 'medium', variant: 'default' },
 } as Meta;
 
-const Template: Story<ChipProps> = (args) => <Chip {...args} />;
+const Template: StoryFn<ChipProps> = (args) => <Chip {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

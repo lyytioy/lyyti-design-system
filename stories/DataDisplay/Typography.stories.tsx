@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Typography, { TypographyProps } from '../../src/components/Typography';
 
@@ -69,7 +69,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TypographyProps> = (args) => <Typography {...args} />;
+const Template: StoryFn<TypographyProps> = (args) => <Typography {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
