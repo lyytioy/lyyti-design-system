@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Paper, { PaperProps } from '../../src/components/Paper';
 import { Rect } from '../Feedback/Skeleton.stories';
 
@@ -21,7 +21,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<PaperProps> = ({ ...args }) => (
+const Template: StoryFn<PaperProps> = ({ ...args }) => (
   <Paper {...args}>
     <Rect {...Rect.args} />
   </Paper>

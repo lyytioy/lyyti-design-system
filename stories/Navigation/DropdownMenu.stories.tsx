@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Meta, StoryFn } from '@storybook/react';
 import DropdownMenu, { DropdownProps } from '../../src/components/DropdownMenu';
 import { Calendar, ChevronDown, Radio, Rectangle } from '../../src/icons';
 
@@ -19,7 +19,7 @@ const menuItems2 = [
   { id: 3, title: 'Menu item 2', icon: <Radio fontSize="small" /> },
 ];
 
-const Template: Story<DropdownProps> = (args) => <DropdownMenu {...args} />;
+const Template: StoryFn<DropdownProps> = (args) => <DropdownMenu {...args} />;
 
 export const Dropdown = Template.bind({});
 Dropdown.args = {

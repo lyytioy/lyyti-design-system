@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import DataGrid, { DataGridProps } from '../../src/components/DataGrid';
 
@@ -65,7 +65,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<DataGridProps> = (args) => (
+const Template: StoryFn<DataGridProps> = (args) => (
   <div style={{ height: '400px', width: '700px' }}>
     <DataGrid {...args} />
   </div>

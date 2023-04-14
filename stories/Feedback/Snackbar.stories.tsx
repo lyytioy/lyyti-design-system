@@ -1,10 +1,10 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import type{ StoryFn, Meta } from '@storybook/react';
 import { useState, SyntheticEvent } from 'react';
 import Snackbar, { SnackbarProps } from '../../src/components/Snackbar';
 import Button from '../../src/components/Button';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
-export default {
+const meta: Meta = {
   title: 'Components/Feedback/Snackbar',
   component: Snackbar,
   parameters: {
@@ -24,7 +24,7 @@ export default {
     direction: {
       description: 'Direction the snackbar will enter from.',
     },
-    message: { description: 'The message to display.', type: 'text' },
+    message: { description: 'The message to display.', type: 'string' },
     severity: {
       description: 'The severity of the snackbar. This defines the color and icon used.',
     },
@@ -32,9 +32,11 @@ export default {
       description: 'The variant to use.',
     },
   },
-} as unknown as Meta;
+} 
 
-const Template: Story<SnackbarProps> = (args) => {
+export default meta;
+
+const Template: StoryFn<SnackbarProps> = (args) => {
   const [showSnackbar, setShowSnackbar] = useState(false);
 
   const handleClose = (event: Event | SyntheticEvent<any, Event>, reason?: string) => {

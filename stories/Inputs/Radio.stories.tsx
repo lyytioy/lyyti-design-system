@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Radio, { RadioProps } from '../../src/components/Radio';
 import FormControlLabel, { FormControlLabelProps } from '../../src/components/FormControlLabel';
 
@@ -12,9 +12,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<RadioProps> = (args) => <Radio {...args} />;
+const Template: StoryFn<RadioProps> = (args) => <Radio {...args} />;
 
-const LabelTemplate: Story<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
+const LabelTemplate: StoryFn<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
 
 export const Medium = Template.bind({});
 Medium.args = {

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Search, { SearchProps } from '../../src/components/Search';
 import Box from '../../src/components/Box';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
@@ -98,7 +98,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SearchProps> = (args) => (
+const Template: StoryFn<SearchProps> = (args: SearchProps) => (
   <Box sx={{ width: '300px' }}>
     <Search {...args} />
   </Box>

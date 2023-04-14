@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { useState } from 'react';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import Alert, { AlertProps } from '../../src/components/Alert';
@@ -39,7 +39,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AlertProps> = (args) => {
+const Template: StoryFn<AlertProps> = (args) => {
   const [alertOpen, setAlertOpen] = useState(true);
 
   args.open = alertOpen;

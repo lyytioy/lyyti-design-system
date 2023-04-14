@@ -1,16 +1,13 @@
-import { Meta } from '@storybook/addon-docs';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
+import { Meta } from '@storybook/blocks';
 
 <Meta title="Introduction" />
 
-<style>{`
+<style>
+  {`
+  p {
+    margin: 0 !important;
+  }
+  
   .subheading {
     --mediumdark: '#999999';
     font-weight: 900;
@@ -47,7 +44,6 @@ import StackAlt from './assets/stackalt.svg';
   }
 
   .link-item {
-    display: block;
     padding: 20px 30px 20px 15px;
     border: 1px solid #00000010;
     border-radius: 5px;
@@ -90,11 +86,11 @@ import StackAlt from './assets/stackalt.svg';
     display: inline-block;
     border-radius: 1em;
     font-size: 11px;
-    line-height: 12px;
+    line-height: 16px;
     font-weight: 700;
     background: #E7FDD8;
     color: #66BF3C;
-    padding: 4px 12px;
+    padding: 4px 16px;
     margin-right: 10px;
     vertical-align: top;
   }
@@ -112,36 +108,37 @@ import StackAlt from './assets/stackalt.svg';
   }
 
 
-`}</style>
+  `}
+</style>
 
 # Welcome to Lyyti Design System
 
 The Lyyti Design System is here to help you build an even more lovable Lyyti.
 The whole of the Design System can be found in [**Zeroheight**](https://lyyti.zeroheight.com/styleguide/s/24777/p/593925-lyyti-design-system).
-
+<br />
 This version of Design System in Storybook is meant mostly for developers and others interested in Lyytis UI components in isolation from any app's business logic, data, and context.
-
+<br />
 We mainly use ready-made components from libraries like [**MUI**](https://mui.com/) and add styles to them to match Lyytis design. Changes to component functionality are done based on needs and kept quite minimal.
 
 <div class="subheading">Main dependencies</div>
 
 <div class="link-list">
   <a class="link-item" href="https://mui.com/" target="_blank">
-    <img src={Plugin} alt="plugin" />
+    <img src="/assets/plugin.svg" alt="plugin" />
     <span>
       <strong>MUI</strong>
       React components for faster and easier web development.
     </span>
   </a>
   <a class="link-item" href="https://streamlineicons.com/" target="_blank">
-    <img src={Colors} alt="colors" />
+    <img src="/assets/colors.svg" alt="colors" />
     <span>
       <strong>Streamline Icons</strong>
       The world’s largest icon pack
     </span>
   </a>
   <a class="link-item" href="https://emotion.sh/" target="_blank">
-    <img src={StackAlt} alt="Build" />
+    <img src="/assets/stackalt.svg" alt="Build" />
     <span>
       <strong>Emotion</strong>
       Writing css styles with Javascript while providing powerful and predictable style composition.
@@ -153,27 +150,27 @@ We mainly use ready-made components from libraries like [**MUI**](https://mui.co
 
 <div class="link-list">
   <a class="link-item" href="https://reactjs.org" target="_blank">
-    <img src={Repo} alt="repo" />
+    <img src="/assets/repo.svg" alt="repo" />
     <span>
       <strong>React</strong>A JavaScript library for building user interfaces
     </span>
   </a>
   <a class="link-item" href="https://www.typescriptlang.org" target="_blank">
-    <img src={Direction} alt="direction" />
+    <img src="/assets/direction.svg" alt="direction" />
     <span>
       <strong>TypeScript</strong>
       Typed JavaScript at Any Scale
     </span>
   </a>
   <a class="link-item" href="https://storybook.js.org/docs" target="_blank">
-    <img src={Code} alt="code" />
+    <img src="/assets/code-brackets.svg" alt="code" />
     <span>
       <strong>Storybook</strong>
       View the source and add issues
     </span>
   </a>
   <a class="link-item" href="https://nextjs.org/" target="_blank">
-    <img src={Comments} alt="comments" />
+    <img src="/assets/comments.svg" alt="comments" />
     <span>
       <strong>Next.js</strong>
       The best React developer experience with all the features you need for production

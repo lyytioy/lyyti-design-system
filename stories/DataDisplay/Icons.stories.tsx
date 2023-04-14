@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { Source } from '@storybook/addon-docs';
 import { SvgIconProps } from '@mui/material';
 import Paper from '../../src/components/Paper';
@@ -188,7 +188,7 @@ const iconsList = [
   { name: 'Pause', component: i.Pause },
 ];
 
-const Template: Story<SvgIconProps> = (args) => {
+const Template: StoryFn<SvgIconProps> = (args) => {
   const [search, setSearch] = useState('');
   const [importIcon, setImportIcon] = useState('Cog');
 

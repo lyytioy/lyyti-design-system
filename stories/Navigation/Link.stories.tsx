@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Link, { LinkProps } from '../../src/components/Link';
 import { Cog } from '../../src/icons';
 
@@ -7,7 +7,7 @@ export default {
   component: Link,
 } as Meta;
 
-const Template: Story<LinkProps> = (args) => <Link {...args} />;
+const Template: StoryFn<LinkProps> = (args) => <Link {...args} />;
 
 export const ListLink = Template.bind({});
 ListLink.args = {

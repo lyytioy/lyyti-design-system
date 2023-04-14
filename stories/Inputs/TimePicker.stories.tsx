@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import TimePicker, { TimePickerProps } from '../../src/components/TimePicker';
 import Box from '../../src/components/Box';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
@@ -88,7 +88,7 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const Template: Story<TimePickerProps<Dayjs>> = (args) => {
+const Template: StoryFn<TimePickerProps<Dayjs>> = (args) => {
   const [value, setValue] = useState<Dayjs | null>(dayjs());
 
   return (

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import Switch, { SwitchProps } from '../../src/components/Switch';
 import FormControlLabel, { FormControlLabelProps } from '../../src/components/FormControlLabel';
 
@@ -12,9 +12,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SwitchProps> = (args) => <Switch {...args} />;
+const Template: StoryFn<SwitchProps> = (args) => <Switch {...args} />;
 
-const LabelTemplate: Story<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
+const LabelTemplate: StoryFn<FormControlLabelProps> = (args) => <FormControlLabel {...args} />;
 
 export const Medium = Template.bind({});
 Medium.args = {

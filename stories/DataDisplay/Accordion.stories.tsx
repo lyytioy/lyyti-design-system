@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { Skeleton, Typography } from '../../src';
 import Accordion, { AccordionProps } from '../../src/components/Accordion';
 import { Stack } from '@mui/material';
@@ -68,7 +68,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AccordionProps> = (args) => (
+const Template: StoryFn<AccordionProps> = (args) => (
   <div style={{ width: '700px' }}>
     <Accordion {...args} />
   </div>

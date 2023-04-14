@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { useState } from 'react';
 import DatePicker, { DatePickerProps } from '../../src/components/DatePicker';
 import { LocalizationProvider } from '../../src';
@@ -66,7 +66,7 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const TemplateDateJs: Story<DatePickerProps<Dayjs, Dayjs>> = (args) => {
+const TemplateDateJs: StoryFn<DatePickerProps<Dayjs, Dayjs>> = (args) => {
   // Run `npm install @date-io/dayjs` to install the adapter
 
   // import AdapterDateFns from '@date-io/dayjs';
@@ -86,7 +86,7 @@ const TemplateDateJs: Story<DatePickerProps<Dayjs, Dayjs>> = (args) => {
   );
 };
 
-const TemplateMoment: Story<DatePickerProps<Moment, Moment>> = (args) => {
+const TemplateMoment: StoryFn<DatePickerProps<Moment, Moment>> = (args) => {
   // Run `npm install @date-io/moment` to install the adapter
 
   // import AdapterMoment from '@date-io/moment';

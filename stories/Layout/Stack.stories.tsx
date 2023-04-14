@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { StoryFn, Meta } from '@storybook/react';
 import { Stack, StackProps } from '../../src';
 import { Rect } from '../Feedback/Skeleton.stories';
 
@@ -35,7 +35,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<StackProps> = ({ ...args }) => (
+const Template: StoryFn<StackProps> = ({ ...args }) => (
   <Stack {...args}>
     <Rect {...Rect.args} />
     <Rect {...Rect.args} />
