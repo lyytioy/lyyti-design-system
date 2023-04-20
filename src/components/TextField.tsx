@@ -1,5 +1,5 @@
 import { forwardRef, Ref, useRef } from 'react';
-import { TextField as MuiTextField, OutlinedTextFieldProps } from '@mui/material';
+import { TextField as MuiTextField, OutlinedInputProps, OutlinedTextFieldProps, TextFieldPropsColorOverrides } from '@mui/material';
 import InputAdornment from './InputAdornment';
 
 export type SizeTypes = 'small' | 'medium';
@@ -19,6 +19,10 @@ export type TextFieldProps = {
   OutlinedTextFieldProps,
   'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel'
 >;
+
+export interface TextInputProps extends OutlinedInputProps {
+  helperText?: string;
+}
 
 const TextField = (
   {

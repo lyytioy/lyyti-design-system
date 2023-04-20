@@ -9,7 +9,6 @@ import { TextFieldProps, TextInputProps } from './TextField';
 export interface DatePickerProps<TDate = unknown> extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
   InputProps?: Partial<TextInputProps>;
-  // InputProps?: Partial<OutlinedInputProps>
 }
 
 const isDisallowedYear = (date: any) => {
@@ -75,7 +74,6 @@ const DatePicker = <TDate = unknown>(
             }),
           },
         },
-        // textField: {InputProps: InputProps as Partial<OutlinedInputProps>}
         textField: {InputProps}
         }}
       shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year) : false}

@@ -2,8 +2,8 @@ import {
   TimePicker as MuiTimePicker,
   TimePickerProps as MuiTimePickerProps,
 } from '@mui/x-date-pickers/TimePicker';
-import type { OutlinedInputProps as MuiOutlinedInputProps, InputAdornmentProps as MuiInputAdornmentProps, OutlinedTextFieldProps, FilledInputProps, OutlinedInputProps } from '@mui/material';
-import { TextFieldProps, TextInputProps } from './TextField';
+import type { InputAdornmentProps as MuiInputAdornmentProps, OutlinedInputProps } from '@mui/material';
+import { TextInputProps } from './TextField';
 
 export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProps<TDate>, 'renderInput' | 'InputProps'> {
   InputProps?:  Partial<TextInputProps>;

@@ -7,7 +7,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import dayjs, { Dayjs } from 'dayjs';
 import moment, { Moment } from 'moment';
-import { Color } from '../../src/components/TextField';
 
 export default {
   title: 'Components/Inputs/DatePicker',
@@ -109,17 +108,6 @@ const TemplateMoment: StoryFn<DatePickerProps<Moment>> = (args) => {
 
 export const Default = TemplateDateJs.bind({});
 Default.args = {};
-
-export const White = TemplateDateJs.bind({});
-White.args = {
-  label: 'Event date',
-  InputProps: { sx: {color: 'white'} },
-  showDaysOutsideCurrentMonth: false,
-  allowAllYears: true,
-};
-White.parameters = {
-  backgrounds: { default: 'dark' },
-};
 
 export const DateMoment = TemplateMoment.bind({});
 DateMoment.args = {
