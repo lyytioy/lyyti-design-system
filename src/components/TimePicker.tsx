@@ -2,10 +2,13 @@ import {
   TimePicker as MuiTimePicker,
   TimePickerProps as MuiTimePickerProps,
 } from '@mui/x-date-pickers/TimePicker';
-import TextField, { TextFieldProps } from './TextField';
+import type { OutlinedInputProps as MuiOutlinedInputProps, InputAdornmentProps as MuiInputAdornmentProps, OutlinedTextFieldProps, FilledInputProps, OutlinedInputProps } from '@mui/material';
+import { TextFieldProps, TextInputProps } from './TextField';
 
-export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProps<TDate, TDate>, 'renderInput' | 'InputProps'> {
-  InputProps?: TextFieldProps;
+export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProps<TDate>, 'renderInput' | 'InputProps'> {
+  InputProps?:  Partial<TextInputProps>;
+  InputAdornmentProps?: Partial<MuiInputAdornmentProps>;
+  OpenPickerButtonProps?: Record<string, unknown>;
   'data-testid'?: string;
 }
 
@@ -14,22 +17,21 @@ const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, InputAdorn
     <MuiTimePicker
       ampm={ampm}
       {...props}
-      InputAdornmentProps={{
-        sx: {
-          ml: '0px',
+      slotProps={{
+        textField: {InputProps: InputProps as Partial<OutlinedInputProps>},
+        inputAdornment: {
+          sx: {
+            ml: '0px',
+          },
+          ...InputAdornmentProps
         },
-        ...InputAdornmentProps
-      }}
-      OpenPickerButtonProps={{
-        sx: {
-          pointerEvents: 'none',
-        },
-        tabIndex: -1,
-        ...OpenPickerButtonProps
-      }}
-      renderInput={(params) => {
-        const {inputProps, ...props} = InputProps;
-        return <TextField {...(params as TextFieldProps)} inputProps={{...params.inputProps, ...inputProps}} {...props} />;
+        openPickerButton: {
+          sx: {
+            pointerEvents: 'none',
+          },
+          tabIndex: -1,
+          ...OpenPickerButtonProps
+        }
       }}
     />
   );

@@ -3,12 +3,13 @@ import {
   DatePickerProps as MuiDatepickerProps,
 } from '@mui/x-date-pickers/DatePicker';
 import Calendar from '../icons/Calendar';
-import TextField, { TextFieldProps } from './TextField';
+import type { OutlinedInputProps as MuiOutlinedInputProps, OutlinedInputProps } from '@mui/material';
+import { TextFieldProps, TextInputProps } from './TextField';
 
-export interface DatePickerProps<TInputDate = unknown, TDate = unknown>
-  extends Omit<MuiDatepickerProps<TInputDate, TDate>, 'renderInput' | 'InputProps'> {
+export interface DatePickerProps<TDate = unknown> extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
-  InputProps?: TextFieldProps;
+  InputProps?: Partial<TextInputProps>;
+  // InputProps?: Partial<OutlinedInputProps>
 }
 
 const isDisallowedYear = (date: any) => {
@@ -17,68 +18,68 @@ const isDisallowedYear = (date: any) => {
   return year < 2006 || year > maxYear;
 };
 
-const DatePicker = <TInputDate = unknown, TDate = unknown>(
+const DatePicker = <TDate = unknown>(
   {
     allowAllYears = false,
-    InputProps = { color: 'primary', id: 'datepicker' },
+    InputProps = { color: 'primary', id: 'datepicker', defaultValue: '' },
     ...props
-  }: DatePickerProps<TInputDate, TDate>,
+  }: DatePickerProps<TDate>,
 ): JSX.Element => {
   return (
     <MuiDatePicker
-      components={{ OpenPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
-      PaperProps={{
-        sx: {
-          '& .MuiPickersDay-today': {
-            bgcolor: '#fff',
-            borderColor: 'primary.main',
-            color: 'primary.main',
-            '&:focus': {
-              bgcolor: 'common.white',
-            },
-          },
-          '& .MuiPickersDay-root': {
-            fontSize: '1rem',
-            '&:hover': {
-              bgcolor: 'primaryStates.selected',
+      slots={{ openPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
+      slotProps={
+        {desktopPaper: {
+          sx: {
+            '& .MuiPickersDay-today': {
+              bgcolor: '#fff',
+              borderColor: 'primary.main',
               color: 'primary.main',
-            },
-          },
-          '& .MuiPickersDay-root:not(.Mui-selected)': {
-            borderColor: 'primary.main',
-          },
-          '& .PrivatePickersSlideTransition-root': {
-            minHeight: '244px',
-          },
-          '& .MuiOutlinedInput-root:hover': {
-            borderColor: 'common.white',
-          },
-          '& .PrivatePickersYear-yearButton:hover': {
-            bgcolor: 'primaryStates.selected',
-          },
-          '& .MuiIconButton-root:hover': {
-            bgcolor: 'primaryStates.selected',
-          },
-          ...(!allowAllYears && {
-            '& .PrivatePickersYear-root': {
-              height: 'min-content',
-              width: 'min-content',
-              '& .Mui-disabled': {
-                display: 'none',
+              '&:focus': {
+                bgcolor: 'common.white',
               },
             },
-            '& .PrivatePickersYear-root:nth-of-type(-n+106)': {
-              display: 'none',
+            '& .MuiPickersDay-root': {
+              fontSize: '1rem',
+              '&:hover': {
+                bgcolor: 'primaryStates.selected',
+                color: 'primary.main',
+              },
             },
-          }),
+            '& .MuiPickersDay-root:not(.Mui-selected)': {
+              borderColor: 'primary.main',
+            },
+            '& .MuiPickersSlideTransition-root': {
+              minHeight: '244px',
+            },
+            '& .MuiOutlinedInput-root:hover': {
+              borderColor: 'common.white',
+            },
+            '& .MuiPickersYear-yearButton:hover': {
+              bgcolor: 'primaryStates.selected',
+            },
+            '& .MuiIconButton-root:hover': {
+              bgcolor: 'primaryStates.selected',
+            },
+            ...(!allowAllYears && {
+              '& .MuiPickersYear-root': {
+                height: 'min-content',
+                width: 'min-content',
+                '& .Mui-disabled': {
+                  display: 'none',
+                },
+              },
+              '& .MuiPickersYear-root:nth-of-type(-n+106)': {
+                display: 'none',
+              },
+            }),
+          },
         },
-      }}
+        // textField: {InputProps: InputProps as Partial<OutlinedInputProps>}
+        textField: {InputProps}
+        }}
       shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year) : false}
       {...props}
-      renderInput={(params) => {
-        const {inputProps, ...props} = InputProps;
-        return <TextField {...(params as TextFieldProps)} inputProps={{...params.inputProps, ...inputProps}} {...props} />;
-      }}
     />
   );
 };

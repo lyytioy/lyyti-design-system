@@ -3,10 +3,11 @@ import { useState } from 'react';
 import DatePicker, { DatePickerProps } from '../../src/components/DatePicker';
 import { LocalizationProvider } from '../../src';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
-import AdapterDayjs from '@date-io/dayjs';
-import AdapterMoment from '@date-io/moment';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import dayjs, { Dayjs } from 'dayjs';
 import moment, { Moment } from 'moment';
+import { Color } from '../../src/components/TextField';
 
 export default {
   title: 'Components/Inputs/DatePicker',
@@ -66,7 +67,7 @@ Please install any of these date management libraries, @date-io adapter for it a
   },
 } as Meta;
 
-const TemplateDateJs: StoryFn<DatePickerProps<Dayjs, Dayjs>> = (args) => {
+const TemplateDateJs: StoryFn<DatePickerProps<Dayjs>> = (args) => {
   // Run `npm install @date-io/dayjs` to install the adapter
 
   // import AdapterDateFns from '@date-io/dayjs';
@@ -86,7 +87,7 @@ const TemplateDateJs: StoryFn<DatePickerProps<Dayjs, Dayjs>> = (args) => {
   );
 };
 
-const TemplateMoment: StoryFn<DatePickerProps<Moment, Moment>> = (args) => {
+const TemplateMoment: StoryFn<DatePickerProps<Moment>> = (args) => {
   // Run `npm install @date-io/moment` to install the adapter
 
   // import AdapterMoment from '@date-io/moment';
@@ -112,7 +113,7 @@ Default.args = {};
 export const White = TemplateDateJs.bind({});
 White.args = {
   label: 'Event date',
-  InputProps: { color: 'white' },
+  InputProps: { sx: {color: 'white'} },
   showDaysOutsideCurrentMonth: false,
   allowAllYears: true,
 };
