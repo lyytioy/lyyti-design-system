@@ -1,19 +1,20 @@
 import {
   DataGrid as MuiDataGrid,
   DataGridProps as MuiDataGridProps,
-  GridColumns as MuiGridColumns,
+  GridColDef as MuiGridColumn,
   GridRowsProp as MuiGridRowsProp,
-  GridSelectionModel as MuiGridSelectionModel,
+  GridRowSelectionModel as MuiGridSelectionModel,
   GridColumnHeaderParams as MuiGridColumnHeaderParams,
   GridCallbackDetails as MuiGridCallbackDetails,
   GridSortModel as MuiGridSortModel,
+  GridPaginationModel,
 } from '@mui/x-data-grid';
 import { forwardRef, Ref } from 'react';
 
 export { useGridApiRef, useGridApiContext } from '@mui/x-data-grid';
 
 export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
-export interface GridColumns extends MuiGridColumns {}
+export type GridColumns = MuiGridColumn[]
 export interface GridRowsProp extends MuiGridRowsProp {}
 export interface GridSelectionModel extends MuiGridSelectionModel {}
 export interface GridCallbackDetails extends MuiGridCallbackDetails {}
@@ -26,7 +27,7 @@ export interface DataGridProps extends MuiDataGridProps {
   checkboxSelection?: boolean;
   disableColumnMenu?: boolean;
   hideFooter?: boolean;
-  pageSize?: number;
+  paginationModel?: GridPaginationModel
 }
 
 const DataGrid = (
@@ -35,7 +36,7 @@ const DataGrid = (
     checkboxSelection = false,
     disableColumnMenu = false,
     hideFooter = false,
-    pageSize = 100,
+    paginationModel = {page: 0, pageSize: 100},
     sx = {},
     ...props
   }: DataGridProps,
@@ -48,7 +49,7 @@ const DataGrid = (
       checkboxSelection={checkboxSelection}
       disableColumnMenu={disableColumnMenu}
       hideFooter={hideFooter}
-      pageSize={pageSize}
+      paginationModel={paginationModel}
       sx={{
         '& .MuiDataGrid-iconSeparator': {
           display: 'none',
