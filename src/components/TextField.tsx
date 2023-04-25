@@ -20,7 +20,7 @@ export type TextFieldProps = {
   'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel'
 >;
 
-export interface TextInputProps extends Omit<OutlinedInputProps, 'defaultValue'> {
+export interface TextInputProps extends OutlinedInputProps {
   helperText?: string;
   'data-testid'?: string;
 }

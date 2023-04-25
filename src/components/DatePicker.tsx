@@ -11,7 +11,8 @@ import { TextInputProps } from './TextField';
 export interface DatePickerProps<TDate = unknown> extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
   InputProps?: Partial<TextInputProps>;
-   InputAdornmentProps?: Partial<MuiInputAdornmentProps>;
+  InputAdornmentProps?: Partial<MuiInputAdornmentProps>;
+  'data-testid'?: string;
 }
 
 export { AdapterDayjs }
