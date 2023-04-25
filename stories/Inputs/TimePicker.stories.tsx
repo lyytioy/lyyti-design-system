@@ -114,5 +114,5 @@ Error.args = {
   label: 'Error',
   disabled: false,
   ampm: false,
-  InputProps: { error: true, helperText: 'Invalid time' },
+  InputProps: { error: true, helperText: 'Invalid time', "data-testid": "timepicker" },
 };
