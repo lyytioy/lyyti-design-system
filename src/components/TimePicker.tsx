@@ -2,7 +2,7 @@ import {
   TimePicker as MuiTimePicker,
   TimePickerProps as MuiTimePickerProps,
 } from '@mui/x-date-pickers/TimePicker';
-import type { InputAdornmentProps as MuiInputAdornmentProps, OutlinedInputProps } from '@mui/material';
+import type { InputAdornmentProps as MuiInputAdornmentProps } from '@mui/material';
 import { TextInputProps } from './TextField';
 
 export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProps<TDate>, 'renderInput' | 'InputProps'> {
@@ -13,12 +13,13 @@ export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProp
 }
 
 const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, InputAdornmentProps = {}, OpenPickerButtonProps = {}, ...props }: TimePickerProps<TDate>): JSX.Element => {
+  const helperText = InputProps.helperText;
+  delete InputProps.helperText;
   return (
     <MuiTimePicker
       ampm={ampm}
-      {...props}
       slotProps={{
-        textField: {InputProps: InputProps as Partial<OutlinedInputProps>},
+        textField: {InputProps, helperText},
         inputAdornment: {
           sx: {
             ml: '0px',
@@ -33,6 +34,7 @@ const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, InputAdorn
           ...OpenPickerButtonProps
         }
       }}
+      {...props}
     />
   );
 };
