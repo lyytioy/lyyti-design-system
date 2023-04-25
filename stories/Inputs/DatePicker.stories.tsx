@@ -115,3 +115,11 @@ DateMoment.args = {
   showDaysOutsideCurrentMonth: false,
   allowAllYears: true,
 };
+
+
+export const Error = TemplateDateJs.bind({});
+Error.args = {
+  label: 'Error',
+  disabled: false,
+  InputProps: { error: true, helperText: 'Invalid date', "data-testid": "datepicker" },
+};
