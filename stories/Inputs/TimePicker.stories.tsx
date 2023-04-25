@@ -3,7 +3,7 @@ import TimePicker, { TimePickerProps } from '../../src/components/TimePicker';
 import Box from '../../src/components/Box';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 import { LocalizationProvider } from '../../src';
-import AdapterDayjs from '@date-io/dayjs';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 

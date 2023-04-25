@@ -81,7 +81,7 @@ export const PageSize = Template.bind({});
 PageSize.args = {
   rows: rows,
   columns: columns,
-  pageSize: 25,
+  paginationModel: {page: 0, pageSize: 25},
 };
 
 export const CheckboxSelection = Template.bind({});
