@@ -115,3 +115,13 @@ Fab.args = {
   variant: 'fab',
   children: <Bin />,
 };
+
+export const WhiteIconButton = Template.bind({});
+WhiteIconButton.args = {
+  variant: 'icon',
+  color: 'white',
+  children: <Bin />,
+};
+WhiteIconButton.parameters = {
+  backgrounds: { default: 'dark' },
+};

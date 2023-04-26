@@ -54,6 +54,7 @@ declare module '@mui/material/styles/createPalette' {
     sunset: ColorRangeOptions;
     sun: ColorRangeOptions;
     sand: ColorRangeOptions;
+    white: ColorShadeOptions;
   }
   interface PaletteOptions {
     primaryStates: ColorStateOptions;
@@ -67,6 +68,7 @@ declare module '@mui/material/styles/createPalette' {
     sunset: ColorRangeOptions;
     sun: ColorRangeOptions;
     sand: ColorRangeOptions;
+    white: ColorShadeOptions;
   }
 }
 
@@ -93,6 +95,31 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     navigationLink: true;
+  }
+}
+
+// Update the Button's color prop options
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    white: true;
+  }
+}
+
+declare module '@mui/material/IconButton' {
+  interface IconButtonPropsColorOverrides {
+    white: true;
+  }
+}
+
+declare module '@mui/material/Fab' {
+  interface FabPropsColorOverrides {
+    white: true;
+  }
+}
+
+declare module '@mui/material/Chip' {
+  interface ChipPropsColorOverrides {
+    white: true;
   }
 }
 
@@ -214,6 +241,12 @@ export default createTheme({
       '300': '#F4E6D4',
       '400': '#E0C9AC',
       '500': '#735632',
+    },
+    white: {
+      main: '#FFFFFF',
+      dark: '#B1B9BE',
+      light: '#F3F3F3',
+      contrastText: '#045B56',
     },
     primaryStates: {
       activeContained: 'rgba(4, 91, 86, 0.3)',

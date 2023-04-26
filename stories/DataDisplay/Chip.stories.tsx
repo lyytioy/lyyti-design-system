@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import Chip, { ChipProps } from '../../src/components/Chip';
 import Avatar from '../../src/components/Avatar';
-import { StarFilled } from '../../src/icons';
+import { Play, StarFilled } from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
@@ -56,4 +56,33 @@ SecondaryOutlined.args = {
   variant: 'outlined',
   avatar: <Avatar alt="Steve" src="/steve-basic.png" />,
   onDelete: undefined,
+};
+
+export const SecondaryOutlinedIcon = Template.bind({});
+SecondaryOutlinedIcon.args = {
+  color: 'secondary',
+  variant: 'outlined',
+  icon: <Play fontSize="small" />,
+  onDelete: undefined,
+};
+
+export const White = Template.bind({});
+White.args = {
+  color: 'white',
+  variant: 'outlined',
+  icon: <Play fontSize="small" />,
+  clickable: true,
+};
+White.parameters = {
+  backgrounds: { default: 'dark' },
+};
+
+export const WhiteFilled = Template.bind({});
+WhiteFilled.args = {
+  color: 'white',
+  avatar: <Avatar>{'M'}</Avatar>,
+  onDelete: () => null,
+};
+WhiteFilled.parameters = {
+  backgrounds: { default: 'dark' },
 };
