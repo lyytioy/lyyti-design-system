@@ -1,32 +1,35 @@
 import {
     DataGridPro as MuiDataGridPro,
     DataGridProProps as MuiDataGridProProps,
-    GridColumns as MuiGridColumns,
+    GridColDef as MuiGridColDef,
     GridRowsProp as MuiGridRowsProp,
-    GridSelectionModel as MuiGridSelectionModel,
+    GridRowSelectionModel as MuiGridSelectionModel,
     GridColumnHeaderParams as MuiGridColumnHeaderParams,
     GridCallbackDetails as MuiGridCallbackDetails,
     GridSortModel as MuiGridSortModel,
+    GridPaginationModel as MuiGridPaginationModel,
   } from '@mui/x-data-grid-pro';
   import { forwardRef, Ref } from 'react';
   
   export { useGridApiRef, useGridApiContext } from '@mui/x-data-grid-pro';
   
   export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
-  export interface GridColumns extends MuiGridColumns {}
   export interface GridRowsProp extends MuiGridRowsProp {}
   export interface GridSelectionModel extends MuiGridSelectionModel {}
   export interface GridCallbackDetails extends MuiGridCallbackDetails {}
   export interface GridSortModel extends MuiGridSortModel {}
+  export interface GridPaginationModel extends MuiGridPaginationModel {}
   
   export interface DataGridProProps extends MuiDataGridProProps {
-    columns: GridColumns;
+    columns: MuiGridColDef[];
     rows: GridRowsProp;
     autoHeight?: boolean;
     checkboxSelection?: boolean;
     disableColumnMenu?: boolean;
     hideFooter?: boolean;
+    page?: number;
     pageSize?: number;
+    onPaginationModelChange?: (model: GridPaginationModel, details: GridCallbackDetails) => void
   }
   
   const DataGridPro = (
@@ -35,7 +38,7 @@ import {
       checkboxSelection = false,
       disableColumnMenu = false,
       hideFooter = false,
-      pageSize = 100,
+      paginationModel = {page: 0, pageSize: 100},
       sx = {},
       ...props
     }: DataGridProProps,
@@ -48,7 +51,7 @@ import {
         checkboxSelection={checkboxSelection}
         disableColumnMenu={disableColumnMenu}
         hideFooter={hideFooter}
-        pageSize={pageSize}
+        paginationModel={paginationModel}
         sx={{
           '& .MuiDataGrid-iconSeparator': {
             display: 'none',

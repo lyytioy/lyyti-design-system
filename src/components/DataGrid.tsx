@@ -1,32 +1,37 @@
 import {
   DataGrid as MuiDataGrid,
   DataGridProps as MuiDataGridProps,
-  GridColumns as MuiGridColumns,
+  GridColDef,
   GridRowsProp as MuiGridRowsProp,
-  GridSelectionModel as MuiGridSelectionModel,
+  GridRowSelectionModel as MuiGridSelectionModel,
   GridColumnHeaderParams as MuiGridColumnHeaderParams,
   GridCallbackDetails as MuiGridCallbackDetails,
   GridSortModel as MuiGridSortModel,
+  GridPaginationModel as MuiGridPaginationModel,
+  GridRenderCellParams as MuiGridRenderCellParams
 } from '@mui/x-data-grid';
 import { forwardRef, Ref } from 'react';
 
-export { useGridApiRef, useGridApiContext } from '@mui/x-data-grid';
+export { type GridColDef, useGridApiRef, useGridApiContext, useGridSelector, gridPageCountSelector } from '@mui/x-data-grid';
 
 export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
-export interface GridColumns extends MuiGridColumns {}
 export interface GridRowsProp extends MuiGridRowsProp {}
 export interface GridSelectionModel extends MuiGridSelectionModel {}
 export interface GridCallbackDetails extends MuiGridCallbackDetails {}
 export interface GridSortModel extends MuiGridSortModel {}
-
+export interface GridPaginationModel extends MuiGridPaginationModel {}
+export interface GridRenderCellParams extends MuiGridRenderCellParams {}
 export interface DataGridProps extends MuiDataGridProps {
-  columns: GridColumns;
+  columns: GridColDef[];
   rows: GridRowsProp;
   autoHeight?: boolean;
   checkboxSelection?: boolean;
   disableColumnMenu?: boolean;
   hideFooter?: boolean;
+  page?: number;
   pageSize?: number;
+  onPaginationModelChange?: (model: GridPaginationModel, details: GridCallbackDetails) => void
+  
 }
 
 const DataGrid = (
@@ -35,8 +40,9 @@ const DataGrid = (
     checkboxSelection = false,
     disableColumnMenu = false,
     hideFooter = false,
-    pageSize = 100,
     sx = {},
+    page = 1,
+    pageSize = 100,
     ...props
   }: DataGridProps,
   ref: Ref<HTMLDivElement>
@@ -48,7 +54,7 @@ const DataGrid = (
       checkboxSelection={checkboxSelection}
       disableColumnMenu={disableColumnMenu}
       hideFooter={hideFooter}
-      pageSize={pageSize}
+      paginationModel={{page: page -1, pageSize}}
       sx={{
         '& .MuiDataGrid-iconSeparator': {
           display: 'none',
