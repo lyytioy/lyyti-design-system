@@ -124,3 +124,4 @@ export { default as EmailQuestion } from './EmailQuestion';
 export { default as Check } from './Check';
 export { default as Play } from './Play';
 export { default as Pause } from './Pause';
+export { default as Delete } from './Delete';

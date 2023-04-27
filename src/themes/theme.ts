@@ -16,86 +16,6 @@ const baseFontStack = [
 const objektivMk1FontFamily = ['"Objektiv MK1"'].concat(baseFontStack).join(',');
 const objektivMk3FontFamily = ['"Objektiv MK3"'].concat(baseFontStack).join(',');
 
-interface ColorStateOptions {
-  activeContained: string;
-  hover: string;
-  selected: string;
-  activeOutlined: string;
-  outlinedStroke: string;
-  disabledBg: string;
-}
-
-interface ColorShadeOptions {
-  main: string;
-  dark: string;
-  light: string;
-  contrastText: string;
-}
-
-interface ColorRangeOptions {
-  50: string;
-  100: string;
-  200: string;
-  300: string;
-  400: string;
-  500: string;
-}
-
-declare module '@mui/material/styles/createPalette' {
-  interface Palette {
-    primaryStates: ColorStateOptions;
-    secondaryStates: ColorStateOptions;
-    errorStates: ColorStateOptions;
-    light: ColorShadeOptions;
-    lightStates: ColorStateOptions;
-    sky: ColorRangeOptions;
-    balticSea: ColorRangeOptions;
-    coral: ColorRangeOptions;
-    sunset: ColorRangeOptions;
-    sun: ColorRangeOptions;
-    sand: ColorRangeOptions;
-  }
-  interface PaletteOptions {
-    primaryStates: ColorStateOptions;
-    secondaryStates: ColorStateOptions;
-    errorStates: ColorStateOptions;
-    light: ColorShadeOptions;
-    lightStates: ColorStateOptions;
-    sky: ColorRangeOptions;
-    balticSea: ColorRangeOptions;
-    coral: ColorRangeOptions;
-    sunset: ColorRangeOptions;
-    sun: ColorRangeOptions;
-    sand: ColorRangeOptions;
-  }
-}
-
-declare module '@mui/material/styles' {
-  interface TypographyVariants {
-    navigationLink: React.CSSProperties;
-  }
-
-  // allow configuration using `createTheme`
-  interface TypographyVariantsOptions {
-    navigationLink?: React.CSSProperties;
-  }
-  interface PaletteColor {
-    darkText?: string;
-    lightBg?: string;
-  }
-  interface SimplePaletteColorOptions {
-    darkText?: string;
-    lightBg?: string;
-  }
-}
-
-// Update the Typography's variant prop options
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    navigationLink: true;
-  }
-}
-
 export default createTheme({
   palette: {
     primary: {
@@ -214,6 +134,12 @@ export default createTheme({
       '300': '#F4E6D4',
       '400': '#E0C9AC',
       '500': '#735632',
+    },
+    white: {
+      main: '#FFFFFF',
+      dark: '#B1B9BE',
+      light: '#F3F3F3',
+      contrastText: '#045B56',
     },
     primaryStates: {
       activeContained: 'rgba(4, 91, 86, 0.3)',
