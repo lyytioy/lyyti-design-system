@@ -42,7 +42,7 @@
     "@storybook/nextjs": "7.0.4",
     "@storybook/react": "7.0.4",
     "@storybook/test-runner": "0.10.0",
-    "@svgr/cli": "6.5.1",
+    "@svgr/cli": "7.0.0",
     "@types/node": "16.18.23",
     "@types/react": "17.0.43",
     "babel-loader": "9.1.2",
