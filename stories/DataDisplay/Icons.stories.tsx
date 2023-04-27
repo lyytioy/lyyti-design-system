@@ -186,6 +186,7 @@ const iconsList = [
   { name: 'Check', component: i.Check },
   { name: 'Play', component: i.Play },
   { name: 'Pause', component: i.Pause },
+  { name: 'Delete', component: i.Delete },
 ];
 
 const Template: StoryFn<SvgIconProps> = (args) => {

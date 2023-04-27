@@ -10,7 +10,7 @@ export interface ButtonProps extends Omit<MuiButtonProps, 'color' | 'variant' | 
   chunky?: boolean;
   variant?: MuiButtonProps['variant'] | 'icon' | 'fab';
   children: MuiButtonProps['children'] & { $$typeof?: symbol; props?: any };
-  color?: 'primary' | 'secondary' | 'danger' | 'inherit';
+  color?: 'primary' | 'secondary' | 'danger' | 'inherit' | 'white';
   loading?: boolean;
   'data-testid'?: string;
 }
@@ -75,6 +75,7 @@ const Button = (
         disabled={disabled}
         size="large"
         sx={{
+          '&.MuiIconButton-root:hover': { backgroundColor: alpha(theme.palette.white.main, 0.5) },
           '&.MuiIconButton-colorPrimary': iconPrimaryStyles,
           '&.MuiIconButton-colorSecondary': iconSecondaryStyles,
           '&.MuiIconButton-colorError': iconDangerStyles,
