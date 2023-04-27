@@ -20,15 +20,26 @@ const Chip = (
   }: ChipProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-  const overrideDeleteIconStyles = {
-    color: color === 'white' ? (variant === 'outlined' ? 'white.main' : 'grey.200') : 'none',
-    '&:hover': {
-      color: color === 'white' ? (variant === 'outlined' ? 'white.dark' : 'grey.400') : 'none',
-    },
-    '&:active': {
-      color: color === 'white' ? (variant === 'outlined' ? 'white.light' : 'grey.300') : 'none',
-    },
+  let overrideDeleteIconStyles = {
+    color: 'none',
+    '&:hover': { color: 'none' },
+    '&:active': { color: 'none' },
   };
+  if (color === 'white') {
+    if (variant === 'outlined') {
+      overrideDeleteIconStyles = {
+        color: 'white.main',
+        '&:hover': { color: 'white.dark' },
+        '&:active': { color: 'white.light' },
+      };
+    } else {
+      overrideDeleteIconStyles = {
+        color: 'grey.200',
+        '&:hover': { color: 'grey.400' },
+        '&:active': { color: 'grey.300' },
+      };
+    }
+  }
 
   const overrideChipAvatarStyles = {
     color: color === 'white' ? (variant === 'outlined' ? 'none' : 'white.main') : 'none',
