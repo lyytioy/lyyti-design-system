@@ -20,34 +20,38 @@ const Chip = (
   }: ChipProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-  let overrideDeleteIconStyles = {
-    color: 'none',
-    '&:hover': { color: 'none' },
-    '&:active': { color: 'none' },
-  };
-  if (color === 'white') {
-    if (variant === 'outlined') {
-      overrideDeleteIconStyles = {
+  const overrideDeleteIconStyles = {
+    '&, &:hover, &:active': {
+      color: 'none',
+    },
+    ...(color === 'white' && {
+      color: 'grey.200',
+      '&:active': {
+        color: 'grey.300',
+      },
+      '&:hover': {
+        color: 'grey.400',
+      },
+      ...(variant === 'outlined' && {
         color: 'white.main',
-        '&:hover': { color: 'white.dark' },
-        '&:active': { color: 'white.light' },
-      };
-    } else {
-      overrideDeleteIconStyles = {
-        color: 'grey.200',
-        '&:hover': { color: 'grey.400' },
-        '&:active': { color: 'grey.300' },
-      };
-    }
-  }
+        '&:active': {
+          color: 'white.light',
+        },
+        '&:hover': {
+          color: 'white.dark',
+        },
+      }),
+    }),
+  };
 
   const overrideChipAvatarStyles = {
-    color: color === 'white' ? (variant === 'outlined' ? 'none' : 'white.main') : 'none',
+    color: color === 'white' && variant !== 'outlined' ? 'white.main' : 'none',
   };
-
   const overrideAvatarStyles = {
-    backgroundColor:
-      color === 'white' ? (variant === 'outlined' ? 'white.main' : 'primary.main') : 'none',
+    backgroundColor: 'none',
+    ...(color === 'white' && {
+      backgroundColor: variant === 'outlined' ? 'white.main' : 'primary.main',
+    }),
   };
 
   return (
