@@ -58,7 +58,7 @@
     "react-dom": "18.2.0",
     "storybook": "7.0.10",
     "typescript": "4.9.5",
-    "webpack": "5.79.0"
+    "webpack": "5.82.1"
   },
   "main": "index.js",
   "types": "index.d.ts",
