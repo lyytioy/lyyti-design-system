@@ -121,5 +121,6 @@ export const Error = TemplateDateJs.bind({});
 Error.args = {
   label: 'Error',
   disabled: false,
-  InputProps: { error: true, helperText: 'Invalid date', "data-testid": "datepicker" },
+  helperText: 'Invalid date',
+  InputProps: { error: true, "data-testid": "datepicker" },
 };
