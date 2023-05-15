@@ -10,12 +10,14 @@ import {
   GridPaginationModel,
   gridPageCountSelector,
   useGridSelector,
-  GridRenderCellParams
+  GridRenderCellParams,
 } from '@mui/x-data-grid';
 
 import { forwardRef, Ref } from 'react';
 
-export { useGridApiRef, useGridApiContext } from '@mui/x-data-grid';
+export { useGridApiRef, useGridApiContext, useGridRootProps, gridPageCountSelector,
+  useGridSelector,
+  type GridRenderCellParams } from '@mui/x-data-grid';
 
 export interface GridColumnHeaderParams extends MuiGridColumnHeaderParams {}
 export type GridColumns = MuiGridColumn[]
@@ -24,11 +26,6 @@ export interface GridSelectionModel extends MuiGridSelectionModel {}
 export interface GridCallbackDetails extends MuiGridCallbackDetails {}
 export interface GridSortModel extends MuiGridSortModel {}
 
-export {
-  gridPageCountSelector,
-  useGridSelector,
-  type GridRenderCellParams
-}
 
 export interface DataGridProps extends MuiDataGridProps {
   columns: GridColumns;
