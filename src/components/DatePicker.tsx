@@ -3,13 +3,15 @@ import {
   DatePickerProps as MuiDatepickerProps,
 } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import type { InputAdornmentProps as MuiInputAdornmentProps } from '@mui/material';
+import type { FormHelperTextProps, InputAdornmentProps as MuiInputAdornmentProps } from '@mui/material';
 
 import Calendar from '../icons/Calendar';
 import { TextInputProps } from './TextField';
 
 export interface DatePickerProps<TDate = unknown> extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
   allowAllYears?: boolean;
+  helperText?: string;
+  FormHelperTextProps?: FormHelperTextProps;
   InputProps?: Partial<TextInputProps>;
   InputAdornmentProps?: Partial<MuiInputAdornmentProps>;
   'data-testid'?: string;
@@ -28,16 +30,16 @@ const DatePicker = <TDate = unknown>(
     allowAllYears = false,
     InputProps = { color: 'primary', id: 'datepicker' },
     InputAdornmentProps = {},
+    helperText,
+    FormHelperTextProps,
     ...props
   }: DatePickerProps<TDate>,
 ): JSX.Element => {
-  const helperText = InputProps.helperText;
-  delete InputProps.helperText;
   return (
     <MuiDatePicker
       slots={{ openPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
-      slotProps={
-        {desktopPaper: {
+      slotProps={{
+        desktopPaper: {
           sx: {
             '& .MuiPickersDay-today': {
               bgcolor: '#fff',
@@ -83,11 +85,11 @@ const DatePicker = <TDate = unknown>(
             }),
           },
         },
-        textField: {InputProps, helperText},
+        textField: {InputProps, helperText, FormHelperTextProps},
         inputAdornment: {
           ...InputAdornmentProps
         },
-        }}
+      }}
       shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year) : false}
       {...props}
     />
