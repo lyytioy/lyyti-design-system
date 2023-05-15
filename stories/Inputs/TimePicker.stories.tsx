@@ -115,5 +115,6 @@ Error.args = {
   disabled: false,
   ampm: false,
   helperText: 'Invalid time',
+  FormHelperTextProps: {sx: {color: "red"}},
   InputProps: { error: true, "data-testid": "timepicker" },
 };
