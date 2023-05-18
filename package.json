@@ -41,7 +41,7 @@
     "@storybook/addon-mdx-gfm": "7.0.10",
     "@storybook/addon-styling": "1.0.6",
     "@storybook/nextjs": "7.0.10",
-    "@storybook/react": "7.0.10",
+    "@storybook/react": "7.0.12",
     "@storybook/test-runner": "0.10.0",
     "@svgr/cli": "8.0.1",
     "@types/node": "16.18.23",
