@@ -3,7 +3,7 @@ import {
   DatePickerProps as MuiDatepickerProps,
 } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import type { FormHelperTextProps, InputAdornmentProps as MuiInputAdornmentProps } from '@mui/material';
+import type { FormHelperTextProps, InputLabelProps, InputAdornmentProps as MuiInputAdornmentProps } from '@mui/material';
 
 import Calendar from '../icons/Calendar';
 import { TextInputProps } from './TextField';
@@ -14,6 +14,7 @@ export interface DatePickerProps<TDate = unknown> extends Omit<MuiDatepickerProp
   FormHelperTextProps?: FormHelperTextProps;
   InputProps?: Partial<TextInputProps>;
   InputAdornmentProps?: Partial<MuiInputAdornmentProps>;
+  InputLabelProps?: Partial<InputLabelProps>
   'data-testid'?: string;
 }
 
@@ -30,6 +31,7 @@ const DatePicker = <TDate = unknown>(
     allowAllYears = false,
     InputProps = { color: 'primary', id: 'datepicker' },
     InputAdornmentProps = {},
+    InputLabelProps,
     helperText,
     FormHelperTextProps,
     ...props
@@ -85,7 +87,7 @@ const DatePicker = <TDate = unknown>(
             }),
           },
         },
-        textField: {InputProps, helperText, FormHelperTextProps},
+        textField: {InputProps, helperText, FormHelperTextProps, InputLabelProps},
         inputAdornment: {
           ...InputAdornmentProps
         },
