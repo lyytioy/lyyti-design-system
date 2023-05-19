@@ -15,7 +15,7 @@ export interface TimePickerProps<TDate = unknown> extends Omit<MuiTimePickerProp
   'data-testid'?: string;
 }
 
-const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, InputAdornmentProps = {}, OpenPickerButtonProps = {}, helperText, FormHelperTextProps, ...props }: TimePickerProps<TDate>): JSX.Element => {
+const TimePicker = <TDate = unknown>({ ampm = false, InputProps = {}, InputAdornmentProps = {}, OpenPickerButtonProps = {}, helperText, FormHelperTextProps, InputLabelProps, ...props }: TimePickerProps<TDate>): JSX.Element => {
   return (
     <MuiTimePicker
       ampm={ampm}
