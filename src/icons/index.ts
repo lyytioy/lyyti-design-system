@@ -126,3 +126,5 @@ export { default as Play } from './Play';
 export { default as Pause } from './Pause';
 export { default as Delete } from './Delete';
 export { default as Send } from './Send';
+export { default as PlayContained } from './PlayContained';
+export { default as ClockContained } from './ClockContained';
