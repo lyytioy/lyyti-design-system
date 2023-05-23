@@ -3,7 +3,6 @@ import {
   DatePickerProps as MuiDatepickerProps,
 } from '@mui/x-date-pickers/DatePicker';
 import { DesktopDatePicker as MuiDesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { MobileDatePicker as MuiMobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import type { FormHelperTextProps, InputLabelProps, InputAdornmentProps as MuiInputAdornmentProps } from '@mui/material';
 
@@ -18,7 +17,7 @@ export interface DatePickerProps<TDate = unknown> extends Omit<MuiDatepickerProp
   InputAdornmentProps?: Partial<MuiInputAdornmentProps>;
   InputLabelProps?: Partial<InputLabelProps>
   'data-testid'?: string;
-  variant: 'desktop' | 'mobile' | 'responsive';
+  variant?: 'desktop' | 'responsive';
 }
 
 export { AdapterDayjs }
@@ -41,7 +40,7 @@ const DatePicker = <TDate = unknown>(
     ...props
   }: DatePickerProps<TDate>,
 ): JSX.Element => {
-  const MuiDatePicker = variant === 'responsive' ? MuiResponsiveDatePicker : variant === 'desktop' ? MuiDesktopDatePicker : MuiMobileDatePicker;
+  const MuiDatePicker = variant === 'desktop' ? MuiDesktopDatePicker : MuiResponsiveDatePicker;
   return (
     <MuiDatePicker
       slots={{ openPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
