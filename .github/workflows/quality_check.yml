@@ -21,7 +21,7 @@ jobs:
         run: npm run check-types
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
-  storybook:
+  test-storybook:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
