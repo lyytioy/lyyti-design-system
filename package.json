@@ -43,7 +43,7 @@
     "@storybook/react": "7.0.12",
     "@storybook/test-runner": "0.10.0",
     "@svgr/cli": "8.0.1",
-    "@types/node": "16.18.23",
+    "@types/node": "20.2.5",
     "@types/react": "17.0.43",
     "babel-loader": "9.1.2",
     "dayjs": "1.11.7",
