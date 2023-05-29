@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "engines": {
     "node": "^18",
     "npm": "^8"
@@ -22,8 +22,8 @@
     "**/@emotion/styled": "^11.0.0"
   },
   "dependencies": {
-    "@emotion/react": "11.10.6",
-    "@emotion/styled": "11.10.6",
+    "@emotion/react": "11.11.0",
+    "@emotion/styled": "11.11.0",
     "@mui/lab": "5.0.0-alpha.129",
     "@mui/material": "5.13.2",
     "@mui/x-data-grid": "6.4.0",
@@ -32,13 +32,12 @@
     "@mui/x-license-pro": "6.0.4"
   },
   "devDependencies": {
-    "@babel/core": "7.21.4",
+    "@babel/core": "7.22.1",
     "@date-io/dayjs": "2.16.0",
     "@date-io/moment": "2.16.1",
-    "@storybook/addon-actions": "7.0.10",
-    "@storybook/addon-essentials": "7.0.10",
-    "@storybook/addon-links": "7.0.10",
-    "@storybook/addon-mdx-gfm": "7.0.10",
+    "@storybook/addon-actions": "7.0.18",
+    "@storybook/addon-essentials": "7.0.18",
+    "@storybook/addon-links": "7.0.18",
     "@storybook/addon-styling": "1.0.6",
     "@storybook/nextjs": "7.0.10",
     "@storybook/react": "7.0.12",
