@@ -190,6 +190,7 @@ const iconsList = [
   { name: 'Send', component: i.Send },
   { name: 'PlayContained', component: i.PlayContained },
   { name: 'ClockContained', component: i.ClockContained },
+  { name: 'ParticipantFictional', component: i.ParticipantFictional },
 ];
 
 const Template: StoryFn<SvgIconProps> = (args) => {

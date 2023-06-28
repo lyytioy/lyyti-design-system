@@ -128,3 +128,4 @@ export { default as Delete } from './Delete';
 export { default as Send } from './Send';
 export { default as PlayContained } from './PlayContained';
 export { default as ClockContained } from './ClockContained';
+export { default as ParticipantFictional } from './ParticipantFictional';
