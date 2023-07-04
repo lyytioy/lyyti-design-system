@@ -32,7 +32,7 @@
     "@mui/x-license-pro": "6.0.4"
   },
   "devDependencies": {
-    "@babel/core": "7.22.1",
+    "@babel/core": "7.22.6",
     "@date-io/dayjs": "2.16.0",
     "@date-io/moment": "2.16.1",
     "@storybook/addon-actions": "7.0.18",
