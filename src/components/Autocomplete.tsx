@@ -10,6 +10,7 @@ import Chip from './Chip';
 import { forwardRef, Ref } from 'react';
 import MenuItem from './MenuItem';
 import Typography from './Typography';
+import Checkbox from './Checkbox';
 
 declare module '@mui/material' {
   interface AutocompleteProps<
@@ -47,6 +48,7 @@ export interface AutocompleteProps<T = OptionsType>
   'data-testid'?: string;
   ref?: Ref<HTMLDivElement>;
   name?: string;
+  checkbox?: boolean;
 }
 
 const Autocomplete = (
@@ -67,6 +69,7 @@ const Autocomplete = (
     'data-testid': testid,
     sx = {},
     name,
+    checkbox,
     ...props
   }: AutocompleteProps,
   ref: Ref<HTMLDivElement>
@@ -128,6 +131,7 @@ const Autocomplete = (
               }),
             }}
           >
+            {checkbox && (<Checkbox checked={state.selected} />)}
             {label}
             {description && (
               <Typography variant="caption" color="grey.400">

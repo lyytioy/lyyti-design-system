@@ -9,6 +9,7 @@ type CommonProps = {
   optionDivider?: boolean;
   adornment?: AutocompleteProps<OptionsType>['adornment'];
   multiple?: boolean;
+  checkbox?: boolean;
   'data-testid'?: string;
   ref?: Ref<HTMLDivElement>;
 };
@@ -29,6 +30,7 @@ const Select = (
     multiple = false,
     'data-testid': testid,
     optionDivider,
+    checkbox,
     ...props
   }: SelectProps,
   ref: Ref<HTMLDivElement>
@@ -37,6 +39,7 @@ const Select = (
     return (
       <Autocomplete
         multiple={multiple}
+        checkbox={checkbox}
         options={options}
         disableClearable
         data-testid={testid}
