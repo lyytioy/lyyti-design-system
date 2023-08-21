@@ -126,6 +126,14 @@ MultipleSelect.args = {
   fullWidth: true,
 };
 
+export const MultipleSelectCheckbox = MultiSelectTemplate.bind({});
+MultipleSelectCheckbox.args = {
+  multiple: true,
+  placeholder: 'Select',
+  fullWidth: true,
+  checkbox: true,
+};
+
 export const MultipleSelectOptionDivider = MultiSelectTemplate.bind({});
 MultipleSelectOptionDivider.args = {
   multiple: true,
