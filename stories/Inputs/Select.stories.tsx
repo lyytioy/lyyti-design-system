@@ -30,7 +30,8 @@ export default {
 } as Meta;
 
 const SelectTemplate: StoryFn<SelectProps> = (args: SelectProps) => {
-  const [selectValue, setSelectValue] = useState('0');
+  const isMultiple = Boolean('SelectProps' in args && args.SelectProps?.multiple);
+  const [selectValue, setSelectValue] = useState<Array<string | number> | string | number>(isMultiple ? [0] : 0);
 
   args.value = selectValue;
   args.onChange = (e: ChangeEvent<HTMLInputElement>) => setSelectValue(e.target.value);
@@ -126,11 +127,13 @@ MultipleSelect.args = {
   fullWidth: true,
 };
 
-export const MultipleSelectCheckbox = MultiSelectTemplate.bind({});
+export const MultipleSelectCheckbox = SelectTemplate.bind({});
 MultipleSelectCheckbox.args = {
-  multiple: true,
   placeholder: 'Select',
   fullWidth: true,
+  SelectProps: {
+    multiple: true,
+  },
   checkbox: true,
 };
 
