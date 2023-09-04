@@ -28,7 +28,7 @@ jobs:
     if: github.event.pull_request.merged == true || github.event.inputs.accept == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get package.json version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
@@ -51,7 +51,7 @@ jobs:
     needs: create-release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 18.13.0
