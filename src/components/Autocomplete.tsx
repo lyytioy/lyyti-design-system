@@ -1,28 +1,14 @@
 import {
   Autocomplete as MuiAutocomplete,
-  ChipTypeMap,
   AutocompleteProps as MuiAutocompleteProps,
-  TextFieldProps,
 } from '@mui/material';
 import TextField, { SizeTypes, ColorTypes } from './TextField';
 import InputAdornment from './InputAdornment';
 import Chip from './Chip';
-import { forwardRef, Ref } from 'react';
+import React, { forwardRef, Ref, JSX } from 'react';
 import MenuItem from './MenuItem';
 import Typography from './Typography';
 import Checkbox from './Checkbox';
-
-declare module '@mui/material' {
-  interface AutocompleteProps<
-    T,
-    Multiple extends boolean | undefined,
-    DisableClearable extends boolean | undefined,
-    FreeSolo extends boolean | undefined,
-    ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']
-  > {
-    getOptionLabel?: (option: OptionsType) => string;
-  }
-}
 
 export type OptionsType = {
   id: number | string;
@@ -33,7 +19,7 @@ export type OptionsType = {
 
 export interface AutocompleteProps<T = OptionsType>
   extends Omit<
-    MuiAutocompleteProps<T, boolean | undefined, boolean | undefined, boolean | undefined>,
+    MuiAutocompleteProps<OptionsType, boolean | undefined, boolean | undefined, boolean | undefined>,
     'hiddenLabel' | 'startAdornment' | 'endAdornment' | 'variant' | 'renderInput' | 'ref'
   > {
   adornment?: string | JSX.Element;
@@ -54,7 +40,7 @@ export interface AutocompleteProps<T = OptionsType>
 const Autocomplete = (
   {
     adornment,
-    getOptionLabel = (option: OptionsType) => option.value,
+    getOptionLabel = (option) => typeof option === 'string' ? option : option.value,
     label,
     size = 'medium',
     freeSolo = false,
@@ -95,7 +81,7 @@ const Autocomplete = (
       }}
       renderTags={(tags: OptionsType[], getTagProps) =>
         tags.map((tag: OptionsType, index: number) => (
-          <Chip label={tag.value} size={size} {...getTagProps({ index })} key={index} />
+          <Chip label={tag.value} size={size} {...getTagProps({ index })} key={tag.id} />
         ))
       }
       renderInput={(params) => (

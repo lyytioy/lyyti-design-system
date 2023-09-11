@@ -4,7 +4,6 @@ import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
 import { forwardRef, Ref } from 'react';
 import Typography from './Typography';
 import Checkbox from './Checkbox';
-import React from 'react';
 
 type CommonProps = {
   options?: AutocompleteProps['options'];
