@@ -17,13 +17,13 @@ jobs:
   compare-versions:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: main
       - name: Get main branch package.json version
         id: version-in-main
         uses: martinbeentjes/npm-get-version-action@v1.3.1
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get current package.json version
         id: current-package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
@@ -36,7 +36,7 @@ jobs:
   test-build:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 18.13.0
