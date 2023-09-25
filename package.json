@@ -39,7 +39,7 @@
     "@storybook/addon-essentials": "7.0.24",
     "@storybook/addon-links": "7.4.0",
     "@storybook/addon-styling": "1.0.6",
-    "@storybook/nextjs": "7.0.10",
+    "@storybook/nextjs": "7.4.5",
     "@storybook/react": "7.0.24",
     "@storybook/test-runner": "0.10.0",
     "@svgr/cli": "8.1.0",
