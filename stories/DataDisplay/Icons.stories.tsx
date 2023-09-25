@@ -192,6 +192,8 @@ const iconsList = [
   { name: 'ClockContained', component: i.ClockContained },
   { name: 'ParticipantFictional', component: i.ParticipantFictional },
   { name: 'Sharing', component: i.Sharing },
+  { name: 'DoubleArrow', component: i.DoubleArrow },
+  { name: 'HandGrab', component: i.HandGrab },
 ];
 
 const Template: StoryFn<SvgIconProps> = (args) => {
@@ -227,9 +229,9 @@ import { ${importIcon} } from '@lyyti/design-system/icons';
         {iconsList
           .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
           .sort((a, b) => a.name.localeCompare(b.name))
-          .map((icon, index) => {
+          .map((icon) => {
             return (
-              <Grid item xs={3} key={index} onClick={() => setImportIcon(icon.name)}>
+              <Grid item xs={3} key={icon.name} onClick={() => setImportIcon(icon.name)}>
                 <Paper
                   sx={{
                     backgroundColor: 'grey.200',
