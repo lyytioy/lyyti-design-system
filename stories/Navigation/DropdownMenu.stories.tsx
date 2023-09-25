@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import DropdownMenu, { DropdownProps } from '../../src/components/DropdownMenu';
-import { Calendar, ChevronDown, Radio, Rectangle } from '../../src/icons';
+import { Calendar, ChevronDown, LayoutRows, Radio, Rectangle } from '../../src/icons';
 
 export default {
   title: 'Components/Navigation/Menu',
@@ -46,4 +46,13 @@ DropdownIcons.args = {
   },
   menuItemProps: { sx: { py: 1.5, pl: 3 } },
   textProps: { color: 'primary' },
+};
+
+export const DropdownButtonPropsChildren = Template.bind({});
+DropdownButtonPropsChildren.args = {
+  items: menuItems2,
+  buttonProps: {
+    variant: 'icon',
+    children: <LayoutRows />,
+  },
 };

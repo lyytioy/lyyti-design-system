@@ -130,3 +130,5 @@ export { default as PlayContained } from './PlayContained';
 export { default as ClockContained } from './ClockContained';
 export { default as ParticipantFictional } from './ParticipantFictional';
 export { default as Sharing } from './Sharing';
+export { default as DoubleArrow } from './DoubleArrow';
+export { default as HandGrab } from './HandGrab';
