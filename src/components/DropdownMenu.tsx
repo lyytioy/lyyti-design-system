@@ -9,7 +9,7 @@ import { TypographyProps } from './Typography';
 export interface DropdownProps {
   title: string;
   onSelect: (clickedItem: number) => void;
-  items: Array<{ id: number; title: string; icon?: any; menuItemProps?: Partial<MenuItemProps>  }>;
+  items: Array<{ id: number; title: string; icon?: any; menuItemProps?: Partial<MenuItemProps> }>;
   buttonProps?: Partial<ButtonProps>;
   subtitle?: string;
   menuItemProps?: Partial<MenuItemProps>;
@@ -46,9 +46,15 @@ const DropdownMenu = (props: DropdownProps): JSX.Element => {
         onClick={handleClick}
         {...props.buttonProps}
       >
-        {props.title}
+        {props.buttonProps?.children || props.title}
       </Button>
-      <Menu id="menu-list-grow" anchorEl={anchorEl} open={open} onClose={handleClose} {...props.menuProps}>
+      <Menu
+        id="menu-list-grow"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        {...props.menuProps}
+      >
         {props.subtitle && (
           <ListItemText primaryTypographyProps={{ ...props.textProps }} sx={{ pl: 1.5, pb: 0.5 }}>
             {props.subtitle}
