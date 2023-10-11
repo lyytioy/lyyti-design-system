@@ -6,7 +6,6 @@ interface ColorStateOptions {
     selected: string;
     activeOutlined: string;
     outlinedStroke: string;
-    disabledBg: string;
   }
   
   interface ColorShadeOptions {
@@ -30,6 +29,9 @@ interface ColorStateOptions {
       primaryStates: ColorStateOptions;
       secondaryStates: ColorStateOptions;
       errorStates: ColorStateOptions;
+      infoStates: ColorStateOptions;
+      successStates: ColorStateOptions;
+      warningStates: ColorStateOptions;
       light: ColorShadeOptions;
       lightStates: ColorStateOptions;
       sky: ColorRangeOptions;
@@ -44,6 +46,9 @@ interface ColorStateOptions {
       primaryStates: ColorStateOptions;
       secondaryStates: ColorStateOptions;
       errorStates: ColorStateOptions;
+      infoStates: ColorStateOptions;
+      successStates: ColorStateOptions;
+      warningStates: ColorStateOptions;
       light: ColorShadeOptions;
       lightStates: ColorStateOptions;
       sky: ColorRangeOptions;
