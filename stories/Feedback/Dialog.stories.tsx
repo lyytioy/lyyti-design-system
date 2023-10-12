@@ -87,12 +87,7 @@ const Template: StoryFn<DialogProps> = (args) => {
   args.onClose = () => setDialogOpen(false);
   return (
     <>
-      <Button
-        variant="contained"
-        color="primary"
-        chunky={false}
-        onClick={() => setDialogOpen(true)}
-      >
+      <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}>
         {'Open Dialog'}
       </Button>
       <Dialog {...args} />

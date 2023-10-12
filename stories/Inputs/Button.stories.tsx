@@ -11,10 +11,17 @@ export default {
   },
   argTypes: {
     color: {
-      options: ['primary', 'secondary', 'danger', 'inherit'],
+      defaultValue: 'primary',
+      table: { defaultValue: { summary: 'primary' } },
+    },
+    variant: {
+      defaultValue: 'contained',
+      table: { defaultValue: { summary: 'contained' } },
     },
     disabled: {
       control: { type: 'boolean' },
+      defaultValue: 'false',
+      table: { defaultValue: { summary: 'false' } },
     },
   },
   args: {
@@ -24,54 +31,58 @@ export default {
 
 const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const Secondary = Template.bind({});
-Secondary.args = { color: 'secondary' };
+export const Large = Template.bind({});
+Large.args = { size: 'large' };
 
-export const Danger = Template.bind({});
-Danger.args = {
-  color: 'danger',
-};
+export const Small = Template.bind({});
+Small.args = { size: 'small' };
 
-export const OutlinedPrimary = Template.bind({});
-OutlinedPrimary.args = {
+export const Outlined = Template.bind({});
+Outlined.args = {
   variant: 'outlined',
 };
 
-export const OutlinedSecondary = Template.bind({});
-OutlinedSecondary.args = {
-  color: 'secondary',
+export const Text = Template.bind({});
+Text.args = {
+  variant: 'text',
+};
+
+export const Success = Template.bind({});
+Success.args = { color: 'success' };
+
+export const Warning = Template.bind({});
+Warning.args = { color: 'warning' };
+
+export const Error = Template.bind({});
+Error.args = {
+  color: 'error',
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  color: 'info',
+};
+
+export const ContainedDisabled = Template.bind({});
+ContainedDisabled.args = {
+  size: 'large',
+  disabled: true,
+};
+
+export const OutlinedDisabled = Template.bind({});
+OutlinedDisabled.args = {
   variant: 'outlined',
+  disabled: true,
 };
 
-export const OutlinedDanger = Template.bind({});
-OutlinedDanger.args = {
-  color: 'danger',
-  variant: 'outlined',
-};
-
-export const TextPrimary = Template.bind({});
-TextPrimary.args = {
+export const TextDisabled = Template.bind({});
+TextDisabled.args = {
   variant: 'text',
-};
-
-export const TextSecondary = Template.bind({});
-TextSecondary.args = {
-  color: 'secondary',
-  variant: 'text',
-};
-
-export const TextDanger = Template.bind({});
-TextDanger.args = {
-  color: 'danger',
-  variant: 'text',
-};
-
-export const Chunky = Template.bind({});
-Chunky.args = {
-  chunky: true,
+  size: 'small',
+  disabled: true,
 };
 
 export const Loading = Template.bind({});
@@ -84,16 +95,17 @@ WithIcon.args = {
   startIcon: <Bin />,
 };
 
-export const ChunkyWithIcon = Template.bind({});
-ChunkyWithIcon.args = {
-  endIcon: <Bin />,
-  chunky: true,
-};
-
 export const IconPrimary = Template.bind({});
 IconPrimary.args = {
   variant: 'icon',
   children: <Bin />,
+};
+
+export const IconError = Template.bind({});
+IconError.args = {
+  variant: 'icon',
+  children: <Bin />,
+  color: 'error',
 };
 
 export const IconSecondary = Template.bind({});

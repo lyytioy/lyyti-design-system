@@ -29,7 +29,6 @@ Dropdown.args = {
     children: '',
     variant: 'outlined',
     color: 'primary',
-    chunky: false,
   },
 };
 
@@ -41,7 +40,6 @@ DropdownIcons.args = {
   buttonProps: {
     children: '',
     color: 'primary',
-    chunky: true,
     endIcon: <ChevronDown />,
   },
   menuItemProps: { sx: { py: 1.5, pl: 3 } },
