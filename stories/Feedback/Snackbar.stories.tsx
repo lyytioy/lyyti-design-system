@@ -1,4 +1,4 @@
-import type{ StoryFn, Meta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import { useState, SyntheticEvent } from 'react';
 import Snackbar, { SnackbarProps } from '../../src/components/Snackbar';
 import Button from '../../src/components/Button';
@@ -32,7 +32,7 @@ const meta: Meta = {
       description: 'The variant to use.',
     },
   },
-} 
+};
 
 export default meta;
 
@@ -51,12 +51,7 @@ const Template: StoryFn<SnackbarProps> = (args) => {
 
   return (
     <>
-      <Button
-        variant="contained"
-        color="primary"
-        chunky={false}
-        onClick={() => setShowSnackbar(true)}
-      >
+      <Button variant="contained" color="primary" onClick={() => setShowSnackbar(true)}>
         {'Open snackbar'}
       </Button>
       <Snackbar {...args} />
