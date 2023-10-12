@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "2.5.0",
+  "version": "3.0.0",
   "engines": {
     "node": "^18",
     "npm": "^9"
