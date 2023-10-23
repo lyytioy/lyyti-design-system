@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "engines": {
     "node": "^18",
     "npm": "^9"
@@ -25,10 +25,10 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/lab": "5.0.0-alpha.134",
-    "@mui/material": "5.14.10",
-    "@mui/x-data-grid": "6.13.0",
-    "@mui/x-data-grid-pro": "6.7.0",
-    "@mui/x-date-pickers": "6.4.0",
+    "@mui/material": "5.14.14",
+    "@mui/x-data-grid": "6.16.3",
+    "@mui/x-data-grid-pro": "6.16.3",
+    "@mui/x-date-pickers": "6.16.3",
     "@mui/x-license-pro": "6.10.2"
   },
   "devDependencies": {
