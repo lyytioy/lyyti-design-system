@@ -4,23 +4,29 @@ import {
 } from '@mui/x-date-pickers/DatePicker';
 import { DesktopDatePicker as MuiDesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import type { FormHelperTextProps, InputLabelProps, InputAdornmentProps as MuiInputAdornmentProps } from '@mui/material';
+import type {
+  FormHelperTextProps,
+  InputLabelProps,
+  InputAdornmentProps as MuiInputAdornmentProps,
+} from '@mui/material';
 
 import Calendar from '../icons/Calendar';
 import { TextInputProps } from './TextField';
 
-export interface DatePickerProps<TDate = unknown> extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
+export interface DatePickerProps<TDate = unknown>
+  extends Omit<MuiDatepickerProps<TDate>, 'renderInput' | 'InputProps'> {
+  required?: boolean;
   allowAllYears?: boolean;
   helperText?: string;
   FormHelperTextProps?: FormHelperTextProps;
   InputProps?: Partial<TextInputProps>;
   InputAdornmentProps?: Partial<MuiInputAdornmentProps>;
-  InputLabelProps?: Partial<InputLabelProps>
+  InputLabelProps?: Partial<InputLabelProps>;
   'data-testid'?: string;
   variant?: 'desktop' | 'responsive';
 }
 
-export { AdapterDayjs }
+export { AdapterDayjs };
 
 const isDisallowedYear = (date: any) => {
   const year = new Date(date).getFullYear();
@@ -28,18 +34,17 @@ const isDisallowedYear = (date: any) => {
   return year < 2006 || year > maxYear;
 };
 
-const DatePicker = <TDate = unknown>(
-  {
-    allowAllYears = false,
-    InputProps = { color: 'primary', id: 'datepicker' },
-    InputAdornmentProps = {},
-    InputLabelProps,
-    helperText,
-    FormHelperTextProps,
-    variant = 'responsive',
-    ...props
-  }: DatePickerProps<TDate>,
-): JSX.Element => {
+const DatePicker = <TDate = unknown,>({
+  allowAllYears = false,
+  InputProps = { color: 'primary', id: 'datepicker' },
+  InputAdornmentProps = {},
+  InputLabelProps,
+  helperText,
+  FormHelperTextProps,
+  variant = 'responsive',
+  required = false,
+  ...props
+}: DatePickerProps<TDate>): JSX.Element => {
   const MuiDatePicker = variant === 'desktop' ? MuiDesktopDatePicker : MuiResponsiveDatePicker;
   return (
     <MuiDatePicker
@@ -91,12 +96,12 @@ const DatePicker = <TDate = unknown>(
             }),
           },
         },
-        textField: {InputProps, helperText, FormHelperTextProps, InputLabelProps},
+        textField: { InputProps, helperText, FormHelperTextProps, InputLabelProps, required },
         inputAdornment: {
-          ...InputAdornmentProps
+          ...InputAdornmentProps,
         },
       }}
-      shouldDisableYear={(year) => !allowAllYears ? isDisallowedYear(year) : false}
+      shouldDisableYear={(year) => (!allowAllYears ? isDisallowedYear(year) : false)}
       {...props}
     />
   );
