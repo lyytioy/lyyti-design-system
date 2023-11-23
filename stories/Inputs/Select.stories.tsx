@@ -3,6 +3,8 @@ import Select, { SelectProps } from '../../src/components/Select';
 import { ChangeEvent, useState } from 'react';
 import { AutocompleteProps } from '../../src/components/Autocomplete';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
+import { MenuItem, Typography } from '../../src';
+import { Info } from '../../src/icons';
 
 export default {
   title: 'Components/Inputs/Select',
@@ -31,7 +33,9 @@ export default {
 
 const SelectTemplate: StoryFn<SelectProps> = (args: SelectProps) => {
   const isMultiple = Boolean('SelectProps' in args && args.SelectProps?.multiple);
-  const [selectValue, setSelectValue] = useState<Array<string | number> | string | number>(isMultiple ? [0] : 0);
+  const [selectValue, setSelectValue] = useState<Array<string | number> | string | number>(
+    isMultiple ? [0] : 0
+  );
 
   args.value = selectValue;
   args.onChange = (e: ChangeEvent<HTMLInputElement>) => setSelectValue(e.target.value);
@@ -91,7 +95,7 @@ StartAdornment.args = {
 export const OptionDivider = SelectTemplate.bind({});
 OptionDivider.args = {
   helperText: 'Helper text',
-  optionDivider: true
+  optionDivider: true,
 };
 
 export const OptionDescription = SelectTemplate.bind({});
@@ -120,6 +124,24 @@ White.parameters = {
   backgrounds: { default: 'dark' },
 };
 
+export const ChildrenOptions = SelectTemplate.bind({});
+ChildrenOptions.args = {
+  children: [
+    { id: 0, value: 'Select...' },
+    { id: 1, value: 'Option 1' },
+    { id: 2, value: 'Option 2' },
+    { id: 3, value: 'Option 3' },
+    { id: 4, value: 'Option 4' },
+  ].map(({ id, value }) => {
+    return (
+      <MenuItem key={id} value={id} sx={{ display: 'flex', alignItems: 'center', columnGap: 1 }}>
+        <Info />
+        <Typography sx={{color: 'text.secondary'}}>{value}</Typography>
+      </MenuItem>
+    );
+  }),
+};
+
 export const MultipleSelect = MultiSelectTemplate.bind({});
 MultipleSelect.args = {
   multiple: true,
@@ -142,9 +164,8 @@ MultipleSelectOptionDivider.args = {
   multiple: true,
   placeholder: 'Select',
   fullWidth: true,
-  optionDivider: true
+  optionDivider: true,
 };
-
 
 export const MultipleSelectOptionDescription = MultiSelectTemplate.bind({});
 MultipleSelectOptionDescription.args = {
