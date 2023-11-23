@@ -1,7 +1,7 @@
 import { MenuItem } from '@mui/material';
 import TextField, { TextFieldProps } from './TextField';
 import Autocomplete, { AutocompleteProps, OptionsType } from './Autocomplete';
-import { forwardRef, Ref } from 'react';
+import { forwardRef, ReactNode, Ref } from 'react';
 import Typography from './Typography';
 import Checkbox from './Checkbox';
 
@@ -20,7 +20,7 @@ export type SingleSelectProps = Omit<
   TextFieldProps,
   'startAdornment' | 'endAdornment' | 'variant'
 > &
-  CommonProps;
+  CommonProps & { children?: ReactNode | ReactNode[] };
 
 export type SelectProps = MultipleSelectProps | SingleSelectProps;
 
@@ -74,40 +74,50 @@ const Select = (
           ...selectProps?.MenuProps,
         },
         renderValue: (value) => {
-          if (value instanceof Array) return value.map((v) => options.find((o) => o.id == v)?.value).join(', ');
+          if (value instanceof Array)
+            return value.map((v) => options.find((o) => o.id == v)?.value).join(', ');
 
-          return  options.find((o) => o.id == value)?.value;
+          return options.find((o) => o.id == value)?.value;
         },
         ...selectProps,
       }}
     >
-      {options.map(({ id, value: label, description, disabled }) => {
-        const isChecked = isMultiple && (props.value as Array<string | number>).map((i) => i.toString()).indexOf(id.toString()) > -1;
+      {'children' in props
+        ? props.children
+        : options.map((option) => {
+            const { id, value: label, description, disabled } = option;
 
-        return (
-          <MenuItem
-            key={id}
-            value={id}
-            disabled={disabled}
-            sx={{
-              ...(description && {
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-              }),
-              ...(optionDivider && {
-                '&:not(:last-child)': { borderBottom: '1px solid rgba(0,0,0,.23)' },
-              }),
-            }}
-          >
-            {checkbox && (<Checkbox checked={isChecked} />)}
-            {label}
-            {description && (
-              <Typography variant="caption" color="grey.400">
-                {description}
-              </Typography>
-            )}
-          </MenuItem>
-      )})}
+            const isChecked =
+              isMultiple &&
+              (props.value as Array<string | number>)
+                .map((i) => i.toString())
+                .indexOf(id.toString()) > -1;
+
+            return (
+              <MenuItem
+                key={id}
+                value={id}
+                disabled={disabled}
+                sx={{
+                  ...(description && {
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                  }),
+                  ...(optionDivider && {
+                    '&:not(:last-child)': { borderBottom: '1px solid rgba(0,0,0,.23)' },
+                  }),
+                }}
+              >
+                {checkbox && <Checkbox checked={isChecked} />}
+                {label}
+                {description && (
+                  <Typography variant="caption" color="grey.400">
+                    {description}
+                  </Typography>
+                )}
+              </MenuItem>
+            );
+          })}
     </TextField>
   );
 };

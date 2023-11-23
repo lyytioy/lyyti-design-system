@@ -134,3 +134,5 @@ export { default as ParticipantFictional } from './ParticipantFictional';
 export { default as Sharing } from './Sharing';
 export { default as DoubleArrow } from './DoubleArrow';
 export { default as HandGrab } from './HandGrab';
+export { default as PhoneNumberQuestion } from './PhoneNumberQuestion';
+
