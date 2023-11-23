@@ -17,7 +17,9 @@ jobs:
         run: npm ci
       - name: Run ESLint
         run: npm run lint
+        env:
+          NODE_OPTIONS: '--max_old_space_size=8192'
       - name: Check types
         run: npm run check-types
         env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_OPTIONS: '--max_old_space_size=8192'

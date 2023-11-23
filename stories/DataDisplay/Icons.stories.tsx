@@ -196,6 +196,7 @@ const iconsList = [
   { name: 'Sharing', component: i.Sharing },
   { name: 'DoubleArrow', component: i.DoubleArrow },
   { name: 'HandGrab', component: i.HandGrab },
+  { name: 'PhoneNumberQuestion', component: i.PhoneNumberQuestion },
 ];
 
 const Template: StoryFn<SvgIconProps> = (args) => {
