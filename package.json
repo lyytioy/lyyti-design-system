@@ -29,7 +29,8 @@
     "@mui/x-data-grid": "6.13.0",
     "@mui/x-data-grid-pro": "6.7.0",
     "@mui/x-date-pickers": "6.4.0",
-    "@mui/x-license-pro": "6.10.2"
+    "@mui/x-license-pro": "6.10.2",
+    "@mui/x-tree-view": "6.17.0"
   },
   "devDependencies": {
     "@babel/core": "7.23.2",
