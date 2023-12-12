@@ -135,4 +135,4 @@ export { default as Sharing } from './Sharing';
 export { default as DoubleArrow } from './DoubleArrow';
 export { default as HandGrab } from './HandGrab';
 export { default as PhoneNumberQuestion } from './PhoneNumberQuestion';
-
+export { default as Office } from './Office';
