@@ -1,4 +1,4 @@
-import { ToggleButtonGroup as MuiToggleButtonGroup, ToggleButton as MuiToggleButton, type SxProps as MuiSxProps, type ToggleButtonGroupProps as MuiToggleButtonGroupProps } from "@mui/material"
+import { ToggleButtonGroup as MuiToggleButtonGroup, ToggleButton as MuiToggleButton, type SxProps as MuiSxProps, type ToggleButtonGroupProps as MuiToggleButtonGroupProps, useTheme } from "@mui/material"
 
 export interface ToggleButtonOption {
     value: string;
@@ -32,26 +32,32 @@ const ToggleButtonGroup = ({
   testId,
   ...props
 }: ToggleButtonGroupProps) => {
+  const theme = useTheme();
+
+  const sxProp = {
+    color: theme.palette.primary.main,
+    height: '40px',
+    border: `1px solid ${theme.palette.primary.main}`,
+    '& .MuiToggleButton-root': {
+      width: '130px', 
+      color: theme.palette.primary.main 
+    },
+    '& .Mui-selected, & .Mui-selected:hover': {
+      bgcolor: `${theme.palette.primary.main} !important`,
+      color: 'white !important',
+    },
+    ...sx
+  } as ToggleButtonGroupProps['sx'];
+  // We have to explicitly cast it to correct type as typescript-5.3.3 complains about
+  // excessive complexity comparing types
+
   return <MuiToggleButtonGroup
     data-testid={testId}
     value={value}
     exclusive
     onChange={onChange}
     aria-label={ariaLabel ?? 'toggle button group'}
-    sx={{
-      color: theme => theme.palette.primary.main,
-      height: '40px',
-      border: theme => `1px solid ${theme.palette.primary.main}`,
-      '& .MuiToggleButton-root': {
-        width: '130px', 
-        color: theme => theme.palette.primary.main 
-      },
-      '& .Mui-selected, & .Mui-selected:hover': {
-        bgcolor: theme => `${theme.palette.primary.main} !important`,
-        color: 'white !important',
-      },
-      ...sx
-    }}
+    sx={sxProp}
     {...props}
   >
     {options.map(option => <MuiToggleButton 
