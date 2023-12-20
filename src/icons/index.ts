@@ -79,6 +79,8 @@ export { default as ParticipantRegisteredOutlined } from './ParticipantRegistere
 export { default as ParticipantAttendingOutlined } from './ParticipantAttendingOutlined';
 export { default as ParticipantDeclinedOutlined } from './ParticipantDeclinedOutlined';
 export { default as ParticipantNoShowOutlined } from './ParticipantNoShowOutlined';
+export { default as ParticipantNotReacted } from './ParticipantNotReacted';
+export { default as ParticipantNotReactedOutlined } from './ParticipantNotReactedOutlined';
 export { default as ParticipantEmail } from './ParticipantEmail';
 export { default as Person } from './Person';
 export { default as Bill } from './Bill';

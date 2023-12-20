@@ -143,6 +143,8 @@ const iconsList = [
   { name: 'ParticipantAttendingOutlined', component: i.ParticipantAttendingOutlined },
   { name: 'ParticipantDeclinedOutlined', component: i.ParticipantDeclinedOutlined },
   { name: 'ParticipantNoShowOutlined', component: i.ParticipantNoShowOutlined },
+  { name: 'ParticipantNotReacted', component: i.ParticipantNotReacted },
+  { name: 'ParticipantNotReactedOutlined', component: i.ParticipantNotReactedOutlined },
   { name: 'ParticipantEmail', component: i.ParticipantEmail },
   { name: 'Bill', component: i.Bill },
   { name: 'BrowserPage', component: i.BrowserPage },
