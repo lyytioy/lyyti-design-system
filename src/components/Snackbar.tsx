@@ -1,4 +1,4 @@
-import { Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@mui/material';
+import { Divider, Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@mui/material';
 import AlertBase from './AlertBase';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
@@ -14,7 +14,7 @@ export interface SnackbarProps extends MuiSnackbarProps {
   direction?: 'right' | 'left' | 'up' | 'down';
   severity?: 'success' | 'info' | 'warning' | 'error';
   variant?: 'standard' | 'filled' | 'outlined';
-  ref?: Ref<HTMLDivElement>
+  ref?: Ref<HTMLDivElement>;
 }
 
 const Snackbar = (
@@ -28,6 +28,7 @@ const Snackbar = (
     direction = 'left',
     severity = 'success',
     variant = 'standard',
+    action,
     ...props
   }: SnackbarProps,
   ref: Ref<HTMLDivElement>
@@ -43,7 +44,7 @@ const Snackbar = (
       {...props}
     >
       <div>
-        <AlertBase color={color} severity={severity} variant={variant}>
+        <AlertBase color={color} severity={severity} variant={variant} action={action}>
           {props.message}
         </AlertBase>
       </div>
