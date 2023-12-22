@@ -17,7 +17,7 @@ const AlertBase = (
       ref={ref}
       severity={severity}
       variant={variant}
-      sx={{ alignItems: 'center', '& .MuiAlert-action': { pt: 0, pl: 5 } }}
+      sx={{ alignItems: 'center', '& .MuiAlert-action': { pt: 0, pl: 5 }, ...props.sx }}
       {...props}
     />
   );
