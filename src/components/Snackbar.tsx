@@ -1,4 +1,4 @@
-import { Divider, Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@mui/material';
+import { Snackbar as MuiSnackbar, SnackbarProps as MuiSnackbarProps } from '@mui/material';
 import AlertBase from './AlertBase';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
