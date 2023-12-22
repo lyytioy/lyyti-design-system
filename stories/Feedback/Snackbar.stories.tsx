@@ -3,6 +3,7 @@ import { useState, SyntheticEvent } from 'react';
 import Snackbar, { SnackbarProps } from '../../src/components/Snackbar';
 import Button from '../../src/components/Button';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
+import { Box } from '@mui/material';
 
 const meta: Meta = {
   title: 'Components/Feedback/Snackbar',
@@ -50,18 +51,26 @@ const Template: StoryFn<SnackbarProps> = (args) => {
   args.onClose = handleClose;
 
   return (
-    <>
-      <Button variant="contained" color="primary" onClick={() => setShowSnackbar(true)}>
-        {'Open snackbar'}
-      </Button>
+    <Box sx={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+      <Button onClick={() => setShowSnackbar(true)}>{'Open snackbar'}</Button>
       <Snackbar {...args} />
-    </>
+    </Box>
   );
 };
 
 export const Success = Template.bind({});
 Success.args = {
   message: 'Success message',
+};
+
+export const SuccessWithAction = Template.bind({});
+SuccessWithAction.args = {
+  message: 'Success message',
+  action: (
+    <Button color="inherit" onClick={() => console.log('clicked snackbar button')} variant="text">
+      Click me
+    </Button>
+  ),
 };
 
 export const Error = Template.bind({});
@@ -86,4 +95,9 @@ Info.args = {
     horizontal: 'left',
   },
   direction: 'up',
+  action: (
+    <Button color="inherit" onClick={() => console.log('clicked snackbar button')} variant="text">
+      click me
+    </Button>
+  ),
 };

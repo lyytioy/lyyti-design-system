@@ -9,10 +9,18 @@ export interface AlertBaseProps extends MuiAlertProps {
 }
 
 const AlertBase = (
-  { severity = 'success', variant = 'standard', ...props }: AlertBaseProps,
+  { severity = 'success', variant = 'standard', sx, ...props }: AlertBaseProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-  return <MuiAlert ref={ref} severity={severity} variant={variant} {...props} />;
+  return (
+    <MuiAlert
+      ref={ref}
+      severity={severity}
+      variant={variant}
+      sx={{ alignItems: 'center', '& .MuiAlert-action': { pt: 0, pl: 5 }, ...sx }}
+      {...props}
+    />
+  );
 };
 
 export default forwardRef(AlertBase);
