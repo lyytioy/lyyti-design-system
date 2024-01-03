@@ -1,7 +1,7 @@
-import { Button as MuiButton, ButtonProps as MuiButtonProps, Fab, IconButton, ButtonGroup as MuiButtonGroup } from '@mui/material';
+import { Button as MuiButton, ButtonProps as MuiButtonProps, Fab, IconButton } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import { forwardRef, Ref } from 'react';
-import LoadingButton from '@mui/lab/LoadingButton';
+import { LoadingButton } from '@mui/lab';
 
 export interface ButtonProps extends Omit<MuiButtonProps, 'color' | 'variant'> {
   variant?: MuiButtonProps['variant'] | 'icon' | 'fab';
@@ -146,13 +146,10 @@ const Button = (
   };
 
   if (loading) {
-    console.log({buttonProps})
     return (
-      <MuiButtonGroup variant="outlined" aria-label="loading button group">
       <LoadingButton color={color} loading={loading} {...buttonProps}>
         {children}
       </LoadingButton>
-      </MuiButtonGroup>
     );
   }
 
