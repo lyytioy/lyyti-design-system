@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "3.6.3",
+  "version": "3.7.0",
   "engines": {
     "node": "^18",
     "npm": "^9"
@@ -24,6 +24,7 @@
   "dependencies": {
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
+    "@mui/base": "5.0.0-beta.30",
     "@mui/lab": "5.0.0-alpha.158",
     "@mui/material": "5.15.2",
     "@mui/x-data-grid": "6.18.6",
