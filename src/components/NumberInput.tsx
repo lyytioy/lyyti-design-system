@@ -70,6 +70,7 @@ const NumberInput = (
           <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <Box
               component="button"
+              type="button"
               {...getIncrementButtonProps()}
               sx={{
                 bgcolor: color === 'white' ? undefined : 'grey.100',
@@ -88,6 +89,7 @@ const NumberInput = (
             </Box>
             <Box
               component="button"
+              type="button"
               {...getDecrementButtonProps()}
               sx={{
                 bgcolor: color === 'white' ? undefined : 'grey.100',
