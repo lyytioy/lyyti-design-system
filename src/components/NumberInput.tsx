@@ -20,7 +20,10 @@ export type SizeTypes = 'small' | 'medium';
 
 export type ColorTypes = 'primary' | 'white';
 
-export type NumberInputProps = {
+export interface NumberInputProps extends Omit<
+OutlinedTextFieldProps,
+'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel' | 'onChange' | 'onBlur' | 'onClick' | 'onFocus'
+>, Omit<UseNumberInputParameters, 'value' | 'inputRef'> {
   fullWidth?: boolean;
   size?: SizeTypes;
   startAdornment?: string | JSX.Element;
@@ -28,10 +31,8 @@ export type NumberInputProps = {
   error?: boolean;
   helperText?: string;
   'data-testid'?: string;
-} & Omit<
-  OutlinedTextFieldProps,
-  'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel'
-> & UseNumberInputParameters;
+  value?: number | string; // Allow strings to enable controlled behaviour, empty value "" instead of undefined
+}
 
 const NumberInput = (
   {
@@ -43,11 +44,22 @@ const NumberInput = (
     helperText = '',
     sx = {},
     InputLabelProps = {},
-    ...props
+    ...rest
   }: NumberInputProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-  const { getRootProps, getInputProps, getIncrementButtonProps, getDecrementButtonProps } = useNumberInput(props);
+  const { onChange, onBlur, ...props } = rest;
+
+  const {
+    getRootProps,
+    getInputProps,
+    getIncrementButtonProps,
+    getDecrementButtonProps
+  } = useNumberInput({
+    ...props as UseNumberInputParameters, // Casting due to different value type
+    onChange,
+    onBlur
+  });
   const muiTextField = useRef<HTMLDivElement>(null);
   const overrideColor = color === 'white' ? 'common.white' : undefined;
 
