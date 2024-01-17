@@ -186,6 +186,7 @@ const iconsList = [
   { name: 'SelectManyQuestion', component: i.SelectManyQuestion },
   { name: 'DateQuestion', component: i.DateQuestion },
   { name: 'EmailQuestion', component: i.EmailQuestion },
+  { name: 'StatusQuestion', component: i.StatusQuestion },
   { name: 'Check', component: i.Check },
   { name: 'Play', component: i.Play },
   { name: 'Pause', component: i.Pause },
