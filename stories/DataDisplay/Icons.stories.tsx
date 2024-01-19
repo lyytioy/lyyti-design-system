@@ -201,6 +201,8 @@ const iconsList = [
   { name: 'HandGrab', component: i.HandGrab },
   { name: 'PhoneNumberQuestion', component: i.PhoneNumberQuestion },
   { name: 'Office', component: i.Office },
+  { name: 'HeaderBlock', component: i.HeaderBlock },
+  { name: 'TextBlock', component: i.TextBlock },
 ];
 
 const Template: StoryFn<SvgIconProps> = (args) => {
