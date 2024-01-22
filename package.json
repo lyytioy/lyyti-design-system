@@ -2,7 +2,7 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "engines": {
     "node": "^18",
     "npm": "^9"
@@ -34,8 +34,8 @@
     "@mui/x-tree-view": "6.17.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.5",
-    "@date-io/dayjs": "2.17.0",
+    "@babel/core": "7.23.7",
+    "@date-io/dayjs": "3.0.0",
     "@date-io/moment": "2.17.0",
     "@storybook/addon-actions": "7.6.7",
     "@storybook/addon-essentials": "7.6.7",
@@ -46,9 +46,9 @@
     "@storybook/react": "7.6.7",
     "@storybook/test-runner": "0.16.0",
     "@svgr/cli": "8.1.0",
-    "@types/node": "20.10.8",
+    "@types/node": "20.11.5",
     "@types/react": "18.2.47",
-    "@typescript-eslint/eslint-plugin": "6.10.0",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
     "@typescript-eslint/parser": "6.18.1",
     "babel-loader": "9.1.3",
     "dayjs": "1.11.10",
@@ -56,7 +56,7 @@
     "eslint-config-next": "14.0.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-storybook": "0.6.15",
-    "moment": "2.29.4",
+    "moment": "2.30.1",
     "next": "14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
