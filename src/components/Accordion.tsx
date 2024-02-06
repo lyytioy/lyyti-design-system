@@ -7,7 +7,7 @@ import {
   AccordionDetails,
   TypographyProps,
 } from '@mui/material';
-import { ChevronDown } from '../icons';
+import { ExpandMoreRounded } from '../icons';
 
 export interface AccordionProps extends MuiAccordionProps {
   title: string;
@@ -22,7 +22,7 @@ const Accordion = (
     titleProps = {
       fontSize: '16px',
     },
-    expandIcon = <ChevronDown />,
+    expandIcon = <ExpandMoreRounded />,
     expandIconInline,
     elevation = 0,
     children,
@@ -31,9 +31,6 @@ const Accordion = (
   }: AccordionProps,
   ref: Ref<HTMLDivElement>
 ): JSX.Element => {
-  const fontSize = titleProps.fontSize + (typeof titleProps.fontSize === 'number' ? 'px' : '');
-  const iconSize = `calc(${fontSize} * 0.75)`;
-
   return (
     <MuiAccordion ref={ref} elevation={elevation} sx={sx} {...props}>
       <AccordionSummary
@@ -44,7 +41,6 @@ const Accordion = (
           '& .MuiAccordionSummary-content': { flexGrow: expandIconInline ? 0 : 1 },
           '& .MuiSvgIcon-root': {
             color: 'text.primary',
-            fontSize: iconSize,
           },
         }}
       >

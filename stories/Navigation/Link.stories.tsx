@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import Link, { LinkProps } from '../../src/components/Link';
-import { Cog } from '../../src/icons';
+import { SettingsRounded } from '../../src/icons';
 
 export default {
   title: 'Components/Navigation/Link',
@@ -26,6 +26,9 @@ InlineLink.args = {
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   href: '#',
-  children: [<Cog key={1} fontSize="inherit" style={{ marginRight: '8px' }} />, 'Link example'],
+  children: [
+    <SettingsRounded key={1} fontSize="inherit" style={{ marginRight: '8px' }} />,
+    'Link example',
+  ],
   underline: 'always',
 };

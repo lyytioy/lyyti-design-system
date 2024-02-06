@@ -34,7 +34,8 @@ export default {
       description: 'Array of options, expects a array of objects that contain id and value',
     },
     adornmentOnRight: {
-      description: 'Applies only to Search with no options. If true, the search icon adornment will be positioned at the end. If not set or false, adornment stays at the start.',
+      description:
+        'Applies only to Search with no options. If true, the search icon adornment will be positioned at the end. If not set or false, adornment stays at the start.',
       control: {
         type: 'boolean',
       },
@@ -127,7 +128,7 @@ White.parameters = {
 
 export const WithEndAdornment = Template.bind({});
 WithEndAdornment.args = {
-  adornmentOnRight: true
-}
+  adornmentOnRight: true,
+};
 
 export const NoOptions = Template.bind({});

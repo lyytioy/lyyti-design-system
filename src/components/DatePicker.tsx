@@ -10,7 +10,7 @@ import type {
   InputAdornmentProps as MuiInputAdornmentProps,
 } from '@mui/material';
 
-import Calendar from '../icons/Calendar';
+import { CalendarTodayRounded } from '../icons';
 import { TextInputProps } from './TextField';
 
 export interface DatePickerProps<TDate = unknown>
@@ -48,7 +48,9 @@ const DatePicker = <TDate = unknown,>({
   const MuiDatePicker = variant === 'desktop' ? MuiDesktopDatePicker : MuiResponsiveDatePicker;
   return (
     <MuiDatePicker
-      slots={{ openPickerIcon: (iconProps) => Calendar({ fontSize: 'small', ...iconProps }) }}
+      slots={{
+        openPickerIcon: CalendarTodayRounded,
+      }}
       slotProps={{
         desktopPaper: {
           sx: {
