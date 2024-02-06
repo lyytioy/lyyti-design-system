@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import Button, { ButtonProps } from '../../src/components/Button';
-import { Bin } from '../../src/icons';
+import { DeleteOutlineRounded } from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
@@ -92,19 +92,19 @@ Loading.args = {
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  startIcon: <Bin />,
+  startIcon: <DeleteOutlineRounded />,
 };
 
 export const IconPrimary = Template.bind({});
 IconPrimary.args = {
   variant: 'icon',
-  children: <Bin />,
+  children: <DeleteOutlineRounded />,
 };
 
 export const IconError = Template.bind({});
 IconError.args = {
   variant: 'icon',
-  children: <Bin />,
+  children: <DeleteOutlineRounded />,
   color: 'error',
 };
 
@@ -112,27 +112,27 @@ export const IconSecondary = Template.bind({});
 IconSecondary.args = {
   variant: 'icon',
   color: 'secondary',
-  children: <Bin />,
+  children: <DeleteOutlineRounded />,
 };
 
 export const IconDisabled = Template.bind({});
 IconDisabled.args = {
   variant: 'icon',
-  children: <Bin />,
+  children: <DeleteOutlineRounded />,
   disabled: true,
 };
 
 export const Fab = Template.bind({});
 Fab.args = {
   variant: 'fab',
-  children: <Bin />,
+  children: <DeleteOutlineRounded />,
 };
 
 export const WhiteIconButton = Template.bind({});
 WhiteIconButton.args = {
   variant: 'icon',
   color: 'white',
-  children: <Bin />,
+  children: <DeleteOutlineRounded />,
 };
 WhiteIconButton.parameters = {
   backgrounds: { default: 'dark' },

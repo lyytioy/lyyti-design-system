@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import Chip, { ChipProps } from '../../src/components/Chip';
 import Avatar from '../../src/components/Avatar';
-import { Play, StarFilled } from '../../src/icons';
+import { PlayArrowRounded, StarRounded } from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
 
 export default {
@@ -38,7 +38,7 @@ SecondaryRemovable.args = {
 
 export const PrimaryIcon = Template.bind({});
 PrimaryIcon.args = {
-  icon: <StarFilled fontSize="small" />,
+  icon: <StarRounded fontSize="small" />,
   onDelete: undefined,
 };
 
@@ -62,7 +62,7 @@ export const SecondaryOutlinedIcon = Template.bind({});
 SecondaryOutlinedIcon.args = {
   color: 'secondary',
   variant: 'outlined',
-  icon: <Play fontSize="small" />,
+  icon: <PlayArrowRounded fontSize="small" />,
   onDelete: undefined,
 };
 
@@ -70,7 +70,7 @@ export const White = Template.bind({});
 White.args = {
   color: 'white',
   variant: 'outlined',
-  icon: <Play fontSize="small" />,
+  icon: <PlayArrowRounded fontSize="small" />,
   clickable: true,
 };
 White.parameters = {
