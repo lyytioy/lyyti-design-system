@@ -1,10 +1,10 @@
 import { forwardRef, Ref, useRef } from 'react';
 import { Box, TextField as MuiTextField, OutlinedTextFieldProps } from '@mui/material';
 import {
-    unstable_useNumberInput as useNumberInput,
-    UseNumberInputParameters,
-  } from '@mui/base/unstable_useNumberInput';
-import { ChevronDown, ChevronUp } from '../icons';
+  unstable_useNumberInput as useNumberInput,
+  UseNumberInputParameters,
+} from '@mui/base/unstable_useNumberInput';
+import { ExpandLessRounded, ExpandMoreRounded } from '../icons';
 
 // A workaround component to make numbers work with TextField
 // Official upcoming MUI component https://github.com/mui/material-ui/issues/19154
@@ -20,10 +20,21 @@ export type SizeTypes = 'small' | 'medium';
 
 export type ColorTypes = 'primary' | 'white';
 
-export interface NumberInputProps extends Omit<
-OutlinedTextFieldProps,
-'variant' | 'color' | 'fullWidth' | 'error' | 'helperText' | 'hiddenLabel' | 'onChange' | 'onBlur' | 'onClick' | 'onFocus'
->, Omit<UseNumberInputParameters, 'value' | 'inputRef'> {
+export interface NumberInputProps
+  extends Omit<
+      OutlinedTextFieldProps,
+      | 'variant'
+      | 'color'
+      | 'fullWidth'
+      | 'error'
+      | 'helperText'
+      | 'hiddenLabel'
+      | 'onChange'
+      | 'onBlur'
+      | 'onClick'
+      | 'onFocus'
+    >,
+    Omit<UseNumberInputParameters, 'value' | 'inputRef'> {
   fullWidth?: boolean;
   size?: SizeTypes;
   startAdornment?: string | JSX.Element;
@@ -50,16 +61,12 @@ const NumberInput = (
 ): JSX.Element => {
   const { onChange, onBlur, ...props } = rest;
 
-  const {
-    getRootProps,
-    getInputProps,
-    getIncrementButtonProps,
-    getDecrementButtonProps
-  } = useNumberInput({
-    ...props as UseNumberInputParameters, // Casting due to different value type
-    onChange,
-    onBlur
-  });
+  const { getRootProps, getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
+    useNumberInput({
+      ...(props as UseNumberInputParameters), // Casting due to different value type
+      onChange,
+      onBlur,
+    });
   const muiTextField = useRef<HTMLDivElement>(null);
   const overrideColor = color === 'white' ? 'common.white' : undefined;
 
@@ -74,10 +81,9 @@ const NumberInput = (
       onClick={() => muiTextField.current?.focus()}
       inputRef={muiTextField}
       InputProps={{
-        
         ...(props.InputProps ?? {}),
         notched: false,
-        ...(getInputProps()),
+        ...getInputProps(),
         endAdornment: (
           <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <Box
@@ -96,8 +102,9 @@ const NumberInput = (
                 '&:hover': {
                   bgcolor: 'grey.200',
                 },
-              }}>
-              <ChevronUp sx={{ fontSize: '12px', bgcolor: null }} />
+              }}
+            >
+              <ExpandLessRounded sx={{ fontSize: '12px', bgcolor: null }} />
             </Box>
             <Box
               component="button"
@@ -115,11 +122,12 @@ const NumberInput = (
                 '&:hover': {
                   bgcolor: 'grey.200',
                 },
-              }}>
-              <ChevronDown sx={{ fontSize: '12px', bgcolor: null }} />
+              }}
+            >
+              <ExpandMoreRounded sx={{ fontSize: '12px', bgcolor: null }} />
             </Box>
           </Box>
-        )
+        ),
       }}
       InputLabelProps={{ shrink: true, ...InputLabelProps }}
       sx={{
