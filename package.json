@@ -35,7 +35,7 @@
     "@mui/x-tree-view": "6.17.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.7",
+    "@babel/core": "7.23.9",
     "@date-io/dayjs": "3.0.0",
     "@date-io/moment": "3.0.0",
     "@storybook/addon-actions": "7.6.7",
