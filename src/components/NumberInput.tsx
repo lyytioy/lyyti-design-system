@@ -20,21 +20,20 @@ export type SizeTypes = 'small' | 'medium';
 
 export type ColorTypes = 'primary' | 'white';
 
-export interface NumberInputProps
+interface TextFieldProps
   extends Omit<
-      OutlinedTextFieldProps,
-      | 'variant'
-      | 'color'
-      | 'fullWidth'
-      | 'error'
-      | 'helperText'
-      | 'hiddenLabel'
-      | 'onChange'
-      | 'onBlur'
-      | 'onClick'
-      | 'onFocus'
-    >,
-    Omit<UseNumberInputParameters, 'value' | 'inputRef'> {
+    OutlinedTextFieldProps,
+    | 'variant'
+    | 'color'
+    | 'fullWidth'
+    | 'error'
+    | 'helperText'
+    | 'hiddenLabel'
+    | 'onChange'
+    | 'onBlur'
+    | 'onClick'
+    | 'onFocus'
+  > {
   fullWidth?: boolean;
   size?: SizeTypes;
   startAdornment?: string | JSX.Element;
@@ -44,6 +43,8 @@ export interface NumberInputProps
   'data-testid'?: string;
   value?: number | string; // Allow strings to enable controlled behaviour, empty value "" instead of undefined
 }
+
+export type NumberInputProps = TextFieldProps & Omit<UseNumberInputParameters, 'value' | 'inputRef'>;
 
 const NumberInput = (
   {
