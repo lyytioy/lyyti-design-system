@@ -80,3 +80,5 @@ export { default as ToggleButtonGroup } from './components/ToggleButtonGroup';
 export type { ToggleButtonOption } from './components/ToggleButtonGroup';
 export { createFilterOptions } from '@mui/material/useAutocomplete';
 export { useTheme } from '@mui/system';
+export type { SxProps } from '@mui/material';
+export type { Theme } from '@mui/material/styles';
