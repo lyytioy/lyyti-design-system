@@ -78,6 +78,7 @@ export { default as TableFooter } from '@mui/material/TableFooter';
 export { default as TableRow } from '@mui/material/TableRow';
 export { default as ToggleButtonGroup } from './components/ToggleButtonGroup';
 export type { ToggleButtonOption } from './components/ToggleButtonGroup';
+export { default as Slider } from './components/Slider';
 export { createFilterOptions } from '@mui/material/useAutocomplete';
 export { useTheme } from '@mui/system';
 export type { SxProps } from '@mui/material';
