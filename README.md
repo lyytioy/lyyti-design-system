@@ -46,11 +46,14 @@ Make sure to clone the repository and do the following
 5. Go to your own project directory
 6. Run `npm link @lyyti/design-system`
 
-If you run into an `Invalid hook` error in the project, here's what to do.
-The error is about having two copies of the react packace caused by the link. More info can be found [in the React docs](https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react).
+Now when you make changes to source code you only need to run `npm run build` again no need to re-run the link commands
+When you are done run `npm unlink --no-save @lyyti/design-system && npm ci` in your project's folder.
+
+If you run into an `Invalid hook` error in the project or `you are loading @emotion/react when it is already loaded`, here's what to do.
+The error is about having two copies of the packages caused by the link. More info can be found [in the React docs](https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react).
 
 - Go to the design system directory
-- Run `npm link [..path/to/yourproject]/node_modules/react`
+- Run `npm link [..path/to/yourproject]/node_modules/react` same for `@emotion/react`
 - Repeat steps `5` and `6` of the linking process
 
 ## Contribute
