@@ -2,10 +2,10 @@
   "name": "@lyyti/design-system",
   "description": "Lyyti Design System",
   "homepage": "https://lyytioy.github.io/lyyti-design-system",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "engines": {
-    "node": "^18",
-    "npm": "^9"
+    "node": ">=18",
+    "npm": ">=9"
   },
   "scripts": {
     "dev": "storybook dev -p 6006",
