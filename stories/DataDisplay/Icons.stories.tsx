@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
-import { Source } from '@storybook/addon-docs';
 import { SvgIconProps } from '@mui/material';
 import Paper from '../../src/components/Paper';
 import TextField from '../../src/components/TextField';
 import Grid from '../../src/components/Grid';
 import * as i from '../../src/icons';
 import { modifyExcludedParams } from '../../.storybook/excludedParams';
+import { Typography } from '../../src';
 
 export default {
   title: 'Components/Data Display/Icons',
@@ -72,31 +72,16 @@ const iconsList = [
 
 const Template: StoryFn<SvgIconProps> = (args) => {
   const [search, setSearch] = useState('');
-  const [importIcon, setImportIcon] = useState('SettingsRounded');
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
   return (
-    <Grid container spacing={1} direction="column">
+    <Grid container spacing={1} direction="column" rowGap={2}>
       <Grid container alignItems={'center'} spacing={1}>
         <Grid item xs={4}>
           <TextField onChange={handleChange} value={search} placeholder="Search" />
-        </Grid>
-        <Grid item xs={8}>
-          <Source
-            language={'js'}
-            code={`
-          // import icon
-import { ${importIcon} } from '@lyyti/design-system/icons';
-// use in a component
-<${importIcon} ${args.color && args.color !== 'inherit' ? `color="${args.color}"` : ''}${
-              args.fontSize && args.fontSize !== 'medium' ? ` fontSize="${args.fontSize}"` : ''
-            }${args.htmlColor && args.htmlColor ? ` htmlColor="${args.htmlColor}"` : ''}/>
-        `}
-            dark
-          />
         </Grid>
       </Grid>
       <Grid container spacing={1}>
@@ -105,7 +90,7 @@ import { ${importIcon} } from '@lyyti/design-system/icons';
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((icon) => {
             return (
-              <Grid item xs={3} key={icon.name} onClick={() => setImportIcon(icon.name)}>
+              <Grid item xs={3} key={icon.name}>
                 <Paper
                   sx={{
                     backgroundColor: 'grey.100',
@@ -117,7 +102,7 @@ import { ${importIcon} } from '@lyyti/design-system/icons';
                   }}
                 >
                   <icon.component {...args} />
-                  <span>{icon.name}</span>
+                  <Typography>{icon.name}</Typography>
                 </Paper>
               </Grid>
             );
