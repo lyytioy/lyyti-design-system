@@ -19,7 +19,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 500;
-    src: url('../fonts/Montserrat-Medium-Regular.ttf') format('truetype');
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
   }
   
   @font-face {
@@ -27,7 +27,7 @@
     font-style: italic;
     font-display: swap;
     font-weight: 500;
-    src: url('../fonts/Montserrat-Medium-Italic.ttf') format('truetype');
+    src: url('../fonts/Montserrat-MediumItalic.ttf') format('truetype');
   }
   
   @font-face {
@@ -43,5 +43,5 @@
     font-style: italic;
     font-display: swap;
     font-weight: 700;
-    src: url('../fonts/Montserrat-Bold-Italic.ttf') format('truetype');
+    src: url('../fonts/Montserrat-BoldItalic.ttf') format('truetype');
   }
