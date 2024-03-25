@@ -38,7 +38,7 @@
     "@babel/core": "7.24.0",
     "@date-io/dayjs": "3.0.0",
     "@date-io/moment": "3.0.0",
-    "@storybook/addon-actions": "8.0.0",
+    "@storybook/addon-actions": "8.0.4",
     "@storybook/addon-essentials": "8.0.0",
     "@storybook/addon-links": "8.0.0",
     "@storybook/addon-styling-webpack": "1.0.0",
